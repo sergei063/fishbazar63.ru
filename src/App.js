@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import Header from './Header';
+import Slider from './Slider';
 import Home from './pages/Home';
 import About from './pages/About';
 import Production from './pages/Production';
+import { StyleSheet, css } from 'aphrodite/no-important';
+import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
@@ -27,13 +30,11 @@ const Main = () => (
 
 
 const App = () => (
-    <div>
+    <div className={css(AppStyle.container)}>
         <Header />
+        <Slider/>
         <Main />
     </div>
 )
-
-// This demo uses a HashRouter instead of BrowserRouter
-// because there is no server to match URLs
 
 export default App;
