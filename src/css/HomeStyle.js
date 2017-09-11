@@ -1,25 +1,22 @@
-
-import { StyleSheet, css } from 'aphrodite/no-important';
-
+import {StyleSheet, css} from 'aphrodite/no-important';
 
 
 const HomeStyle = StyleSheet.create({
-    ul:{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent:'space-around'
-    },
+    ul: {},
 
     li: {
         fontFamily: 'Open Sans Condensed',
         fontWeight: 'bold',
         color: '#3F51B5',
-        display: 'inline',
-        flex: '1',
+        display: 'block',
+        width: '100%',
+        float: 'left',
+        transition: 'width .2s',
+
         marginRight: '5em',
         listStyle: 'none',
         fontSize: '2em',
-        boxShadow:'0 2px 10px rgba(0, 0, 1, 0.06)',
+        boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)',
         backgroundColor: 'white',
         ':hover': {
             backgroundColor: 'red',
@@ -27,7 +24,7 @@ const HomeStyle = StyleSheet.create({
         },
         '@media (max-width: 750px)': {
 
-            fontSize:'1.8em',
+            fontSize: '1.8em',
             marginRight: '3em',
         }
     }

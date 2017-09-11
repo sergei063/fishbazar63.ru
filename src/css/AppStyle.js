@@ -5,7 +5,11 @@ const AppStyle = StyleSheet.create({
 
     siteTitle: {
         fontFamily: 'Merriweather, serif',
-        textAlign: 'center'
+        textAlign: 'center',
+        display:'table-cell',
+        verticalAlign:'middle',
+        fontSize:'2em',
+        color:'white'
 
     },
 
@@ -18,30 +22,43 @@ const AppStyle = StyleSheet.create({
     },
 
     slider: {
-        backgroundColor: '#3F51B5',
-        height: '75vh',
+        minWidth:'530px',
+        height: '65vh',
         backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + ")",
         backgroundSize: 'cover',
         backgroundPositionX: '0px',
-        backgroundPositionY: '0px'
+        backgroundPositionY: '0px',
+        display: 'table',
+        textShadow: 'black 0.1em 0.1em 0.2em',
+        width: '100%'
     },
     menu_inline: {
         fontFamily: 'Open Sans Condensed',
         fontWeight: 'bold',
-        color: '#3F51B5',
+        color: '#212121',
         display: 'inline',
         marginRight: '2em',
         marginRight: '2em',
         fontSize: '2em',
         backgroundColor: 'white',
         ':hover': {
-            backgroundColor: 'red',
-            color: 'white'
+            borderBottom:'2px solid #cda659',
+            fontWeight:'bold'
         },
         '@media (max-width: 750px)': {
-            marginRight: '1em',
+            marginRight: '0.5em',
             fontSize: '1.5em',
+        },
+        '@media (max-width: 500px)': {
+            marginRight: '0.5em',
+            fontSize: '1em',
         }
+
+
+    },
+    menu_inline_active: {
+        borderBottom:'2px solid #cda659',
+        fontWeight:'bold'
 
 
     },

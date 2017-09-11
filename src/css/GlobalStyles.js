@@ -42,15 +42,11 @@ const styles = StyleSheet.create({
         },
         main: {
             left: '10%',
-            display:'flex',
             backgroundColor: "white",
             width:'80%',
-            height:'75%',
-            top: '20%',
             margin: '0 auto',
             textIndent: '2em',
             padding:'10px',
-            overflow:'auto',
             '@media (max-width: 750px)': {
                 top: '25%',
                 height:'60%'
@@ -58,8 +54,13 @@ const styles = StyleSheet.create({
         },
         nav: {
             backgroundColor: "white",
-            paddingRight:'1em'
+            paddingRight:'1em',
+            textAlign:'right'
 
+        },
+        header: {
+
+            zIndex: '10000'
         }
 
     }

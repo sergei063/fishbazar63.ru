@@ -8,19 +8,22 @@ import HomeStyle from '../css/HomeStyle';
 const showcase={};
 
 
-const AllShowcase = () => (
-    <div>
-        <ul className={css(HomeStyle.ul)}>
-            {
-                Katalog.getShowcaseItems().map(p => (
-                    <li className={css(HomeStyle.li)} key={p.id}>
-                        <Link to={`/production/${p.id}`}>{p.name}</Link>
-                    </li>
-                ))
-            }
-        </ul>
-    </div>
-)
+const AllShowcase = (props) => {
+
+    return (
+        <div>
+            <ul className={css(HomeStyle.ul)}>
+                {
+                    Katalog.getShowcaseItems().map(p => (
+                        <li className={css(HomeStyle.li)} key={p.id}>
+                            <Link to={`/production/${p.id}`}>{p.name}</Link>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    )
+}
 
 const Home = () => (
     <Switch>

@@ -14,10 +14,6 @@ import './App.css';
 import {  HashRouter, Switch, Route, Link } from 'react-router-dom'
 
 
-
-
-
-
 const Main = () => (
     <main>
         <Switch>
