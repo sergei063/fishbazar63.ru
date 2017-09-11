@@ -2,7 +2,10 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 
 
 const HomeStyle = StyleSheet.create({
-    ul: {},
+    ul: {listStyle: 'none',
+        margin: '0  0px 0 0',
+        padding: '0'
+    },
 
     li: {
         fontFamily: 'Open Sans Condensed',
@@ -12,8 +15,7 @@ const HomeStyle = StyleSheet.create({
         width: '100%',
         float: 'left',
         transition: 'width .2s',
-
-        marginRight: '5em',
+        marginLeft: '1em',
         listStyle: 'none',
         fontSize: '2em',
         boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)',
@@ -23,10 +25,30 @@ const HomeStyle = StyleSheet.create({
             color: 'white'
         },
         '@media (max-width: 750px)': {
-
             fontSize: '1.8em',
             marginRight: '3em',
+        },
+        '@media (min-width: 450px)': {
+            width: '50%'
+        },
+        '@media (min-width: 768px)': {
+            width: '33.333%'
+        },
+        '@media (min-width: 1000px)': {
+            width: '20%'
         }
+    },
+    card:{
+        display:'block',
+        border:'1px solid #b5e9a7',
+        borderRadius:'3px',
+        position:'relative',
+        background:'#fff',
+        margin:'0 0px 20px 0',
+        textDecoration:'none',
+        color:'#474747',
+        zIndex:'0',
+        height:'300px'
     }
 
 

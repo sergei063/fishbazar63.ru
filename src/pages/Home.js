@@ -16,7 +16,7 @@ const AllShowcase = (props) => {
                 {
                     Katalog.getShowcaseItems().map(p => (
                         <li className={css(HomeStyle.li)} key={p.id}>
-                            <Link to={`/production/${p.id}`}>{p.name}</Link>
+                            <Link className = {css(HomeStyle.card)} to={`/production/${p.id}`}>{p.name}</Link>
                         </li>
                     ))
                 }

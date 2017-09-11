@@ -1,5 +1,13 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
 
+let menu_inline_ul={
+    listStyleType:'disc',
+    webkitMarginBefore:'1em',
+    webkitMarginAfter:'1em',
+    webkitMarginStart:'0px',
+    webkitMarginEnd:'0px',
+    webkitPaddingStart:'40px'
+}
 
 const AppStyle = StyleSheet.create({
 
@@ -56,10 +64,16 @@ const AppStyle = StyleSheet.create({
 
 
     },
-    menu_inline_active: {
-        borderBottom:'2px solid #cda659',
-        fontWeight:'bold'
-
+    menu_inline_ul: {
+        ...menu_inline_ul
+    },
+    menu_inline_ul_scroll: {
+        ...menu_inline_ul,
+        width:'100%',
+        textAlign:'center',
+        top:'0px',
+        position:'fixed',
+        transition: 'top 2s'
 
     },
 

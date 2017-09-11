@@ -8,6 +8,9 @@ import $ from 'jquery'
 
 import registerServiceWorker from './registerServiceWorker';
 import './css/GlobalStyles'; // global styles through Aphrodite
+import { StyleSheet, css } from 'aphrodite/no-important';
+
+import AppStyle from './css/AppStyle';
 
 import createHistory from 'history/createBrowserHistory'
 const history = createHistory()
@@ -24,15 +27,20 @@ ReactDOM.render(
 const listenScrollEvent   = () => {
     let top = $(window).scrollTop(),
         h_hght = 15,
-        elem = $('header');
+        elem = $('nav');
 
-   console.log(top);
+
 
     if (top < h_hght) {
-        elem.css('top', '');
+        //elem.css('top', '');
+        elem.addClass(css(AppStyle.menu_inline_ul));
+        elem.removeClass(css(AppStyle.menu_inline_ul_scroll));
     } else {
-        elem.css('top', 0);
-        elem.css('position', 'fixed');
+        elem.removeClass(css(AppStyle.menu_inline_ul));
+        elem.addClass(css(AppStyle.menu_inline_ul_scroll));
+
+       /* elem.css('top', 0);
+        elem.css('position', 'fixed');*/
     }
 
     //>80

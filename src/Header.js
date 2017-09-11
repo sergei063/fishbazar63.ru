@@ -10,7 +10,7 @@ const Header = (props) => {
 
 
         <nav>
-            <ul >
+            <ul>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Главная</Link></li>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Новости</Link></li>
                 <li id="page_production" className={css(AppStyle.menu_inline)}><Link to='/production'>Продукция</Link></li>
