@@ -7,7 +7,7 @@ import HomeStyle from '../css/HomeStyle';
 
 const showcase={};
 
-
+//<img className={css(HomeStyle.productPhotoImg)} src={require(`${p.img}`)} alt=""></img>
 const AllShowcase = (props) => {
 
     return (
@@ -16,7 +16,19 @@ const AllShowcase = (props) => {
                 {
                     Katalog.getShowcaseItems().map(p => (
                         <li className={css(HomeStyle.li)} key={p.id}>
-                            <Link className = {css(HomeStyle.card)} to={`/production/${p.id}`}>{p.name}</Link>
+                            <Link className = {css(HomeStyle.card)} to={`/production/${p.id}`}>
+                            <div className = {css(HomeStyle.productPhoto)} >
+                                <img className={css(HomeStyle.productPhotoImg)} src={require('../img/katalog/keta.jpg')} alt=""></img>
+                            </div>
+                                <div  className = {css(HomeStyle.productNameDiv)}>
+                                    <span  className = {css(HomeStyle.productName)}>{p.name}</span>
+                                    <br/>
+                                    <span className = {css(HomeStyle.productPrice)} >
+									<b>{p.price}</b>
+									<small>руб.</small>
+								</span>
+                                </div>
+                            </Link>
                         </li>
                     ))
                 }

@@ -73,7 +73,9 @@ const AppStyle = StyleSheet.create({
         textAlign:'center',
         top:'0px',
         position:'fixed',
-        transition: 'top 2s'
+        transition: 'top 2s',
+        zIndex:999999,
+        boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)'
 
     },
 

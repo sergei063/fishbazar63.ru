@@ -2,7 +2,8 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 
 
 const HomeStyle = StyleSheet.create({
-    ul: {listStyle: 'none',
+    ul: {
+        listStyle: 'none',
         margin: '0  0px 0 0',
         padding: '0'
     },
@@ -38,17 +39,45 @@ const HomeStyle = StyleSheet.create({
             width: '20%'
         }
     },
-    card:{
-        display:'block',
-        border:'1px solid #b5e9a7',
-        borderRadius:'3px',
-        position:'relative',
-        background:'#fff',
-        margin:'0 0px 20px 0',
-        textDecoration:'none',
-        color:'#474747',
-        zIndex:'0',
-        height:'300px'
+    card: {
+        display: 'block',
+        border: '1px solid #b5e9a7',
+        borderRadius: '3px',
+        position: 'relative',
+        background: '#fff',
+        margin: '0 0px 20px 0',
+        textDecoration: 'none',
+        color: '#474747',
+        zIndex: '0'
+    },
+    productPhoto: {
+        position: 'relative',
+        paddingBottom: '100%',
+        overflow: 'hidden'
+    },
+    productName: {
+        fontSize:'1.5em',
+        fontFamily: 'Open Sans Condensed'
+    },
+    productNameDiv: {
+        textAlign:'center',
+    },
+    productPrice: {
+       fontSize:'1.3em',
+    },
+    productPhotoImg: {
+        position: 'absolute',
+        top: '0',
+        bottom: '0',
+        left: '0',
+        right: '0',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        margin: 'auto',
+        transition: 'transform .4s ease-out',
+        ':hover': {
+            transform: 'scale(1.05)'
+        }
     }
 
 

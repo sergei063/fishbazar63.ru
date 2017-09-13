@@ -14,6 +14,7 @@ import AppStyle from './css/AppStyle';
 
 import createHistory from 'history/createBrowserHistory'
 const history = createHistory()
+
 history.listen((location, action) => {
 //    console.log(location);
 });
