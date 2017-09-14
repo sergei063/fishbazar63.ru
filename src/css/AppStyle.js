@@ -1,15 +1,15 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
 
-let menu_inline_ul={
-    listStyleType:'disc',
-    webkitMarginBefore:'1em',
-    webkitMarginAfter:'1em',
-    webkitMarginStart:'0px',
-    webkitMarginEnd:'0px',
-    webkitPaddingStart:'40px'
+let menu_inline_ul = {
+    listStyleType: 'disc',
+    webkitMarginBefore: '1em',
+    webkitMarginAfter: '1em',
+    webkitMarginStart: '0px',
+    webkitMarginEnd: '0px',
+    webkitPaddingStart: '40px'
 }
-let sliderBase={
-    minWidth:'530px',
+let sliderBase = {
+    minWidth: '530px',
     height: '65vh',
     backgroundSize: '100% 100%',
     backgroundPositionX: '0px',
@@ -25,15 +25,18 @@ const AppStyle = StyleSheet.create({
     siteTitle: {
         fontFamily: 'Merriweather, serif',
         textAlign: 'center',
-        display:'table-cell',
-        verticalAlign:'middle',
-        fontSize:'2em',
-        color:'white'
+        display: 'table-cell',
+        verticalAlign: 'middle',
+        fontSize: '2em',
+        color: 'white'
 
     },
 
     red_text: {
         color: 'red'
+    },
+    center_text: {
+        textAlign: 'center'
     },
 
     blue_text: {
@@ -44,20 +47,20 @@ const AppStyle = StyleSheet.create({
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + ")",
     },
-    slider_1:{
+    slider_1: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/fried-prawn.jpg') + ")",
     },
-    slider_2:{
+    slider_2: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/prawn.jpg') + ")",
 
     },
-    slider_3:{
+    slider_3: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/fish.jpg') + ")",
     },
-    slider_4:{
+    slider_4: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
     },
@@ -71,8 +74,8 @@ const AppStyle = StyleSheet.create({
         fontSize: '2em',
         backgroundColor: 'white',
         ':hover': {
-            borderBottom:'2px solid #cda659',
-            fontWeight:'bold'
+            borderBottom: '2px solid #cda659',
+            fontWeight: 'bold'
         },
         '@media (max-width: 750px)': {
             marginRight: '0.5em',
@@ -82,21 +85,19 @@ const AppStyle = StyleSheet.create({
             marginRight: '0.5em',
             fontSize: '1em',
         }
-
-
     },
     menu_inline_ul: {
         ...menu_inline_ul
-        ,transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
+        , transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
     },
     menu_inline_ul_scroll: {
         ...menu_inline_ul,
-        width:'100%',
-        textAlign:'center',
-        top:'0px',
-        position:'fixed',
+        width: '100%',
+        textAlign: 'center',
+        top: '0px',
+        position: 'fixed',
         //transition: 'top 2s',
-        zIndex:999999,
+        zIndex: 999999,
         transition: 'transform 0.4s ease 0s, background 0.4s ease 0s',
         boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)'
 
@@ -106,6 +107,21 @@ const AppStyle = StyleSheet.create({
     hover: {
         ':hover': {
             backgroundColor: 'red'
+        }
+    },
+    button: {
+        color: '#fff',
+        textDecoration: 'none',
+        userSelect: 'none',
+        background: 'rgb(212,75,56)',
+        padding: '.7em 1.5em',
+        outline: 'none',
+        cursor: 'pointer',
+        ':hover':{
+            background: 'rgb(232,95,76)',
+        },
+        ':active':{
+            background: 'rgb(152,15,0);',
         }
     },
 

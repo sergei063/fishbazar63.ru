@@ -2,6 +2,10 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 
 
 const HomeStyle = StyleSheet.create({
+    cnt:{
+        width: document.body.clientWidth*0.7,
+        margin: '0 auto'
+    },
     ul: {
         listStyle: 'none',
         margin: '0  0px 0 0',

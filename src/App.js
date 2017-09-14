@@ -4,6 +4,7 @@ import Slider from './Slider';
 import Home from './pages/Home';
 import About from './pages/About';
 import Production from './pages/Production';
+import ShoppingCart from './pages/ShoppingCart';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 
@@ -20,6 +21,7 @@ const Main = () => (
             <Route exact path='/' component={Home}/>
             <Route path='/production' component={Production}/>
             <Route path='/about' component={About}/>
+            <Route path='/shopping_cart' component={ShoppingCart}/>
         </Switch>
     </main>
 )

@@ -28,13 +28,13 @@ const Price = {
             {
                 id: "treska",
                 showCaseName:'Треска', name: "Треска",
-                info: "Тихоокеанская ПБГ потрошеная безголовая навеской 0,3-0,5 /0,5-1/1-1,5/1,5-2/2-3<br/>ГОСТ, 2S и S",
+                info: "Тихоокеанская ПБГ потрошеная безголовая навеской 0,3-0,5 /0,5-1/1-1,5/1,5-2/2-3<br />ГОСТ, 2S и S",
                 isShowCase: true, img:'../img/katalog/keta.jpg',price: 195
             },
             {
                 id: "mintay",
                 showCaseName:'Минтай', name: "Минтай",
-                info: "ПБГ потрошеный безголовый 21+/25+/30+/35+<br/>ГОСТ, М 30см+ «Алаид»",
+                info: "ПБГ потрошеный безголовый 21+/25+/30+/35+<br />ГОСТ, М 30см+ «Алаид»",
                 isShowCase: true,
                 img:'../img/katalog/keta.jpg',price: 90
             },
@@ -49,7 +49,7 @@ const Price = {
         catalog_tittle: 'Камбаловые',
         items: [
             {id: "Flounder_s",  showCaseName:'Камбала S', name: "Камбала S [290-310]", info: "Без головы [1 сорт] ГОСТ, белобрюхая, S [290-310] крупная,  частично икряная", isShowCase: true, img:'../img/katalog/keta.jpg',price: 155},
-            {id: "Flounder_s_tu",  showCaseName:'Камбала', name: "Камбала <елобрюхая S", info: "Без головы [1 сорт] ГОСТ / ТУ, белобрюхая,   S", isShowCase: false, img:'../img/katalog/keta.jpg',price: 150},
+            {id: "Flounder_s_tu",  showCaseName:'Камбала', name: "Камбала Белобрюхая S", info: "Без головы [1 сорт] ГОСТ / ТУ, белобрюхая,   S", isShowCase: false, img:'../img/katalog/keta.jpg',price: 150},
             {id: "Flounder_m",  showCaseName:'Камбала M', name: "Камбала Белобрюхая, M", info: "Без головы [1 сорт] Белобрюхая, M  [250-350]", isShowCase: true, img:'../img/katalog/keta.jpg',price: 165},
             {id: "Flounder_l",  showCaseName:'Камбала L', name: "Камбала Белобрюхая,  L", info: "Без головы [1 сорт] ГОСТ / ТУ, белобрюхая,  L   частично икряная", isShowCase: true, img:'../img/katalog/keta.jpg',price: 180},
             {id: "Halibut",  showCaseName:'Палтус', name: "Палтус", info: "Белокорый ПБГ потрошеная безголовая 0,5-1кг", isShowCase: true, img:'../img/katalog/keta.jpg',price: 9999}
@@ -115,6 +115,22 @@ const Katalog = {
                 }
             }
         }
+
+        return res;
+    },
+    getShoppingCart: function () {
+        let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+        if (shoppingCart != null) {
+
+        }
+        let res=[];
+        for (let el in shoppingCart) {
+                res.push(shoppingCart[el]);
+            console.log(shoppingCart[el])
+        }
+
+
+
 
         return res;
     }

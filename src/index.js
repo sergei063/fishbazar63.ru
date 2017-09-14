@@ -50,6 +50,7 @@ const getRandomArbitrary = (min, max)  => {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 window.addEventListener('scroll', listenScrollEvent);
+
 setInterval(() => {
     $('#slider').removeClass();
    let index = getRandomArbitrary(0,5);

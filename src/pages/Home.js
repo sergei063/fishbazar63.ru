@@ -11,7 +11,7 @@ const showcase={};
 const AllShowcase = (props) => {
 
     return (
-        <div>
+        <div className={css(HomeStyle.cnt)}>
             <ul className={css(HomeStyle.ul)}>
                 {
                     Katalog.getShowcaseItems().map(p => (

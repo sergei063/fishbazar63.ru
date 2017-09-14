@@ -43,8 +43,6 @@ const styles = StyleSheet.create({
         main: {
             left: '10%',
             backgroundColor: "white",
-            width: document.body.clientWidth*0.7,
-            margin: '0 auto',
             textIndent: '2em',
             padding:'10px',
             '@media (max-width: 750px)': {
