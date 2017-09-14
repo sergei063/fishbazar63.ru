@@ -21,11 +21,11 @@ const AllShowcase = (props) => {
                                 <img className={css(HomeStyle.productPhotoImg)} src={require('../img/katalog/keta.jpg')} alt=""></img>
                             </div>
                                 <div  className = {css(HomeStyle.productNameDiv)}>
-                                    <span  className = {css(HomeStyle.productName)}>{p.name}</span>
+                                    <span  className = {css(HomeStyle.productName)}>{p.showCaseName}</span>
                                     <br/>
                                     <span className = {css(HomeStyle.productPrice)} >
 									<b>{p.price}</b>
-									<small>руб.</small>
+									<small>руб/кг</small>
 								</span>
                                 </div>
                             </Link>

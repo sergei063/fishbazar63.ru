@@ -7,6 +7,7 @@ const AboutStyle = StyleSheet.create({
     text: {
         fontFamily:'Noto Serif, serif',
         color:'#3F51B5',
+        paddingTop:'2em',
         fontSize:'2em',
         '@media (max-width: 750px)': {
 

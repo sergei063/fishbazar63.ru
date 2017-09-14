@@ -46,8 +46,39 @@ const listenScrollEvent   = () => {
 
     //>80
 }
+const getRandomArbitrary = (min, max)  => {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 window.addEventListener('scroll', listenScrollEvent);
-
+setInterval(() => {
+    $('#slider').removeClass();
+   let index = getRandomArbitrary(0,5);
+   //console.log(index)
+    switch(index) {
+        case 0: {
+            $('#slider').addClass(css(AppStyle.slider));
+            break;
+        }
+        case 1: {
+            $('#slider').addClass(css(AppStyle.slider_1));
+            break;
+        }
+        case 2: {
+            $('#slider').addClass(css(AppStyle.slider_2));
+            break;
+        }case 3: {
+            $('#slider').addClass(css(AppStyle.slider_3));
+            break;
+        }case 4: {
+            $('#slider').addClass(css(AppStyle.slider_4));
+            break;
+        }
+        default: {
+            $('#slider').addClass(css(AppStyle.slider));
+            break;
+        }
+    }
+}, 3000);
 
 registerServiceWorker();
 

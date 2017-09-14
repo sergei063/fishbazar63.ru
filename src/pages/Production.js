@@ -32,6 +32,9 @@ const PlayerAPI = {
 const AllProducts = () => (
     <div>
         {Katalog.creatMenu()}
+        <br/>
+        <br/>
+        <br/>
     </div>
 )
 /*<Link  onClick={history.goBack()} to='/production'>Назад</Link>*/

@@ -18,7 +18,7 @@ const HomeStyle = StyleSheet.create({
         transition: 'width .2s',
         marginLeft: '1em',
         listStyle: 'none',
-        fontSize: '2em',
+        fontSize: '1.3em',
         boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)',
         backgroundColor: 'white',
         ':hover': {
@@ -41,8 +41,8 @@ const HomeStyle = StyleSheet.create({
     },
     card: {
         display: 'block',
-        border: '1px solid #b5e9a7',
-        borderRadius: '3px',
+        border: '1px dotted #c1c0c1',
+        //borderRadius: '3px',
         position: 'relative',
         background: '#fff',
         margin: '0 0px 20px 0',
