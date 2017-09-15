@@ -80,6 +80,6 @@ setInterval(() => {
         }
     }
 }, 3000);
-alert(1)
+
 registerServiceWorker();
 
