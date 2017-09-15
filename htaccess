@@ -1,0 +1,15 @@
+
+<IfModule mod_rewrite.c>
+    Options -Indexes -MultiViews
+
+    RewriteEngine On
+
+    RewriteBase /
+
+    RewriteRule ^index\.html$ - [L]
+    #RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . / [L]
+
+ </IfModule>git
