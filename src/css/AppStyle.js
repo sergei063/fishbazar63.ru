@@ -16,7 +16,7 @@ let sliderBase = {
     backgroundPositionY: '0px',
     display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
-    transition: 'background 1s ease 0s',
+    transition: 'background 2s ease 0s',
     width: '100%'
 }
 
@@ -45,7 +45,7 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + "),url(" + require('../img/fons/fried-prawn.jpg') + "),url(" + require('../img/fons/prawn.jpg') + "), url(" + require('../img/fons/fish.jpg') + "), url(" + require('../img/fons/boy.jpg') + ")"
     },
     slider_1: {
         ...sliderBase,

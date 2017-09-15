@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "webpack -d",
+    "production": "webpack -p --progress",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

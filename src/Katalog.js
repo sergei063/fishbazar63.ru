@@ -120,19 +120,19 @@ const Katalog = {
     },
     getShoppingCart: function () {
         let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-        if (shoppingCart != null) {
-
-        }
         let res=[];
-        for (let el in shoppingCart) {
+        if (shoppingCart != null) {
+            for (let el in shoppingCart) {
                 res.push(shoppingCart[el]);
-            console.log(shoppingCart[el])
+                console.log(shoppingCart[el])
+            }
         }
-
-
 
 
         return res;
+    },
+    clearShoppingCart: function () {
+        localStorage.removeItem('shoppingCart');
     }
 }
 

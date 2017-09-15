@@ -1,33 +1,50 @@
 import React from 'react';
-
-
-import {  HashRouter, Switch, Route, Link } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite/no-important';
-import HomeStyle from '../css/HomeStyle';
-
+import {HashRouter, Switch, Route, Link} from 'react-router-dom';
+import {StyleSheet, css} from 'aphrodite/no-important';
+import createHistory from 'history/createBrowserHistory'
+import ProductionStyle from '../css/ProductionStyle';
+import AppStyle from '../css/AppStyle';
 import Katalog from '../Katalog';
 
+const history = createHistory()
+
 const ShoppingCart = (props) => {
-    return( <div>
-            {Katalog.getShoppingCart().map(p => (
-            <li className={css(HomeStyle.li)} key={p.id}>
-                <Link className = {css(HomeStyle.card)} to={`/production/${p.id}`}>
-                    <div className = {css(HomeStyle.productPhoto)} >
-                        <img className={css(HomeStyle.productPhotoImg)} src={require('../img/katalog/keta.jpg')} alt=""></img>
-                    </div>
-                    <div  className = {css(HomeStyle.productNameDiv)}>
-                        <span  className = {css(HomeStyle.productName)}>{p.showCaseName}({p.count} кг)</span>
-                        <br/>
-                        <span className = {css(HomeStyle.productPrice)} >
-									<b>{p.price}</b>
-									<small>руб/кг</small>
-                                    <b> Итого {p.price*p.count}</b>
-									<small>руб</small>
-								</span>
-                    </div>
-                </Link>
-            </li>
+    let catalog = Katalog.getShoppingCart();
+    console.log(catalog)
+    if ((catalog == null) || (catalog.length == 0)) {
+        return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
+    }
+    return ( <div className={css(ProductionStyle.productCnt,ProductionStyle.text)}>
+
+            <table>
+                <tbody>
+                <tr>
+                    <td>Наименование</td>
+                    <td>Количество</td>
+                    <td>Цена</td>
+                    <td>Стоимость</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+
+
+            {catalog.map(p => (
+                <tr id={p.id} key={p.id}>
+                    <td><Link to={`/production/${p.id}`}>{p.showCaseName}</Link></td>
+                    <td>{p.count} кг</td>
+                    <td>{p.price}</td>
+                    <td>{p.price * p.count}</td>
+                    <td>&nbsp;</td>
+                </tr>
             ))}
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+            <span onClick={() => {Katalog.clearShoppingCart();history.goBack();}} className={css(AppStyle.button)}>Очистить корзину</span>
+            <br/><br/><br/>
         </div>
-    )}
+    )
+}
 export default ShoppingCart;
