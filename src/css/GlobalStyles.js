@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
         },
         nav: {
             backgroundColor: "white",
-            paddingRight:'1em',
+            padding:'46px 5px 0 0',
             textAlign:'right'
 
         },
         header: {
-
+            height:'118px',
             zIndex: '10000'
         }
 

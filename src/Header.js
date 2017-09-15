@@ -17,7 +17,7 @@ const Header = (props) => {
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Партнеры</Link></li>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Контакты</Link></li>
                 <li id="page_about" className={css(AppStyle.menu_inline)}><Link to='/about'>О&nbsp;нас</Link></li>
-                <li id="page_shopping_сart" className={css(AppStyle.menu_inline)} ><Link to='/shopping_cart'>Корзина</Link></li>
+                <li id="page_shopping_сart" className={css(AppStyle.menu_inline)} ><Link  className={css(AppStyle.showCase)}to='/shopping_cart'>&nbsp;&nbsp;</Link></li>
             </ul>
         </nav>
     </header>

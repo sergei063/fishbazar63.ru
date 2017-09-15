@@ -1,6 +1,6 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
 
-let menu_inline_ul = {
+const menu_inline_ul = {
     listStyleType: 'disc',
     webkitMarginBefore: '1em',
     webkitMarginAfter: '1em',
@@ -8,9 +8,9 @@ let menu_inline_ul = {
     webkitMarginEnd: '0px',
     webkitPaddingStart: '40px'
 }
-let sliderBase = {
+const sliderBase = {
     minWidth: '530px',
-    height: '65vh',
+    height: '45vh',
     backgroundSize: '100% 100%',
     backgroundPositionX: '0px',
     backgroundPositionY: '0px',
@@ -19,6 +19,13 @@ let sliderBase = {
     transition: 'background 2s ease 0s',
     width: '100%'
 }
+
+ const coolFont = {
+     fontFamily: 'MYRIADPRO-REGULAR',
+     src: ' url("'+require('../fonts/MYRIADPRO-REGULAR.eot')+'"), url("'+require('../fonts/MYRIADPRO-REGULAR.eot?#iefix')+'") format("embedded-opentype"), url("'+require('../fonts/MYRIADPRO-REGULAR.woff')+'") format("woff")',
+     fontWeight: 'normal',
+     fontStyle: 'normal'
+};
 
 const AppStyle = StyleSheet.create({
 
@@ -65,17 +72,15 @@ const AppStyle = StyleSheet.create({
         backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
     },
     menu_inline: {
-        fontFamily: 'Open Sans Condensed',
-        fontWeight: 'bold',
+        fontFamily: [coolFont, "sans-serif"],
         color: '#212121',
         display: 'inline',
         marginRight: '2em',
         marginRight: '2em',
-        fontSize: '2em',
+        fontSize: '1.1em',
         backgroundColor: 'white',
         ':hover': {
-            borderBottom: '2px solid #cda659',
-            fontWeight: 'bold'
+            borderBottom: '2px solid #cda659'
         },
         '@media (max-width: 750px)': {
             marginRight: '0.5em',
@@ -90,6 +95,13 @@ const AppStyle = StyleSheet.create({
         ...menu_inline_ul
         , transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
     },
+
+    showCase:{
+        background:"#221e1f url(" + require('../img/bg_pouch.png') + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+    },
+
     menu_inline_ul_scroll: {
         ...menu_inline_ul,
         width: '100%',
