@@ -31,35 +31,51 @@ const PlayerAPI = {
 }
 
 
-const AllProducts = () => (
-    <div className={css(ProductionStyle.productCnt)}>
-        {Katalog.creatMenu()}
-        <br/>
-        <br/>
-        <br/>
-    </div>
-)
+const AllProducts = (props) => {
+
+    let filter;
+    try {
+        filter = props.history.location.state.filter;
+    } catch (e) {
+        filter=null
+    }
+
+    const getLIproduct = ()=> {
+        let key=0, r = [];
+        r.push(<span id="filter_btn_all"  key={key} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css(AppStyle.buttonBlue)}>Все</span>);
+        ++key;
+
+        Katalog.getGroup().map(p => {
+            r.push(<span  key={key}  id={p.name} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css(AppStyle.buttonBlue)}>{p.catalog_tittle}</span>);
+            ++key;
+        })
+        return r;
+    }
+
+    return (
+        <div className={css(ProductionStyle.productCnt)}>
+            <div className={css(AppStyle.marginAuto,ProductionStyle.groupProduct)}>{getLIproduct()}</div>
+            <br/>
+            <br/>
+            { Katalog.getRenderedShowcase(Katalog.getGroupItems(filter))}
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    )
+}
 /*<Link  onClick={history.goBack()} to='/production'>Назад</Link>*/
 const backClick = (event) => {
     event.preventDefault();
     history.goBack();
 }
+const catalogBackClick = (event) => {
+    event.preventDefault();
+    history.goBack();
+}
 
-const AddShoppingCart = (fish,countFish) => {
-
-
-    let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-    if (shoppingCart == null) {
-        shoppingCart = {}
-    }
-
-    shoppingCart[fish.id] = {...fish, count: countFish[0].getValueAsNumber(),}
-
-    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
-console.log(JSON.stringify(shoppingCart))
-    $('#page_shopping_сart').css("display","inline");
-
-
+const AddShoppingCart = (fish, countFish) => {
+    Katalog.addShoppingCart(fish, countFish);
 }
 
 const countFormat = (num) => (
@@ -75,6 +91,7 @@ const Player = (props) => {
             <div className={css(ProductionStyle.photoDiv)}>
                 <img src={require('../img/katalog/keta.jpg')} alt=""></img>
             </div>
+            <Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(ProductionStyle.back)} to='/production'>{player.parent.catalog_tittle}</Link>
             <div className={css(ProductionStyle.details)}>
                 <h1>{player.name} ({player.price} руб/кг)</h1>
 
@@ -82,11 +99,11 @@ const Player = (props) => {
                 <div className={css(AppStyle.center_text)}><br/><br/><span>
                     <NumericInput id="countFish" value={1} style={{
                         input: {
-                            width: '7em',height: '3em'
+                            width: '7em', height: '3em'
                         }
                     }} format={countFormat}/>кг&nbsp;&nbsp;</span><span
                     onClick={() => {
-                        AddShoppingCart(player,$('#countFish'))
+                        AddShoppingCart(player, $('#countFish'))
                     }} className={css(AppStyle.button)}>В корзину</span><br/><br/></div>
             </div>
 

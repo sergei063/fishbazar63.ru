@@ -4,7 +4,11 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 const HomeStyle = StyleSheet.create({
     cnt:{
         width: document.body.clientWidth*0.7,
-        margin: '0 auto'
+        paddingLeft:'7%',
+        margin: '0 auto',
+        '@media (max-width: 1350px)': {
+            paddingLeft:'0%'
+        },
     },
     ul: {
         listStyle: 'none',
@@ -20,13 +24,12 @@ const HomeStyle = StyleSheet.create({
         width: '100%',
         float: 'left',
         transition: 'width .2s',
-        marginLeft: '1em',
+        marginLeft: '2em',
         listStyle: 'none',
         fontSize: '1.3em',
         boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)',
         backgroundColor: 'white',
         ':hover': {
-            backgroundColor: 'red',
             color: 'white'
         },
         '@media (max-width: 750px)': {
@@ -39,7 +42,7 @@ const HomeStyle = StyleSheet.create({
         '@media (min-width: 768px)': {
             width: '33.333%'
         },
-        '@media (min-width: 1000px)': {
+        '@media (min-width: 1020px)': {
             width: '20%'
         }
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {  BrowserRouter,Router,HashRouter, Switch, Route, Link } from 'react-router-dom'
+import {  Router} from 'react-router-dom'
 
 import './index.css';
 import App from './App';
@@ -8,7 +8,7 @@ import $ from 'jquery'
 
 import registerServiceWorker from './registerServiceWorker';
 import './css/GlobalStyles'; // global styles through Aphrodite
-import { StyleSheet, css } from 'aphrodite/no-important';
+import { css } from 'aphrodite/no-important';
 
 import AppStyle from './css/AppStyle';
 

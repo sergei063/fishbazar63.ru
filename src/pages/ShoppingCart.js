@@ -1,16 +1,15 @@
 import React from 'react';
-import {HashRouter, Switch, Route, Link} from 'react-router-dom';
+import {HashRouter, Switch, Route,Redirect, Link} from 'react-router-dom';
 import {StyleSheet, css} from 'aphrodite/no-important';
 import createHistory from 'history/createBrowserHistory'
 import ProductionStyle from '../css/ProductionStyle';
 import AppStyle from '../css/AppStyle';
 import Katalog from '../Katalog';
 
-const history = createHistory()
+const history = createHistory();
 
 const ShoppingCart = (props) => {
     let catalog = Katalog.getShoppingCart();
-    console.log(catalog)
     if ((catalog == null) || (catalog.length == 0)) {
         return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
     }
@@ -42,7 +41,7 @@ const ShoppingCart = (props) => {
             </table>
             <br/>
             <br/>
-            <span onClick={() => {Katalog.clearShoppingCart();history.goBack();}} className={css(AppStyle.button)}>Очистить корзину</span>
+            <span onClick={() => {Katalog.clearShoppingCart(); props.history.push({pathname: '/shopping_cart'}) }} className={css(AppStyle.button)}>Очистить корзину</span>
             <br/><br/><br/>
         </div>
     )

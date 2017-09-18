@@ -13,6 +13,10 @@ const ProductionStyle = StyleSheet.create({
         width: '80%',
         margin: '0 auto'
     },
+    groupProduct: {
+        width: '50%',
+        paddingTop: '2em'
+    },
     ul: {}, li: {
         listStyleType: 'none',
         ':hover': {

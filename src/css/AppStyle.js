@@ -9,8 +9,9 @@ const menu_inline_ul = {
     webkitPaddingStart: '40px'
 }
 const sliderBase = {
-    minWidth: '530px',
-    height: '45vh',
+    minWidth: '100%',
+    //height: '45vh',
+    minHeight: '430px',
     backgroundSize: '100% 100%',
     backgroundPositionX: '0px',
     backgroundPositionY: '0px',
@@ -35,8 +36,18 @@ const AppStyle = StyleSheet.create({
         display: 'table-cell',
         verticalAlign: 'middle',
         fontSize: '2em',
-        color: 'white'
+        color: 'white',
+        '@media (max-width: 1020px)': {
+            fontSize: '1em',
+        },
+        '@media (max-width: 1500px)': {
+            fontSize: '1.5em',
+        }
 
+    },
+
+    marginAuto: {
+        margin: '0 auto'
     },
 
     red_text: {
@@ -45,6 +56,9 @@ const AppStyle = StyleSheet.create({
     center_text: {
         textAlign: 'center'
     },
+    floatRight: {
+        float: 'right'
+    },
 
     blue_text: {
         color: '#3F51B5'
@@ -52,7 +66,7 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + "),url(" + require('../img/fons/fried-prawn.jpg') + "),url(" + require('../img/fons/prawn.jpg') + "), url(" + require('../img/fons/fish.jpg') + "), url(" + require('../img/fons/boy.jpg') + ")"
+        backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + "),url(" + require('../img/fons/fried-prawn.jpg') + "),url(" + require('../img/fons/prawn.jpg') + "), url(" + require('../img/fons/fish.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
     },
     slider_1: {
         ...sliderBase,
@@ -69,13 +83,12 @@ const AppStyle = StyleSheet.create({
     },
     slider_4: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/abstract.jpg') + ")",
     },
     menu_inline: {
         fontFamily: [coolFont, "sans-serif"],
         color: '#212121',
         display: 'inline',
-        marginRight: '2em',
         marginRight: '2em',
         fontSize: '1.1em',
         backgroundColor: 'white',
@@ -95,13 +108,6 @@ const AppStyle = StyleSheet.create({
         ...menu_inline_ul
         , transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
     },
-
-    showCase:{
-        background:"#221e1f url(" + require('../img/bg_pouch.png') + ") no-repeat 50% 13px",
-        height: '44px', width: '44px',
-        borderRadius: '44px',
-    },
-
     menu_inline_ul_scroll: {
         ...menu_inline_ul,
         width: '100%',
@@ -123,6 +129,7 @@ const AppStyle = StyleSheet.create({
     },
     button: {
         color: '#fff',
+        fontFamily: [coolFont, "sans-serif"],
         textDecoration: 'none',
         userSelect: 'none',
         background: 'rgb(212,75,56)',
@@ -134,6 +141,22 @@ const AppStyle = StyleSheet.create({
         },
         ':active':{
             background: 'rgb(152,15,0);',
+        }
+    },
+    buttonBlue: {
+        fontFamily: [coolFont, "sans-serif"],
+        color: '#fff',
+        textDecoration: 'none',
+        userSelect: 'none',
+        background: '#03A9F4',
+        padding: '.7em 1.5em',
+        outline: 'none',
+        cursor: 'pointer',
+        ':hover':{
+            background: '#0277BD',
+        },
+        ':active':{
+            background: '#01579B',
         }
     },
 

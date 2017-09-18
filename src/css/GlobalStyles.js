@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         },
         nav: {
             backgroundColor: "white",
-            padding:'46px 5px 0 0',
+            padding:'26px 5px 0 0',
             textAlign:'right'
 
         },
