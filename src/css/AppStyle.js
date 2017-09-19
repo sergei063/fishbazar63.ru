@@ -159,6 +159,22 @@ const AppStyle = StyleSheet.create({
             background: '#01579B',
         }
     },
+    buttonBlueCheck: {
+        fontFamily: [coolFont, "sans-serif"],
+        color: '#fff',
+        textDecoration: 'none',
+        userSelect: 'none',
+        background: '#01579B',
+        padding: '.7em 1.5em',
+        outline: 'none',
+        cursor: 'pointer',
+        ':hover':{
+            background: '#0277BD',
+        },
+        ':active':{
+            background: '#01579B',
+        }
+    },
 
     small: {
         '@media (max-width: 600px)': {

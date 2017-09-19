@@ -12,9 +12,27 @@ import { css } from 'aphrodite/no-important';
 
 import AppStyle from './css/AppStyle';
 
+
 import createHistory from 'history/createBrowserHistory'
 const history = createHistory()
 
+if (!String.prototype.includes) {
+    String.prototype.includes = function() {
+        'use strict';
+        return String.prototype.indexOf.apply(this, arguments) !== -1;
+    };
+}
+if (!Array.prototype.includes) {
+    Object.defineProperty(Array.prototype, "includes", {
+        enumerable: false,
+        value: function(obj) {
+            var newArr = this.filter(function(el) {
+                return el == obj;
+            });
+            return newArr.length > 0;
+        }
+    });
+}
 history.listen((location, action) => {
 //    console.log(location);
 });

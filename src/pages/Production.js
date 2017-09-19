@@ -39,14 +39,14 @@ const AllProducts = (props) => {
     } catch (e) {
         filter=null
     }
-
+//id="`filter_btn_{p.name}`"
     const getLIproduct = ()=> {
         let key=0, r = [];
-        r.push(<span id="filter_btn_all"  key={key} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css(AppStyle.buttonBlue)}>Все</span>);
+        r.push(<span id="filter_btn_all"  key={key} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: null }})   }  }className={css((!filter)?AppStyle.buttonBlueCheck:AppStyle.buttonBlue)}>Все</span>);
         ++key;
 
         Katalog.getGroup().map(p => {
-            r.push(<span  key={key}  id={p.name} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css(AppStyle.buttonBlue)}>{p.catalog_tittle}</span>);
+            r.push(<span  key={key}   onClick={() => { props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css((filter==p.name)?AppStyle.buttonBlueCheck:AppStyle.buttonBlue)}>{p.catalog_tittle}</span>);
             ++key;
         })
         return r;
