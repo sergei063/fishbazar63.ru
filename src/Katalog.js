@@ -16,7 +16,7 @@ const Price = {
                 name: "Горбуша",
                 info: "Неразделанная [1 сорт]   серебро, морская",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/pink salmon.jpg'),
                 price: 230
             },
             {
@@ -25,7 +25,7 @@ const Price = {
                 name: "Кета",
                 info: "Потрошеная с головой [1 сорт] штучной заморозки, серебро, морская красное мясо",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 325
             },
             {
@@ -34,7 +34,7 @@ const Price = {
                 name: "Нерка",
                 info: "ПБГ потрошеная безголовая",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/red_salmon.jpg'),
                 price: 500
             },
             {
@@ -43,7 +43,7 @@ const Price = {
                 name: "Кижуч",
                 info: "ПБГ потрошеный безголовый",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/coho.jpg'),
                 price: 600
             },
             {
@@ -52,7 +52,7 @@ const Price = {
                 name: "Голец",
                 info: "НР неразделанный",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 700
             },
             {
@@ -61,7 +61,7 @@ const Price = {
                 name: "Чавыча",
                 info: "ПСГ потрошеная с головой / ПБГ потрошеная безголовая",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 800
             },
             {
@@ -70,7 +70,7 @@ const Price = {
                 name: "Семга",
                 info: "Чили(3-4)",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 590
             },
             {
@@ -79,7 +79,7 @@ const Price = {
                 name: "Семга Чили(5-6)",
                 info: "Описание отсутствует",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 625
             },
             {
@@ -88,7 +88,7 @@ const Price = {
                 name: "Семга Чили(6-7)",
                 info: "Описание отсутствует",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 675
             },
             {
@@ -97,7 +97,7 @@ const Price = {
                 name: "Форель «Айсберг»",
                 info: "(1,8-2,7) «Айсберг»",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 570
             },
             {
@@ -106,7 +106,7 @@ const Price = {
                 name: "Форель Prem Чили",
                 info: "(1,8-2,7) Prem Чили",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 570
             }
         ]
@@ -118,14 +118,14 @@ const Price = {
                 id: "treska",
                 showCaseName: 'Треска', name: "Треска",
                 info: "Тихоокеанская ПБГ потрошеная безголовая навеской 0,3-0,5 /0,5-1/1-1,5/1,5-2/2-3<br />ГОСТ, 2S и S",
-                isShowCase: true, img: '../img/katalog/keta.jpg', price: 195
+                isShowCase: true, img: require('./img/katalog/keta.jpg'), price: 195
             },
             {
                 id: "mintay",
                 showCaseName: 'Минтай', name: "Минтай",
                 info: "ПБГ потрошеный безголовый 21+/25+/30+/35+<br />ГОСТ, М 30см+ «Алаид»",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg', price: 90
+                img: require('./img/katalog/keta.jpg'), price: 90
             },
             {
                 id: "navaga",
@@ -133,7 +133,7 @@ const Price = {
                 name: "Навага",
                 info: "ПБГ потрошеная безголовая 21+/25+/30+",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 130
             },
             {
@@ -142,7 +142,7 @@ const Price = {
                 name: 'Пикша',
                 info: "Описание отсутствует",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 130
             },
             {
@@ -151,7 +151,7 @@ const Price = {
                 name: 'Путассу',
                 info: "Описание отсутствует",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 130
             },
             {
@@ -160,7 +160,7 @@ const Price = {
                 name: 'Хек',
                 info: "Описание отсутствует",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 130
             },
             {
@@ -169,7 +169,7 @@ const Price = {
                 name: 'Лемонема',
                 info: "Описание отсутствует",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/keta.jpg'),
                 price: 130
             }
         ]
@@ -183,7 +183,7 @@ const Price = {
                 name: "Камбала S [290-310]",
                 info: "Без головы [1 сорт] ГОСТ, белобрюхая, S [290-310] крупная,  частично икряная",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/flounder_l.jpg'),
                 price: 155
             },
             {
@@ -192,7 +192,7 @@ const Price = {
                 name: "Камбала Белобрюхая S",
                 info: "Без головы [1 сорт] ГОСТ / ТУ, белобрюхая,   S",
                 isShowCase: false,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/flounder_l.jpg'),
                 price: 150
             },
             {
@@ -201,7 +201,7 @@ const Price = {
                 name: "Камбала Белобрюхая, M",
                 info: "Без головы [1 сорт] Белобрюхая, M  [250-350]",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 165
             },
             {
@@ -210,7 +210,7 @@ const Price = {
                 name: "Камбала Белобрюхая,  L",
                 info: "Без головы [1 сорт] ГОСТ / ТУ, белобрюхая,  L   частично икряная",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 180
             },
             {
@@ -219,7 +219,7 @@ const Price = {
                 name: "Палтус",
                 info: "Белокорый ПБГ потрошеная безголовая 0,5-1кг",
                 isShowCase: true,
-                img: '../img/katalog/keta.jpg',
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 9999
             }
         ]
@@ -297,7 +297,7 @@ const Katalog = {
                             <Link className={css(HomeStyle.card)} to={`/production/${p.id}`}>
                                 <div className={css(HomeStyle.productPhoto)}>
                                     <img className={css(HomeStyle.productPhotoImg)}
-                                         src={require('./img/katalog/keta.jpg')} alt=""></img>
+                                         src={p.img} alt={p.info}></img>
                                 </div>
                                 <div className={css(HomeStyle.productNameDiv)}>
                                     <div className={css(HomeStyle.productName)}>{p.showCaseName}</div>

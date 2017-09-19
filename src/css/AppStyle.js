@@ -11,7 +11,7 @@ const menu_inline_ul = {
 const sliderBase = {
     minWidth: '100%',
     //height: '45vh',
-    minHeight: '430px',
+    minHeight: '530px',
     backgroundSize: '100% 100%',
     backgroundPositionX: '0px',
     backgroundPositionY: '0px',
@@ -30,8 +30,11 @@ const sliderBase = {
 
 const AppStyle = StyleSheet.create({
 
+    displayNone:{display: 'none'},
+    displayBlock:{display: 'block'},
+
     siteTitle: {
-        fontFamily: 'Merriweather, serif',
+        fontFamily: 'PT Sans Caption, sans-serif',
         textAlign: 'center',
         display: 'table-cell',
         verticalAlign: 'middle',
@@ -66,24 +69,23 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + "),url(" + require('../img/fons/fried-prawn.jpg') + "),url(" + require('../img/fons/prawn.jpg') + "), url(" + require('../img/fons/fish.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
+        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
+    },
+    slider_line: {
+        width: '675px',margin: 'auto',borderTop: '2px solid #fff'
     },
     slider_1: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fried-prawn.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
     },
     slider_2: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/prawn.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/mintai.jpg') + ")",
 
     },
     slider_3: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fish.jpg') + ")",
-    },
-    slider_4: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/abstract.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
     },
     menu_inline: {
         fontFamily: [coolFont, "sans-serif"],
