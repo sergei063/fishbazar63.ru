@@ -15,6 +15,7 @@ import './App.css';
 import {  HashRouter, Switch, Route, Link } from 'react-router-dom'
 
 
+
 const Main = () => (
     <main>
         <Switch>
@@ -30,7 +31,7 @@ const Main = () => (
 const App = () => (
     <div className={css(AppStyle.container)}>
         <Header />
-        <Slider/>
+        <Slider slider="carousel"/>
         <Main />
     </div>
 )

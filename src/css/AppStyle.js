@@ -9,29 +9,29 @@ const menu_inline_ul = {
     webkitPaddingStart: '40px'
 }
 const sliderBase = {
+    position: 'relative',
     minWidth: '100%',
-    //height: '45vh',
-    minHeight: '530px',
-    backgroundSize: '100% 100%',
-    backgroundPositionX: '0px',
-    backgroundPositionY: '0px',
+    height: '45vh',
+    minHeight: '430px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
     display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
     transition: 'background 2s ease 0s',
     width: '100%'
 }
 
- const coolFont = {
-     fontFamily: 'MYRIADPRO-REGULAR',
-     src: ' url("'+require('../fonts/MYRIADPRO-REGULAR.eot')+'"), url("'+require('../fonts/MYRIADPRO-REGULAR.eot?#iefix')+'") format("embedded-opentype"), url("'+require('../fonts/MYRIADPRO-REGULAR.woff')+'") format("woff")',
-     fontWeight: 'normal',
-     fontStyle: 'normal'
+const coolFont = {
+    fontFamily: 'MYRIADPRO-REGULAR',
+    src: ' url("' + require('../fonts/MYRIADPRO-REGULAR.eot') + '"), url("' + require('../fonts/MYRIADPRO-REGULAR.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MYRIADPRO-REGULAR.woff') + '") format("woff")',
+    fontWeight: 'normal',
+    fontStyle: 'normal'
 };
 
 const AppStyle = StyleSheet.create({
 
-    displayNone:{display: 'none'},
-    displayBlock:{display: 'block'},
+    displayNone: {display: 'none'},
+    displayBlock: {display: 'block'},
 
     siteTitle: {
         fontFamily: 'PT Sans Caption, sans-serif',
@@ -47,6 +47,27 @@ const AppStyle = StyleSheet.create({
             fontSize: '1.5em',
         }
 
+    },
+    prev: {
+        position: 'absolute',
+        left: '44px',
+        top: '178px',
+        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat',
+        height: '62px',
+        width: '62px',
+        display: 'block',
+        zIndex: '99'
+
+    },
+    next: {
+        position: 'absolute',
+        right: '39px',
+        top: '178px',
+        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat -62px 0',
+        height: '62px',
+        width: '62px',
+        display: 'block',
+        zIndex: '99'
     },
 
     marginAuto: {
@@ -72,7 +93,7 @@ const AppStyle = StyleSheet.create({
         backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
     },
     slider_line: {
-        width: '675px',margin: 'auto',borderTop: '2px solid #fff'
+        width: '675px', margin: 'auto', borderTop: '2px solid #fff'
     },
     slider_1: {
         ...sliderBase,
@@ -113,13 +134,14 @@ const AppStyle = StyleSheet.create({
     menu_inline_ul_scroll: {
         ...menu_inline_ul,
         width: '100%',
+        opacity: '0.9',
         textAlign: 'center',
         top: '0px',
         position: 'fixed',
         //transition: 'top 2s',
         zIndex: 999999,
         transition: 'transform 0.4s ease 0s, background 0.4s ease 0s',
-        boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)'
+        boxShadow: '10px 10px 10px rgba(0, 0, 1, 0.06)'
 
     },
 
@@ -138,10 +160,10 @@ const AppStyle = StyleSheet.create({
         padding: '.7em 1.5em',
         outline: 'none',
         cursor: 'pointer',
-        ':hover':{
+        ':hover': {
             background: 'rgb(232,95,76)',
         },
-        ':active':{
+        ':active': {
             background: 'rgb(152,15,0);',
         }
     },
@@ -154,10 +176,10 @@ const AppStyle = StyleSheet.create({
         padding: '.7em 1.5em',
         outline: 'none',
         cursor: 'pointer',
-        ':hover':{
+        ':hover': {
             background: '#0277BD',
         },
-        ':active':{
+        ':active': {
             background: '#01579B',
         }
     },
