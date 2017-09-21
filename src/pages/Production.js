@@ -7,7 +7,7 @@ import Katalog from '../Katalog';
 import NumericInput from 'react-numeric-input';
 import createHistory from 'history/createBrowserHistory'
 import $ from 'jquery'
-
+import uniqid  from 'uniqid';
 const history = createHistory()
 
 
@@ -30,40 +30,54 @@ const PlayerAPI = {
     }
 }
 
+class AllProducts extends React.Component {
+    render() {
 
-const AllProducts = (props) => {
+        let filter;
+        try {
+            filter = this.props.history.location.state.filter;
+        } catch (e) {
+            filter=null
+        }
 
-    let filter;
-    try {
-        filter = props.history.location.state.filter;
-    } catch (e) {
-        filter=null
-    }
+        const getLIproduct = ()=> {
 
-    const getLIproduct = ()=> {
-        let key=0, r = [];
-        r.push(<span id="filter_btn_all"  key={key} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css(AppStyle.buttonBlue)}>Все</span>);
-        ++key;
 
-        Katalog.getGroup().map(p => {
-            r.push(<span  key={key}  id={p.name} onClick={() => { props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css(AppStyle.buttonBlue)}>{p.catalog_tittle}</span>);
+            let key=0, r = [];
+            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css((!filter)? AppStyle.link_active:AppStyle.link, AppStyle.marginRight15)}>Все</span>);
             ++key;
-        })
-        return r;
+
+            Katalog.getGroup().map(p => {
+                r.push(<span  key={key}  id={p.name} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css((filter==p.name)? AppStyle.link_active:AppStyle.link, AppStyle.marginRight15)}>{p.catalog_tittle}</span>);
+                ++key;
+            })
+            return r;
+        }
+
+        return (
+            <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
+                <div  className={css(AppStyle.marginAuto,ProductionStyle.groupProduct)}>{getLIproduct()}</div>
+                <br/>
+                <br/>
+                { Katalog.getRenderedShowcase(Katalog.getGroupItems(filter))}
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        )
     }
 
-    return (
-        <div className={css(ProductionStyle.productCnt)}>
-            <div className={css(AppStyle.marginAuto,ProductionStyle.groupProduct)}>{getLIproduct()}</div>
-            <br/>
-            <br/>
-            { Katalog.getRenderedShowcase(Katalog.getGroupItems(filter))}
-            <br/>
-            <br/>
-            <br/>
-        </div>
-    )
+    componentDidMount(){
+        //alert($("#productuion_container").offset().top)
+        $("html, body").animate({
+            scrollTop: $("#productuion_container").offset().top-30 + "px"
+        }, {
+            duration: 1000,
+            easing: "swing"
+        });
+    }
 }
+
 /*<Link  onClick={history.goBack()} to='/production'>Назад</Link>*/
 const backClick = (event) => {
     event.preventDefault();

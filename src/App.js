@@ -31,7 +31,7 @@ const Main = () => (
 const App = () => (
     <div className={css(AppStyle.container)}>
         <Header />
-        <Slider slider="carousel"/>
+        <Slider/>
         <Main />
     </div>
 )

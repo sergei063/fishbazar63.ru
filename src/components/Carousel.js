@@ -8,12 +8,12 @@ import AppStyle from '../css/AppStyle';
 
 class Carousel {
     constructor() {
+
         this.indexSlider = 0;
         this.timeout = 5000;
         this.count = 3;
     }
     startSlider(timeout) {
-    //alert(this.indexSlider);
         if (this.indexSlider <= this.count) {
             $('#slider').removeClass();
             switch (this.indexSlider) {
@@ -44,6 +44,7 @@ class Carousel {
                 }
             }
             this.indexSlider++;
+            clearTimeout(this.timerId);
             this.timerId = setTimeout(() => this.startSlider(), timeout||this.timeout);
 
         } else {

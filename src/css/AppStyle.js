@@ -34,7 +34,7 @@ const AppStyle = StyleSheet.create({
     displayBlock: {display: 'block'},
 
     siteTitle: {
-        fontFamily: 'PT Sans Caption, sans-serif',
+        fontFamily: 'Lobster, sans-serif',
         textAlign: 'center',
         display: 'table-cell',
         verticalAlign: 'middle',
@@ -46,6 +46,11 @@ const AppStyle = StyleSheet.create({
         '@media (max-width: 1500px)': {
             fontSize: '1.5em',
         }
+
+    },
+    sliderText: {
+        fontFamily: 'Lobster',
+        fontSize:'1.3em'
 
     },
     prev: {
@@ -72,6 +77,9 @@ const AppStyle = StyleSheet.create({
 
     marginAuto: {
         margin: '0 auto'
+    },
+    marginRight15: {
+        marginRight: '1.5em'
     },
 
     red_text: {
@@ -167,21 +175,20 @@ const AppStyle = StyleSheet.create({
             background: 'rgb(152,15,0);',
         }
     },
-    buttonBlue: {
+    link: {
         fontFamily: [coolFont, "sans-serif"],
-        color: '#fff',
-        textDecoration: 'none',
-        userSelect: 'none',
-        background: '#03A9F4',
-        padding: '.7em 1.5em',
-        outline: 'none',
-        cursor: 'pointer',
+        cursor:'pointer',
+        color: '#212121',
+        fontSize:'1.5em',
         ':hover': {
-            background: '#0277BD',
-        },
-        ':active': {
-            background: '#01579B',
+            borderBottom: '2px solid #cda659'
         }
+    },link_active: {
+        borderBottom: '2px solid #cda659',
+        fontFamily: [coolFont, "sans-serif"],
+        cursor:'pointer',
+        color: '#212121',
+        fontSize:'1.5em',
     },
 
     small: {
