@@ -14,8 +14,9 @@ const ProductionStyle = StyleSheet.create({
         margin: '0 auto'
     },
     groupProduct: {
-        width: '50%',
-        paddingTop: '2em'
+        //backgroundColor:'white',
+        width: '80%',
+        padding: '2em'
     },
     ul: {}, li: {
         listStyleType: 'none',

@@ -9,29 +9,32 @@ const menu_inline_ul = {
     webkitPaddingStart: '40px'
 }
 const sliderBase = {
+    position: 'relative',
     minWidth: '100%',
-    //height: '45vh',
+    height: '45vh',
     minHeight: '430px',
-    backgroundSize: '100% 100%',
-    backgroundPositionX: '0px',
-    backgroundPositionY: '0px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
     display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
     transition: 'background 2s ease 0s',
     width: '100%'
 }
 
- const coolFont = {
-     fontFamily: 'MYRIADPRO-REGULAR',
-     src: ' url("'+require('../fonts/MYRIADPRO-REGULAR.eot')+'"), url("'+require('../fonts/MYRIADPRO-REGULAR.eot?#iefix')+'") format("embedded-opentype"), url("'+require('../fonts/MYRIADPRO-REGULAR.woff')+'") format("woff")',
-     fontWeight: 'normal',
-     fontStyle: 'normal'
+const coolFont = {
+    fontFamily: 'MYRIADPRO-REGULAR',
+    src: ' url("' + require('../fonts/MYRIADPRO-REGULAR.eot') + '"), url("' + require('../fonts/MYRIADPRO-REGULAR.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MYRIADPRO-REGULAR.woff') + '") format("woff")',
+    fontWeight: 'normal',
+    fontStyle: 'normal'
 };
 
 const AppStyle = StyleSheet.create({
 
+    displayNone: {display: 'none'},
+    displayBlock: {display: 'block'},
+
     siteTitle: {
-        fontFamily: 'Merriweather, serif',
+        fontFamily: 'Lobster, sans-serif',
         textAlign: 'center',
         display: 'table-cell',
         verticalAlign: 'middle',
@@ -45,9 +48,38 @@ const AppStyle = StyleSheet.create({
         }
 
     },
+    sliderText: {
+        fontFamily: 'Lobster',
+        fontSize:'1.3em'
+
+    },
+    prev: {
+        position: 'absolute',
+        left: '44px',
+        top: '178px',
+        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat',
+        height: '62px',
+        width: '62px',
+        display: 'block',
+        zIndex: '99'
+
+    },
+    next: {
+        position: 'absolute',
+        right: '39px',
+        top: '178px',
+        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat -62px 0',
+        height: '62px',
+        width: '62px',
+        display: 'block',
+        zIndex: '99'
+    },
 
     marginAuto: {
         margin: '0 auto'
+    },
+    marginRight15: {
+        marginRight: '1.5em'
     },
 
     red_text: {
@@ -66,24 +98,23 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fish-fillet.jpg') + "),url(" + require('../img/fons/fried-prawn.jpg') + "),url(" + require('../img/fons/prawn.jpg') + "), url(" + require('../img/fons/fish.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
+        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
+    },
+    slider_line: {
+        width: '675px', margin: 'auto', borderTop: '2px solid #fff'
     },
     slider_1: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fried-prawn.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
     },
     slider_2: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/prawn.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/mintai.jpg') + ")",
 
     },
     slider_3: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fish.jpg') + ")",
-    },
-    slider_4: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/abstract.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
     },
     menu_inline: {
         fontFamily: [coolFont, "sans-serif"],
@@ -111,13 +142,14 @@ const AppStyle = StyleSheet.create({
     menu_inline_ul_scroll: {
         ...menu_inline_ul,
         width: '100%',
+        opacity: '0.9',
         textAlign: 'center',
         top: '0px',
         position: 'fixed',
         //transition: 'top 2s',
         zIndex: 999999,
         transition: 'transform 0.4s ease 0s, background 0.4s ease 0s',
-        boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)'
+        boxShadow: '10px 10px 10px rgba(0, 0, 1, 0.06)'
 
     },
 
@@ -136,28 +168,27 @@ const AppStyle = StyleSheet.create({
         padding: '.7em 1.5em',
         outline: 'none',
         cursor: 'pointer',
-        ':hover':{
+        ':hover': {
             background: 'rgb(232,95,76)',
         },
-        ':active':{
+        ':active': {
             background: 'rgb(152,15,0);',
         }
     },
-    buttonBlue: {
+    link: {
         fontFamily: [coolFont, "sans-serif"],
-        color: '#fff',
-        textDecoration: 'none',
-        userSelect: 'none',
-        background: '#03A9F4',
-        padding: '.7em 1.5em',
-        outline: 'none',
-        cursor: 'pointer',
-        ':hover':{
-            background: '#0277BD',
-        },
-        ':active':{
-            background: '#01579B',
+        cursor:'pointer',
+        color: '#212121',
+        fontSize:'1.5em',
+        ':hover': {
+            borderBottom: '2px solid #cda659'
         }
+    },link_active: {
+        borderBottom: '2px solid #cda659',
+        fontFamily: [coolFont, "sans-serif"],
+        cursor:'pointer',
+        color: '#212121',
+        fontSize:'1.5em',
     },
     buttonBlueCheck: {
         fontFamily: [coolFont, "sans-serif"],

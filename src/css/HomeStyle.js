@@ -27,10 +27,11 @@ const HomeStyle = StyleSheet.create({
         marginLeft: '2em',
         listStyle: 'none',
         fontSize: '1.3em',
-        boxShadow: '0 2px 10px rgba(0, 0, 1, 0.06)',
-        backgroundColor: 'white',
+        boxShadow: '5px 2px 10px rgba(0, 0, 1, 0.06)',
+
         ':hover': {
-            color: 'white'
+            color: 'white',
+            boxShadow: '15px 15px 15px rgba(0, 0, 1, 0.06)',
         },
         '@media (max-width: 750px)': {
             fontSize: '1.8em',

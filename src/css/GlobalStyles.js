@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
             margin: '0px',
             padding: '0px',
             fontSize:'14px',
+            backgroundColor:'#efefef',
             '@media (max-width: 600px)': {
                 fontSize: '10',
             }
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         },
         main: {
             left: '10%',
-            backgroundColor: "white",
+            backgroundColor: "#efefef",
             textIndent: '2em',
             padding:'10px',
             '@media (max-width: 750px)': {
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
         },
         header: {
             height:'118px',
-            zIndex: '10000'
+            zIndex: '10000',
+            backgroundColor: "white"
         }
 
     }
