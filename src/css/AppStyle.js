@@ -28,10 +28,19 @@ const coolFont = {
     fontStyle: 'normal'
 };
 
+export const SourceSansProRegularFonts = {
+    fontFamily: "SourceSansProRegular",
+    src: 'url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.eot')+'"),src: url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.eot?#iefix')+'")format("embedded-opentype"),    url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.woff')+'") format("woff"),    url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.ttf')+'") format("truetype")',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+};
+
+
 const AppStyle = StyleSheet.create({
 
     displayNone: {display: 'none'},
     displayBlock: {display: 'block'},
+    bottomLine: {borderBottom: '1px dotted #c4c4c4'},
 
     siteTitle: {
         fontFamily: 'Lobster, sans-serif',
@@ -50,29 +59,38 @@ const AppStyle = StyleSheet.create({
     },
     sliderText: {
         fontFamily: 'Lobster',
-        fontSize:'1.3em'
+        fontSize: '1.3em'
 
     },
+
     prev: {
         position: 'absolute',
-        left: '44px',
+        left: '30px',
         top: '178px',
-        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat',
-        height: '62px',
-        width: '62px',
+        background: "url(" + require('../img/slider_nav.png') + ") no-repeat",
+        height: '57px',
+        width: '151px',
         display: 'block',
-        zIndex: '99'
-
+        zIndex: '99',
+        transition: 'left 2s ease 0s',
+        ':hover':{
+            left:'0'
+        }
     },
+
     next: {
         position: 'absolute',
-        right: '39px',
+        right: '30px',
         top: '178px',
-        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat -62px 0',
-        height: '62px',
-        width: '62px',
+        background: "url(" + require('../img/slider_nav.png') + ") no-repeat -151px 0",
+        height: '57px',
+        width: '151px',
         display: 'block',
-        zIndex: '99'
+        zIndex: '99',
+        transition: 'right 2s ease 0s',
+        ':hover':{
+            right:'0'
+        }
     },
 
     marginAuto: {
@@ -82,11 +100,17 @@ const AppStyle = StyleSheet.create({
         marginRight: '1.5em'
     },
 
-    red_text: {
-        color: 'red'
+    red_link: {
+        color: 'red',
+        ':hover':{
+            borderBottom: '2px solid red'
+        }
     },
     center_text: {
         textAlign: 'center'
+    },
+    right_text: {
+        textAlign: 'right'
     },
     floatRight: {
         float: 'right'
@@ -177,18 +201,18 @@ const AppStyle = StyleSheet.create({
     },
     link: {
         fontFamily: [coolFont, "sans-serif"],
-        cursor:'pointer',
+        cursor: 'pointer',
         color: '#212121',
-        fontSize:'1.5em',
+        fontSize: '1.5em',
         ':hover': {
             borderBottom: '2px solid #cda659'
         }
-    },link_active: {
+    }, link_active: {
         borderBottom: '2px solid #cda659',
         fontFamily: [coolFont, "sans-serif"],
-        cursor:'pointer',
+        cursor: 'pointer',
         color: '#212121',
-        fontSize:'1.5em',
+        fontSize: '1.5em',
     },
 
     small: {

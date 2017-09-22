@@ -515,6 +515,15 @@ const Katalog = {
         $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
 
+    },
+    updatePounch: () => {
+        let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+        if (shoppingCart == null) {
+            shoppingCart = {}
+        }
+        $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
+
+
     }
 }
 

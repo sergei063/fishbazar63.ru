@@ -1,22 +1,32 @@
 import { StyleSheet, css } from 'aphrodite/no-important';
-
+import SourceSansProRegularFonts from './AppStyle'
 
 
 const AboutStyle = StyleSheet.create({
 
-    text: {
-        fontFamily:'Noto Serif, serif',
-        color:'#3F51B5',
+    cnt: {
+        width:'100%',
+        position:'relative',
         paddingTop:'2em',
-        width:'70%',
-        margin: '0 auto',
-        fontSize:'2em',
-        '@media (max-width: 750px)': {
 
+
+
+    },text: {
+        fontFamily: [SourceSansProRegularFonts, "sans-serif"],
+        color:'#333333',
+        width:'70%',
+        textIndent:'1em',
+        margin: '0 auto',
+        fontSize:'1.3em',
+        '@media (max-width: 750px)': {
             fontSize:'1em',
             padding: '0.2em',
         }
 
+    },
+    line: {
+       width:'50%',
+       margin:'0 auto'
 
     }
 });

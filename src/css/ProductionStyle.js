@@ -1,5 +1,5 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
-
+import SourceSansProRegularFonts from './AppStyle'
 
 const ProductionStyle = StyleSheet.create({
     cnt: {
@@ -11,6 +11,7 @@ const ProductionStyle = StyleSheet.create({
     },
     productCnt: {
         width: '80%',
+        position: 'relative',
         margin: '0 auto'
     },
     groupProduct: {
@@ -44,13 +45,14 @@ const ProductionStyle = StyleSheet.create({
         float: 'left',
         margin: '15px 0 0 40px',
         wordWrap: 'break-word',
-        width: '70%',
+        width: '60%',
         //fontSize: '1.7em',
         //maxWidth:'50em',
         //backgroundColor: 'green',
         fontFamily: 'Merriweather',
         '@media (max-width: 1160px)': {
-            fontSize: '1em'
+            fontSize: '1em',
+            width: '50%',
         },
     },
     clear: {
@@ -62,8 +64,8 @@ const ProductionStyle = StyleSheet.create({
         fontSize: '1.5em'
     },
     text: {
-        fontFamily:'Noto Serif, serif',
-        color:'#3F51B5',
+        fontFamily: [SourceSansProRegularFonts, "sans-serif"],
+        color:'#333333',
         paddingTop:'2em',
         width:'70%',
         margin: '0 auto',

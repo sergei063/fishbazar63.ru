@@ -102,10 +102,12 @@ const Player = (props) => {
     }
     return (
         <div className={css(ProductionStyle.productCnt)}>
+            <div><Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(AppStyle.link)} to='/production'>{player.parent.catalog_tittle}</Link></div>
+            <br/>
             <div className={css(ProductionStyle.photoDiv)}>
                 <img src={require('../img/katalog/keta.jpg')} alt=""></img>
             </div>
-            <Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(ProductionStyle.back)} to='/production'>{player.parent.catalog_tittle}</Link>
+
             <div className={css(ProductionStyle.details)}>
                 <h1>{player.name} ({player.price} руб/кг)</h1>
 
@@ -124,7 +126,7 @@ const Player = (props) => {
             <div className={css(ProductionStyle.clear)}></div>
             <br/>
             <br/>
-            <Link onClick={backClick} className={css(ProductionStyle.back)} to='/production'>Назад</Link>
+            <div><Link onClick={backClick} className={css(AppStyle.link)} to='/production'>Назад</Link></div>
             <br/>
             <br/><br/>
             <br/><br/>
