@@ -1,0 +1,3 @@
+User-Agent: *
+Sitemap: http://avdonkin.ru/sitemap.xml
+Host: avdonkin.ru

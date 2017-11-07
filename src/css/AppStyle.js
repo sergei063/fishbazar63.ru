@@ -28,10 +28,19 @@ const coolFont = {
     fontStyle: 'normal'
 };
 
+export const SourceSansProRegularFonts = {
+    fontFamily: "SourceSansProRegular",
+    src: 'url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.eot')+'"),src: url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.eot?#iefix')+'")format("embedded-opentype"),    url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.woff')+'") format("woff"),    url("'+require('../fonts/SourceSansPro/SourceSansProRegular/SourceSansProRegular.ttf')+'") format("truetype")',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+};
+
+
 const AppStyle = StyleSheet.create({
 
     displayNone: {display: 'none'},
     displayBlock: {display: 'block'},
+    bottomLine: {borderBottom: '1px dotted #c4c4c4'},
 
     siteTitle: {
         fontFamily: 'Lobster, sans-serif',
@@ -50,32 +59,41 @@ const AppStyle = StyleSheet.create({
     },
     sliderText: {
         fontFamily: 'Lobster',
-        fontSize:'1.3em'
+        fontSize: '1.3em'
 
     },
     clearBoth:{
         clear:'both'
     },
+
     prev: {
         position: 'absolute',
-        left: '44px',
+        left: '30px',
         top: '178px',
-        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat',
-        height: '62px',
-        width: '62px',
+        background: "url(" + require('../img/slider_nav.png') + ") no-repeat",
+        height: '57px',
+        width: '151px',
         display: 'block',
-        zIndex: '99'
-
+        zIndex: '99',
+        transition: 'left 2s ease 0s',
+        ':hover':{
+            left:'0'
+        }
     },
+
     next: {
         position: 'absolute',
-        right: '39px',
+        right: '30px',
         top: '178px',
-        background: 'url(https://wijnenzo.be/assets/images/bg_slider_nav.png) no-repeat -62px 0',
-        height: '62px',
-        width: '62px',
+        background: "url(" + require('../img/slider_nav.png') + ") no-repeat -151px 0",
+        height: '57px',
+        width: '151px',
         display: 'block',
-        zIndex: '99'
+        zIndex: '99',
+        transition: 'right 2s ease 0s',
+        ':hover':{
+            right:'0'
+        }
     },
 
     marginAuto: {
@@ -88,11 +106,17 @@ const AppStyle = StyleSheet.create({
         marginRight: '1.5em'
     },
 
-    red_text: {
-        color: 'red'
+    red_link: {
+        color: 'red',
+        ':hover':{
+            borderBottom: '2px solid red'
+        }
     },
     center_text: {
         textAlign: 'center'
+    },
+    right_text: {
+        textAlign: 'right'
     },
     floatRight: {
         float: 'right'
@@ -102,47 +126,33 @@ const AppStyle = StyleSheet.create({
         color: '#3F51B5'
     },
 
-    slider: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
-    },
-    slider_line: {
-        width: '675px', margin: 'auto', borderTop: '2px solid #fff'
-    },
-    slider_1: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
-    },
-    slider_2: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/mintai.jpg') + ")",
 
-    },
-    slider_3: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
-    },
     menu_inline: {
         fontFamily: [coolFont, "sans-serif"],
         color: '#212121',
-        display: 'inline',
+        display: 'inline-block',
         marginRight: '2em',
         fontSize: '1.1em',
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         ':hover': {
             borderBottom: '2px solid #cda659'
         },
         '@media (max-width: 750px)': {
             marginRight: '0.5em',
             fontSize: '1.5em',
-        },
+            textAlign: 'center',
+            lineHeight: '1.5em',
+            display: 'block'
+        }/*,
         '@media (max-width: 500px)': {
             marginRight: '0.5em',
+            display: 'block',
             fontSize: '1em',
-        }
+        }*/
     },
     menu_inline_ul: {
         ...menu_inline_ul
+        ,backgroundColor:"white"
         , transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
     },
     menu_inline_ul_scroll: {
@@ -181,22 +191,20 @@ const AppStyle = StyleSheet.create({
             background: 'rgb(152,15,0);',
         }
     },
-
-    buttonBlueCheck: {
+    link: {
         fontFamily: [coolFont, "sans-serif"],
-        color: '#fff',
-        textDecoration: 'none',
-        userSelect: 'none',
-        background: '#01579B',
-        padding: '.7em 1.5em',
-        outline: 'none',
         cursor: 'pointer',
-        ':hover':{
-            background: '#0277BD',
-        },
-        ':active':{
-            background: '#01579B',
+        color: '#212121',
+        fontSize: '1.5em',
+        ':hover': {
+            borderBottom: '2px solid #cda659'
         }
+    }, link_active: {
+        borderBottom: '2px solid #cda659',
+        fontFamily: [coolFont, "sans-serif"],
+        cursor: 'pointer',
+        color: '#212121',
+        fontSize: '1.5em',
     },
 
     small: {

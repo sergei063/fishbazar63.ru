@@ -44,24 +44,24 @@ class AllProducts extends React.Component {
 
 
             let key=0, r = [];
-            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css((!filter)? ProductionStyle.link_active:ProductionStyle.link)}>Все</span>);
+            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css((!filter)? AppStyle.link_active:AppStyle.link, AppStyle.marginRight15)}>Все</span>);
             ++key;
 
             Katalog.getGroup().map(p => {
-                r.push(<span  key={key}  id={p.name} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css((filter==p.name)? ProductionStyle.link_active:ProductionStyle.link)}>{p.catalog_tittle}</span>);
+                r.push(<span  key={key}  id={p.name} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css((filter==p.name)? AppStyle.link_active:AppStyle.link, AppStyle.marginRight15)}>{p.catalog_tittle}</span>);
                 ++key;
             })
-
             return r;
         }
 
         return (
             <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
-                <div  className={css(AppStyle.marginAuto,ProductionStyle.groupProduct)}>{getLIproduct()}</div>
-                <div  className={css(AppStyle.clearBoth)}></div>
+                <div  className={css(ProductionStyle.groupProduct)}>{getLIproduct()}</div>
                 <br/>
                 <br/>
+                <div className={css(ProductionStyle.productTable)}>
                 { Katalog.getRenderedShowcase(Katalog.getGroupItems(filter))}
+                </div>
                 <br/>
                 <br/>
                 <br/>
@@ -72,7 +72,7 @@ class AllProducts extends React.Component {
     componentDidMount(){
         //alert($("#productuion_container").offset().top)
         $("html, body").animate({
-            scrollTop: $("#slider_navigate_this").offset().top-30 + "px"
+            scrollTop: $("#productuion_container").offset().top-30 + "px"
         }, {
             duration: 1000,
             easing: "swing"
@@ -97,6 +97,7 @@ const AddShoppingCart = (fish, countFish) => {
 const countFormat = (num) => (
     num + ' /кг'
 )
+//require('../img/katalog/keta.jpg')
 const Player = (props) => {
     const player = PriceDB.get(props.match.params.id)
     if (!player) {
@@ -104,10 +105,12 @@ const Player = (props) => {
     }
     return (
         <div className={css(ProductionStyle.productCnt)}>
+            <div><Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(AppStyle.link)} to='/production'>{player.parent.catalog_tittle}</Link></div>
+            <br/>
             <div className={css(ProductionStyle.photoDiv)}>
-                <img src={require('../img/katalog/keta.jpg')} alt=""></img>
+                <img src={player.img} alt=""></img>
             </div>
-            <Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(ProductionStyle.back)} to='/production'>{player.parent.catalog_tittle}</Link>
+
             <div className={css(ProductionStyle.details)}>
                 <h1>{player.name} ({player.price} руб/кг)</h1>
 
@@ -126,7 +129,7 @@ const Player = (props) => {
             <div className={css(ProductionStyle.clear)}></div>
             <br/>
             <br/>
-            <Link onClick={backClick} className={css(ProductionStyle.back)} to='/production'>Назад</Link>
+            <div><Link onClick={backClick} className={css(AppStyle.link)} to='/production'>Назад</Link></div>
             <br/>
             <br/><br/>
             <br/><br/>

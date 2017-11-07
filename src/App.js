@@ -13,6 +13,7 @@ import './App.css';
 
 // For this demo, we are using the UMD build of react-router-dom
 import {  HashRouter, Switch, Route, Link } from 'react-router-dom'
+import Katalog from './Katalog'
 
 
 
@@ -27,13 +28,20 @@ const Main = () => (
     </main>
 )
 
+class App extends React.Component {
+    render() {
+        return (
+            <div className={css(AppStyle.container)}>
+                <Header />
+                <Slider/>
+                <Main />
+            </div>
+        )
+    }
+    componentDidMount(){
+        Katalog.updatePounch();
+    }
+}
 
-const App = () => (
-    <div className={css(AppStyle.container)}>
-        <Header />
-        <Slider/>
-        <Main />
-    </div>
-)
 
 export default App;

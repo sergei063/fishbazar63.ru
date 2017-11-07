@@ -1,11 +1,5 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
-import AppStyle from './AppStyle';
-const coolFont = {
-    fontFamily: 'MYRIADPRO-REGULAR',
-    src: ' url("' + require('../fonts/MYRIADPRO-REGULAR.eot') + '"), url("' + require('../fonts/MYRIADPRO-REGULAR.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MYRIADPRO-REGULAR.woff') + '") format("woff")',
-    fontWeight: 'normal',
-    fontStyle: 'normal'
-};
+
 
 const ProductionStyle = StyleSheet.create({
     cnt: {
@@ -17,12 +11,35 @@ const ProductionStyle = StyleSheet.create({
     },
     productCnt: {
         width: '80%',
-        margin: '0 auto'
+        position: 'relative',
+        '@media (max-width: 1400px)': {
+            margin: '0'
+        }
+    },
+    productTable: {
+        width: '100%',
+        margin: '0 auto',
+        '@media (max-width: 1400px)': {
+            margin: '0'
+        }
     },
     groupProduct: {
         //backgroundColor:'white',
+        margin: '0 auto',
         width: '80%',
-        padding: '2em'
+        paddingLeft: '30%',
+        //padding: '2em',
+        '@media (max-width: 1550px)': {
+            paddingLeft: '10%',
+        },'@media (max-width: 1330px)': {
+            paddingLeft: '0',
+            margin:'0'
+        },'@media (max-width: 1200px)': {
+            paddingLeft: '0',
+            margin:'0 auto',
+            fontSize:'0.7em'
+        }
+
     },
     ul: {}, li: {
         listStyleType: 'none',
@@ -45,60 +62,19 @@ const ProductionStyle = StyleSheet.create({
         textAlign:'center'
 
     },
-    link: {
-        fontFamily: [coolFont, "sans-serif"],
-        cursor:'pointer',
-        color: '#212121',
-        fontSize:'1.5em',
-        marginRight:'1.5em',
-        ':hover': {
-            borderBottom: '2px solid #cda659'
-        },
-        '@media (max-width: 1430px)': {
-            marginRight:'0.5em'
-        },
-        '@media (max-width: 1165px)': {
-            fontSize:'1.2em',
-            marginRight:'0.5em'
-        },
-        '@media (max-width: 950px)': {
-            fontSize:'1.2em',
-            marginRight:'0.5em',
-            display:'block'
-        }
-
-    },link_active: {
-        borderBottom: '2px solid #cda659',
-        fontFamily: [coolFont, "sans-serif"],
-        cursor:'pointer',
-        color: '#212121',
-        fontSize:'1.5em',
-        marginRight:'1.5em',
-        '@media (max-width: 1430px)': {
-            marginRight:'0.5em'
-        },'@media (max-width: 1165px)': {
-            fontSize:'1.2em',
-            marginRight:'0.5em'
-        },
-        '@media (max-width: 950px)': {
-            fontSize:'1.2em',
-            marginRight:'0.5em',
-            display:'block'
-        }
-    },
-
     details: {
         position: 'relative',
         float: 'left',
         margin: '15px 0 0 40px',
         wordWrap: 'break-word',
-        width: '70%',
+        width: '60%',
         //fontSize: '1.7em',
         //maxWidth:'50em',
         //backgroundColor: 'green',
         fontFamily: 'Merriweather',
         '@media (max-width: 1160px)': {
-            fontSize: '1em'
+            fontSize: '1em',
+            width: '50%',
         },
     },
     clear: {
@@ -110,8 +86,8 @@ const ProductionStyle = StyleSheet.create({
         fontSize: '1.5em'
     },
     text: {
-        fontFamily:'Noto Serif, serif',
-        color:'#3F51B5',
+        fontFamily: [SourceSansProRegularFonts, "sans-serif"],
+        color:'#333333',
         paddingTop:'2em',
         width:'70%',
         margin: '0 auto',

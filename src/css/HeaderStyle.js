@@ -54,6 +54,14 @@ const HeaderStyle = StyleSheet.create({
         textShadow: '0 1px #634d23',
         webkitFontSmoothing: 'auto'
     }
+    ,floatMenuBlock: {
+
+        float: 'right',
+        '@media (max-width: 750px)': {
+            backgroundColor:'white',
+            float: 'left',
+        }
+    }
 
 });
 export default HeaderStyle;
