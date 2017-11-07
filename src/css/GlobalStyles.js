@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
             margin: '0px',
             padding: '0px',
             fontSize:'14px',
-            backgroundColor:'#efefef',
+           backgroundColor:'#efefef',
             '@media (max-width: 600px)': {
                 fontSize: '10',
             }
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         },
         main: {
             left: '10%',
-            backgroundColor: "#efefef",
+            //backgroundColor: "#efefef",
             textIndent: '2em',
             padding:'10px',
             '@media (max-width: 750px)': {

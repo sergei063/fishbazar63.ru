@@ -56,10 +56,12 @@ class AllProducts extends React.Component {
 
         return (
             <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
-                <div  className={css(AppStyle.marginAuto,ProductionStyle.groupProduct)}>{getLIproduct()}</div>
+                <div  className={css(ProductionStyle.groupProduct)}>{getLIproduct()}</div>
                 <br/>
                 <br/>
+                <div className={css(ProductionStyle.productTable)}>
                 { Katalog.getRenderedShowcase(Katalog.getGroupItems(filter))}
+                </div>
                 <br/>
                 <br/>
                 <br/>
@@ -95,6 +97,7 @@ const AddShoppingCart = (fish, countFish) => {
 const countFormat = (num) => (
     num + ' /кг'
 )
+//require('../img/katalog/keta.jpg')
 const Player = (props) => {
     const player = PriceDB.get(props.match.params.id)
     if (!player) {
@@ -105,7 +108,7 @@ const Player = (props) => {
             <div><Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(AppStyle.link)} to='/production'>{player.parent.catalog_tittle}</Link></div>
             <br/>
             <div className={css(ProductionStyle.photoDiv)}>
-                <img src={require('../img/katalog/keta.jpg')} alt=""></img>
+                <img src={player.img} alt=""></img>
             </div>
 
             <div className={css(ProductionStyle.details)}>

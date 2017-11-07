@@ -12,12 +12,34 @@ const ProductionStyle = StyleSheet.create({
     productCnt: {
         width: '80%',
         position: 'relative',
-        margin: '0 auto'
+        '@media (max-width: 1400px)': {
+            margin: '0'
+        }
+    },
+    productTable: {
+        width: '100%',
+        margin: '0 auto',
+        '@media (max-width: 1400px)': {
+            margin: '0'
+        }
     },
     groupProduct: {
         //backgroundColor:'white',
+        margin: '0 auto',
         width: '80%',
-        padding: '2em'
+        paddingLeft: '30%',
+        //padding: '2em',
+        '@media (max-width: 1550px)': {
+            paddingLeft: '10%',
+        },'@media (max-width: 1330px)': {
+            paddingLeft: '0',
+            margin:'0'
+        },'@media (max-width: 1200px)': {
+            paddingLeft: '0',
+            margin:'0 auto',
+            fontSize:'0.7em'
+        }
+
     },
     ul: {}, li: {
         listStyleType: 'none',

@@ -120,47 +120,33 @@ const AppStyle = StyleSheet.create({
         color: '#3F51B5'
     },
 
-    slider: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
-    },
-    slider_line: {
-        width: '675px', margin: 'auto', borderTop: '2px solid #fff'
-    },
-    slider_1: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
-    },
-    slider_2: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/mintai.jpg') + ")",
 
-    },
-    slider_3: {
-        ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
-    },
     menu_inline: {
         fontFamily: [coolFont, "sans-serif"],
         color: '#212121',
-        display: 'inline',
+        display: 'inline-block',
         marginRight: '2em',
         fontSize: '1.1em',
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         ':hover': {
             borderBottom: '2px solid #cda659'
         },
         '@media (max-width: 750px)': {
             marginRight: '0.5em',
             fontSize: '1.5em',
-        },
+            textAlign: 'center',
+            lineHeight: '1.5em',
+            display: 'block'
+        }/*,
         '@media (max-width: 500px)': {
             marginRight: '0.5em',
+            display: 'block',
             fontSize: '1em',
-        }
+        }*/
     },
     menu_inline_ul: {
         ...menu_inline_ul
+        ,backgroundColor:"white"
         , transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
     },
     menu_inline_ul_scroll: {
@@ -213,22 +199,6 @@ const AppStyle = StyleSheet.create({
         cursor: 'pointer',
         color: '#212121',
         fontSize: '1.5em',
-    },
-    buttonBlueCheck: {
-        fontFamily: [coolFont, "sans-serif"],
-        color: '#fff',
-        textDecoration: 'none',
-        userSelect: 'none',
-        background: '#01579B',
-        padding: '.7em 1.5em',
-        outline: 'none',
-        cursor: 'pointer',
-        ':hover':{
-            background: '#0277BD',
-        },
-        ':active':{
-            background: '#01579B',
-        }
     },
 
     small: {
