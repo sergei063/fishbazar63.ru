@@ -157,7 +157,7 @@ const Price = {
                 price: 185
             },
             {
-                id: "blue whiting",
+                id: "blue_whiting",
                 showCaseName: 'Путассу',
                 name: 'Путассу',
                 info: "Описание отсутствует",

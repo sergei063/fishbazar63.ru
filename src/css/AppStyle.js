@@ -53,6 +53,9 @@ const AppStyle = StyleSheet.create({
         fontSize:'1.3em'
 
     },
+    clearBoth:{
+        clear:'both'
+    },
     prev: {
         position: 'absolute',
         left: '44px',
@@ -77,6 +80,9 @@ const AppStyle = StyleSheet.create({
 
     marginAuto: {
         margin: '0 auto'
+    },
+    displayInline: {
+        display: 'inline',
     },
     marginRight15: {
         marginRight: '1.5em'
@@ -175,21 +181,7 @@ const AppStyle = StyleSheet.create({
             background: 'rgb(152,15,0);',
         }
     },
-    link: {
-        fontFamily: [coolFont, "sans-serif"],
-        cursor:'pointer',
-        color: '#212121',
-        fontSize:'1.5em',
-        ':hover': {
-            borderBottom: '2px solid #cda659'
-        }
-    },link_active: {
-        borderBottom: '2px solid #cda659',
-        fontFamily: [coolFont, "sans-serif"],
-        cursor:'pointer',
-        color: '#212121',
-        fontSize:'1.5em',
-    },
+
     buttonBlueCheck: {
         fontFamily: [coolFont, "sans-serif"],
         color: '#fff',

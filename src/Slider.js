@@ -43,6 +43,7 @@ const Slider = () => {
             <p id="slider_text_2" className={css(AppStyle.displayNone)} >...Замороженная на рыбацком судне рыбка<br/>размораживается только на Вашей кухне!!..и нигде больше!</p>
             <p id="slider_text_3" className={css(AppStyle.displayNone)} >...Не нужно платить за лед.<br/>Наши креветки 100% без глазури.</p>
         </div>
+        <div id="slider_navigate_this"></div>
 
     </div>)
 }

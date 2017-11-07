@@ -3,7 +3,8 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 
 const HomeStyle = StyleSheet.create({
     cnt:{
-        width: document.body.clientWidth*0.7,
+        //width: document.body.clientWidth*0.7,
+        width: '80%',
         paddingLeft:'7%',
         margin: '0 auto',
         '@media (max-width: 1350px)': {
@@ -38,13 +39,16 @@ const HomeStyle = StyleSheet.create({
             marginRight: '3em',
         },
         '@media (min-width: 450px)': {
-            width: '50%'
+            width: '40%',
+            fontSize: '0.9em'
         },
         '@media (min-width: 768px)': {
-            width: '33.333%'
+            width: '25%',
+            fontSize: '1.8em'
         },
         '@media (min-width: 1020px)': {
-            width: '20%'
+            width: '20%',
+            fontSize: '1.8em'
         }
     },
     card: {

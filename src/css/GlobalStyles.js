@@ -62,6 +62,9 @@ const styles = StyleSheet.create({
             height:'118px',
             zIndex: '10000',
             backgroundColor: "white"
+        },
+        ul: {
+            listStyle:'none'
         }
 
     }

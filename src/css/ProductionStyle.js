@@ -1,5 +1,11 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
-
+import AppStyle from './AppStyle';
+const coolFont = {
+    fontFamily: 'MYRIADPRO-REGULAR',
+    src: ' url("' + require('../fonts/MYRIADPRO-REGULAR.eot') + '"), url("' + require('../fonts/MYRIADPRO-REGULAR.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MYRIADPRO-REGULAR.woff') + '") format("woff")',
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+};
 
 const ProductionStyle = StyleSheet.create({
     cnt: {
@@ -39,6 +45,48 @@ const ProductionStyle = StyleSheet.create({
         textAlign:'center'
 
     },
+    link: {
+        fontFamily: [coolFont, "sans-serif"],
+        cursor:'pointer',
+        color: '#212121',
+        fontSize:'1.5em',
+        marginRight:'1.5em',
+        ':hover': {
+            borderBottom: '2px solid #cda659'
+        },
+        '@media (max-width: 1430px)': {
+            marginRight:'0.5em'
+        },
+        '@media (max-width: 1165px)': {
+            fontSize:'1.2em',
+            marginRight:'0.5em'
+        },
+        '@media (max-width: 950px)': {
+            fontSize:'1.2em',
+            marginRight:'0.5em',
+            display:'block'
+        }
+
+    },link_active: {
+        borderBottom: '2px solid #cda659',
+        fontFamily: [coolFont, "sans-serif"],
+        cursor:'pointer',
+        color: '#212121',
+        fontSize:'1.5em',
+        marginRight:'1.5em',
+        '@media (max-width: 1430px)': {
+            marginRight:'0.5em'
+        },'@media (max-width: 1165px)': {
+            fontSize:'1.2em',
+            marginRight:'0.5em'
+        },
+        '@media (max-width: 950px)': {
+            fontSize:'1.2em',
+            marginRight:'0.5em',
+            display:'block'
+        }
+    },
+
     details: {
         position: 'relative',
         float: 'left',
