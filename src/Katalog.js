@@ -204,7 +204,7 @@ const Price = {
                 name: "Камбала S [290-310]",
                 info: "Без головы,белобрюхая,  частично икряная",
                 isShowCase: true,
-                img: require('./img/katalog/flounder.jpg'),
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 155
             },
             {
@@ -213,7 +213,7 @@ const Price = {
                 name: "Камбала S",
                 info: "Без головы,белобрюхая",
                 isShowCase: false,
-                img: require('./img/katalog/flounder.jpg'),
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 150
             },
             {
@@ -222,7 +222,7 @@ const Price = {
                 name: "Камбала, М[250-350]",
                 info: "Без головы,Белобрюхая",
                 isShowCase: true,
-                img: require('./img/katalog/flounder.jpg'),
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 165
             },
             {
@@ -231,7 +231,7 @@ const Price = {
                 name: "Камбала,  L",
                 info: "Без головы,белобрюхая,частично икряная",
                 isShowCase: true,
-                img: require('./img/katalog/flounder.jpg'),
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 180
             },
             {
@@ -240,7 +240,7 @@ const Price = {
                 name: "Палтус",
                 info: "Белокорый потрошеный безголовый 0,5-1кг",
                 isShowCase: true,
-                img: require('./img/katalog/flounder.jpg'),
+                img: require('./img/katalog/Flounder.jpg'),
                 price: 1
             }
         ]

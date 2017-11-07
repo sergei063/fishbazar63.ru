@@ -1,5 +1,12 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
+import SourceSansProRegularFonts from './AppStyle'
 
+const coolFont = {
+    fontFamily: 'MYRIADPRO-REGULAR',
+    src: ' url("' + require('../fonts/MYRIADPRO-REGULAR.eot') + '"), url("' + require('../fonts/MYRIADPRO-REGULAR.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MYRIADPRO-REGULAR.woff') + '") format("woff")',
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+};
 
 const ProductionStyle = StyleSheet.create({
     cnt: {

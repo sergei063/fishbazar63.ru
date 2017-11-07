@@ -364,7 +364,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 var _prodInvariant = __webpack_require__(2);
 
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var ReactDOMComponentFlags = __webpack_require__(82);
 
 var invariant = __webpack_require__(0);
@@ -1842,225 +1842,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.SourceSansProRegularFonts = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _noImportant = __webpack_require__(7);
-
-var menu_inline_ul = {
-    listStyleType: 'disc',
-    webkitMarginBefore: '1em',
-    webkitMarginAfter: '1em',
-    webkitMarginStart: '0px',
-    webkitMarginEnd: '0px',
-    webkitPaddingStart: '40px'
-};
-var sliderBase = {
-    position: 'relative',
-    minWidth: '100%',
-    height: '45vh',
-    minHeight: '430px',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    display: 'table',
-    textShadow: 'black 0.1em 0.1em 0.2em',
-    transition: 'background 2s ease 0s',
-    width: '100%'
-};
-
-var coolFont = {
-    fontFamily: 'MYRIADPRO-REGULAR',
-    src: ' url("' + __webpack_require__(281) + '"), url("' + __webpack_require__(282) + '") format("embedded-opentype"), url("' + __webpack_require__(283) + '") format("woff")',
-    fontWeight: 'normal',
-    fontStyle: 'normal'
-};
-
-var SourceSansProRegularFonts = exports.SourceSansProRegularFonts = {
-    fontFamily: "SourceSansProRegular",
-    src: 'url("' + __webpack_require__(284) + '"),src: url("' + __webpack_require__(285) + '")format("embedded-opentype"),    url("' + __webpack_require__(286) + '") format("woff"),    url("' + __webpack_require__(287) + '") format("truetype")',
-    fontStyle: 'normal',
-    fontWeight: 'normal'
-};
-
-var AppStyle = _noImportant.StyleSheet.create({
-
-    displayNone: { display: 'none' },
-    displayBlock: { display: 'block' },
-    bottomLine: { borderBottom: '1px dotted #c4c4c4' },
-
-    siteTitle: {
-        fontFamily: 'Lobster, sans-serif',
-        textAlign: 'center',
-        display: 'table-cell',
-        verticalAlign: 'middle',
-        fontSize: '2em',
-        color: 'white',
-        '@media (max-width: 1020px)': {
-            fontSize: '1em'
-        },
-        '@media (max-width: 1500px)': {
-            fontSize: '1.5em'
-        }
-
-    },
-    sliderText: {
-        fontFamily: 'Lobster',
-        fontSize: '1.3em'
-
-    },
-
-    prev: {
-        position: 'absolute',
-        left: '30px',
-        top: '178px',
-        background: "url(" + __webpack_require__(118) + ") no-repeat",
-        height: '57px',
-        width: '151px',
-        display: 'block',
-        zIndex: '99',
-        transition: 'left 2s ease 0s',
-        ':hover': {
-            left: '0'
-        }
-    },
-
-    next: {
-        position: 'absolute',
-        right: '30px',
-        top: '178px',
-        background: "url(" + __webpack_require__(118) + ") no-repeat -151px 0",
-        height: '57px',
-        width: '151px',
-        display: 'block',
-        zIndex: '99',
-        transition: 'right 2s ease 0s',
-        ':hover': {
-            right: '0'
-        }
-    },
-
-    marginAuto: {
-        margin: '0 auto'
-    },
-    marginRight15: {
-        marginRight: '1.5em'
-    },
-
-    red_link: {
-        color: 'red',
-        ':hover': {
-            borderBottom: '2px solid red'
-        }
-    },
-    center_text: {
-        textAlign: 'center'
-    },
-    right_text: {
-        textAlign: 'right'
-    },
-    floatRight: {
-        float: 'right'
-    },
-
-    blue_text: {
-        color: '#3F51B5'
-    },
-
-    menu_inline: {
-        fontFamily: [coolFont, "sans-serif"],
-        color: '#212121',
-        display: 'inline-block',
-        marginRight: '2em',
-        fontSize: '1.1em',
-        //backgroundColor: 'white',
-        ':hover': {
-            borderBottom: '2px solid #cda659'
-        },
-        '@media (max-width: 750px)': {
-            marginRight: '0.5em',
-            fontSize: '1.5em',
-            textAlign: 'center',
-            lineHeight: '1.5em',
-            display: 'block' /*,
-                             '@media (max-width: 500px)': {
-                                marginRight: '0.5em',
-                                display: 'block',
-                                fontSize: '1em',
-                             }*/
-        } },
-    menu_inline_ul: _extends({}, menu_inline_ul, { backgroundColor: "white",
-        transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
-    }),
-    menu_inline_ul_scroll: _extends({}, menu_inline_ul, {
-        width: '100%',
-        opacity: '0.9',
-        textAlign: 'center',
-        top: '0px',
-        position: 'fixed',
-        //transition: 'top 2s',
-        zIndex: 999999,
-        transition: 'transform 0.4s ease 0s, background 0.4s ease 0s',
-        boxShadow: '10px 10px 10px rgba(0, 0, 1, 0.06)'
-
-    }),
-
-    //example
-    hover: {
-        ':hover': {
-            backgroundColor: 'red'
-        }
-    },
-    button: {
-        color: '#fff',
-        fontFamily: [coolFont, "sans-serif"],
-        textDecoration: 'none',
-        userSelect: 'none',
-        background: 'rgb(212,75,56)',
-        padding: '.7em 1.5em',
-        outline: 'none',
-        cursor: 'pointer',
-        ':hover': {
-            background: 'rgb(232,95,76)'
-        },
-        ':active': {
-            background: 'rgb(152,15,0);'
-        }
-    },
-    link: {
-        fontFamily: [coolFont, "sans-serif"],
-        cursor: 'pointer',
-        color: '#212121',
-        fontSize: '1.5em',
-        ':hover': {
-            borderBottom: '2px solid #cda659'
-        }
-    }, link_active: {
-        borderBottom: '2px solid #cda659',
-        fontFamily: [coolFont, "sans-serif"],
-        cursor: 'pointer',
-        color: '#212121',
-        fontSize: '1.5em'
-    },
-
-    small: {
-        '@media (max-width: 600px)': {
-            backgroundColor: 'red'
-        }
-    }
-});
-exports.default = AppStyle;
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2269,6 +2050,231 @@ var DOMProperty = {
 };
 
 module.exports = DOMProperty;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.SourceSansProRegularFonts = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _noImportant = __webpack_require__(7);
+
+var menu_inline_ul = {
+    listStyleType: 'disc',
+    webkitMarginBefore: '1em',
+    webkitMarginAfter: '1em',
+    webkitMarginStart: '0px',
+    webkitMarginEnd: '0px',
+    webkitPaddingStart: '40px'
+};
+var sliderBase = {
+    position: 'relative',
+    minWidth: '100%',
+    height: '45vh',
+    minHeight: '430px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    display: 'table',
+    textShadow: 'black 0.1em 0.1em 0.2em',
+    transition: 'background 2s ease 0s',
+    width: '100%'
+};
+
+var coolFont = {
+    fontFamily: 'MYRIADPRO-REGULAR',
+    src: ' url("' + __webpack_require__(281) + '"), url("' + __webpack_require__(282) + '") format("embedded-opentype"), url("' + __webpack_require__(283) + '") format("woff")',
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+};
+
+var SourceSansProRegularFonts = exports.SourceSansProRegularFonts = {
+    fontFamily: "SourceSansProRegular",
+    src: 'url("' + __webpack_require__(284) + '"),src: url("' + __webpack_require__(285) + '")format("embedded-opentype"),    url("' + __webpack_require__(286) + '") format("woff"),    url("' + __webpack_require__(287) + '") format("truetype")',
+    fontStyle: 'normal',
+    fontWeight: 'normal'
+};
+
+var AppStyle = _noImportant.StyleSheet.create({
+
+    displayNone: { display: 'none' },
+    displayBlock: { display: 'block' },
+    bottomLine: { borderBottom: '1px dotted #c4c4c4' },
+
+    siteTitle: {
+        fontFamily: 'Lobster, sans-serif',
+        textAlign: 'center',
+        display: 'table-cell',
+        verticalAlign: 'middle',
+        fontSize: '2em',
+        color: 'white',
+        '@media (max-width: 1020px)': {
+            fontSize: '1em'
+        },
+        '@media (max-width: 1500px)': {
+            fontSize: '1.5em'
+        }
+
+    },
+    sliderText: {
+        fontFamily: 'Lobster',
+        fontSize: '1.3em'
+
+    },
+    clearBoth: {
+        clear: 'both'
+    },
+
+    prev: {
+        position: 'absolute',
+        left: '30px',
+        top: '178px',
+        background: "url(" + __webpack_require__(118) + ") no-repeat",
+        height: '57px',
+        width: '151px',
+        display: 'block',
+        zIndex: '99',
+        transition: 'left 2s ease 0s',
+        ':hover': {
+            left: '0'
+        }
+    },
+
+    next: {
+        position: 'absolute',
+        right: '30px',
+        top: '178px',
+        background: "url(" + __webpack_require__(118) + ") no-repeat -151px 0",
+        height: '57px',
+        width: '151px',
+        display: 'block',
+        zIndex: '99',
+        transition: 'right 2s ease 0s',
+        ':hover': {
+            right: '0'
+        }
+    },
+
+    marginAuto: {
+        margin: '0 auto'
+    },
+    displayInline: {
+        display: 'inline'
+    },
+    marginRight15: {
+        marginRight: '1.5em'
+    },
+
+    red_link: {
+        color: 'red',
+        ':hover': {
+            borderBottom: '2px solid red'
+        }
+    },
+    center_text: {
+        textAlign: 'center'
+    },
+    right_text: {
+        textAlign: 'right'
+    },
+    floatRight: {
+        float: 'right'
+    },
+
+    blue_text: {
+        color: '#3F51B5'
+    },
+
+    menu_inline: {
+        fontFamily: [coolFont, "sans-serif"],
+        color: '#212121',
+        display: 'inline-block',
+        marginRight: '2em',
+        fontSize: '1.1em',
+        //backgroundColor: 'white',
+        ':hover': {
+            borderBottom: '2px solid #cda659'
+        },
+        '@media (max-width: 750px)': {
+            marginRight: '0.5em',
+            fontSize: '1.5em',
+            textAlign: 'center',
+            lineHeight: '1.5em',
+            display: 'block' /*,
+                             '@media (max-width: 500px)': {
+                                marginRight: '0.5em',
+                                display: 'block',
+                                fontSize: '1em',
+                             }*/
+        } },
+    menu_inline_ul: _extends({}, menu_inline_ul, { backgroundColor: "white",
+        transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
+    }),
+    menu_inline_ul_scroll: _extends({}, menu_inline_ul, {
+        width: '100%',
+        opacity: '0.9',
+        textAlign: 'center',
+        top: '0px',
+        position: 'fixed',
+        //transition: 'top 2s',
+        zIndex: 999999,
+        transition: 'transform 0.4s ease 0s, background 0.4s ease 0s',
+        boxShadow: '10px 10px 10px rgba(0, 0, 1, 0.06)'
+
+    }),
+
+    //example
+    hover: {
+        ':hover': {
+            backgroundColor: 'red'
+        }
+    },
+    button: {
+        color: '#fff',
+        fontFamily: [coolFont, "sans-serif"],
+        textDecoration: 'none',
+        userSelect: 'none',
+        background: 'rgb(212,75,56)',
+        padding: '.7em 1.5em',
+        outline: 'none',
+        cursor: 'pointer',
+        ':hover': {
+            background: 'rgb(232,95,76)'
+        },
+        ':active': {
+            background: 'rgb(152,15,0);'
+        }
+    },
+    link: {
+        fontFamily: [coolFont, "sans-serif"],
+        cursor: 'pointer',
+        color: '#212121',
+        fontSize: '1.5em',
+        ':hover': {
+            borderBottom: '2px solid #cda659'
+        }
+    }, link_active: {
+        borderBottom: '2px solid #cda659',
+        fontFamily: [coolFont, "sans-serif"],
+        cursor: 'pointer',
+        color: '#212121',
+        fontSize: '1.5em'
+    },
+
+    small: {
+        '@media (max-width: 600px)': {
+            backgroundColor: 'red'
+        }
+    }
+});
+exports.default = AppStyle;
 
 /***/ }),
 /* 21 */
@@ -4089,12 +4095,7 @@ var createPath = function createPath(location) {
 };
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/imgsrc/img/katalog/flounder.jpg";
-
-/***/ }),
+/* 35 */,
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16099,7 +16100,7 @@ var Price = {
             img: __webpack_require__(8),
             price: 185
         }, {
-            id: "blue whiting",
+            id: "blue_whiting",
             showCaseName: 'Путассу',
             name: 'Путассу',
             info: "Описание отсутствует",
@@ -16140,7 +16141,7 @@ var Price = {
             name: "Камбала S [290-310]",
             info: "Без головы,белобрюхая,  частично икряная",
             isShowCase: true,
-            img: __webpack_require__(35),
+            img: __webpack_require__(315),
             price: 155
         }, {
             id: "Flounder_s_tu",
@@ -16148,7 +16149,7 @@ var Price = {
             name: "Камбала S",
             info: "Без головы,белобрюхая",
             isShowCase: false,
-            img: __webpack_require__(35),
+            img: __webpack_require__(315),
             price: 150
         }, {
             id: "Flounder_m",
@@ -16156,7 +16157,7 @@ var Price = {
             name: "Камбала, М[250-350]",
             info: "Без головы,Белобрюхая",
             isShowCase: true,
-            img: __webpack_require__(35),
+            img: __webpack_require__(315),
             price: 165
         }, {
             id: "Flounder_l",
@@ -16164,7 +16165,7 @@ var Price = {
             name: "Камбала,  L",
             info: "Без головы,белобрюхая,частично икряная",
             isShowCase: true,
-            img: __webpack_require__(35),
+            img: __webpack_require__(315),
             price: 180
         }, {
             id: "Halibut",
@@ -16172,7 +16173,7 @@ var Price = {
             name: "Палтус",
             info: "Белокорый потрошеный безголовый 0,5-1кг",
             isShowCase: true,
-            img: __webpack_require__(35),
+            img: __webpack_require__(315),
             price: 1
         }]
     },
@@ -19015,13 +19016,20 @@ var _count;
 
 var _noImportant = __webpack_require__(7);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var coolFont = {
+    fontFamily: 'MYRIADPRO-REGULAR',
+    src: ' url("' + __webpack_require__(281) + '"), url("' + __webpack_require__(282) + '") format("embedded-opentype"), url("' + __webpack_require__(283) + '") format("woff")',
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+};
 
 var ProductionStyle = _noImportant.StyleSheet.create({
     cnt: {
@@ -21065,7 +21073,7 @@ module.exports = CSSProperty;
 
 
 
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(12);
 
@@ -22257,7 +22265,7 @@ module.exports = getActiveElement;
 var _prodInvariant = __webpack_require__(2);
 
 var DOMLazyTree = __webpack_require__(26);
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var React = __webpack_require__(23);
 var ReactBrowserEventEmitter = __webpack_require__(43);
 var ReactCurrentOwner = __webpack_require__(15);
@@ -23867,7 +23875,8 @@ var _noImportant = __webpack_require__(7);
 
 var HomeStyle = _noImportant.StyleSheet.create({
     cnt: {
-        width: document.body.clientWidth * 0.7,
+        //width: document.body.clientWidth*0.7,
+        width: '80%',
         paddingLeft: '7%',
         margin: '0 auto',
         '@media (max-width: 1350px)': {
@@ -23902,13 +23911,16 @@ var HomeStyle = _noImportant.StyleSheet.create({
             marginRight: '3em'
         },
         '@media (min-width: 450px)': {
-            width: '50%'
+            width: '40%',
+            fontSize: '0.9em'
         },
         '@media (min-width: 768px)': {
-            width: '33.333%'
+            width: '25%',
+            fontSize: '1.8em'
         },
         '@media (min-width: 1020px)': {
-            width: '20%'
+            width: '20%',
+            fontSize: '1.8em'
         }
     },
     card: {
@@ -24046,7 +24058,7 @@ __webpack_require__(309);
 
 var _noImportant = __webpack_require__(7);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -28076,7 +28088,7 @@ module.exports = EnterLeaveEventPlugin;
 
 
 
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 
 var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -28769,7 +28781,7 @@ var AutoFocusUtils = __webpack_require__(167);
 var CSSPropertyOperations = __webpack_require__(168);
 var DOMLazyTree = __webpack_require__(26);
 var DOMNamespaces = __webpack_require__(55);
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var DOMPropertyOperations = __webpack_require__(94);
 var EventPluginHub = __webpack_require__(30);
 var EventPluginRegistry = __webpack_require__(38);
@@ -33771,7 +33783,7 @@ module.exports = getUnboundedScrollPosition;
 
 
 
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var EventPluginHub = __webpack_require__(30);
 var EventPluginUtils = __webpack_require__(49);
 var ReactComponentEnvironment = __webpack_require__(58);
@@ -35921,7 +35933,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
 
 
 
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var EventPluginRegistry = __webpack_require__(38);
 var ReactComponentTreeHook = __webpack_require__(10);
 
@@ -36086,7 +36098,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 
 
 
-var DOMProperty = __webpack_require__(20);
+var DOMProperty = __webpack_require__(19);
 var ReactComponentTreeHook = __webpack_require__(10);
 
 var warning = __webpack_require__(1);
@@ -38928,7 +38940,7 @@ var _ShoppingCart2 = _interopRequireDefault(_ShoppingCart);
 
 var _noImportant = __webpack_require__(7);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -39019,7 +39031,7 @@ var _reactRouterDom = __webpack_require__(18);
 
 var _noImportant = __webpack_require__(7);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -40796,7 +40808,7 @@ var _reactRouterDom = __webpack_require__(18);
 
 var _noImportant = __webpack_require__(7);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -40903,7 +40915,8 @@ var Slider = function Slider() {
                     ' \u0431\u0435\u0437 \u0433\u043B\u0430\u0437\u0443\u0440\u0438.'
                 )
             )
-        )
+        ),
+        _react2.default.createElement('div', { id: 'slider_navigate_this' })
     );
 };
 exports.default = Slider;
@@ -41229,7 +41242,7 @@ var _AboutStyle = __webpack_require__(303);
 
 var _AboutStyle2 = _interopRequireDefault(_AboutStyle);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -41288,7 +41301,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _noImportant = __webpack_require__(7);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -41347,7 +41360,7 @@ var _ProductionStyle = __webpack_require__(72);
 
 var _ProductionStyle2 = _interopRequireDefault(_ProductionStyle);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -42613,7 +42626,7 @@ var _ProductionStyle = __webpack_require__(72);
 
 var _ProductionStyle2 = _interopRequireDefault(_ProductionStyle);
 
-var _AppStyle = __webpack_require__(19);
+var _AppStyle = __webpack_require__(20);
 
 var _AppStyle2 = _interopRequireDefault(_AppStyle);
 
@@ -42936,10 +42949,24 @@ var styles = _noImportant.StyleSheet.create(_defineProperty({}, GLOBALS, {
         height: '118px',
         zIndex: '10000',
         backgroundColor: "white"
+    },
+    ul: {
+        listStyle: 'none'
     }
 
 }));
 exports.default = extended.css(styles[GLOBALS]);
+
+/***/ }),
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/imgsrc/img/katalog/Flounder.jpg";
 
 /***/ })
 /******/ ]);
