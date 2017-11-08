@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery'
 import {css} from 'aphrodite/no-important';
 
-import SliderStyle from '../css/SliderStyle';
+import AppStyle from '../css/AppStyle';
 
 
 
@@ -18,31 +18,31 @@ class Carousel {
             $('#slider').removeClass();
             switch (this.indexSlider) {
                 case 0: {
-                    $('#slider').addClass(css(SliderStyle.slider));
+                    $('#slider').addClass(css(AppStyle.slider));
                     $('#slider_text').html($('#slider_text_0').html());
                     break;
                 }
                 case 1: {
-                    $('#slider').addClass(css(SliderStyle.slider_1));
+                    $('#slider').addClass(css(AppStyle.slider_1));
                     $('#slider_text').html($('#slider_text_1').html());
                     break;
                 }
                 case 2: {
-                    $('#slider').addClass(css(SliderStyle.slider_2));
+                    $('#slider').addClass(css(AppStyle.slider_2));
                     $('#slider_text').html($('#slider_text_2').html());
                     break;
                 }
                 case 3: {
-                    $('#slider').addClass(css(SliderStyle.slider_3));
+                    $('#slider').addClass(css(AppStyle.slider_3));
                     $('#slider_text').html($('#slider_text_3').html());
                     break;
                 } case 4: {
-                    $('#slider').addClass(css(SliderStyle.slider_4));
+                    $('#slider').addClass(css(AppStyle.slider_4));
                     $('#slider_text').html($('#slider_text_4').html());
                     break;
                 }
                 default: {
-                    $('#slider').addClass(css(SliderStyle.slider));
+                    $('#slider').addClass(css(AppStyle.slider));
                     $('#slider_text').html($('#slider_text_0').html());
                     break;
                 }

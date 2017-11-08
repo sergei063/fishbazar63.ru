@@ -2,19 +2,21 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 
 
 const HomeStyle = StyleSheet.create({
-    cnt:{
-        //width: document.body.clientWidth*0.7,
-        width: '80%',
-        paddingLeft:'7%',
+
+    cnt: {
+        width: '100%',
         margin: '0 auto',
-        '@media (max-width: 1350px)': {
-            paddingLeft:'0%'
-        },
+        position: 'relative',
+        overflow:"hidden",
+        '@media (max-width: 1400px)': {
+            margin: '0'
+        }
     },
     ul: {
         listStyle: 'none',
-        margin: '0  0px 0 0',
-        padding: '0'
+
+        //margin: '0  0px 0 0',
+        //padding: '0'
     },
 
     li: {
@@ -46,7 +48,7 @@ const HomeStyle = StyleSheet.create({
             width: '25%',
             fontSize: '1.8em'
         },
-        '@media (min-width: 1020px)': {
+        '@media (min-width: 1100px)': {
             width: '20%',
             fontSize: '1.8em'
         }

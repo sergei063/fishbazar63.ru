@@ -17,38 +17,39 @@ const ProductionStyle = StyleSheet.create({
         margin: '0 auto'
     },
     productCnt: {
-        width: '80%',
-        position: 'relative',
-        '@media (max-width: 1400px)': {
-            margin: '0'
-        }
-    },
-    productTable: {
         width: '100%',
         margin: '0 auto',
+
+        position: 'relative',
+        overflow:"hidden",
         '@media (max-width: 1400px)': {
             margin: '0'
         }
     },
+
     groupProduct: {
-        //backgroundColor:'white',
-        margin: '0 auto',
-        width: '80%',
-        paddingLeft: '30%',
+        height:"3em",
+        textAlign:"center",
+        width: '100%',
+        overflow:"hidden",
         //padding: '2em',
-        '@media (max-width: 1550px)': {
-            paddingLeft: '10%',
-        },'@media (max-width: 1330px)': {
-            paddingLeft: '0',
-            margin:'0'
-        },'@media (max-width: 1200px)': {
-            paddingLeft: '0',
-            margin:'0 auto',
+        '@media (max-width: 1200px)': {
             fontSize:'0.7em'
+        },
+        '@media (max-width: 840px)': {
+            fontSize:'0.6em',
+            height:"100%",
         }
 
     },
-    ul: {}, li: {
+    marginRight15: {
+        marginRight: '1.5em',
+        '@media (max-width: 840px)': {
+           display:"table"
+        }
+    },
+    ul: {},
+    li: {
         listStyleType: 'none',
         ':hover': {
             backgroundColor: 'red',
@@ -75,6 +76,7 @@ const ProductionStyle = StyleSheet.create({
         margin: '15px 0 0 40px',
         wordWrap: 'break-word',
         width: '60%',
+        minWidth: '300px',
         //fontSize: '1.7em',
         //maxWidth:'50em',
         //backgroundColor: 'green',

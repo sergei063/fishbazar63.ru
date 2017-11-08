@@ -44,27 +44,29 @@ class AllProducts extends React.Component {
 
 
             let key=0, r = [];
-            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css((!filter)? AppStyle.link_active:AppStyle.link, AppStyle.marginRight15)}>Все</span>);
+            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }})   }  } className={css((!filter)? AppStyle.link_active:AppStyle.link, ProductionStyle.marginRight15)}>Все</span>);
             ++key;
 
             Katalog.getGroup().map(p => {
-                r.push(<span  key={key}  id={p.name} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css((filter==p.name)? AppStyle.link_active:AppStyle.link, AppStyle.marginRight15)}>{p.catalog_tittle}</span>);
+                r.push(<span  key={key}  id={p.name} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: p.name }})   }  } className={css((filter==p.name)? AppStyle.link_active:AppStyle.link, ProductionStyle.marginRight15)}>{p.catalog_tittle}</span>);
                 ++key;
             })
             return r;
         }
 
         return (
-            <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
+            <div>
                 <div  className={css(ProductionStyle.groupProduct)}>{getLIproduct()}</div>
+            <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
                 <br/>
                 <br/>
-                <div className={css(ProductionStyle.productTable)}>
+                <div>
                 { Katalog.getRenderedShowcase(Katalog.getGroupItems(filter))}
                 </div>
                 <br/>
                 <br/>
                 <br/>
+            </div>
             </div>
         )
     }
@@ -94,8 +96,11 @@ const AddShoppingCart = (fish, countFish) => {
     Katalog.addShoppingCart(fish, countFish);
 }
 
-const countFormat = (num) => (
+const countFormatKg = (num) => (
     num + ' /кг'
+)
+const countFormatPc = (num) => (
+    num + ' /шт'
 )
 //require('../img/katalog/keta.jpg')
 const Player = (props) => {
@@ -112,18 +117,20 @@ const Player = (props) => {
             </div>
 
             <div className={css(ProductionStyle.details)}>
-                <h1>{player.name} ({player.price} руб/кг)</h1>
+                <h1>{player.name} <nobr>({player.price}руб/кг)</nobr></h1>
 
                 <h2 dangerouslySetInnerHTML={{__html: player.info}}></h2>
+                <h3 dangerouslySetInnerHTML={{__html: player.packagingInfo}}></h3>
                 <div className={css(AppStyle.center_text)}><br/><br/><span>
-                    <NumericInput id="countFish" value={1} style={{
+                    <NumericInput min={0} id="countFish" value={1} style={{
                         input: {
                             width: '7em', height: '3em'
                         }
-                    }} format={countFormat}/>кг&nbsp;&nbsp;</span><span
-                    onClick={() => {
+                    }} format={(player.packaging=="кг")?countFormatKg:countFormatPc}/> &nbsp;&nbsp;</span>
+
+                    <span onClick={() => {
                         AddShoppingCart(player, $('#countFish'))
-                    }} className={css(AppStyle.button)}>В корзину</span><br/><br/></div>
+                    }} className={css(AppStyle.button)}><nobr>В корзину</nobr></span><br/><br/></div>
             </div>
 
             <div className={css(ProductionStyle.clear)}></div>

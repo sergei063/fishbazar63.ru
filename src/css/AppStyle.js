@@ -21,6 +21,8 @@ const sliderBase = {
     width: '100%'
 }
 
+
+
 const coolFont = {
     fontFamily: 'MYRIADPRO-REGULAR',
     src: ' url("' + require('../fonts/MYRIADPRO-REGULAR.eot') + '"), url("' + require('../fonts/MYRIADPRO-REGULAR.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MYRIADPRO-REGULAR.woff') + '") format("woff")',
@@ -41,6 +43,32 @@ const AppStyle = StyleSheet.create({
     displayNone: {display: 'none'},
     displayBlock: {display: 'block'},
     bottomLine: {borderBottom: '1px dotted #c4c4c4'},
+
+    slider: {
+        ...sliderBase,
+        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
+    },
+    slider_line: {
+        width: '675px', margin: 'auto', borderTop: '2px solid #fff'
+    },
+    slider_1: {
+        ...sliderBase,
+        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
+    },
+    slider_2: {
+        ...sliderBase,
+        backgroundImage: "url(" + require('../img/fons/mintai.jpg') + ")",
+
+    },
+    slider_3: {
+        ...sliderBase,
+        backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
+    },
+    slider_4: {
+        ...sliderBase,
+        backgroundImage: "url(" + require('../img/fons/krevetki2.jpg') + ")",
+    },
+
 
     siteTitle: {
         fontFamily: 'Lobster, sans-serif',
