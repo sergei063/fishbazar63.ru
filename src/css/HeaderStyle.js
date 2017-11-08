@@ -35,6 +35,29 @@ const HeaderStyle = StyleSheet.create({
             border: '1px solid #3fa59e'
         }
     },
+    pouchInstagram: {
+        background: "#424242 url(" + require('../img/bg_pouch_inst.png') + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover span': {
+            background: '#3fa59e',
+            boxShadow: 'none',
+            border: '1px solid #3fa59e'
+        }
+    },pouchVk: {
+        background: "#424242 url(" + require('../img/bg_pouch_vk.svg') + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover span': {
+            background: '#3fa59e',
+            boxShadow: 'none',
+            border: '1px solid #3fa59e'
+        }
+    },
     pouch_a_span: {
 
         position: 'absolute',

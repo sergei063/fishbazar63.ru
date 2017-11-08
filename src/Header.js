@@ -17,6 +17,14 @@ const Header = (props) => {
                         <Link id="header_pouch" className={css(HeaderStyle.pouchA)} to='/shopping_cart'><span className={css(HeaderStyle.pouch_a_span)}>0</span></Link>
 
                     </li>
+                    <li className={css(HeaderStyle.headBarLI)}>
+                        <a id="header_pouch" className={css(HeaderStyle.pouchInstagram)} target="_blank" href='https://www.instagram.com/fishbazar63/'></a>
+
+                    </li>
+                    <li className={css(HeaderStyle.headBarLI)}>
+                        <a id="header_pouch" className={css(HeaderStyle.pouchVk)} target="_blank" href='https://vk.com/id454817122'></a>
+
+                    </li>
                 </ul>
 
             </div>

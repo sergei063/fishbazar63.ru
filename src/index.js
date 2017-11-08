@@ -27,12 +27,13 @@ ReactDOM.render(
     , document.getElementById('root'));
 
 const listenScrollEvent = () => {
+
     let top = $(window).scrollTop(),
         h_hght = 15,
         elem = $('nav');
 
 
-    if (top < h_hght) {
+    if ((top < h_hght) || ($(window).width()<=750)) {
         //elem.css('top', '');
         elem.addClass(css(AppStyle.menu_inline_ul));
         elem.removeClass(css(AppStyle.menu_inline_ul_scroll));
@@ -51,7 +52,7 @@ const getRandomArbitrary = (min, max) => {
 }
 window.addEventListener('scroll', listenScrollEvent);
 
-
+//alert($(window).width())
 
 //startSlider();
 registerServiceWorker();

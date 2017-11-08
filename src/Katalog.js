@@ -367,7 +367,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/krivetki.jpg'),
                 "price": 400
             },
 

@@ -16311,7 +16311,7 @@ var Price = {
             "packaging": "кг",
             "packagingInfo": "",
             "isShowCase": true,
-            "img": __webpack_require__(7),
+            "img": __webpack_require__(316),
             "price": 400
         }]
     },
@@ -24030,13 +24030,19 @@ var HomeStyle = _noImportant.StyleSheet.create({
             color: 'white',
             boxShadow: '15px 15px 15px rgba(0, 0, 1, 0.06)'
         },
-        '@media (max-width: 750px)': {
+        '@media (min-width: 750px)': {
             fontSize: '1.8em',
             marginRight: '3em'
         },
         '@media (min-width: 450px)': {
             width: '40%',
+            marginLeft: '0.5em',
             fontSize: '0.9em'
+        },
+        '@media (max-width: 450px)': {
+            width: '100%',
+            marginLeft: '-2em',
+            fontSize: '1.3em'
         },
         '@media (min-width: 768px)': {
             width: '25%',
@@ -24206,11 +24212,12 @@ _reactDom2.default.render(_react2.default.createElement(
 ), document.getElementById('root'));
 
 var listenScrollEvent = function listenScrollEvent() {
+
     var top = (0, _jquery2.default)(window).scrollTop(),
         h_hght = 15,
         elem = (0, _jquery2.default)('nav');
 
-    if (top < h_hght) {
+    if (top < h_hght || (0, _jquery2.default)(window).width() <= 750) {
         //elem.css('top', '');
         elem.addClass((0, _noImportant.css)(_AppStyle2.default.menu_inline_ul));
         elem.removeClass((0, _noImportant.css)(_AppStyle2.default.menu_inline_ul_scroll));
@@ -24228,6 +24235,8 @@ var getRandomArbitrary = function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 };
 window.addEventListener('scroll', listenScrollEvent);
+
+//alert($(window).width())
 
 //startSlider();
 (0, _registerServiceWorker2.default)();
@@ -39190,6 +39199,16 @@ var Header = function Header(props) {
                                 '0'
                             )
                         )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { className: (0, _noImportant.css)(_HeaderStyle2.default.headBarLI) },
+                        _react2.default.createElement('a', { id: 'header_pouch', className: (0, _noImportant.css)(_HeaderStyle2.default.pouchInstagram), target: '_blank', href: 'https://www.instagram.com/fishbazar63/' })
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { className: (0, _noImportant.css)(_HeaderStyle2.default.headBarLI) },
+                        _react2.default.createElement('a', { id: 'header_pouch', className: (0, _noImportant.css)(_HeaderStyle2.default.pouchVk), target: '_blank', href: 'https://vk.com/id454817122' })
                     )
                 )
             ),
@@ -40876,6 +40895,29 @@ var HeaderStyle = _noImportant.StyleSheet.create({
             border: '1px solid #3fa59e'
         }
     },
+    pouchInstagram: {
+        background: "#424242 url(" + __webpack_require__(314) + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover span': {
+            background: '#3fa59e',
+            boxShadow: 'none',
+            border: '1px solid #3fa59e'
+        }
+    }, pouchVk: {
+        background: "#424242 url(" + __webpack_require__(315) + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover span': {
+            background: '#3fa59e',
+            boxShadow: 'none',
+            border: '1px solid #3fa59e'
+        }
+    },
     pouch_a_span: {
 
         position: 'absolute',
@@ -41007,9 +41049,7 @@ var Slider = function Slider() {
             _react2.default.createElement(
                 'p',
                 { id: 'slider_text_2', className: (0, _noImportant.css)(_AppStyle2.default.displayNone) },
-                '...\u0417\u0430\u043C\u043E\u0440\u043E\u0436\u0435\u043D\u043D\u0430\u044F \u043D\u0430 \u0440\u044B\u0431\u0430\u0446\u043A\u043E\u043C \u0441\u0443\u0434\u043D\u0435 \u0440\u044B\u0431\u043A\u0430',
-                _react2.default.createElement('br', null),
-                '\u0440\u0430\u0437\u043C\u043E\u0440\u0430\u0436\u0438\u0432\u0430\u0435\u0442\u0441\u044F \u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0430 \u0412\u0430\u0448\u0435\u0439 \u043A\u0443\u0445\u043D\u0435!!..\u0438 \u043D\u0438\u0433\u0434\u0435 \u0431\u043E\u043B\u044C\u0448\u0435!'
+                '\xA0'
             ),
             _react2.default.createElement(
                 'p',
@@ -42975,7 +43015,7 @@ var styles = _noImportant.StyleSheet.create(_defineProperty({}, GLOBALS, {
         margin: '0px',
         padding: '0px',
         fontSize: '14px',
-        backgroundColor: '#efefef',
+        backgroundColor: 'white',
         '@media (max-width: 600px)': {
             fontSize: '10'
         }
@@ -42999,7 +43039,7 @@ var styles = _noImportant.StyleSheet.create(_defineProperty({}, GLOBALS, {
     },
     main: {
         left: '10%',
-        //backgroundColor: "#efefef",
+        backgroundColor: '#efefef',
         textIndent: '2em',
         padding: '10px',
         '@media (max-width: 750px)': {
@@ -43036,6 +43076,24 @@ exports.default = extended.css(styles[GLOBALS]);
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/imgsrc/img/katalog/flatfish.jpg";
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/imgsrc/img/bg_pouch_inst.png";
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fontssrc/img/bg_pouch_vk.svg";
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/imgsrc/img/katalog/krivetki.jpg";
 
 /***/ })
 /******/ ]);

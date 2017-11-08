@@ -36,13 +36,19 @@ const HomeStyle = StyleSheet.create({
             color: 'white',
             boxShadow: '15px 15px 15px rgba(0, 0, 1, 0.06)',
         },
-        '@media (max-width: 750px)': {
+        '@media (min-width: 750px)': {
             fontSize: '1.8em',
             marginRight: '3em',
         },
         '@media (min-width: 450px)': {
             width: '40%',
+            marginLeft: '0.5em',
             fontSize: '0.9em'
+        },
+        '@media (max-width: 450px)': {
+            width: '100%',
+            marginLeft: '-2em',
+            fontSize: '1.3em'
         },
         '@media (min-width: 768px)': {
             width: '25%',

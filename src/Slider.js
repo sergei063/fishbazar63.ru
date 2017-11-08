@@ -40,7 +40,7 @@ const Slider = () => {
 
             <p id="slider_text_0" className={css(AppStyle.displayNone)} >...Hаши цены конкурентны...<br/>вряд ли где либо еще  Вы найдете высочайшее качество, такую цену да еще бесплатную доставку.</p>
             <p id="slider_text_1" className={css(AppStyle.displayNone)} >...Будьте спокойны....<br/>Наш курьер доставит Вам продукт Высочайшего качества в кратчайшие сроки.</p>
-            <p id="slider_text_2" className={css(AppStyle.displayNone)} >...Замороженная на рыбацком судне рыбка<br/>размораживается только на Вашей кухне!!..и нигде больше!</p>
+            <p id="slider_text_2" className={css(AppStyle.displayNone)} >&nbsp;</p>
             <p id="slider_text_3" className={css(AppStyle.displayNone)} ><Link to='/production/salmon_of_chile_3_4'>......Замороженная на рыбацком судне рыбка<br/>размораживается только на Вашей кухне!!..и нигде больше!.</Link></p>
             <p id="slider_text_4" className={css(AppStyle.displayNone)} ><Link to='/production/shrimp_angular'>...Не нужно платить за лед.<br/>Наши креветки <u>100%</u> без глазури.</Link></p>
         </div>
