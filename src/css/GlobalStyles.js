@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
             backgroundRepeat: 'no-repeat'
         },
         main: {
-            left: '10%',
+            //left: '10%',
             backgroundColor:'#efefef',
             textIndent: '2em',
             padding:'10px',

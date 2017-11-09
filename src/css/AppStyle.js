@@ -10,7 +10,7 @@ const menu_inline_ul = {
 }
 const sliderBase = {
     position: 'relative',
-    minWidth: '100%',
+    //minWidth: '100%',
     height: '45vh',
     minHeight: '430px',
     backgroundSize: 'cover',
@@ -18,7 +18,10 @@ const sliderBase = {
     display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
     transition: 'background 2s ease 0s',
-    width: '100%'
+    width: '100%',
+    '@media (max-width: 700px)': {
+        fontSize: '0.7em',
+    }
 }
 
 
@@ -49,7 +52,9 @@ const AppStyle = StyleSheet.create({
         backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
     },
     slider_line: {
-        width: '675px', margin: 'auto', borderTop: '2px solid #fff'
+        maxWidth: '675px',
+        width:"100%",
+        margin: 'auto', borderTop: '2px solid #fff'
     },
     slider_1: {
         ...sliderBase,
