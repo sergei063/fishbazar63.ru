@@ -18,10 +18,7 @@ const sliderBase = {
     display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
     transition: 'background 2s ease 0s',
-    width: '100%',
-    '@media (max-width: 700px)': {
-        fontSize: '0.7em',
-    }
+    width: '100%'
 }
 
 
@@ -49,7 +46,16 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")"
+        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")",
+        '@media (max-width: 750px)': {
+            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            '@media (max-width: 750px)': {
+                backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+                fontSize: '0.7em',
+                height: '45vh',
+                minHeight: '0',
+            }
+        }
     },
     slider_line: {
         maxWidth: '675px',
@@ -59,19 +65,45 @@ const AppStyle = StyleSheet.create({
     slider_1: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
+        '@media (max-width: 750px)': {
+            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            fontSize: '0.7em',
+            height: '45vh',
+            minHeight: '0',
+        }
+
+
     },
     slider_2: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/mintai.jpg') + ")",
+        '@media (max-width: 750px)': {
+            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            fontSize: '0.7em',
+            height: '45vh',
+            minHeight: '0',
+        }
 
     },
     slider_3: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
+        '@media (max-width: 750px)': {
+            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            fontSize: '0.7em',
+            height: '45vh',
+            minHeight: '0',
+        }
     },
     slider_4: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/krevetki2.jpg') + ")",
+        '@media (max-width: 750px)': {
+            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            fontSize: '0.7em',
+            height: '45vh',
+            minHeight: '0',
+        }
     },
 
 
@@ -111,6 +143,9 @@ const AppStyle = StyleSheet.create({
         transition: 'left 2s ease 0s',
         ':hover':{
             left:'0'
+        },
+        '@media (max-width: 750px)': {
+          display:"none"
         }
     },
 
@@ -126,6 +161,9 @@ const AppStyle = StyleSheet.create({
         transition: 'right 2s ease 0s',
         ':hover':{
             right:'0'
+        },
+        '@media (max-width: 750px)': {
+            display:"none"
         }
     },
 

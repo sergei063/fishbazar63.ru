@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
             textIndent: '2em',
             padding:'10px',
             '@media (max-width: 750px)': {
-                top: '25%',
+               /* top: '25%',
                 width:'100%',
-                height:'60%'
+                height:'60%'*/
             }
         },
         nav: {
