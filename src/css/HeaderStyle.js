@@ -46,7 +46,8 @@ const HeaderStyle = StyleSheet.create({
             boxShadow: 'none',
             border: '1px solid #3fa59e'
         }
-    },pouchVk: {
+    },
+    pouchVk: {
         background: "#424242 url(" + require('../img/bg_pouch_vk.svg') + ") no-repeat 50% 13px",
         height: '44px', width: '44px',
         borderRadius: '44px',
@@ -58,6 +59,7 @@ const HeaderStyle = StyleSheet.create({
             border: '1px solid #3fa59e'
         }
     },
+
     pouch_a_span: {
 
         position: 'absolute',
@@ -76,15 +78,50 @@ const HeaderStyle = StyleSheet.create({
         color: '#fff',
         textShadow: '0 1px #634d23',
         webkitFontSmoothing: 'auto'
-    }
-    ,floatMenuBlock: {
+    },
+    floatMenuBlock: {
 
         float: 'right',
         '@media (max-width: 750px)': {
+            position: "absolute",
+            borderRadius: "30px",
+            zIndex: "1",
             backgroundColor:'white',
+            textAlign:"left",
+            width:"35%",
             float: 'left',
+            padding:"10px 0px 0px 10px"
         }
-    }
+    },
+    menuInlineUl:{
+        '@media (max-width: 750px)': {
+            marginLeft: "-35px",
+            display:"none"
+        }
+
+    },
+    mobileMenuBtn:{
+        display:"none",
+        '@media (max-width: 750px)': {
+            display:"block",
+            position:"relative",
+
+        }
+
+    },
+    pouchMobileMenu: {
+        background: "#424242 url(" + require('../img/iconmenu.png') + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover span': {
+            background: '#3fa59e',
+            boxShadow: 'none',
+            border: '1px solid #3fa59e'
+        }
+    },
+
 
 });
 export default HeaderStyle;

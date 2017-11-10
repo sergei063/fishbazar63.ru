@@ -18,6 +18,7 @@ const sliderBase = {
     display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
     transition: 'background 2s ease 0s',
+    minWidth: '10px',
     width: '100%'
 }
 
@@ -43,30 +44,33 @@ const AppStyle = StyleSheet.create({
     displayNone: {display: 'none'},
     displayBlock: {display: 'block'},
     bottomLine: {borderBottom: '1px dotted #c4c4c4'},
+    textAlignRigh: {textAlign: 'right'},
+    textAlignLeft: {textAlign: 'left'},
 
     slider: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fons/mobile/fishmarket.jpg') + ")",
             '@media (max-width: 750px)': {
-                backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+                backgroundImage: "url(" + require('../img/fons/mobile/fishmarket.jpg') + ")",
                 fontSize: '0.7em',
                 height: '45vh',
-                minHeight: '0',
+                minHeight: '0'
+
             }
         }
     },
     slider_line: {
         maxWidth: '675px',
-        width:"100%",
+        width:"50%",
         margin: 'auto', borderTop: '2px solid #fff'
     },
     slider_1: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fons/mobile/boy.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
             minHeight: '0',
@@ -89,7 +93,7 @@ const AppStyle = StyleSheet.create({
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/krevetki.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fons/mobile/krevetki.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
             minHeight: '0',
@@ -99,7 +103,7 @@ const AppStyle = StyleSheet.create({
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fons/krevetki2.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/mintai.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fons/mobile/krevetki2.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
             minHeight: '0',
@@ -211,15 +215,10 @@ const AppStyle = StyleSheet.create({
         '@media (max-width: 750px)': {
             marginRight: '0.5em',
             fontSize: '1.5em',
-            textAlign: 'center',
+            textAlign: 'left',
             lineHeight: '1.5em',
             display: 'block'
-        }/*,
-        '@media (max-width: 500px)': {
-            marginRight: '0.5em',
-            display: 'block',
-            fontSize: '1em',
-        }*/
+        }
     },
     menu_inline_ul: {
         ...menu_inline_ul

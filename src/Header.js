@@ -5,6 +5,23 @@ import {  HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 import HeaderStyle from './css/HeaderStyle';
+import $ from 'jquery'
+
+
+const mobileMenuClick = (event) => {
+    if (event)
+        event.preventDefault();
+
+    let display = $('#menu_inline_ul').css("display");
+    display=(display=="none")?"block":"none";
+    $('#menu_inline_ul').css("display",display);
+
+}
+const hideMobileMenu = (event) => {
+    if ($('#menu_inline_ul').css("display"))
+        $('#menu_inline_ul').css("display","");
+
+}
 
 const Header = (props) => {
     return(<header>
@@ -28,13 +45,19 @@ const Header = (props) => {
 
             </div>
             <div className={css(HeaderStyle.floatMenuBlock)}>
-            <ul>
-                <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Главная</Link></li>
-                <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Новости</Link></li>
-                <li id="page_production" className={css(AppStyle.menu_inline)}><Link to='/production'>Продукция</Link></li>
-                <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Партнеры</Link></li>
-                <li id="page_home" className={css(AppStyle.menu_inline)}><Link to='/'>Контакты</Link></li>
-                <li id="page_about" className={css(AppStyle.menu_inline)}><Link to='/about'>О&nbsp;нас</Link></li>
+                <div className={css(HeaderStyle.mobileMenuBtn)}>
+                    <a id="header_pouch_mobile_menu" onClick={mobileMenuClick} className={css(HeaderStyle.pouchMobileMenu)}  href='#'></a>
+                    <br/>
+                    <br/>
+                </div>
+
+            <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
+                <li id="page_home" className={css(AppStyle.menu_inline)}><Link  onClick={hideMobileMenu} to='/'>Главная</Link></li>
+                <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Новости</Link></li>
+                <li id="page_production" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Продукция</Link></li>
+                <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Партнеры</Link></li>
+                <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Контакты</Link></li>
+                <li id="page_about" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/about'>О&nbsp;нас</Link></li>
             </ul>
             </div>
         </nav>

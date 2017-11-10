@@ -37,7 +37,8 @@ const ProductionStyle = StyleSheet.create({
             fontSize:'0.7em'
         },
         '@media (max-width: 840px)': {
-            fontSize:'0.6em',
+            fontSize:'0.8em',
+            lineHeight:"2em",
             height:"100%",
         }
 
@@ -84,6 +85,9 @@ const ProductionStyle = StyleSheet.create({
         '@media (max-width: 1160px)': {
             fontSize: '1em',
             width: '50%',
+        },
+        '@media (max-width: 750px)': {
+            margin: '15px 0 0 20px',
         },
     },
     clear: {

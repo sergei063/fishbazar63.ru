@@ -5,6 +5,7 @@ import createHistory from 'history/createBrowserHistory'
 import ProductionStyle from '../css/ProductionStyle';
 import AppStyle from '../css/AppStyle';
 import Katalog from '../Katalog';
+import ShoppingCartStyle from '../css/ShoppingCartStyle';
 
 const history = createHistory();
 
@@ -14,33 +15,34 @@ const ShoppingCart = (props) => {
         return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
     }
     let totalSum=0;
+    let i = 0;
     return ( <div className={css(ProductionStyle.productCnt,ProductionStyle.text)}>
 
-            <table>
+            <table className={css(ShoppingCartStyle.table)} >
                 <tbody>
                 <tr>
-                    <td>Наименование</td>
-                    <td>Количество</td>
-                    <td>Цена</td>
-                    <td>Стоимость</td>
-                    <td>&nbsp;</td>
+                    <td width="50%"></td>
+                    <td width="50%"></td>
                 </tr>
 
             {catalog.map(p => {
-                totalSum +=(p.price * p.count);
+                totalSum += (p.packaging!="шт")?(p.price * p.count):0;
+                i++;
                 return(
-                <tr id={p.id} key={p.id}>
-                    <td><Link to={`/production/${p.id}`}>{p.showCaseName}</Link></td>
-                    <td>{p.count} кг</td>
-                    <td>{p.price} руб/кг </td>
-                    <td>{p.price * p.count} руб</td>
-                    <td>&nbsp;</td>
+                <tr id={p.id} key={p.id}  className={css((i&1)?ShoppingCartStyle.row:ShoppingCartStyle.rowOdd)}>
+                    <td><img src={p.img}  className={css(ShoppingCartStyle.img)}/></td>
+
+
+                    <td  className={css(AppStyle.textAlignLeft)}><Link to={`/production/${p.id}`}>
+                        <div>{p.showCaseName}</div>
+                        <div  className={css(AppStyle.textAlignLeft)}>{p.count} {p.packaging}</div>
+                        <div  className={css(AppStyle.textAlignLeft)}>{p.price} руб/кг</div></Link>
+                    </td>
                 </tr>
-            )})}
-                <tr >
-                    <td colSpan={2}>Итого</td>
-                    <td colSpan={2} className={css(AppStyle.right_text)}>{totalSum} руб</td>
-                </tr>
+
+            )
+
+            })}
                 </tbody>
             </table>
             <br/>

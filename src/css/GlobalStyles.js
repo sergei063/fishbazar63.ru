@@ -55,7 +55,13 @@ const styles = StyleSheet.create({
         nav: {
             backgroundColor: "white",
             padding:'26px 5px 0 0',
-            textAlign:'right'
+            textAlign:'right',
+
+            '@media (max-width: 750px)': {
+                /* top: '25%',
+                 width:'100%',
+                 height:'60%'*/
+            }
 
         },
         header: {

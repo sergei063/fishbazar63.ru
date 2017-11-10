@@ -124,7 +124,7 @@ const Player = (props) => {
                 <div className={css(AppStyle.center_text)}><br/><br/><span>
                     <NumericInput min={0} id="countFish" value={1} style={{
                         input: {
-                            width: '7em', height: '3em'
+                            width: '9em', height: '3em'
                         }
                     }} format={(player.packaging=="кг")?countFormatKg:countFormatPc}/> &nbsp;&nbsp;</span>
 

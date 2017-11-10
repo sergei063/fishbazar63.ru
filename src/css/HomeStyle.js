@@ -39,6 +39,7 @@ const HomeStyle = StyleSheet.create({
         '@media (min-width: 750px)': {
             fontSize: '1.8em',
             marginRight: '3em',
+
         },
         '@media (min-width: 450px)': {
             width: '40%',
@@ -47,7 +48,7 @@ const HomeStyle = StyleSheet.create({
         },
         '@media (max-width: 450px)': {
             width: '100%',
-            marginLeft: '-2em',
+            marginLeft: '-1em',
             fontSize: '1.3em'
         },
         '@media (min-width: 768px)': {
@@ -72,7 +73,7 @@ const HomeStyle = StyleSheet.create({
     },
     productPhoto: {
         position: 'relative',
-        paddingBottom: '100%',
+        paddingBottom: '80%',
         overflow: 'hidden'
     },
     productName: {
@@ -93,7 +94,7 @@ const HomeStyle = StyleSheet.create({
         right: '0',
         maxWidth: '100%',
         maxHeight: '100%',
-        margin: 'auto',
+        //margin: 'auto',
         transition: 'transform .4s ease-out',
         ':hover': {
             transform: 'scale(1.05)'
