@@ -22,8 +22,9 @@ const ProductionStyle = StyleSheet.create({
 
         position: 'relative',
         overflow:"hidden",
-        '@media (max-width: 1400px)': {
-            margin: '0'
+        '@media (max-width: 500px)': {
+            margin: '0',
+            width:"100%"
         }
     },
 

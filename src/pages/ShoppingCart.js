@@ -9,6 +9,12 @@ import ShoppingCartStyle from '../css/ShoppingCartStyle';
 
 const history = createHistory();
 
+const deleteClick = (props,id) => {
+    Katalog.deleteShoppingCart(id);
+    props.history.push({pathname: `/shopping_cart/`})
+    //shopping_cart
+}
+
 const ShoppingCart = (props) => {
     let catalog = Katalog.getShoppingCart();
     if ((catalog == null) || (catalog.length == 0)) {
@@ -21,8 +27,9 @@ const ShoppingCart = (props) => {
             <table className={css(ShoppingCartStyle.table)} >
                 <tbody>
                 <tr>
-                    <td width="50%"></td>
-                    <td width="50%"></td>
+                    <td className={css(ShoppingCartStyle.tdPhoto)}></td>
+                    <td></td>
+                    <td></td>
                 </tr>
 
             {catalog.map(p => {
@@ -30,13 +37,18 @@ const ShoppingCart = (props) => {
                 i++;
                 return(
                 <tr id={p.id} key={p.id}  className={css((i&1)?ShoppingCartStyle.row:ShoppingCartStyle.rowOdd)}>
-                    <td><img src={p.img}  className={css(ShoppingCartStyle.img)}/></td>
+                    <td><Link to={`/production/${p.id}`}><img src={p.img}  className={css(ShoppingCartStyle.img)}/></Link></td>
 
 
                     <td  className={css(AppStyle.textAlignLeft)}><Link to={`/production/${p.id}`}>
                         <div>{p.showCaseName}</div>
                         <div  className={css(AppStyle.textAlignLeft)}>{p.count} {p.packaging}</div>
                         <div  className={css(AppStyle.textAlignLeft)}>{p.price} руб/кг</div></Link>
+                    </td>
+                    <td className={css(AppStyle.textAlignRigh, AppStyle.paddingRight15, ShoppingCartStyle.tdDeleteButton)}><button onClick={() => {
+                        deleteClick(props,p.id)
+                    }} className={css(ShoppingCartStyle.delete_button, AppStyle.delete_button)}></button>
+
                     </td>
                 </tr>
 
@@ -47,7 +59,9 @@ const ShoppingCart = (props) => {
             </table>
             <br/>
             <br/>
-            <span onClick={() => {Katalog.clearShoppingCart(); props.history.push({pathname: '/shopping_cart'}) }} className={css(AppStyle.button)}>Очистить корзину</span>
+            <span onClick={() => {Katalog.clearShoppingCart(); props.history.push({pathname: '/shopping_cart'}) }} className={css(AppStyle.button)}>Очистить&nbsp;корзину</span>
+            &nbsp;
+            <span onClick={() => {}} className={css(AppStyle.buttonBlue)}>Оформить&nbsp;заказ</span>
             <br/><br/><br/>
         </div>
     )

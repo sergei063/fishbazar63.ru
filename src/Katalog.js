@@ -597,6 +597,16 @@ const Katalog = {
         $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
 
+    },deleteShoppingCart: (fishId) => {
+        let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+        if (shoppingCart == null) {
+            shoppingCart = {}
+        }
+        delete shoppingCart[fishId]
+        localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+        $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
+
+
     },
     updatePounch: () => {
         let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
