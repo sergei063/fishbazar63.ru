@@ -40,6 +40,7 @@ const ProductionStyle = StyleSheet.create({
         '@media (max-width: 840px)': {
             fontSize:'0.8em',
             lineHeight:"2em",
+            textAlign:"center",
             height:"100%",
         }
 
@@ -48,6 +49,13 @@ const ProductionStyle = StyleSheet.create({
         marginRight: '1.5em',
         '@media (max-width: 840px)': {
            display:"table"
+        }
+    },
+    gpoupItem: {
+        '@media (max-width: 840px)': {
+           width:"100%",
+            fontSize:"1.8em",
+            marginBottom:"0.5em"
         }
     },
     ul: {},

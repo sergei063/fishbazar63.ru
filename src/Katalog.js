@@ -32,7 +32,7 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/keta.jpg'),
                 "price": 325
-            },
+            }/*,
             {
                 "id": "red_salmon",
                 "showCaseName": "Нерка",
@@ -43,7 +43,7 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/red_salmon.jpg'),
                 "price": 1
-            },
+            }*/,
             {
                 "id": "coho",
                 "showCaseName": "Кижуч",
@@ -64,9 +64,9 @@ const Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 1
+                "price": 265
             },
-            {
+            /*{
                 "id": "chinook_salmon",
                 "showCaseName": "Чавыча",
                 "name": "Чавыча",
@@ -76,22 +76,22 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
                 "price": 1
-            },
+            },*/
             {
                 "id": "salmon_of_chile_3_4",
-                "showCaseName": "Семга",
+                "showCaseName": "Семга (2-4 кг)",
                 "name": "Семга",
-                "info": "Чили(3-4)",
+                "info": "Чили(3-4 кг)",
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "isShowCase": true,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 590
+                "price": 600
             },
             {
                 "id": "salmon_of_chile_5_6",
-                "showCaseName": "Семга",
-                "name": "Семга Чили(5-6)",
+                "showCaseName": "Семга (5-6 кг)",
+                "name": "Семга Чили(5-6 кг)",
                 "info": "Описание отсутствует",
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
@@ -101,16 +101,16 @@ const Price = {
             },
             {
                 "id": "salmon_of_chile_6_7",
-                "showCaseName": "Семга",
-                "name": "Семга Чили(6-7)",
+                "showCaseName": "Семга (6-7 кг)",
+                "name": "Семга Чили(6-7 кг)",
                 "info": "Описание отсутствует",
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "isShowCase": false,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 675
+                "price": 680
             },
-            {
+            /*{
                 "id": "Trout_of_iceberg",
                 "showCaseName": "Форель",
                 "name": "Форель «Айсберг»",
@@ -120,17 +120,17 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/trout.jpg'),
                 "price": 570
-            },
+            },*/
             {
                 "id": "Trout_of_chile",
                 "showCaseName": "Форель",
                 "name": "Форель Prem Чили",
-                "info": "(1,8-2,7) Prem Чили",
+                "info": "(1,8-2,7 кг) Prem Чили",
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "isShowCase": true,
                 "img": require('./img/katalog/trout.jpg'),
-                "price": 570
+                "price": 700
             }
         ]
     },
@@ -139,7 +139,7 @@ const Price = {
         "items": [
             {
                 "id": "treska_15",
-                "showCaseName": "Треска",
+                "showCaseName": "Треска (0,5-1,5 кг)",
                 "name": "Треска",
                 "info": "Тихоокеанская потрошеная безголовая навеской (0,5-1,5)кг",
                 "packaging": "кг",
@@ -150,7 +150,7 @@ const Price = {
 
             }, {
                 "id": "treska_03",
-                "showCaseName": "Треска",
+                "showCaseName": "Треска (0,3-0,5 кг)",
                 "name": "треска",
                 "info": "Тихоокеанская потрошеная безголовая навеской (0,3-0,5)кг",
                 "packaging": "кг",
@@ -227,7 +227,7 @@ const Price = {
                 "isShowCase": false,
                 "img": require('./img/katalog/none.jpg'),
                 "price": 175
-            },
+            }/*,
             {
                 "id": "lemonema",
                 "showCaseName": "Лемонема",
@@ -238,7 +238,7 @@ const Price = {
                 "isShowCase": false,
                 "img": require('./img/katalog/none.jpg'),
                 "price": 160
-            }
+            }*/
 
         ]
     },
@@ -288,7 +288,7 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/flatfish.jpg'),
                 "price": 180
-            },
+            }/*,
             {
                 "id": "Halibut",
                 "showCaseName": "Палтус",
@@ -299,7 +299,7 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/flatfish.jpg'),
                 "price": 1
-            }
+            }*/
         ]
     },
     "Mollusc": {
@@ -314,7 +314,7 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 1
+                "price": 215
             },
             {
                 "id": "scallop",
@@ -325,12 +325,12 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 1
+                "price": 1100
             }
         ]
     },
     "Osmeridae": {
-        "catalog_tittle": "Корюшка",
+        "catalog_tittle": "Корюшковые",
         "items": [
             {
                 "id": "osmeridae",
@@ -341,7 +341,7 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 1
+                "price": 265
             },
             {
                 "id": "capelin",
@@ -352,7 +352,7 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 1
+                "price": 145
             }
         ]
     },
@@ -369,12 +369,22 @@ const Price = {
                 "isShowCase": true,
                 "img": require('./img/katalog/krivetki.jpg'),
                 "price": 400
-            },
+            },{
+                "id": "shrimp_tiger",
+                "showCaseName": "Тигровая креветка",
+                "name": "Тигровая креветка",
+                "info": "Индия",
+                "packaging": "кг",
+                "packagingInfo" : "",
+                "isShowCase": true,
+                "img": require('./img/katalog/none.jpg'),
+                "price": 700
+            }
 
         ]
     },
     "Herring": {
-        "catalog_tittle": "Cельдь",
+        "catalog_tittle": "Cельдевые",
         "items": [
             {
                 "id": "herring",
@@ -385,13 +395,13 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 90
+                "price": 97
             }
 
         ]
     },
     "Mackerel": {
-        "catalog_tittle": "Скумбрия",
+        "catalog_tittle": "Скумбриевые",
         "items": [
             {
                 "id": "mackerel",
@@ -402,11 +412,27 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "img": require('./img/katalog/none.jpg'),
-                "price": 175
+                "price": 140
             },
 
         ]
-    },
+    }, "Langoustines": {
+        "catalog_tittle": "Лангустины",
+        "items": [
+            {
+                "id": "langoustine",
+                "showCaseName": "Лангустины",
+                "name": "Лангустины  аргентинские",
+                "info": "Дикий улов. Упаковка 2кг",
+                "packaging": "кг",
+                "packagingInfo" : "",
+                "isShowCase": true,
+                "img": require('./img/katalog/none.jpg'),
+                "price": 630
+            },
+
+        ]
+    }/*,
     "Saury": {
         "catalog_tittle": "Сайра",
         "items": [
@@ -423,7 +449,7 @@ const Price = {
             },
 
         ]
-    }
+    }*/
 
 
 };
