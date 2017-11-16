@@ -45,21 +45,20 @@ const AppStyle = StyleSheet.create({
     displayBlock: {display: 'block'},
     bottomLine: {borderBottom: '1px dotted #c4c4c4'},
     textAlignRigh: {textAlign: 'right'},
+    textAlignCenter: {textAlign: 'center'},
     textAlignLeft: {textAlign: 'left'},
     paddingRight15: {paddingRight: '15px'},
+    fon: {backgroundColor:"#efefef"},
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + "), url(" + require('../img/fons/abstract.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/fishmarket.jpg') + ")",
-            '@media (max-width: 750px)': {
-                backgroundImage: "url(" + require('../img/fons/mobile/fishmarket.jpg') + ")",
-                fontSize: '0.7em',
-                height: '45vh',
-                minHeight: '0'
+            backgroundImage: "url(" + require('../img/fons/mobile/fishmarket.jpg') + "),url(" + require('../img/fons/mobile/boy.jpg') + "),url(" + require('../img/fons/mobile/mintai.jpg') + "), url(" + require('../img/fons/mobile/krevetki.jpg') + ")",
+            fontSize: '0.7em',
+            height: '45vh',
+            minHeight: '0'
 
-            }
         }
     },
     slider_line: {
@@ -141,7 +140,7 @@ const AppStyle = StyleSheet.create({
 
     },
     clearBoth:{
-        clear:'both'
+        clear:'both',
     },
 
     prev: {
@@ -205,6 +204,8 @@ const AppStyle = StyleSheet.create({
     floatRight: {
         float: 'right'
     },
+    zI1:{zIndex:"1"},
+    zI2:{zIndex:"2"},
 
     blue_text: {
         color: '#3F51B5'

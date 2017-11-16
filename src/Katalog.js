@@ -506,7 +506,7 @@ const Katalog = {
                                     <div className={css(HomeStyle.productName)}>{p.showCaseName}</div>
                                     <div className={css(HomeStyle.productPrice)}>
                                         <b>{p.price}</b>
-                                        <small>руб/кг</small>
+                                        <small><nobr>руб/кг</nobr></small>
                                     </div>
                                 </div>
                             </Link>

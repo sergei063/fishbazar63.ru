@@ -28,7 +28,7 @@ const Header = (props) => {
 
 
         <nav>
-            <div className={css(AppStyle.floatRight)}>
+            <div className={css(AppStyle.zI1, AppStyle.floatRight)}>
                 <ul className={css(HeaderStyle.headBarUl)}>
 
                     <li className={css(HeaderStyle.headBarLI)}>
@@ -54,7 +54,7 @@ const Header = (props) => {
             <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link  onClick={hideMobileMenu} to='/'>Главная</Link></li>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Новости</Link></li>
-                <li id="page_production" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Продукция</Link></li>
+                <li id="page_production" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Каталог</Link></li>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Партнеры</Link></li>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Контакты</Link></li>
                 <li id="page_about" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/about'>О&nbsp;нас</Link></li>

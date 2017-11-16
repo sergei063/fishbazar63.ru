@@ -103,54 +103,65 @@ const countFormatPc = (num) => (
     num + ' /шт'
 )
 //require('../img/katalog/keta.jpg')
-const Player = (props) => {
-    const player = PriceDB.get(props.match.params.id)
-    if (!player) {
-        return <div>Ничего не найдено</div>
-    }
-    return (
-        <div className={css(ProductionStyle.productCnt)}>
-            <div><Link onClick={(event) => { event.preventDefault(); props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(AppStyle.link)} to='/production'>{player.parent.catalog_tittle}</Link></div>
-            <br/>
-            <div className={css(ProductionStyle.photoDiv)}>
-                <img src={player.img} alt=""></img>
-            </div>
 
-            <div className={css(ProductionStyle.details)}>
-                <h1>{player.name} <nobr>({player.price}руб/кг)</nobr></h1>
+class Player extends React.Component {
+    render(){
+        const player = PriceDB.get(this.props.match.params.id)
+        if (!player) {
+            return <div>Ничего не найдено</div>
+        }
+        return (
+            <div id="production_card" className={css(ProductionStyle.productCnt)}>
+                <div><Link onClick={(event) => { event.preventDefault(); this.props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(AppStyle.link)} to='/production'>{player.parent.catalog_tittle}</Link></div>
+                <br/>
+                <div className={css(ProductionStyle.photoDiv)}>
+                    <img src={player.img} alt=""></img>
+                </div>
 
-                <h2 dangerouslySetInnerHTML={{__html: player.info}}></h2>
-                <h3 dangerouslySetInnerHTML={{__html: player.packagingInfo}}></h3>
-                <div className={css(AppStyle.center_text)}><br/><br/><span>
+                <div className={css(ProductionStyle.details)}>
+                    <h1>{player.name} <nobr>({player.price}руб/кг)</nobr></h1>
+
+                    <h2 dangerouslySetInnerHTML={{__html: player.info}}></h2>
+                    <h3 dangerouslySetInnerHTML={{__html: player.packagingInfo}}></h3>
+                    <div className={css(AppStyle.center_text)}><br/><br/><span>
                     <NumericInput min={0} id="countFish" value={1} style={{
                         input: {
                             width: '9em', height: '3em'
                         }
                     }} format={(player.packaging=="кг")?countFormatKg:countFormatPc}/> &nbsp;&nbsp;</span>
 
-                    <span onClick={() => {
-                        AddShoppingCart(player, $('#countFish'))
-                    }} className={css(AppStyle.button)}><nobr>В корзину</nobr></span><br/><br/></div>
+                        <span onClick={() => {
+                            AddShoppingCart(player, $('#countFish'))
+                        }} className={css(AppStyle.button)}><nobr>В корзину</nobr></span><br/><br/></div>
+                </div>
+
+                <div className={css(ProductionStyle.clear)}></div>
+                <br/>
+                <br/>
+                <div><Link onClick={backClick} className={css(AppStyle.link)} to='/production'>Назад</Link></div>
+                <br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/>
             </div>
 
-            <div className={css(ProductionStyle.clear)}></div>
-            <br/>
-            <br/>
-            <div><Link onClick={backClick} className={css(AppStyle.link)} to='/production'>Назад</Link></div>
-            <br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/>
-        </div>
+        )
+    }
+    componentDidMount(){
 
-    )
+        $("html, body").animate({
+            scrollTop: $("#production_card").offset().top-30 + "px"
+        }, {
+            duration: 1000,
+            easing: "swing"
+        });
+    }
 }
-
 
 const Production = () => (
     <Switch>

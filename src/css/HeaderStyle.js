@@ -29,6 +29,9 @@ const HeaderStyle = StyleSheet.create({
         borderRadius: '44px',
         float: 'left',
         position: 'relative',
+        ':hover': {
+            backgroundColor: '#697a7c'
+        },
         ':hover span': {
             background: '#3fa59e',
             boxShadow: 'none',
@@ -41,22 +44,18 @@ const HeaderStyle = StyleSheet.create({
         borderRadius: '44px',
         float: 'left',
         position: 'relative',
-        ':hover span': {
-            background: '#3fa59e',
-            boxShadow: 'none',
-            border: '1px solid #3fa59e'
+        ':hover': {
+            backgroundColor: '#697a7c'
         }
     },
     pouchVk: {
-        background: "#424242 url(" + require('../img/bg_pouch_vk.svg') + ") no-repeat 50% 13px",
+        background: "#424242 url(" + require('../img/bg_pouch_vk.png') + ") no-repeat 50% 13px",
         height: '44px', width: '44px',
         borderRadius: '44px',
         float: 'left',
         position: 'relative',
-        ':hover span': {
-            background: '#3fa59e',
-            boxShadow: 'none',
-            border: '1px solid #3fa59e'
+        ':hover': {
+            backgroundColor: '#697a7c'
         }
     },
 
@@ -84,11 +83,11 @@ const HeaderStyle = StyleSheet.create({
         float: 'right',
         '@media (max-width: 750px)': {
             position: "absolute",
-            borderRadius: "30px",
-            zIndex: "1",
+            borderRadius: "15px",
+            zIndex: "2",
             backgroundColor:'white',
             textAlign:"left",
-            width:"35%",
+            width:"40%",
             float: 'left',
             padding:"10px 0px 0px 10px"
         }
@@ -115,10 +114,8 @@ const HeaderStyle = StyleSheet.create({
         borderRadius: '44px',
         float: 'left',
         position: 'relative',
-        ':hover span': {
-            background: '#3fa59e',
-            boxShadow: 'none',
-            border: '1px solid #3fa59e'
+        ':hover': {
+            backgroundColor: '#697a7c'
         }
     },
 

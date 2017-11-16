@@ -30,6 +30,7 @@ const HomeStyle = StyleSheet.create({
         marginLeft: '2em',
         listStyle: 'none',
         fontSize: '1.3em',
+        //fontSize:'1.5vw',
         boxShadow: '5px 2px 10px rgba(0, 0, 1, 0.06)',
 
         ':hover': {
@@ -37,27 +38,28 @@ const HomeStyle = StyleSheet.create({
             boxShadow: '15px 15px 15px rgba(0, 0, 1, 0.06)',
         },
         '@media (min-width: 750px)': {
-            fontSize: '1.8em',
             marginRight: '3em',
 
         },
         '@media (min-width: 450px)': {
             width: '40%',
             marginLeft: '0.5em',
-            fontSize: '0.9em'
+            fontSize: '3vw'
+
         },
         '@media (max-width: 450px)': {
             width: '100%',
             marginLeft: '-1em',
-            fontSize: '1.3em'
+            fontSize: '5.8vw'
+
         },
         '@media (min-width: 768px)': {
             width: '25%',
-            fontSize: '1.8em'
+            fontSize:'1.5vw',
         },
         '@media (min-width: 1100px)': {
             width: '20%',
-            fontSize: '1.8em'
+            fontSize: '1.6em',
         }
     },
     card: {
@@ -73,18 +75,25 @@ const HomeStyle = StyleSheet.create({
     },
     productPhoto: {
         position: 'relative',
-        paddingBottom: '80%',
+        paddingBottom: '70%',
         overflow: 'hidden'
     },
     productName: {
-        fontSize:'1.5em',
+        textAlign:'centr',
+
+        display:"table-cell",
         fontFamily: 'Open Sans Condensed'
     },
     productNameDiv: {
+        position:"relative",
+        width:"95%",
+        display:"table",
+        overflow:"hidden",
         textAlign:'center',
     },
     productPrice: {
-       fontSize:'1.3em',
+        display:"table-cell",
+       textAlign:"right",
     },
     productPhotoImg: {
         position: 'absolute',
