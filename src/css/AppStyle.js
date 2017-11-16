@@ -61,6 +61,14 @@ const AppStyle = StyleSheet.create({
 
         }
     },
+
+    map: {
+
+        backgroundImage: "url(" + require('../img/map.png') + ")",
+        width:"70%",
+        height:"70%",
+        backgroundSize:"cover"
+    },
     slider_line: {
         maxWidth: '675px',
         width:"50%",

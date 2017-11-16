@@ -56,7 +56,7 @@ const Header = (props) => {
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Новости</Link></li>
                 <li id="page_production" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Каталог</Link></li>
                 <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Партнеры</Link></li>
-                <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Контакты</Link></li>
+                <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/location'>Контакты</Link></li>
                 <li id="page_about" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/about'>О&nbsp;нас</Link></li>
             </ul>
             </div>
