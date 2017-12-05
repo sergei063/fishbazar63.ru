@@ -40,7 +40,7 @@ class App extends React.Component {
     render() {
         return (
             <div className={css(AppStyle.container)}>
-                <Header />
+                <Header isMobile={this.props.isMobile} />
                 <Slider/>
                 <Main />
                 <Footer />

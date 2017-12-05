@@ -19,10 +19,30 @@ const history = createHistory()
 history.listen((location, action) => {
     //console.log(location);
 });
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 
 ReactDOM.render(
     <Router history={history} basename="/fishbazar63.ru">
-        <App />
+        <App isMobile={isMobile} />
     </Router>
     , document.getElementById('root'));
 
@@ -57,3 +77,5 @@ window.addEventListener('scroll', listenScrollEvent);
 //startSlider();
 registerServiceWorker();
 
+
+//alert(window.isMobile.any())

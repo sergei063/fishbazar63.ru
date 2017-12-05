@@ -84,12 +84,21 @@ const HeaderStyle = StyleSheet.create({
         '@media (max-width: 750px)': {
             position: "absolute",
             borderRadius: "15px",
-            zIndex: "2",
             backgroundColor:'white',
             textAlign:"left",
             width:"40%",
             float: 'left',
-            padding:"10px 0px 0px 10px"
+            padding:"14px 0px 0px 5px"
+        }
+    },
+    phoneNumberMenuBlock: {
+
+        float: 'left',
+        padding:"14px 0px 0px 5px",
+        fontFamily:"Lobster, sans-serif",
+        fontSize:"1.5em",
+        '@media (max-width: 770px)': {
+            display:"none"
         }
     },
     menuInlineUl:{
@@ -102,8 +111,8 @@ const HeaderStyle = StyleSheet.create({
     mobileMenuBtn:{
         display:"none",
         '@media (max-width: 750px)': {
-            display:"block",
-            position:"relative",
+            display:"inline-block",
+            position:"relative"
 
         }
 
@@ -117,7 +126,16 @@ const HeaderStyle = StyleSheet.create({
         ':hover': {
             backgroundColor: '#697a7c'
         }
-    },
+    },pouchPhoneMenu: {
+        background: "#424242 url(" + require('../img/phone_pounch.png') + ") no-repeat 50% 13px",
+        height: '44px', width: '44px',
+        borderRadius: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover': {
+            backgroundColor: '#697a7c'
+        }
+    }
 
 
 });

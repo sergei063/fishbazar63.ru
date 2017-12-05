@@ -169,7 +169,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/mintay.jpg'),
                 "price": 95
 
             },
@@ -256,7 +256,7 @@ const Price = {
                 "img": require('./img/katalog/flatfish.jpg'),
                 "price": 155
             },
-            {
+            /*{
                 "id": "Flounder_s_tu",
                 "showCaseName": "Камбала",
                 "name": "Камбала S",
@@ -266,7 +266,7 @@ const Price = {
                 "isShowCase": false,
                 "img": require('./img/katalog/flatfish.jpg'),
                 "price": 150
-            },
+            },*/
             {
                 "id": "Flounder_m",
                 "showCaseName": "Камбала M",
@@ -427,7 +427,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/langoustines.jpg'),
                 "price": 630
             },
 

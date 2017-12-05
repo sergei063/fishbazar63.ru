@@ -48,6 +48,7 @@ const AppStyle = StyleSheet.create({
     textAlignCenter: {textAlign: 'center'},
     textAlignLeft: {textAlign: 'left'},
     paddingRight15: {paddingRight: '15px'},
+    paddingLeft10: {paddingLeft: '10px'},
     fon: {backgroundColor:"#efefef"},
 
     slider: {

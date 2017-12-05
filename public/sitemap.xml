@@ -1,168 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>http://http://avdonkin.ru/production/pink_salmon</loc>
+      <loc>http://http://fishbazar63.ru/production</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
+
    <url>
-      <loc>http://http://avdonkin.ru/production/chum</loc>
+      <loc>http://http://fishbazar63.ru/location</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/red_salmon</loc>
+
+    <url>
+      <loc>http://http://fishbazar63.ru/about</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/coho</loc>
+
+
+
+    <url>
+      <loc>http://http://fishbazar63.ru/production/pink_salmon</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/sea_run_char</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/chum</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/chinook_salmon</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/red_salmon</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/salmon_of_chile_3_4</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/coho</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/salmon_of_chile_5_6</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/sea_run_char</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/salmon_of_chile_6_7</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/chinook_salmon</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Trout_of_iceberg</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/salmon_of_chile_3_4</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Trout_of_chile</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/salmon_of_chile_5_6</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/treska_15</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/salmon_of_chile_6_7</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/treska_03</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Trout_of_iceberg</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/mintay</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Trout_of_chile</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/navaga</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/treska_15</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/haddock</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/treska_03</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/blue_whiting</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/mintay</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/hake</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/navaga</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/hake</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/haddock</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/lemonema</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/blue_whiting</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Flounder_s</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/hake</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Flounder_s_tu</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/hake</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Flounder_m</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/lemonema</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Flounder_l</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Flounder_s</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/Halibut</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Flounder_s_tu</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/squid</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Flounder_m</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/scallop</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Flounder_l</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/osmeridae</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/Halibut</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/capelin</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/squid</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/shrimp_angular</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/scallop</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/herring</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/osmeridae</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/mackerel</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/capelin</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>http://http://avdonkin.ru/production/saury</loc>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/shrimp_angular</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/shrimp_tiger</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/herring</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/mackerel</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/langoustine</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+ <url>
+      <loc>http://http://fishbazar63.ru/production/saury</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
 </urlset>
+
