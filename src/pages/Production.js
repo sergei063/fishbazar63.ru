@@ -102,6 +102,10 @@ const catalogBackClick = (event) => {
 
 const AddShoppingCart = (fish, countFish) => {
     Katalog.addShoppingCart(fish, countFish);
+
+
+    alert("Добавлено в корзину: "+fish.name+" ("+countFish[0].getValueAsNumber()+" "+fish.packaging+")");
+
 }
 
 const countFormatKg = (num) => (
