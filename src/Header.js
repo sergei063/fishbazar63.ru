@@ -80,6 +80,12 @@ class Header extends React.Component {
                             <li id="page_about" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
                                                                                             to='/about'>О&nbsp;
                                 нас</Link></li>
+                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
+                                                                                           to='/about_fish'>О рыбе</Link>
+                            </li>
+                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
+                                                                                           to='/recipes'>Рецепты</Link>
+                            </li>
                         </ul>
                     </div>
 
