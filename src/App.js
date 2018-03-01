@@ -3,8 +3,10 @@ import Header from './Header';
 import Slider from './Slider';
 import Home from './pages/Home';
 import About from './pages/About';
+import AboutFish from './pages/AboutFish';
 import Production from './pages/Production';
 import ShoppingCart from './pages/ShoppingCart';
+import Recipes from './pages/Recipes';
 import Location from './pages/Location';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
@@ -24,8 +26,10 @@ const Main = () => (
             <Route exact path='/' component={Home}/>
             <Route path='/production' component={Production}/>
             <Route path='/about' component={About}/>
+            <Route path='/about_fish' component={AboutFish}/>
             <Route path='/shopping_cart' component={ShoppingCart}/>
             <Route path='/location' component={Location}/>
+            <Route path='/recipes' component={Recipes}/>
         </Switch>
     </main>
 )
