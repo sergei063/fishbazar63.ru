@@ -30,7 +30,7 @@ const Price = {
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "isShowCase": true,
-                "img": require('./img/katalog/keta.jpg'),
+                "img": require('./img/katalog/chum.jpg'),
                 "price": 340
             }/*,
             {
@@ -415,7 +415,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/squid.jpg'),
                 "price": 235
             },
 
@@ -454,7 +454,27 @@ const Price = {
             },
 
         ]
-    }/*,
+    },
+    "roe_chum": {
+        "catalog_tittle": "Икра",
+        "items": [
+            {
+                "id": "roe_chum_salmon",
+                "showCaseName": "Икра Кеты",
+                "name": "Икра Кеты",
+                "info": "Фасовка-250/500 грамм",
+                "packaging": "кг",
+                "packagingInfo" : "",
+                "isShowCase": true,
+                "img": require('./img/katalog/roe_chum_salmon.jpg'),
+                "price": 4000
+            },
+
+        ]
+    }
+
+
+    /*,
     "Saury": {
         "catalog_tittle": "Сайра",
         "items": [
