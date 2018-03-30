@@ -9,6 +9,12 @@ const coolFont = {
 };
 
 const ProductionStyle = StyleSheet.create({
+    a:{fontFamily: 'PT Sans Narrow',
+        color: '#303F9F',
+        fontWeight:'bold'
+
+
+    },
     cnt: {
         fontFamily: 'PT Sans Narrow',
         color: '#303F9F',
@@ -79,6 +85,16 @@ const ProductionStyle = StyleSheet.create({
         width:'3em',
         textAlign:'center'
 
+    },
+    nutritionalValue:{
+        fontFamily: 'Merriweather',
+        textIndent: "0em",
+        marginLeft: "2em"
+    },
+    shopInfo:{
+        fontFamily: 'Merriweather',
+        textIndent: "0em",
+        marginLeft: "2em"
     },
     details: {
         position: 'relative',

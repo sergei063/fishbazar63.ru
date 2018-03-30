@@ -65,6 +65,7 @@ const HomeStyle = StyleSheet.create({
     card: {
         display: 'block',
         border: '1px dotted #c1c0c1',
+        height:"340px",
         //borderRadius: '3px',
         position: 'relative',
         background: '#fff',
@@ -90,6 +91,7 @@ const HomeStyle = StyleSheet.create({
         display:"table",
         overflow:"hidden",
         textAlign:'center',
+
     },
     productPrice: {
         display:"table-cell",
