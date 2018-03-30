@@ -59,7 +59,7 @@ class Header extends React.Component {
                 </span>
                         <span className={css(HeaderStyle.mobileMenuBtn, AppStyle.paddingLeft10)}>
                     <a id="header_pouch_phone_menu"
-                       className={ (this.state.isMobile) ? css(HeaderStyle.pouchPhoneMenu) : null    }
+                       className={ (this.state.isMobile) ? css(HeaderStyle.pouchPhoneMenu) : css(HeaderStyle.pouchPhoneMenu)    }
                        href='tel:+79171682771'></a>
                     <br/>
                     <br/>
@@ -72,8 +72,7 @@ class Header extends React.Component {
                                                                                            to='/'>Новости</Link></li>
                             <li id="page_production" className={css(AppStyle.menu_inline)}><Link
                                 onClick={hideMobileMenu} to='/production'>Каталог</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
-                                                                                           to='/'>Партнеры</Link></li>
+
                             <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
                                                                                            to='/location'>Контакты</Link>
                             </li>

@@ -128,12 +128,15 @@ class Player extends React.Component {
                 <br/>
                 <div className={css(ProductionStyle.photoDiv)}>
                     <img src={player.img} alt=""></img>
+                    <div className={css(ProductionStyle.nutritionalValue)}>Пищевая ценность в 100г продукта:</div>
+                    <div className={css(ProductionStyle.nutritionalValue)} dangerouslySetInnerHTML={{__html: player.nutritionalValue||""}}></div>
+
                 </div>
 
                 <div className={css(ProductionStyle.details)}>
                     <h1>{player.name} <nobr>({player.price}руб/кг)</nobr></h1>
 
-                    <h2 dangerouslySetInnerHTML={{__html: player.info}}></h2>
+                    <h3 dangerouslySetInnerHTML={{__html: player.info}}></h3>
                     <h3 dangerouslySetInnerHTML={{__html: player.packagingInfo}}></h3>
                     <div className={css(AppStyle.center_text)}><br/><br/><span>
                     <NumericInput min={0} id="countFish" value={1} style={{
@@ -146,12 +149,31 @@ class Player extends React.Component {
                             AddShoppingCart(player, $('#countFish'))
                         }} className={css(AppStyle.button)}><nobr>В корзину</nobr></span><br/><br/></div>
                 </div>
-
                 <div className={css(ProductionStyle.clear)}></div>
+
+
+
                 <br/>
                 <br/>
                 <div><Link onClick={backClick} className={css(AppStyle.link)} to='/production'>Назад</Link></div>
                 <br/>
+                <br/>
+                <div className={css(ProductionStyle.shopInfo)}>
+                    <p><b> Доставка FishBazar63.ru </b></p>
+                    <span> - Принимаем</span><span> заказы с 8:00-20:00 без перерывов и выходных</span><br/>
+                    <span> - Минимальный заказ всего от 600 руб!!!</span><br/>
+                    <span> - На каждой неделе мы делаем по 2 дня бесплатной доставки о чем сообщаем заблаговременно во вкладке <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>новости</a> или  <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK</a>! Не пропустите!</span><br/>
+                    <span> - Доставка в остальные дни :</span><br/>
+                    <div className={css(AppStyle.marginLeft15)}><address><span>г. Новокуйбышевск; п.Гранный -70 руб</span></address>
+                    <address><span>г. Самара -150 руб</span></address>
+                        <address><span>Сухая Самарка; Жилой район Волгарь; 116км. -100руб</span></address><br/></div>
+                    <span><b>Наши преимущества:</b></span><br/>
+                    - Превосходное качество<br/>
+                    - Цены ниже рыночных<br/>
+                    - Нет посредников (мы сами доставляем рыбу и морепродукты с Дальнего Востока)<br/>
+                    - Доставим не просто быстро, а в удобное для Вас время!<br/>
+
+                </div>
                 <br/><br/>
                 <br/><br/>
                 <br/><br/>
