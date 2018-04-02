@@ -386,7 +386,7 @@ const Price = {
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "Размер 90 -120",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/greenland_shrimp.jpg'),
                 "price": 550
             }
 

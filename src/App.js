@@ -13,10 +13,9 @@ import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
-
-// For this demo, we are using the UMD build of react-router-dom
 import {  HashRouter, Switch, Route, Link } from 'react-router-dom'
 import Katalog from './Katalog'
+import News from "./pages/News";
 
 
 
@@ -26,6 +25,7 @@ const Main = () => (
             <Route exact path='/' component={Home}/>
             <Route path='/production' component={Production}/>
             <Route path='/about' component={About}/>
+            <Route path='/news' component={News}/>
             <Route path='/about_fish' component={AboutFish}/>
             <Route path='/shopping_cart' component={ShoppingCart}/>
             <Route path='/location' component={Location}/>

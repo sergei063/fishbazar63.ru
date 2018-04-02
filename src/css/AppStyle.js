@@ -54,9 +54,9 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/fishmarket.jpg') + "),url(" + require('../img/fons/boy.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "), url(" + require('../img/fons/krevetki.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/fishmarket.jpg') + "),url(" + require('../img/fons/mobile/boy.jpg') + "),url(" + require('../img/fons/mobile/mintai.jpg') + "), url(" + require('../img/fons/mobile/krevetki.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fons/mobile/fried_langistines.jpg') + "),url(" + require('../img/fons/mobile/langoustine.jpg') + "),url(" + require('../img/fons/mobile/mintai.jpg') + "), url(" + require('../img/fons/mobile/krevetki.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
             minHeight: '0'
@@ -86,9 +86,9 @@ const AppStyle = StyleSheet.create({
     },
     slider_1: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fons/boy.jpg') + ")",
+        backgroundImage: "url(" + require('../img/fons/langoustine.jpg') + ")",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/boy.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fons/mobile/langoustine.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
             minHeight: '0',

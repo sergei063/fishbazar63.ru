@@ -68,8 +68,8 @@ class Header extends React.Component {
                         <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
                             <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
                                                                                            to='/'>Главная</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
-                                                                                           to='/'>Новости</Link></li>
+                            <li id="page_news" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu}
+                                                                                           to='/news'>Новости</Link></li>
                             <li id="page_production" className={css(AppStyle.menu_inline)}><Link
                                 onClick={hideMobileMenu} to='/production'>Каталог</Link></li>
 
