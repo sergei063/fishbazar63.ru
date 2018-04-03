@@ -189,7 +189,7 @@ class Player extends React.Component {
     componentDidMount(){
 
         $("html, body").animate({
-            scrollTop: $("#production_card").offset().top-30 + "px"
+            scrollTop: $("#production_card").offset().top-220 + "px"
         }, {
             duration: 1000,
             easing: "swing"
