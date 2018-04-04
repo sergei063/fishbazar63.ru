@@ -145,7 +145,7 @@ const AppStyle = StyleSheet.create({
 
     },
     sliderText: {
-        fontFamily: 'Lobster',
+        fontFamily: 'Vollkorn SC',
         fontSize: '1.3em'
 
     },

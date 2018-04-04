@@ -95,8 +95,8 @@ const HeaderStyle = StyleSheet.create({
 
         float: 'left',
         padding:"14px 0px 0px 5px",
-        fontFamily:"Lobster, sans-serif",
-        fontSize:"1.5em",
+        fontFamily:"Vollkorn SC, sans-serif",
+        fontSize:"2.5em",
         '@media (max-width: 770px)': {
             display:"none"
         }

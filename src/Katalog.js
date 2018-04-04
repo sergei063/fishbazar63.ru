@@ -82,7 +82,7 @@ const Price = {
              },*/
             {
                 "id": "salmon_of_chile_2_3",
-                "showCaseName": "Семга Premium(2-3)кг",
+                "showCaseName": "Семга Premium (2-3)кг",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -93,7 +93,7 @@ const Price = {
                 "price": 640
             },{
                 "id": "salmon_of_chile_3_4",
-                "showCaseName": "Семга Premium(3-4)кг",
+                "showCaseName": "Семга Premium (3-4)кг",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -105,7 +105,7 @@ const Price = {
             },
             {
                 "id": "salmon_of_chile_5_6",
-                "showCaseName": "Семга Premium(5-6)кг",
+                "showCaseName": "Семга Premium (5-6)кг",
                 "name": "Семга Чили(5-6 кг)",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -117,7 +117,7 @@ const Price = {
             },
             {
                 "id": "salmon_of_chile_6_7",
-                "showCaseName": "Семга Premium(6-7)кг",
+                "showCaseName": "Семга Premium (6-7)кг",
                 "name": "Семга Чили(6-7 кг)",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
