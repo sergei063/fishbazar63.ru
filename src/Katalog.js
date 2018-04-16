@@ -32,7 +32,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue": "Калории 127ккал<br/>Белки. 19г<br/>Жиры 5,6г<br/>Углеводы. 0г<br/>Омега3(г). 1г",
                 "isShowCase": true,
-                "img": require('./img/katalog/keta.jpg'),
+                "img": require('./img/katalog/keta_1.jpg'),
                 "price": 340
             }/*,
              {
@@ -55,7 +55,7 @@ const Price = {
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 21,6г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/> Омега3(г). 0г",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "isShowCase": true,
-                "img": require('./img/katalog/coho.jpg'),
+                "img": require('./img/katalog/coho_1.jpg'),
                 "price": 480
             },
             /*{
@@ -274,7 +274,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 90ккал<br/>                Белки. 15,7г<br/>           Жиры 3г<br/>            Углеводы. 0г<br/>            Омега3(г). 0г",
                 "isShowCase": true,
-                "img": require('./img/katalog/flatfish.jpg'),
+                "img": require('./img/katalog/flatfish_1.jpg'),
                 "price": 165
             },
             /*{
@@ -285,7 +285,7 @@ const Price = {
              "packaging": "кг",
              "packagingInfo" : "",
              "isShowCase": false,
-             "img": require('./img/katalog/flatfish.jpg'),
+             "img": require('./img/katalog/flatfish_1.jpg'),
              "price": 150
              },*/
             {
@@ -296,7 +296,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/flatfish.jpg'),
+                "img": require('./img/katalog/flatfish_1.jpg'),
                 "price": 175
             },
             {
@@ -307,7 +307,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/flatfish.jpg'),
+                "img": require('./img/katalog/flatfish_1.jpg'),
                 "price": 279
             }/*,
              {
@@ -404,7 +404,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 248ккал<br/>Белки. 17,7г<br/>Жиры 19,5г<br/>Углеводы. 0г<br/>Омега3(г). 0г",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/herring.jpg'),
                 "price": 105
             }
 
@@ -422,7 +422,7 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "nutritionalValue":"Калории 77ккал<br>Белки. 11,5г<br>Жиры 2г<br>Углеводы. 3,3г<br>Омега3(г). 0г",
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/mussels.jpg'),
                 "price": 590
             }, {
                 "id": "scallop",
@@ -443,7 +443,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 100ккал<br/>                Белки. 18г<br/>            Жиры 2,2г<br/>            Углеводы. 2г<br/>            Омега3(г). 1,4г",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/squid_1.jpg'),
                 "price": 235
             },
 
@@ -461,7 +461,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/none.jpg'),
+                "img": require('./img/katalog/mackerel.jpg'),
                 "price": 180
             },
 

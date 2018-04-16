@@ -9,7 +9,55 @@ const News = () => (
         <div className={css(AppStyle.bottomLine, NewsStyle.line)}></div>
         <br/><br/>
         <div className={css(NewsStyle.text)}>
-            <h2>Доставка</h2>
+
+            <p>
+                <hr/>  <h2>Бесплатная доставка</h2>
+                <div className={css(NewsStyle.dateNews)}>16.04.2018</div>
+                <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
+                Друзья! На этой неделе:<br/>
+                17 и 20 апреля доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
+                19 и 22 апреля в г. Самара, Сухая Самара и Волгарь!<br/>
+                Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
+
+                <br/>VK личка.<br/>
+                89171682771.<br/>
+                Viber/WhatsApp/Telegram 89171682771<br/>
+                www.fishbazar63.ru<br/>
+            </p>
+            <p>
+                <hr/>  <h2>Бесплатная доставка</h2>
+                <div className={css(NewsStyle.dateNews)}>10.04.2018</div>
+                <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
+                Друзья! На этой неделе:<br/>
+                12 и 13 апреля доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
+                11 и 15 апреля в г. Самара, Сухая Самара и Волгарь!<br/>
+                Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
+
+                <br/>VK личка.<br/>
+                89171682771.<br/>
+                Viber/WhatsApp/Telegram 89171682771<br/>
+                www.fishbazar63.ru<br/>
+            </p>
+
+            <p>
+                <h2>Поступление икры</h2>
+                <div className={css(NewsStyle.dateNews)}>05.04.2018</div>
+                <img src={require('../img/news/caviar.jpg')} alt="" width='90%' height='90%'></img><br/>
+                Друзья! К майским праздникам ожидаем поступление икры кеты с Дальнего Востока!
+                Открыт предзаказ!!Цена 4000руб/кг.
+                Минимальный заказ 250 грамм
+                Как и в прошлый раз, для первых 10 покупателей сделаем бесплатную доставку!
+                Количество икры ограничено!
+                <br/>
+                VK в личку.<br/>
+                89171682771.<br/>
+                Viber/WhatsApp/Telegram 89171682771<br/>
+                www.fishbazar63.ru<br/>
+
+            </p>
+
+            <p>
+            <h2>Поступление гренландских креветок</h2>
             <div className={css(NewsStyle.dateNews)}>02.04.2018</div>
             <img src={require('../img/news/greenland_shrimp.jpg')} alt="" width='90%' height='90%'></img><br/>
 
@@ -20,8 +68,35 @@ const News = () => (
                 VK в личку.<br/>
                 89171682771.<br/>
                 Viber/WhatsApp/Telegram 89171682771<br/>
+                www.fishbazar63.ru<br/>
             </p>
-            <hr/>  <h2>Доставка</h2>
+            </p>
+
+            <hr/>  <h2>Бесплатная доставка</h2>
+            <div className={css(NewsStyle.dateNews)}>02.04.2018</div>
+            <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
+            Друзья! На этой неделе:<br/>
+            3 и 5 апреля доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
+            2 и 7 апреля в г. Самара, Сухая Самара и Волгарь!<br/>
+            Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
+
+            <br/>VK личка.<br/>
+            89171682771.<br/>
+            Viber/WhatsApp/Telegram 89171682771<br/>
+            www.fishbazar63.ru<br/>
+
+            <hr/>  <h2>Бесплатная доставка</h2>
+            <div className={css(NewsStyle.dateNews)}>23.03.2018</div>
+            <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
+            Друзья<br/>
+            На следующей неделе 27 и 30 марта доставка будет бесплатной в г. Новокуйбышевск; 26 и 29 марта в г. Самара
+            Заказывайте ДОСТАВИМ БЕСПЛАТНО<br/>
+            VK личка.<br/>
+            89171682771.<br/>
+            Viber/WhatsApp/Telegram 89171682771<br/>
+            www.fishbazar63.ru<br/>
+
+            <hr/>  <h2>Бесплатная доставка</h2>
             <div className={css(NewsStyle.dateNews)}>23.03.2018</div>
             <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
 

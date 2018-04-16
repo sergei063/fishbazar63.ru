@@ -127,7 +127,7 @@ class Player extends React.Component {
                 <div><Link onClick={(event) => { event.preventDefault(); this.props.history.push({pathname: `/production/`,state: { filter: player.parent.id }})   }  }  className={css(AppStyle.link)} to='/production'>{player.parent.catalog_tittle}</Link></div>
                 <br/>
                 <div className={css(ProductionStyle.photoDiv)}>
-                    <img src={player.img} alt=""></img>
+                    <img src={player.img} alt="" width="380" height="253"></img>
                     <div className={css(ProductionStyle.nutritionalValue)}>Пищевая ценность в 100г продукта:</div>
                     <div className={css(ProductionStyle.nutritionalValue)} dangerouslySetInnerHTML={{__html: player.nutritionalValue||""}}></div>
 
@@ -160,18 +160,22 @@ class Player extends React.Component {
                 <br/>
                 <div className={css(ProductionStyle.shopInfo)}>
                     <p><b> Доставка FishBazar63.ru </b></p>
-                    <span> - Принимаем</span><span> заказы с 8:00-20:00 без перерывов и выходных</span><br/>
+                    <span> - Доставку</span><span> осуществляем с 8:00-20:00 без перерывов и выходных</span><br/>
                     <span> - Минимальный заказ всего от 600 руб!!!</span><br/>
-                    <span> - На каждой неделе мы делаем по 2 дня бесплатной доставки о чем сообщаем заблаговременно во вкладке <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>новости</a> или  <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK</a>! Не пропустите!</span><br/>
+                    <span> - На каждой неделе мы делаем по 2 дня бесплатной доставки о чем сообщаем заблаговременно во вкладке <Link className={css(ProductionStyle.a)} to='/news'>новости</Link> или  <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK</a>! Не пропустите!</span><br/>
                     <span> - Доставка в остальные дни :</span><br/>
                     <div className={css(AppStyle.marginLeft15)}><address><span>г. Новокуйбышевск; п.Гранный -70 руб</span></address>
                     <address><span>г. Самара -150 руб</span></address>
                         <address><span>Сухая Самарка; Жилой район Волгарь; 116км. -100руб</span></address><br/></div>
-                    <span><b>Наши преимущества:</b></span><br/>
-                    - Превосходное качество<br/>
-                    - Цены ниже рыночных<br/>
-                    - Нет посредников (мы сами доставляем рыбу и морепродукты с Дальнего Востока)<br/>
-                    - Доставим не просто быстро, а в удобное для Вас время!<br/>
+                    <p>
+                        <h2 >Наши преимущества</h2>
+                        - <u><b>БЕЗУПРЕЧНОЕ КАЧЕСТВО.</b></u> Наш продукт не лежит на витринах, не перемораживается по несколько раз каждый продукт имеет ветеринарное свидетельство; постоянный контроль условий доставки.<br/><br/>
+                        - <u><b>ЦЕНЫ НИЖЕ РЫНОЧНЫХ.</b></u><br/><br/>
+                        - <u><b>НЕТ ПОСРЕДНИКОВ.</b></u> Одна из первопричин низкого качества продукта-его долгая(через 33 оптовика) дорога до конечного потребителя…МЫ САМИ ОРГАНИЗУЕМ ДОСТАВКУ С ДАЛЬНЕГО ВОСТОКА!!Сами привезли-сами продали на опт и в розницу. Все просто.<br/><br/>
+                        -  <u><b>ДОСТАВИМ НЕ ПРОСТО БЫСТРО, А В УДОБНОЕ ДЛЯ ВАС ВРЕМЯ!</b></u> И кстати 2 раза в неделю у нас бесплатная доставка об этом в разделе <Link className={css(ProductionStyle.a)} to='/news'>новости</Link>  или  <a className={css(ProductionStyle.a)}  target="_blank" href='https://www.instagram.com/fishbazar63/'>Instagram</a>,  <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK</a>.<br/>
+
+                    </p>
+
 
                 </div>
                 <br/><br/>
