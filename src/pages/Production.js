@@ -172,7 +172,7 @@ class Player extends React.Component {
                         - <u><b>БЕЗУПРЕЧНОЕ КАЧЕСТВО.</b></u> Наш продукт не лежит на витринах, не перемораживается по несколько раз каждый продукт имеет ветеринарное свидетельство; постоянный контроль условий доставки.<br/><br/>
                         - <u><b>ЦЕНЫ НИЖЕ РЫНОЧНЫХ.</b></u><br/><br/>
                         - <u><b>НЕТ ПОСРЕДНИКОВ.</b></u> Одна из первопричин низкого качества продукта-его долгая(через 33 оптовика) дорога до конечного потребителя…МЫ САМИ ОРГАНИЗУЕМ ДОСТАВКУ С ДАЛЬНЕГО ВОСТОКА!!Сами привезли-сами продали на опт и в розницу. Все просто.<br/><br/>
-                        -  <u><b>ДОСТАВИМ НЕ ПРОСТО БЫСТРО, А В УДОБНОЕ ДЛЯ ВАС ВРЕМЯ!</b></u> И кстати 2 раза в неделю у нас бесплатная доставка об этом в разделе <Link className={css(ProductionStyle.a)} to='/news'>новости</Link>  или  <a className={css(ProductionStyle.a)}  target="_blank" href='https://www.instagram.com/fishbazar63/'>Instagram</a>,  <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK</a>.<br/>
+                        -  <u><b>ДОСТАВИМ НЕ ПРОСТО БЫСТРО, А В УДОБНОЕ ДЛЯ ВАС ВРЕМЯ!</b></u> И кстати 2 раза в неделю у нас бесплатная доставка. Об этом в разделе <Link className={css(ProductionStyle.a)} to='/news'>новости</Link>  или  <a className={css(ProductionStyle.a)}  target="_blank" href='https://www.instagram.com/fishbazar63/'>Instagram</a>,  <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK</a>.<br/>
 
                     </p>
 
