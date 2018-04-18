@@ -16,8 +16,9 @@ const deleteClick = (props, id) => {
     //shopping_cart
 }
 
-const jsonpCallback = () => {
-    alert("Спасибо, Ваш заказ отправлен в службу доставки! С Вами свяжутся в ближайшее время")
+const jsonpCallback = (data) => {
+
+
 };
 
 const buyClick = () => {
@@ -35,8 +36,35 @@ const buyClick = () => {
 
 
     })
-    $.getJSON( "https://api.telegram.org/bot274564744:AAEGwFztcyAHcXcuNNR6ZzwiXoY4eY-nXCM/sendMessage?text=<code>" + encodeURI(msg) + "</code>&parse_mode=HTML&chat_id=102407893");
-    $.getJSON( "https://api.telegram.org/bot274564744:AAEGwFztcyAHcXcuNNR6ZzwiXoY4eY-nXCM/sendMessage?text=<code>" + encodeURI(msg) + "</code>&parse_mode=HTML&chat_id=92139864", jsonpCallback);
+    //$.getJSON( "https://api.telegram.org/bot274564744:AAEGwFztcyAHcXcuNNR6ZzwiXoY4eY-nXCM/sendMessage?text=<code>" + encodeURI(msg) + "</code>&parse_mode=HTML&chat_id=102407893");
+    //$.getJSON( "https://api.telegram.org/bot274564744:AAEGwFztcyAHcXcuNNR6ZzwiXoY4eY-nXCM/sendMessage?text=<code>" + encodeURI(msg) + "</code>&parse_mode=HTML&chat_id=92139864", jsonpCallback);
+    //$.getJSON( "https://sms.ru/sms/send?api_id=168c57ab-ca50-0e64-8dac-5e7f5106bcc9&to=79277172111,79879531011&json=1&test=1&msg=" + encodeURI(msg), jsonpCallback);
+    //$.getJSON( "https://sms.ru/sms/send?api_id=168c57ab-ca50-0e64-8dac-5e7f5106bcc9&to=79879531011&json=1&test=1&msg=" + encodeURI(msg), jsonpCallback);
+    $.ajax({
+        url: "https://sms.ru/sms/send?api_id=168c57ab-ca50-0e64-8dac-5e7f5106bcc9&to=79277172111&json=1&msg=" + encodeURI(msg),
+        dataType: 'JSONP',
+        jsonpCallback: 'callback',
+        type: 'GET',
+        success: function (data) {
+           /*
+            if (data.status_code === 100) {
+                alert("Спасибо, Ваш заказ отправлен в службу доставки! С Вами свяжутся в ближайшее время")
+            } else {
+                alert("Произошла ошибка: Нет связи с администраторром! Пожалуйста свяжитесь с нами +79277172111")
+            }*/
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+
+
+        },
+        complete: function(jqXHR, textStatus) {
+            alert("Спасибо, Ваш заказ отправлен в службу доставки! С Вами свяжутся в ближайшее время")
+
+        }
+    });
+
+
+
 
 }
 
