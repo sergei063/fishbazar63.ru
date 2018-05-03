@@ -55,7 +55,7 @@ const Price = {
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 21,6г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/> Омега3(г). 0г",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "isShowCase": true,
-                "img": require('./img/katalog/coho_1.jpg'),
+                "img": require('./img/katalog/coho_2.jpg'),
                 "price": 480
             },
             /*{
@@ -82,7 +82,7 @@ const Price = {
              },*/
             {
                 "id": "salmon_of_chile_2_3",
-                "showCaseName": "Семга Premium (2-3)кг",
+                "showCaseName": "Семга Premium<br/>(2-3)кг",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -90,10 +90,10 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": true,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 640
+                "price": 660
             },{
                 "id": "salmon_of_chile_3_4",
-                "showCaseName": "Семга Premium (3-4)кг",
+                "showCaseName": "Семга Premium<br/>(3-4)кг",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -101,11 +101,11 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": true,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 660
+                "price": 680
             },
             {
                 "id": "salmon_of_chile_5_6",
-                "showCaseName": "Семга Premium (5-6)кг",
+                "showCaseName": "Семга Premium<br/>(5-6)кг",
                 "name": "Семга Чили(5-6 кг)",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -113,11 +113,11 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": false,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 670
+                "price": 690
             },
             {
                 "id": "salmon_of_chile_6_7",
-                "showCaseName": "Семга Premium (6-7)кг",
+                "showCaseName": "Семга Premium<br/>(6-7)кг",
                 "name": "Семга Чили(6-7 кг)",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -125,7 +125,7 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": false,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 690
+                "price": 710
             },
             /*{
              "id": "Trout_of_iceberg",
@@ -274,7 +274,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 90ккал<br/>                Белки. 15,7г<br/>           Жиры 3г<br/>            Углеводы. 0г<br/>            Омега3(г). 0г",
                 "isShowCase": true,
-                "img": require('./img/katalog/flatfish_1.jpg'),
+                "img": require('./img/katalog/flatfish_2.jpg'),
                 "price": 165
             },
             /*{
@@ -296,7 +296,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/flatfish_1.jpg'),
+                "img": require('./img/katalog/flatfish_2.jpg'),
                 "price": 175
             },
             {
@@ -307,7 +307,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/flatfish_1.jpg'),
+                "img": require('./img/katalog/flatfish_2.jpg'),
                 "price": 279
             }/*,
              {
@@ -404,7 +404,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 248ккал<br/>Белки. 17,7г<br/>Жиры 19,5г<br/>Углеводы. 0г<br/>Омега3(г). 0г",
                 "isShowCase": true,
-                "img": require('./img/katalog/herring.jpg'),
+                "img": require('./img/katalog/herring_1.jpg'),
                 "price": 105
             }
 
@@ -422,7 +422,7 @@ const Price = {
                 "packagingInfo" : "",
                 "isShowCase": true,
                 "nutritionalValue":"Калории 77ккал<br>Белки. 11,5г<br>Жиры 2г<br>Углеводы. 3,3г<br>Омега3(г). 0г",
-                "img": require('./img/katalog/mussels.jpg'),
+                "img": require('./img/katalog/mussels_1.jpg'),
                 "price": 590
             }, {
                 "id": "scallop",
@@ -443,7 +443,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 100ккал<br/>                Белки. 18г<br/>            Жиры 2,2г<br/>            Углеводы. 2г<br/>            Омега3(г). 1,4г",
                 "isShowCase": true,
-                "img": require('./img/katalog/squid_1.jpg'),
+                "img": require('./img/katalog/squid_2.jpg'),
                 "price": 235
             },
 
@@ -461,7 +461,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "isShowCase": true,
-                "img": require('./img/katalog/mackerel.jpg'),
+                "img": require('./img/katalog/mackerel_1.jpg'),
                 "price": 180
             },
 
@@ -581,7 +581,8 @@ const Katalog = {
                                          src={p.img} alt={p.info}></img>
                                 </div>
                                 <div className={css(HomeStyle.productNameDiv)}>
-                                    <div className={css(HomeStyle.productName)}>{p.showCaseName}</div>
+
+                                    <div className={css(HomeStyle.productName)} dangerouslySetInnerHTML={{__html: p.showCaseName||""}}></div>
                                     <div className={css(HomeStyle.productPrice)}>
                                         <b>{p.price}</b>
                                         <small><nobr>руб/кг</nobr></small>

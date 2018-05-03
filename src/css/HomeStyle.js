@@ -65,7 +65,7 @@ const HomeStyle = StyleSheet.create({
     card: {
         display: 'block',
         border: '1px dotted #c1c0c1',
-        height:"320px",
+        minHeight:"320px",
         //borderRadius: '3px',
         position: 'relative',
         background: '#fff',
@@ -75,18 +75,18 @@ const HomeStyle = StyleSheet.create({
         zIndex: '0',
 
         '@media (max-width: 1644px)': {
-            height:"270px",
+            minHeight:"270px",
 
         },'@media (max-width: 1500px)': {
-            height:"240px",
+            minHeight:"240px",
         },  '@media (max-width: 1100px)': {
-            height:"220px",
+            minHeight:"220px",
         }, '@media (max-width: 950px)': {
-            height:"180px",
+            minHeight:"180px",
         }, '@media (max-width: 765px)': {
-            height:"290px",
+            minHeight:"290px",
         }, '@media (max-width: 350px)': {
-            height:"220px",
+            minHeight:"220px",
         }
     },
     productPhoto: {
@@ -97,6 +97,7 @@ const HomeStyle = StyleSheet.create({
     productName: {
         textAlign:'centr',
         textIndent:"0.1em",
+        paddingLeft:"0.3em",
         display:"table-cell",
         fontFamily: 'Vollkorn SC'
     },

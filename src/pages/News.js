@@ -12,6 +12,20 @@ const News = () => (
 
             <p>
                 <hr/>  <h2>Бесплатная доставка</h2>
+                <div className={css(NewsStyle.dateNews)}>30.04.2018</div>
+                <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
+                Друзья! На этой неделе:<br/>
+                2 и 4 мая до 17.00 доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
+                30 апреля  и 1 мая в г. Самара, Сухая Самара и Волгарь!<br/>
+                Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
+
+                <br/>VK личка.<br/>
+                89171682771.<br/>
+                Viber/WhatsApp/Telegram 89171682771<br/>
+                www.fishbazar63.ru<br/>
+            </p>
+            <p>
+                <hr/>  <h2>Бесплатная доставка</h2>
                 <div className={css(NewsStyle.dateNews)}>16.04.2018</div>
                 <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
                 Друзья! На этой неделе:<br/>
