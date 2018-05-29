@@ -90,7 +90,7 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": true,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 660
+                "price": 680
             },{
                 "id": "salmon_of_chile_3_4",
                 "showCaseName": "Семга Premium<br/>(3-4)кг",
@@ -101,7 +101,7 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": true,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 680
+                "price": 700
             },
             {
                 "id": "salmon_of_chile_5_6",
@@ -113,7 +113,7 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": false,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 690
+                "price": 710
             },
             {
                 "id": "salmon_of_chile_6_7",
@@ -125,7 +125,7 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "isShowCase": false,
                 "img": require('./img/katalog/salmon.jpg'),
-                "price": 710
+                "price": 730
             },
             /*{
              "id": "Trout_of_iceberg",

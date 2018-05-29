@@ -122,6 +122,7 @@ const HomeStyle = StyleSheet.create({
         left: '0',
         right: '0',
         maxWidth: '100%',
+        width: '100%',
         maxHeight: '100%',
         //margin: 'auto',
         transition: 'transform .4s ease-out',
