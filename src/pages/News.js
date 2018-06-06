@@ -3,6 +3,28 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 import {Link} from 'react-router-dom';
 import NewsStyle from '../css/NewsStyle';
 import AppStyle from '../css/AppStyle';
+import ProductionStyle from "../css/ProductionStyle";
+
+const generateOneNews = (date,inNskText,inSamaraText) => {
+    return(
+        <p>
+        <hr/>  <h2>Бесплатная доставка</h2>
+        <div className={css(NewsStyle.dateNews)}>{date}</div>
+        <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
+        Друзья! На этой неделе:<br/>
+            <u>{inNskText}</u> до 17.00 доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
+            <u>{inSamaraText}</u>в г. Самара, Сухая Самара и Волгарь!<br/>
+        Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
+
+        <br/><br/>
+            <a className={css(ProductionStyle.a)}  target="_blank" href='https://www.instagram.com/fishbazar63/'>Instagram</a>,<br/>
+            <a className={css(ProductionStyle.a)}  target="_blank" href='https://vk.com/id454817122'>VK личка</a><br/>
+            <a className={css(ProductionStyle.a)} href='tel:+79171682771'>+7(917)168-27-71</a>.<br/>
+            <span className={css(ProductionStyle.a)}>Viber/WhatsApp/Telegram +79171682771</span><br/>
+            <a className={css(ProductionStyle.a)}  target="_blank" href='http://fishbazar63.ru/'>fishbazar63</a><br/>
+    </p>
+    )
+}
 
 const News = () => (
     <div className={css(NewsStyle.cnt)}>
@@ -10,48 +32,14 @@ const News = () => (
         <br/><br/>
         <div className={css(NewsStyle.text)}>
 
-            <p>
-                <hr/>  <h2>Бесплатная доставка</h2>
-                <div className={css(NewsStyle.dateNews)}>30.04.2018</div>
-                <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
-                Друзья! На этой неделе:<br/>
-                2 и 4 мая до 17.00 доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
-                30 апреля  и 1 мая в г. Самара, Сухая Самара и Волгарь!<br/>
-                Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
-
-                <br/>VK личка.<br/>
-                89171682771.<br/>
-                Viber/WhatsApp/Telegram 89171682771<br/>
-                www.fishbazar63.ru<br/>
-            </p>
-            <p>
-                <hr/>  <h2>Бесплатная доставка</h2>
-                <div className={css(NewsStyle.dateNews)}>16.04.2018</div>
-                <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
-                Друзья! На этой неделе:<br/>
-                17 и 20 апреля доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
-                19 и 22 апреля в г. Самара, Сухая Самара и Волгарь!<br/>
-                Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
-
-                <br/>VK личка.<br/>
-                89171682771.<br/>
-                Viber/WhatsApp/Telegram 89171682771<br/>
-                www.fishbazar63.ru<br/>
-            </p>
-            <p>
-                <hr/>  <h2>Бесплатная доставка</h2>
-                <div className={css(NewsStyle.dateNews)}>10.04.2018</div>
-                <img src={require('../img/news/delivery.jpg')} alt="" width='90%' height='90%'></img><br/>
-                Друзья! На этой неделе:<br/>
-                12 и 13 апреля доставка будет бесплатной в г. Новокуйбышевск и п. Гранный;<br/>
-                11 и 15 апреля в г. Самара, Сухая Самара и Волгарь!<br/>
-                Заказывайте!ДОСТАВИМ БЕСПЛАТНО!!!
-
-                <br/>VK личка.<br/>
-                89171682771.<br/>
-                Viber/WhatsApp/Telegram 89171682771<br/>
-                www.fishbazar63.ru<br/>
-            </p>
+            {generateOneNews("04.06.2018","4  и 8 июня","6 и 10 июня")}
+            {generateOneNews("28.05.2018","29 и 31 мая","30 мая и 2 июня")}
+            {generateOneNews("21.05.2018","24 и 26 мая","23 и 25 мая")}
+            {generateOneNews("14.05.2018","16 и 17 мая","15 и 19 мая")}
+            {generateOneNews("07.05.2018","8 и 11 мая","7 и 10 мая")}
+            {generateOneNews("30.04.2018","2 и 4 мая","30 апреля  и 1 мая")}
+            {generateOneNews("16.04.2018","17 и 20 апреля","19 и 22 апреля")}
+            {generateOneNews("10.04.2018","12 и 13 апреля","11 и 15 апреля")}
 
             <p>
                 <h2>Поступление икры</h2>
