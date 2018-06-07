@@ -48,7 +48,7 @@ class AllProducts extends React.Component {
             ++key;
 
             Katalog.getGroup().map(p => {
-                r.push(<span  key={key}  id={p.name} onClick={() => {this.props.history.push({pathname: `/production/`,state: { filter: p.name }}); this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter==p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
+                r.push(<span  key={key}  id={p.name} onClick={() => {this.props.history.push({pathname: `/production/`,state: { filter: p.name }}); this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter===p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
                 ++key;
             })
             return r;
