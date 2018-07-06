@@ -42,12 +42,11 @@ var isMobile = {
 
 ReactDOM.render(
     <Router history={history} basename="/fishbazar63.ru">
-        <App isMobile={isMobile} />
+        <App  history={history} isMobile={isMobile} />
     </Router>
     , document.getElementById('root'));
 
 const listenScrollEvent = () => {
-
     let top = $(window).scrollTop(),
         h_hght = 15,
         elem = $('nav');
@@ -60,17 +59,14 @@ const listenScrollEvent = () => {
     } else {
         elem.removeClass(css(AppStyle.menu_inline_ul));
         elem.addClass(css(AppStyle.menu_inline_ul_scroll));
-
         /* elem.css('top', 0);
          elem.css('position', 'fixed');*/
     }
-
-    //>80
 }
 const getRandomArbitrary = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-window.addEventListener('scroll', listenScrollEvent);
+//window.addEventListener('scroll', listenScrollEvent);
 
 //alert($(window).width())
 

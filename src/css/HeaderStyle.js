@@ -24,18 +24,19 @@ const HeaderStyle = StyleSheet.create({
         float: 'left'
     },
     pouchA: {
-        background: "#424242 url(" + require('../img/bg_pouch.png') + ") no-repeat 50% 13px",
-        height: '44px', width: '44px',
+        background: "#ffffff url(" + require('../img/bucket/normal.png') + ") no-repeat 50% 19px",
+        height: '68px', width: '68px',
         borderRadius: '44px',
-        float: 'left',
-        position: 'relative',
+        position: 'absolute',
+        top:'19px',
+        right:'27px',
         ':hover': {
-            backgroundColor: '#697a7c'
+            backgroundImage: "url(" + require('../img/bucket/hover.png') + ")",
         },
         ':hover span': {
-            background: '#3fa59e',
-            boxShadow: 'none',
-            border: '1px solid #3fa59e'
+            background: '#fe545b',
+            boxShadow: 'none'
+            /*border: '1px solid #fe545b'*/
         }
     },
     pouchInstagram: {
@@ -62,25 +63,25 @@ const HeaderStyle = StyleSheet.create({
     pouch_a_span: {
 
         position: 'absolute',
-        top: '-4px',
-        right: '-6px',
+        bottom: '13px',
+        right: '17px',
         display: 'block',
-        background: '#c1953d',
+        background: '#fe545b',
         fontSize: '12px',
         lineHeight: '19px',
-        height: '19px',
-        width: '19px',
+        height: '20px',
+        width: '20px',
         textAlign: 'center',
-        borderRadius: '19px',
-        border: '1px solid #b0893e',
-        boxShadow: 'inset 0 20px 20px -10px #eec77c',
+        borderRadius: '20px',
+        /*border: '1px solid #b0893e',
+        boxShadow: 'inset 0 20px 20px -10px #eec77c',*/
         color: '#fff',
         textShadow: '0 1px #634d23',
         webkitFontSmoothing: 'auto'
     },
     floatMenuBlock: {
 
-        float: 'right',
+
         '@media (max-width: 750px)': {
             position: "absolute",
             borderRadius: "15px",
@@ -90,6 +91,13 @@ const HeaderStyle = StyleSheet.create({
             float: 'left',
             padding:"14px 0px 0px 5px"
         }
+    },
+    nav_urls: {
+        textAlign:'justify',
+        width:'80%',
+        /*maxWidth:'1104px',*/
+        marginLeft: '3%',
+        minWidth:'712px'
     },
     phoneNumberMenuBlock: {
 
@@ -102,6 +110,12 @@ const HeaderStyle = StyleSheet.create({
         }
     },
     menuInlineUl:{
+        display:'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent:'space-around',
+        alignItems:'center',
+
         '@media (max-width: 750px)': {
             marginLeft: "-35px",
             display:"none"

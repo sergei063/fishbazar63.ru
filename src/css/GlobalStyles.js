@@ -43,9 +43,9 @@ const styles = StyleSheet.create({
         },
         main: {
             //left: '10%',
-            backgroundColor:'#efefef',
+            backgroundColor:'#fff',
             textIndent: '2em',
-            padding:'10px',
+            padding:'0px',
             '@media (max-width: 750px)': {
                /* top: '25%',
                 width:'100%',
@@ -54,8 +54,7 @@ const styles = StyleSheet.create({
         },
         nav: {
             backgroundColor: "white",
-            padding:'26px 5px 0 0',
-            textAlign:'right',
+            padding:'0px 5px 0 0',
 
             '@media (max-width: 750px)': {
                 /* top: '25%',
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
 
         },
         header: {
-            height:'118px',
+            height:'156px',
             zIndex: '10000',
             backgroundColor: "white"
         },

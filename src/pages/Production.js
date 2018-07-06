@@ -7,7 +7,7 @@ import Katalog from '../Katalog';
 import NumericInput from 'react-numeric-input';
 import createHistory from 'history/createBrowserHistory'
 import $ from 'jquery'
-import uniqid  from 'uniqid';
+
 const history = createHistory()
 
 
@@ -40,23 +40,10 @@ class AllProducts extends React.Component {
             filter=null
         }
 
-        const getLIproduct = ()=> {
-
-
-            let key=0, r = [];
-            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }});this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span key={key} className={css((!filter)? AppStyle.link_active:AppStyle.link)}>Все</span></span>);
-            ++key;
-
-            Katalog.getGroup().map(p => {
-                r.push(<span  key={key}  id={p.name} onClick={() => {this.props.history.push({pathname: `/production/`,state: { filter: p.name }}); this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter===p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
-                ++key;
-            })
-            return r;
-        }
 
         return (
             <div>
-                <div  className={css(ProductionStyle.groupProduct)}>{getLIproduct()}</div>
+                <div  className={css(ProductionStyle.groupProduct)}>{Katalog.getProductGroup(this.props,filter)}</div>
             <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
                 <br/>
                 <br/>
@@ -69,6 +56,20 @@ class AllProducts extends React.Component {
             </div>
             </div>
         )
+    }
+
+    getLIproduct(filter) {
+
+
+        let key=0, r = [];
+        r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }});this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span key={key} className={css((!filter)? AppStyle.link_active:AppStyle.link)}>Все</span></span>);
+        ++key;
+
+        Katalog.getGroup().map(p => {
+            r.push(<span  key={key}  id={p.name} onClick={() => {this.props.history.push({pathname: `/production/`,state: { filter: p.name }}); this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter===p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
+            ++key;
+        })
+        return r;
     }
 
     scrollToProductuionContainer(){

@@ -4,14 +4,22 @@ import {StyleSheet, css} from 'aphrodite/no-important';
 const HomeStyle = StyleSheet.create({
 
     cnt: {
+
+        backgroundColor:'#fff',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent: 'space-between',
+        alignItems: 'stretch',
+        alignContent: 'stretch',
+
         width: '100%',
-        margin: '0 auto',
+        marginTop: '118px',
         position: 'relative',
-        overflow:"hidden",
-        '@media (max-width: 1400px)': {
-            margin: '0'
-        }
+        overflow: "hidden",
+        '@media (max-width: 1400px)': {}
     },
+
     ul: {
         listStyle: 'none',
 
