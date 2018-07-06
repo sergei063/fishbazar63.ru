@@ -2,13 +2,13 @@ import React from 'react';
 
 import {css} from "aphrodite/no-important";
 import QualityAssuranceStyle from "./QualityAssuranceStyle";
-import DeliveryStyle from "../Delivery/DeliveryStyle";
+
 
 
 
 
 const QualityAssurance = (props) => {
-
+    let {isMinimize} = props;
     return (
         <div className={css(QualityAssuranceStyle.cnt)}>
             <div className={css(QualityAssuranceStyle.h116)}></div>
@@ -26,17 +26,44 @@ const QualityAssurance = (props) => {
                     <div className={css(QualityAssuranceStyle.caption)}>Природные места<br/>добычи</div>
                     <div className={css(QualityAssuranceStyle.h44)}></div>
                     <div className={css(QualityAssuranceStyle.text)}>Рыба - наш семейный бизнес. Поставляем свежемороженные морепродукты более 20 лет, сотрудничаем с крупнейшими  добывающими компаниями Дальнего Востока, и импортируем рыбу и морепродукты из Аргентины и Чили.</div>
+
+                    <div style={(isMinimize) ? {display: 'none'} : {display: 'block'}}>
+                        <div className={css(QualityAssuranceStyle.h20)}></div>
+                        <div className={css(QualityAssuranceStyle.caption)}>Качество подтвержденное сертификатами<br/>добычи
+                        </div>
+                        <div className={css(QualityAssuranceStyle.h44)}></div>
+                        <div className={css(QualityAssuranceStyle.text)}>Морепродукты «FishBazar» соответствуют как
+                            международным, так и российским стандартам качества. Наши эксперты отбирают лучшие партии,
+                            отвечают за проверку документации и ветеринарного свидетельства.
+                        </div>
+                    </div>
+
                 </div>
                 <div className={css(QualityAssuranceStyle.w304, QualityAssuranceStyle.MR96)}>
                     <div className={css(QualityAssuranceStyle.h116)}></div>
                     <div className={css(QualityAssuranceStyle.caption)}>Правильная перевозка и<br/>хранение</div>
                     <div className={css(QualityAssuranceStyle.h44)}></div>
                     <div className={css(QualityAssuranceStyle.text)}>Знаем как сохранить природную свежесть продукта. На этапах транспортировки и хранения поддерживаем требуемый температурный режим и влажность. Морепродукты замораживаются только один раз.</div>
+
+                    <div style={(isMinimize) ? {display: 'none'} : {display: 'block'}}>
+                        <div className={css(QualityAssuranceStyle.h44)}></div>
+                        <div className={css(QualityAssuranceStyle.caption)}>Работаем без<br/>посредников</div>
+                        <div className={css(QualityAssuranceStyle.h44)}></div>
+                        <div className={css(QualityAssuranceStyle.text)}>Главная причина низкого качества и высокой цены
+                            морепродуктов в магазинах, это транспортировка через 33 оптовика до конечного покупателя. Мы
+                            напрямую закупаем морепродукты у добывающих компаний и организуем доставку с Дальнего
+                            Востока до Самарской области, это и помогает сохранять низкие цены близкие к оптовым.
+                        </div>
+                    </div>
+
+
                 </div>
 
 
             </div>
-
+            <div style={(isMinimize) ? {display: 'none'} : {display: 'block'}}>
+                <div className={css(QualityAssuranceStyle.h116)}></div>
+            </div>
         </div>
     );
 }

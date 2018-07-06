@@ -532,7 +532,7 @@ const Katalog = {
         if (shoppingCart == null) {
             shoppingCart = {}
         }
-        shoppingCart[fish.id] = {...fish, count: countFish[0].getValueAsNumber(),}
+        shoppingCart[fish.id] = {...fish, count: countFish,}
         localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
         $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 

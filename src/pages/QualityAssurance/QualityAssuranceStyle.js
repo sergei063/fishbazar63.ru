@@ -4,7 +4,7 @@ import {FuturaFont, MetaSerifProFont} from "../../css/AppStyle";
 
 const QualityAssuranceStyle = StyleSheet.create({
     cnt: {
-        marginTop: '160px',
+        marginTop: '0px',
         textIndent: '0',
         backgroundColor: '#fff'
 
@@ -43,7 +43,7 @@ const QualityAssuranceStyle = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'stretch',
         alignContent: 'stretch',
-        height: '395px'
+
     },
     seafood_layer2: {
         width: '341px',
@@ -80,6 +80,9 @@ const QualityAssuranceStyle = StyleSheet.create({
     },
     h44:{
         height:'44px'
+    },
+    h20:{
+        height:'20px'
     }
 
 

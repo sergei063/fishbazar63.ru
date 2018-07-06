@@ -47,10 +47,10 @@ const Footer = () => (
             </div>
             <div className={css(AppStyle.footer_menu)}>
                 <Link className={css(AppStyle.footer_link)} to='/production'>Морепродукты</Link><br/>
-                <Link className={css(AppStyle.footer_link)} to='/recipes'>Гарантия качества</Link>
+                <Link className={css(AppStyle.footer_link)} to='/quality_assurance'>Гарантия качества</Link>
             </div>
             <div className={css(AppStyle.footer_menu)}>
-                <Link className={css(AppStyle.footer_link)}to='/production'>Доставка</Link><br/>
+                <Link className={css(AppStyle.footer_link)}to='/delivery'>Доставка</Link><br/>
                 <Link className={css(AppStyle.footer_link)} to='/recipes'>Рецепты</Link></div>
             <div>
                 <div className={css(AppStyle.phoneNumber)}>

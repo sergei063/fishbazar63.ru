@@ -12,7 +12,7 @@ import SocialNetworkBlock from "../Delivery/SocialNetworkBlock/SocialNetworkBloc
 import QualityAssurance from "../QualityAssurance/QualityAssurance";
 import Recipes from "./RecipesBlog/RecipesBlog";
 import DeliveryStyle from "../Delivery/DeliveryStyle";
-import Seafood from "../Seafood/Seafood";
+import AllSeafood from "../Seafood/AllSeafood";
 
 
 
@@ -21,10 +21,11 @@ const AllShowcase = (props) => {
 
     return (
         <div>
-            <Seafood {...props}/>
+            <AllSeafood {...props}/>
+            <div className={css(DeliveryStyle.h116)}></div>
             <Delivery/>
             <SocialNetworkBlock/>
-            <QualityAssurance/>
+            <QualityAssurance isMinimize={true}/>
             <Recipes/>
             <br/>
             <br/>

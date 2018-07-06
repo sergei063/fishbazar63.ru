@@ -48,11 +48,16 @@ export const FuturaFont = {
 export const FuturaMediumFont = {
     fontFamily: "Futura-Medium",
     src: ' url("' + require('../fonts/Futura/Futura-Medium/futura-medium.eot') + '"), url("' + require('../fonts/Futura/Futura-Medium/futura-medium.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/Futura/Futura-Medium/futura-medium.woff') + '") format("woff")',
-}
-
-;export const MetaSerifProFont = {
+};
+export const MetaSerifProFont = {
     fontFamily: "MetaSerifPro-Medium",
     src: ' url("' + require('../fonts/MetaSerifPro/MetaSerifPro-Medium/metaserifpro-medium.eot') + '"), url("' + require('../fonts/MetaSerifPro/MetaSerifPro-Medium/metaserifpro-medium.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MetaSerifPro/MetaSerifPro-Medium/metaserifpro-medium.woff') + '") format("woff")',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+};
+export const MetaSerifProLightFont = {
+    fontFamily: "MetaSerifPro-Light",
+    src: ' url("' + require('../fonts/MetaSerifPro/MetaSerifPro-Light/metaserifpro-light.eot') + '"), url("' + require('../fonts/MetaSerifPro/MetaSerifPro-Light/metaserifpro-light.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/MetaSerifPro/MetaSerifPro-Light/metaserifpro-light.woff') + '") format("woff")',
     fontStyle: 'normal',
     fontWeight: 'normal',
 };

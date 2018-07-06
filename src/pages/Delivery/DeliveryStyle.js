@@ -4,7 +4,7 @@ import {FuturaFont, MetaSerifProFont} from "../../css/AppStyle";
 
 const DeliveryStyle = StyleSheet.create({
     cnt: {
-        marginTop: '160px',
+        marginTop: '0px',
         textIndent: '0',
         height:'779px',
         backgroundColor:'#f9f9f9'

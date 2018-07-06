@@ -204,8 +204,8 @@ class Player extends React.Component {
 
 const Production = () => (
     <Switch>
-        <Route exact path='/production' component={AllProducts}/>
-        <Route path='/production/:id' component={Player}/>
+        <Route exact path='/production1' component={AllProducts}/>
+        <Route path='/production1/:id' component={Player}/>
     </Switch>
 )
 export default Production;
