@@ -7,12 +7,10 @@ import DeliveryStyle from "../Delivery/DeliveryStyle";
 import AppStyle from "../../css/AppStyle";
 import $ from "jquery";
 import ProductionStyle from "../../css/ProductionStyle";
+import Counter from "../../components/Counter/Counter";
 
 
 const BreadCrumbs = (props) => {
-    console.log(props.item)
-
-
     return (
         <div>
             <Link onClick={(event) => {
@@ -50,6 +48,7 @@ const SeafoodItem = (props) => {
                         <BreadCrumbs item={item} history={props.history}/>
                         <div><img src={item.img} width='304px' height='172px'></img></div>
                         <div>Вылов: Россия, Камчатка</div>
+                        <div>&nbsp;</div>
                         <div>Производитель: “ Лазурит”</div>
                     </div>
                 </div>
@@ -59,17 +58,18 @@ const SeafoodItem = (props) => {
                     <div>{item.name}&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
                         {item.info}
                     </div>
+                    <Counter id="countFish" packaging={item.packaging}/>
                     <div>
                         <button onClick={() => {
-                            AddShoppingCart(item, 1)
+                            AddShoppingCart(item,  $('#countFish'))
                         }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>В корзину
                         </button>
                     </div>
-                    <div>Вес одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>1,5 кг</span> <br/>
+                    <div  className={css(SeafoodItemStyle.aboutFish)}>Вес одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>1,5 кг</span> <br/>
                         Стоимость одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>367 руб</span><br/>
                         <span className={css(SeafoodItemStyle.hidden_text)}>вес может отличатся +/– 200гр</span>
                     </div>
-                    <div>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
+                    <div className={css(SeafoodItemStyle.aboutDelivery)}>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
                         рыбы<br/>
                         <span className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</span>
 
@@ -82,7 +82,8 @@ const SeafoodItem = (props) => {
         </div>
     )
 }
-const AddShoppingCart = (fish, countFish) => {
+const AddShoppingCart = (fish, countFishEl) => {
+    let countFish = Number.parseInt(countFishEl[0].value);
     Katalog.addShoppingCart(fish, countFish);
 
 

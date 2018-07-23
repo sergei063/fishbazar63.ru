@@ -101,6 +101,24 @@ const SeafoodItemStyle = StyleSheet.create({
         color: '#7794e6',
         fontSize: '14px'
     },
+    aboutDelivery: {
+        fontFamily: [MetaSerifProLightFont, "sans-serif"],
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '1.71',
+
+        width: '303px',
+        fontSize: '14px'
+    },
+    aboutFish: {
+        fontFamily: [MetaSerifProLightFont, "sans-serif"],
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '1.5',
+        fontSize: '14px'
+    },
     hidden_text: {
         fontFamily: [MetaSerifProLightFont, "sans-serif"],
         fontWeight: 'normal',

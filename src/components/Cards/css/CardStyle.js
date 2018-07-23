@@ -54,7 +54,7 @@ const CardStyle = StyleSheet.create({
 
             position:'absolute',
             color:'#fff',
-            left: '-11px',
+            left: '17px',
             top: '17px',
             fontSize: '14px'
         }

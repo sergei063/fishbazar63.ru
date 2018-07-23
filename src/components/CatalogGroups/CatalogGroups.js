@@ -39,7 +39,6 @@ const CatalogGroups = (props) => {
 
 const OneGroup = (props) => {
     let {history, pathname, filter, urlFilter, text} = props;
-    console.log(urlFilter)
     return (
         <li onClick={() => {
             history.push({pathname: pathname, state: {filter: urlFilter}});

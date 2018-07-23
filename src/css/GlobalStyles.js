@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
             color: 'inherit',
             cursor:'pointer'
         },
-
+        '*' :{
+            outline: '0 !important'
+        },
 
 
         body: {
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
         main: {
             //left: '10%',
             backgroundColor:'#fff',
-            textIndent: '2em',
+            textIndent: '0em',
             padding:'0px',
             '@media (max-width: 750px)': {
                /* top: '25%',

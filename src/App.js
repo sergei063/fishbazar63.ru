@@ -87,7 +87,11 @@ class App extends React.Component {
         )
     }
     componentDidMount(){
-        Katalog.updatePounch();
+
+
+    }
+    componentDidUpdate(){
+
     }
 }
 

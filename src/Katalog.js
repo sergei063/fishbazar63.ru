@@ -23,7 +23,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 20,5г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/>            Омега3(г). 1,6г<br/>",
                 "hit": true,
-                "img": require('./img/seafood/горбуша.png'),
+                "img": require('./img/seafood/pink salmon.png'),
                 "price": 245
             },
             {
@@ -35,7 +35,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue": "Калории 127ккал<br/>Белки. 19г<br/>Жиры 5,6г<br/>Углеводы. 0г<br/>Омега3(г). 1г",
                 "hit": false,
-                "img": require('./img/seafood/кета.png'),
+                "img": require('./img/seafood/chum.png'),
                 "price": 340
             }/*,
              {
@@ -58,7 +58,7 @@ const Price = {
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 21,6г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/> Омега3(г). 0г",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "hit": false,
-                "img": require('./img/seafood/кижуч.png'),
+                "img": require('./img/seafood/coho.png'),
                 "price": 480
             },
             {
@@ -70,7 +70,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": true,
-                "img": require('./img/seafood/семга.png'),
+                "img": require('./img/seafood/salmon.png'),
                 "weightFish":{
                     "size":"s",
                     "help":"2-3кг"
@@ -87,7 +87,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
-                "img": require('./img/seafood/семга.png'),
+                "img": require('./img/seafood/salmon.png'),
                 "weightFish":{
                     "size":"m",
                     "help":"3-4кг"
@@ -103,7 +103,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
-                "img": require('./img/seafood/семга.png'),
+                "img": require('./img/seafood/salmon.png'),
                 "weightFish":{
                     "size":"l",
                     "help":"5-6кг"
@@ -120,7 +120,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
-                "img": require('./img/seafood/семга.png'),
+                "img": require('./img/seafood/salmon.png'),
                 "weightFish":{
                     "size":"xl",
                     "help":"6-7кг"
@@ -138,7 +138,7 @@ const Price = {
                 "nutritionalValue": "Калории 141ккал<br>Белки. 19,9г<br>Жиры 6,2г<br>Углеводы. 0г<br>Омега3(г). 0,9г",
                 "packagingInfo": "Реализуется штучно.  Ориентировочный вес 2-3 кг",
                 "hit": true,
-                "img": require('./img/seafood/форель.png'),
+                "img": require('./img/seafood/trout.png'),
                 "price": 750
             },
             {
@@ -150,7 +150,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 69ккал<br/>                Белки. 15,3г<br/>            Жиры 0,4г<br/>            Углеводы. 3,3г<br/>            Омега3(г). 0,1г",
                 "hit": true,
-                "img": require('./img/seafood/треска.png'),
+                "img": require('./img/seafood/cod.png'),
                 "price": 220
 
             }, {
@@ -161,7 +161,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": require('./img/seafood/треска.png'),
+                "img": require('./img/seafood/cod.png'),
                 "price": 205
 
 
@@ -175,7 +175,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 56ккал<br/>Белки. 12,2г<br/>Жиры 0,4г<br/>Углеводы. 0г<br/>Омега3(г). 0,2г",
                 "hit": true,
-                "img": require('./img/seafood/минтай.png'),
+                "img": require('./img/seafood/pollock.png'),
                 "price": 117
 
             },
@@ -188,7 +188,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 90ккал<br/>                Белки. 15,7г<br/>           Жиры 3г<br/>            Углеводы. 0г<br/>            Омега3(г). 0г",
                 "hit": false,
-                "img": require('./img/seafood/камбала.png'),
+                "img": require('./img/seafood/flounder.png'),
                 "price": 165
             },
             {
@@ -199,7 +199,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": true,
-                "img": require('./img/seafood/камбала.png'),
+                "img": require('./img/seafood/flounder.png'),
                 "price": 175
             },
             {
@@ -210,7 +210,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": require('./img/seafood/камбала.png'),
+                "img": require('./img/seafood/flounder.png'),
                 "price": 279
             },
             {
@@ -221,7 +221,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": require('./img/seafood/корюшка.png'),
+                "img": require('./img/seafood/smelt.png'),
                 "price": 265
             },
             {
@@ -233,7 +233,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 248ккал<br/>Белки. 17,7г<br/>Жиры 19,5г<br/>Углеводы. 0г<br/>Омега3(г). 0г",
                 "hit": false,
-                "img": require('./img/seafood/сельдь.png'),
+                "img": require('./img/seafood/herring.png'),
                 "price": 105
             },
             {
@@ -245,7 +245,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": require('./img/seafood/скумбрия.png'),
+                "img": require('./img/seafood/mackerel.png'),
                 "price": 180
             },
         ]
@@ -262,7 +262,7 @@ const Price = {
                 "packagingInfo" : "",
                 "hit": false,
                 "nutritionalValue":"Калории 77ккал<br>Белки. 11,5г<br>Жиры 2г<br>Углеводы. 3,3г<br>Омега3(г). 0г",
-                "img": require('./img/seafood/мидии.png'),
+                "img": require('./img/seafood/mussels.png'),
                 "price": 590
             }, {
                 "id": "scallop",
@@ -272,7 +272,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": require('./img/seafood/гребешок.png'),
+                "img": require('./img/seafood/scallop.png'),
                 "price": 2500
             },{
                 "id": "squid",
@@ -283,7 +283,7 @@ const Price = {
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 100ккал<br/>                Белки. 18г<br/>            Жиры 2,2г<br/>            Углеводы. 2г<br/>            Омега3(г). 1,4г",
                 "hit": false,
-                "img": require('./img/seafood/кальмар.png'),
+                "img": require('./img/seafood/squid.png'),
                 "price": 235
             },
 
@@ -301,7 +301,7 @@ const Price = {
                 "packagingInfo" : "Размер 90 -120",
                 "nutritionalValue" : "Калории 87ккал<br/>Белки. 18,3г<br/>Жиры 1,2г<br/>Углеводы. 0,8г<br/>Омега3(г). 0,5г",
                 "hit": true,
-                "img": require('./img/seafood/креветка_углохвостая.png'),
+                "img": require('./img/seafood/shrimp.png'),
                 "price": "-- "
             },
             {
@@ -313,7 +313,7 @@ const Price = {
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "",
                 "hit": true,
-                "img": require('./img/seafood/тигровая_креветка.png'),
+                "img": require('./img/seafood/Tiger shrimp.png'),
                 "price": 790
             },
             {
@@ -343,7 +343,7 @@ const Price = {
                 "nutritionalValue" : "Калории 143ккал<br>Белки. 26,4г<br>Жиры 1,9г<br>Углеводы. 3,1г<br>Омега3(г). 0,5г",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": require('./img/seafood/лангустины.png'),
+                "img": require('./img/seafood/langoustines.png'),
                 "price": 650
             },
 
@@ -549,12 +549,13 @@ const Katalog = {
 
     },
     updatePounch: () => {
+
         let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+
         if (shoppingCart == null) {
             shoppingCart = {}
         }
         $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
-
 
     },
 

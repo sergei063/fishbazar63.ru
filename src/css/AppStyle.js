@@ -62,6 +62,19 @@ export const MetaSerifProLightFont = {
     fontWeight: 'normal',
 };
 
+export const LucidaGrandeFont = {
+    fontFamily: "LucidaGrande",
+    src: ' url("' + require('../fonts/lucida-grande/lucida-grande.eot') + '"), url("' + require('../fonts/lucida-grande/lucida-grande.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/lucida-grande/lucida-grande.woff') + '") format("woff")',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+};
+export const LucidaGrandeFontB = {
+    fontFamily: "LucidaGrande",
+    src: ' url("' + require('../fonts/lucida-grande/lucida-grande.eot') + '"), url("' + require('../fonts/lucida-grande/lucida-grande.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/lucida-grande/lucida-grande.woff') + '") format("woff")',
+    fontStyle: 'normal',
+    fontWeight:'bold',
+};
+
 
 const AppStyle = StyleSheet.create({
 
@@ -348,8 +361,8 @@ const AppStyle = StyleSheet.create({
     buttonRed: {
         color: '#fff',
         border:'0',
-        fontSize:'22px',
-        fontFamily: [coolFont, "sans-serif"],
+        fontSize:'14px',
+        fontFamily: [LucidaGrandeFont, "sans-serif"],
         textDecoration: 'none',
         userSelect: 'none',
         background: '#fe545b',
@@ -362,6 +375,26 @@ const AppStyle = StyleSheet.create({
         },
         ':active': {
             background: '#fe545b',
+        }
+    },
+    buttonGrey: {
+        color: '#000',
+        border:'0',
+        fontSize:'14px',
+        fontFamily: [LucidaGrandeFont, "sans-serif"],
+        textDecoration: 'none',
+        userSelect: 'none',
+        fontWeight:'bold',
+        background: 'rgba(31, 35, 44, 0.1)',
+        height:'40px',
+        borderRadius:'100px',
+        outline: 'none',
+        cursor: 'pointer',
+        ':hover': {
+            background: 'rgba(31, 35, 44, 0.2)',
+        },
+        ':active': {
+            background: 'rgba(31, 35, 44, 0.2)',
         }
     },
 

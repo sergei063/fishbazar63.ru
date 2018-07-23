@@ -17,22 +17,28 @@ import AllSeafood from "../Seafood/AllSeafood";
 
 
 //<img className={css(HomeStyle.productPhotoImg)} src={require(`${p.img}`)} alt=""></img>
-const AllShowcase = (props) => {
+class AllShowcase extends React.Component {
+    componentDidMount(){
+        Katalog.updatePounch();
+    }
 
-    return (
-        <div>
-            <AllSeafood {...props}/>
-            <div className={css(DeliveryStyle.h116)}></div>
-            <Delivery/>
-            <SocialNetworkBlock/>
-            <QualityAssurance isMinimize={true}/>
-            <Recipes/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-        </div>
-    )
+    render()
+    {
+        return (
+            <div>
+                <AllSeafood {...this.props}/>
+                <div className={css(DeliveryStyle.h116)}></div>
+                <Delivery/>
+                <SocialNetworkBlock/>
+                <QualityAssurance isMinimize={true}/>
+                <Recipes/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        )
+    }
 }
 
 const Home = () => (
