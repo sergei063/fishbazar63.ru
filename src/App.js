@@ -22,6 +22,7 @@ import VK from "./components/SocialNetwork/Vk";
 import QualityAssurance from "./pages/QualityAssurance/QualityAssurance";
 import DeliveryPage from "./pages/Delivery/DeliveryPage";
 import Seafood from "./pages/Seafood/Seafood";
+import {connect} from "react-redux";
 
 const Main = () => (
     <main>
@@ -97,3 +98,8 @@ class App extends React.Component {
 
 
 export default App;
+
+//const mapStateToProps = (state) => ({});
+
+
+//export default connect(mapStateToProps) (App);

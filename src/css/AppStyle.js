@@ -75,10 +75,12 @@ export const LucidaGrandeFontB = {
     fontWeight:'bold',
 };
 
+export  const tabletMedia = '@media (max-width: 900px)';
 
 const AppStyle = StyleSheet.create({
 
     displayNone: {display: 'none'},
+    hidden: {visibility: 'hidden'},
     displayBlock: {display: 'block'},
     bottomLine: {borderBottom: '1px dotted #c4c4c4'},
     textAlignRigh: {textAlign: 'right'},
@@ -93,7 +95,7 @@ const AppStyle = StyleSheet.create({
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fon.jpg') + "), url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "),url(" + require('../img/fons/krevetki.jpg') + "), linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0) 51%, #000000)",
         '@media (max-width: 750px)': {
-            backgroundImage: "url(" + require('../img/fons/mobile/fried_langistines.jpg') + "),url(" + require('../img/fons/mobile/langoustine.jpg') + "),url(" + require('../img/fons/mobile/mintai.jpg') + "), url(" + require('../img/fons/mobile/krevetki.jpg') + ")",
+            backgroundImage: "url(" + require('../img/fon.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
             minHeight: '0'
@@ -294,11 +296,18 @@ const AppStyle = StyleSheet.create({
     width100: {
         width:'100%'
     },
+    menu_inline_logo: {
+        flexGrow: '2',
+        '@media (max-width: 900px)': {
+           display:'none'
+        }
+    },
     menu_inline: {
         fontFamily: [FuturaMediumFont, "sans-serif"],
         color: '#212121',
         minWidth:'138px',
         width:'15%',
+
         fontWeight:'bold',
         fontSize: '18px',
         //backgroundColor: 'white',
@@ -314,7 +323,8 @@ const AppStyle = StyleSheet.create({
         }
     },
     menu_inline_tel: {
-        fontSize:'29px'
+        fontFamily: [FuturaFont, "sans-serif"],
+        fontSize:'18px'
     },
     menu_inline_ul: {
         ...menu_inline_ul

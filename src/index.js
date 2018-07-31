@@ -1,24 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router} from 'react-router-dom'
-
 import './index.css';
 import App from './App';
 import $ from 'jquery'
-
 import registerServiceWorker from './registerServiceWorker';
 import './css/GlobalStyles'; // global styles through Aphrodite
 import {css} from 'aphrodite/no-important';
-
 import AppStyle from './css/AppStyle';
 
 
 import createHistory from 'history/createBrowserHistory'
-const history = createHistory()
+import {applyMiddleware, createStore,compose} from "redux";
+import allReducers from "./reducers";
+import {Provider} from "react-redux";
+import {
+    ConnectedRouter,
+    routerReducer,
+    routerMiddleware,
+    push
+} from "react-router-redux";
+
+
+
+const history = createHistory();
+const middleware = routerMiddleware(history);
+
+const composeEnhancers =
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+            // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+        }) : compose;
+
+const enhancer = composeEnhancers(
+    applyMiddleware(...middleware),
+
+);
+const store = createStore(allReducers, enhancer);
+
+//const store = createStore(allReducers, applyMiddleware(middleware));
+store.subscribe(()=>{
+    console.log('subscribe',store.getState())
+})
 
 history.listen((location, action) => {
     //console.log(location);
 });
+
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -41,9 +70,11 @@ var isMobile = {
 };
 
 ReactDOM.render(
-    <Router history={history} basename="/fishbazar63.ru">
-        <App  history={history} isMobile={isMobile} />
-    </Router>
+    <Provider store={store}>
+        <ConnectedRouter  history={history} basename="/fishbazar63.ru">
+            <App history={history} isMobile={isMobile}/>
+        </ConnectedRouter >
+    </Provider>
     , document.getElementById('root'));
 
 const listenScrollEvent = () => {

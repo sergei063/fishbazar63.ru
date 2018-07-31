@@ -8,6 +8,8 @@ import AppStyle from "../../css/AppStyle";
 import $ from "jquery";
 import ProductionStyle from "../../css/ProductionStyle";
 import Counter from "../../components/Counter/Counter";
+import {connect} from "react-redux";
+import {addFishToSeafoodShoppingCart} from "../../actions";
 
 
 const BreadCrumbs = (props) => {
@@ -38,7 +40,7 @@ const SeafoodItem = (props) => {
     if (!item) {
         return <div>Ничего не найдено</div>
     }
-
+    let weightOfOneFishText = (item.weightOfOneFish)?`dd${item.weightOfOneFish}`:"&nbps;";
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
             <div className={css(SeafoodItemStyle.h124)}></div>
@@ -47,9 +49,9 @@ const SeafoodItem = (props) => {
                     <div className={css(SeafoodItemStyle.fishContainerFirst)}>
                         <BreadCrumbs item={item} history={props.history}/>
                         <div><img src={item.img} width='304px' height='172px'></img></div>
-                        <div>Вылов: Россия, Камчатка</div>
+                        <div>{(item.catchDate)?`Вылов: ${item.catchDate}`:"&nbsp;"}</div>
                         <div>&nbsp;</div>
-                        <div>Производитель: “ Лазурит”</div>
+                        <div>{(item.producer)?`Производитель: ${item.producer}`:"&nbsp;"}</div>
                     </div>
                 </div>
 
@@ -61,15 +63,17 @@ const SeafoodItem = (props) => {
                     <Counter id="countFish" packaging={item.packaging}/>
                     <div>
                         <button onClick={() => {
-                            AddShoppingCart(item,  $('#countFish'))
+                            AddShoppingCart(item,  $('#countFish'),props)
                         }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>В корзину
                         </button>
                     </div>
-                    <div  className={css(SeafoodItemStyle.aboutFish)}>Вес одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>1,5 кг</span> <br/>
-                        Стоимость одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>367 руб</span><br/>
+                    <div  className={css((!item.weightOfOneFish?AppStyle.hidden:SeafoodItemStyle.aboutFish))}>
+                        Вес одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>{item.weightOfOneFish} кг</span> <br/>
+                        Стоимость одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>{item.weightOfOneFish*item.price} руб</span><br/>
                         <span className={css(SeafoodItemStyle.hidden_text)}>вес может отличатся +/– 200гр</span>
                     </div>
-                    <div className={css(SeafoodItemStyle.aboutDelivery)}>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
+
+                    <div className={css( (item.packaging==='шт'?SeafoodItemStyle.aboutDelivery:AppStyle.hidden))}>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
                         рыбы<br/>
                         <span className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</span>
 
@@ -82,13 +86,23 @@ const SeafoodItem = (props) => {
         </div>
     )
 }
-const AddShoppingCart = (fish, countFishEl) => {
+const AddShoppingCart = (fish, countFishEl,props) => {
     let countFish = Number.parseInt(countFishEl[0].value);
     Katalog.addShoppingCart(fish, countFish);
 
-
+    props.addSeafoodItem(fish, countFish)
     alert("Добавлено в корзину: " + fish.name + " (" + countFish + " " + fish.packaging + ")");
 
 }
 
-export default SeafoodItem;
+
+
+const mapStateToProps = (state) => (state);
+
+const matchDispatchToProps = (dispatch) => ({
+    addSeafoodItem:(fish, countFish)=>{
+        dispatch(addFishToSeafoodShoppingCart(fish,countFish))
+    }
+})
+
+export default connect(mapStateToProps,matchDispatchToProps) (SeafoodItem);

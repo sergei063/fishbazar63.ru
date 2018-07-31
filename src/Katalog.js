@@ -24,6 +24,9 @@ const Price = {
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 20,5г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/>            Омега3(г). 1,6г<br/>",
                 "hit": true,
                 "img": require('./img/seafood/pink salmon.png'),
+                "weightOfOneFish":1.5,
+                "producer":"Рыболовецкая Артель \"Нижнее Пронге\" Россия Хабаровский край",
+                "catchDate":"26.06.2018",
                 "price": 245
             },
             {
@@ -35,7 +38,10 @@ const Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue": "Калории 127ккал<br/>Белки. 19г<br/>Жиры 5,6г<br/>Углеводы. 0г<br/>Омега3(г). 1г",
                 "hit": false,
+                "weightOfOneFish":1.9,
                 "img": require('./img/seafood/chum.png'),
+                "producer":"АО \"Хайрюзовский рыбоконсервный завод\" Россия Камчатский край Тигильский район с. Усть-Хайрюзово",
+                "catchDate":"01.07.2018",
                 "price": 340
             }/*,
              {
@@ -58,12 +64,13 @@ const Price = {
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 21,6г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/> Омега3(г). 0г",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "hit": false,
+                "weightOfOneFish":2,
                 "img": require('./img/seafood/coho.png'),
                 "price": 480
             },
             {
                 "id": "salmon_of_chile_s",
-                "showCaseName": "Семга Premium<br/>",
+                "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -71,6 +78,8 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": true,
                 "img": require('./img/seafood/salmon.png'),
+                "producer":"Chile Ventisqueros S.A.",
+                "weightOfOneFish":2.5,
                 "weightFish":{
                     "size":"s",
                     "help":"2-3кг"
@@ -80,7 +89,7 @@ const Price = {
             },
             {
                 "id": "salmon_of_chile_m",
-                "showCaseName": "Семга Premium<br/>",
+                "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -88,6 +97,8 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
                 "img": require('./img/seafood/salmon.png'),
+                "producer":"Chile Ventisqueros S.A.",
+                "weightOfOneFish":3.5,
                 "weightFish":{
                     "size":"m",
                     "help":"3-4кг"
@@ -96,7 +107,7 @@ const Price = {
 
             },{
                 "id": "salmon_of_chile_l",
-                "showCaseName": "Семга Premium<br/>",
+                "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -104,6 +115,8 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
                 "img": require('./img/seafood/salmon.png'),
+                "producer":"Chile Ventisqueros S.A.",
+                "weightOfOneFish":5.5,
                 "weightFish":{
                     "size":"l",
                     "help":"5-6кг"
@@ -113,7 +126,7 @@ const Price = {
 
             },{
                 "id": "salmon_of_chile_xl",
-                "showCaseName": "Семга Premium<br/>",
+                "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
                 "packaging": "шт",
@@ -121,6 +134,8 @@ const Price = {
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
                 "img": require('./img/seafood/salmon.png'),
+                "producer":"Chile Ventisqueros S.A.",
+                "weightOfOneFish":7.5,
                 "weightFish":{
                     "size":"xl",
                     "help":"6-7кг"
@@ -176,6 +191,8 @@ const Price = {
                 "nutritionalValue":"Калории 56ккал<br/>Белки. 12,2г<br/>Жиры 0,4г<br/>Углеводы. 0г<br/>Омега3(г). 0,2г",
                 "hit": true,
                 "img": require('./img/seafood/pollock.png'),
+                "producer":"ООО ПКФ\"Южно-Курильский рыбокомбинат\" Россия Сазалинская обл. п.г.т. Южно-Курильск",
+                "catchDate":"25.04.2018",
                 "price": 117
 
             },
@@ -189,6 +206,8 @@ const Price = {
                 "nutritionalValue":"Калории 90ккал<br/>                Белки. 15,7г<br/>           Жиры 3г<br/>            Углеводы. 0г<br/>            Омега3(г). 0г",
                 "hit": false,
                 "img": require('./img/seafood/flounder.png'),
+                "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
+                "catchDate":"03.04.2018",
                 "price": 165
             },
             {
@@ -200,6 +219,8 @@ const Price = {
                 "packagingInfo" : "",
                 "hit": true,
                 "img": require('./img/seafood/flounder.png'),
+                "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
+                "catchDate":"03.04.2018",
                 "price": 175
             },
             {
@@ -211,6 +232,8 @@ const Price = {
                 "packagingInfo" : "",
                 "hit": false,
                 "img": require('./img/seafood/flounder.png'),
+                "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
+                "catchDate":"03.04.2018",
                 "price": 279
             },
             {
@@ -284,6 +307,8 @@ const Price = {
                 "nutritionalValue":"Калории 100ккал<br/>                Белки. 18г<br/>            Жиры 2,2г<br/>            Углеводы. 2г<br/>            Омега3(г). 1,4г",
                 "hit": false,
                 "img": require('./img/seafood/squid.png'),
+                "producer":"АО \"Северо-Курильская база Северного флота\" Россия Сахалинская обл г Северо-Курильск",
+                "catchDate":"13.06.2018",
                 "price": 235
             },
 
@@ -302,6 +327,8 @@ const Price = {
                 "nutritionalValue" : "Калории 87ккал<br/>Белки. 18,3г<br/>Жиры 1,2г<br/>Углеводы. 0,8г<br/>Омега3(г). 0,5г",
                 "hit": true,
                 "img": require('./img/seafood/shrimp.png'),
+                "producer":"ООО\" ДЕФА фишинг\"(судно\"Арктик Лайон\")",
+                "catchDate":"07.03.2018",
                 "price": "-- "
             },
             {
@@ -343,6 +370,8 @@ const Price = {
                 "nutritionalValue" : "Калории 143ккал<br>Белки. 26,4г<br>Жиры 1,9г<br>Углеводы. 3,1г<br>Омега3(г). 0,5г",
                 "packagingInfo" : "",
                 "hit": false,
+                "producer":"Аргентина",
+                "catchDate":"01.12.2018",
                 "img": require('./img/seafood/langoustines.png'),
                 "price": 650
             },
@@ -525,7 +554,7 @@ const Katalog = {
     },
     clearShoppingCart: function () {
         localStorage.removeItem('shoppingCart');
-        $('#header_pouch span').html(0);
+        //$('#header_pouch span').html(0);
     },
     addShoppingCart: (fish, countFish) => {
         let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
@@ -534,7 +563,7 @@ const Katalog = {
         }
         shoppingCart[fish.id] = {...fish, count: countFish,}
         localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
-        $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
+        //$('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
 
     },deleteShoppingCart: (fishId) => {
@@ -544,7 +573,7 @@ const Katalog = {
         }
         delete shoppingCart[fishId]
         localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
-        $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
+        //$('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
 
     },
@@ -555,7 +584,7 @@ const Katalog = {
         if (shoppingCart == null) {
             shoppingCart = {}
         }
-        $('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
+        //$('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
     },
 

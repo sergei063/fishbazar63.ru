@@ -7,6 +7,7 @@ import AppStyle from './css/AppStyle';
 
 import Carousel from './components/Carousel';
 import HeaderStyle from "./css/HeaderStyle";
+import PouchIcon from "./containers/PouchIcon/PouchIcon";
 
 
 const carousel = new Carousel();
@@ -47,8 +48,7 @@ const Slider = () => {
             <p id="slider_text_4" className={css(AppStyle.displayNone)} ><Link to='/production/shrimp_angular'>...Не нужно платить за лед.<br/>Наши креветки <u>100%</u> без глазури.</Link></p>
         </div>
         <div className={css(AppStyle.fastDeliveryText)}>Быстрая доставка к вам домой</div>
-        <Link id="header_pouch" className={css(HeaderStyle.pouchA)} to='/shopping_cart'><span
-            className={css(HeaderStyle.pouch_a_span)}>0</span></Link>
+        <PouchIcon/>
         <div id="slider_navigate_this"></div>
 
     </div>)

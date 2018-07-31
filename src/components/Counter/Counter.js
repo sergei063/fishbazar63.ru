@@ -20,19 +20,27 @@ class Counter extends React.Component {
     }
     handleClickPlus() {
         this.setState({
-            counter: this.state.counter >= 1 ? this.state.counter + 1 : 1
+            counter: this.state.counter >= 0 ? this.state.counter + 1 : 0
+        }, function() {
+            if (this.calbackFn) {
+                this.calbackFn.apply()
+            }
         });
+
+
     }
     handleClickMinus() {
         this.setState({
-            counter: this.state.counter >= 2 ? this.state.counter - 1 : 1
+            counter: this.state.counter >= 1 ? this.state.counter - 1 : 0
+        }, function() {
+            if (this.calbackFn) {
+                this.calbackFn.apply()
+            }
         });
 
     }
     componentDidUpdate(){
-        if (this.calbackFn) {
-            this.calbackFn.apply(this)
-        }
+
     }
     render() {
         return (

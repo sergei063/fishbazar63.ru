@@ -23,22 +23,7 @@ const HeaderStyle = StyleSheet.create({
         position: 'relative',
         float: 'left'
     },
-    pouchA: {
-        background: "#ffffff url(" + require('../img/bucket/normal.png') + ") no-repeat 50% 19px",
-        height: '68px', width: '68px',
-        borderRadius: '44px',
-        position: 'absolute',
-        top:'19px',
-        right:'27px',
-        ':hover': {
-            backgroundImage: "url(" + require('../img/bucket/hover.png') + ")",
-        },
-        ':hover span': {
-            background: '#fe545b',
-            boxShadow: 'none'
-            /*border: '1px solid #fe545b'*/
-        }
-    },
+
     pouchInstagram: {
         background: "#424242 url(" + require('../img/bg_pouch_inst.png') + ") no-repeat 50% 13px",
         height: '44px', width: '44px',
@@ -60,44 +45,41 @@ const HeaderStyle = StyleSheet.create({
         }
     },
 
-    pouch_a_span: {
 
-        position: 'absolute',
-        bottom: '13px',
-        right: '17px',
-        display: 'block',
-        background: '#fe545b',
-        fontSize: '12px',
-        lineHeight: '19px',
-        height: '20px',
-        width: '20px',
-        textAlign: 'center',
-        borderRadius: '20px',
-        /*border: '1px solid #b0893e',
-        boxShadow: 'inset 0 20px 20px -10px #eec77c',*/
-        color: '#fff',
-        textShadow: '0 1px #634d23',
-        webkitFontSmoothing: 'auto'
-    },
     floatMenuBlock: {
-
-
-        '@media (max-width: 750px)': {
+        width:'80%',
+        '@media (max-width:1150px)': {
+            width:'100%',
+        },
+        '@media (max-width: 900px)': {
             position: "absolute",
             borderRadius: "15px",
             backgroundColor:'white',
             textAlign:"left",
-            width:"40%",
-            float: 'left',
+            width:"170px",
+            //float: 'left',
+            padding:"14px 0px 0px 5px"
+        }
+    },floatMenuBlockTablet: {
+        display:'none',
+        '@media (max-width: 900px)': {
+            display:'block',
+            position: "relative",
+            borderRadius: "15px",
+            backgroundColor:'white',
+            textAlign:"left",
+            width:"100%",
+
+            //float: 'left',
             padding:"14px 0px 0px 5px"
         }
     },
     nav_urls: {
         textAlign:'justify',
-        width:'80%',
         /*maxWidth:'1104px',*/
-        marginLeft: '3%',
-        minWidth:'712px'
+        margin: '0 auto',
+        //minWidth:'712px',
+
     },
     phoneNumberMenuBlock: {
 
@@ -114,17 +96,29 @@ const HeaderStyle = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'nowrap',
         justifyContent:'space-around',
-        alignItems:'center',
+        alignItems:'baseline',
 
-        '@media (max-width: 750px)': {
+        '@media (max-width: 900px)': {
             marginLeft: "-35px",
             display:"none"
         }
 
     },
+    menuInlineUlTablet:{
+        display:"none",
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent:'center',
+        alignItems:'baseline',
+        alignContent:'center',
+        '@media (max-width: 900px)': {
+            display:'flex'
+        }
+
+    },
     mobileMenuBtn:{
         display:"none",
-        '@media (max-width: 750px)': {
+        '@media (max-width: 900px)': {
             display:"inline-block",
             position:"relative"
 
