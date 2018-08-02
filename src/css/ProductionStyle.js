@@ -9,6 +9,7 @@ const coolFont = {
 };
 
 const ProductionStyle = StyleSheet.create({
+
     a:{fontFamily: 'PT Sans Narrow',
         color: '#303F9F',
         fontWeight:'bold'

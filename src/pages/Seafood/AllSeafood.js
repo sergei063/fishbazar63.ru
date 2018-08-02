@@ -6,6 +6,7 @@ import SeafoodStyle from "./SeafoodStyle";
 import Seafood from "./Seafood";
 import Katalog from "../../Katalog";
 import CatalogGroups from "../../components/CatalogGroups/CatalogGroups";
+import AllCards from "../../components/Cards/AllCards";
 
 const AllSeafood = (props) => {
     let filter, filterCount;
@@ -26,8 +27,8 @@ const AllSeafood = (props) => {
 
     return (
         <div className={css(SeafoodStyle.cnt)}>
-            <div
-                className={css(AppStyle.textAlignCenter)}> {Katalog.getRenderedShowcaseStyle(groupItems)}
+            <div className={css(AppStyle.textAlignCenter)}>
+                <AllCards items={groupItems}/>
                 <br/>
                 <button hidden={(filter != null)} onClick={() => {
                     if (filterCount > groupItems.length) {

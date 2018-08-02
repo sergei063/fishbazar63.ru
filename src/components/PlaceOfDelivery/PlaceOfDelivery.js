@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, css} from "aphrodite/no-important";
-import {MetaSerifProFont} from "../../css/AppStyle";
+import {MetaSerifProFont} from "../../css/Fonts";
 import Katalog from "../../Katalog";
 import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart, setPlaceOfDelivery} from "../../actions";

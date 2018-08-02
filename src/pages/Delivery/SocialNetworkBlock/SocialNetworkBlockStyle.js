@@ -1,16 +1,23 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaFont, MetaSerifProFont} from "../../../css/AppStyle";
+import {FuturaBoldFont, MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
+import {FuturaFont} from "../../../css/Fonts";
 
 
 const SocialNetworkBlockStyle = StyleSheet.create({
     cnt: {
+        position:'relative',
         marginTop: '0px',
         textIndent: '0',
         backgroundColor: '#3454b0'
 
     },
+    delivery_small:{
+        position:'absolute',
+        right:'0',
+        bottom:'-116px'
+    },
     h1: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontSize: '18px',
         fontWeight: 'bold',
         fontStyle: 'normal',
@@ -19,17 +26,20 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         letterSpacing: '0.6px',
         textAlign: 'left',
         color: '#ffffff',
+        flex: '0 0 73px'
     },
     h2: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',
         fontStretch: 'normal',
         lineHeight: '1.39',
         letterSpacing: '0.5px',
+        maxWidth:'306px',
         textAlign: 'left',
         color: '#ffffff',
+        flex: '0 0 80px'
     },
     PL20:{
         paddingLeft:'20px'
@@ -52,7 +62,7 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
-        justifyContent: 'space-around',
+        justifyContent: 'flex-start',
         alignItems: 'stretch',
         alignContent: 'stretch',
         paddingLeft: '96px',

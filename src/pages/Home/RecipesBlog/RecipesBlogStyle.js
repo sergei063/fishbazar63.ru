@@ -1,6 +1,7 @@
 
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaFont, MetaSerifProFont} from "../../../css/AppStyle";
+import {FuturaBoldFont, LucidaGrandeFontB, MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
+import {FuturaFont} from "../../../css/Fonts";
 
 
 const RecipesBlogStyle = StyleSheet.create({
@@ -16,14 +17,14 @@ const RecipesBlogStyle = StyleSheet.create({
 
     },
     h72: {
-        height:'72px'
+        height:'72.5px'
 
     },h59: {
         height:'59px'
 
     },
     h1: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontSize: '42px',
         textAlign: 'center',
         fontWeight:'bold',
@@ -32,9 +33,10 @@ const RecipesBlogStyle = StyleSheet.create({
         lineHeight:'1.19',
         letterSpacing:'1.4px',
         color:'#1e232c',
+        height:'50'
     },
     h2: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [LucidaGrandeFontB, "sans-serif"],
         fontSize: '18px',
         fontWeight: 'bold',
         textAlign:'center',
@@ -48,13 +50,13 @@ const RecipesBlogStyle = StyleSheet.create({
         display: 'table',
         margin: '0 auto',
         minWidth:'306px',
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontSize: '18px',
         fontWeight: 'bold',
         textAlign:'left',
         fontStyle: 'normal',
         fontStretch: 'normal',
-        lineHeight: '1.39',
+        lineHeight: '1.56',
         letterSpacing: '0.5px',
         color: '#000000',
     },
@@ -64,7 +66,7 @@ const RecipesBlogStyle = StyleSheet.create({
     LI:{
         listStyleType:'disc',
 
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         textAlign:'left',
@@ -74,8 +76,27 @@ const RecipesBlogStyle = StyleSheet.create({
         letterSpacing: '0.5px',
         color: '#1e232c',
     },
+    button_bock: {
+        position:'absolute',
+        left:'81px',
+        bottom:'37px',
+
+        maxWidth:'325px',
+    },
+    overRecipes:{
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
+        textDecoration:'underline',
+        marginLeft:'24px',
+        fontSize: '16px',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '1.5',
+        letterSpacing: '0.5px',
+    },
     table:{
         display: 'table',
+        height:'160px',
         margin: '0 auto'
     },
     flexContainer:{

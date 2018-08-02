@@ -1,5 +1,5 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {MetaSerifProFont} from "../../../css/AppStyle";
+import {MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
 
 
 
@@ -61,18 +61,14 @@ const CardStyle = StyleSheet.create({
     },
     card: {
         display: 'block',
-        fontSize: '21px',
         height: "250px",
         //borderRadius: '3px',
         position: 'relative',
         background: '#fff',
         margin: '0 0px 20px 0',
         textDecoration: 'none',
-        color: '#1e232c',
         zIndex: '0',
-        ':hover': {
-            color: '#fe545b'
-        }
+
     },
     productPhoto: {
         position: 'relative',
@@ -109,11 +105,22 @@ const CardStyle = StyleSheet.create({
         textAlign: 'centr',
         textIndent: "0.1em",
         display: "table-cell",
-        fontFamily: [MetaSerifProFont, 'sans-serif'],
+        fontFamily: [MetaSerifProBookFont, 'sans-serif'],
+        fontSize: '16px',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: '0.5px',
+        color: '#1e232c',
+        ':hover': {
+            color: '#fe545b'
+        }
     },
     productPrice: {
         fontFamily: [MetaSerifProFont, 'sans-serif'],
         color: '#7794e6',
+        fontSize:'14px',
         display: "table-cell",
         textAlign: "right",
     },

@@ -29,6 +29,9 @@ const SocialNetworkBlock = (props) => {
                 </div>
 
             </div>
+            <div className={css(SocialNetworkBlockStyle.delivery_small)}><img src={require('../../../img/design/delivery_small/small.png')}
+                      srcSet={`${require('../../../img/design/delivery_small/small2x.png')} 2x, ${require('../../../img/design/delivery_small/small3x.png')} 3x`}
+                      width='273px' height='463px'></img></div>
 
         </div>
     );

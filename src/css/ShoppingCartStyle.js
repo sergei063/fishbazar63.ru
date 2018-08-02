@@ -1,5 +1,6 @@
 import {StyleSheet, css} from 'aphrodite/no-important';
-import {FuturaFont, LucidaGrandeFont, LucidaGrandeFontB, MetaSerifProFont} from "./AppStyle";
+import {LucidaGrandeFontB} from "./Fonts";
+import {FuturaFont, LucidaGrandeFont, MetaSerifProFont} from "./Fonts";
 
 const ShoppingCartStyle = StyleSheet.create({
 

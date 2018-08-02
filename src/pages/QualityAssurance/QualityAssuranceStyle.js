@@ -1,5 +1,6 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaFont, MetaSerifProFont} from "../../css/AppStyle";
+import {FuturaBoldFont, MetaSerifProBookFont, MetaSerifProFont} from "../../css/Fonts";
+import {FuturaFont} from "../../css/Fonts";
 
 
 const QualityAssuranceStyle = StyleSheet.create({
@@ -14,7 +15,7 @@ const QualityAssuranceStyle = StyleSheet.create({
 
     },
     h1: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontSize: '42px',
         textAlign: 'center',
         fontWeight:'bold',
@@ -57,8 +58,8 @@ const QualityAssuranceStyle = StyleSheet.create({
     },
 
     caption:{
-        fontFamily: [FuturaFont, "sans-serif"],
-        fontSize:'22px',
+        fontFamily: [FuturaBoldFont, "sans-serif"],
+        fontSize:'18px',
         fontWeight:'bold',
         fontStyle:'normal',
         fontStretch:'normal',
@@ -68,7 +69,7 @@ const QualityAssuranceStyle = StyleSheet.create({
         color:'#7794e6',
     },
     text:{
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',

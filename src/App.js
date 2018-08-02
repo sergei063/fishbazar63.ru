@@ -23,12 +23,14 @@ import QualityAssurance from "./pages/QualityAssurance/QualityAssurance";
 import DeliveryPage from "./pages/Delivery/DeliveryPage";
 import Seafood from "./pages/Seafood/Seafood";
 import {connect} from "react-redux";
+import Blog from "./pages/Blog/Blog";
 
 const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/production' component={Seafood}/>
+            <Route path='/blog' component={Blog}/>
             <Route path='/about' component={About}/>
             <Route path='/news' component={News}/>
             <Route path='/about_fish' component={AboutFish}/>
@@ -52,7 +54,7 @@ const Footer = () => (
             </div>
             <div className={css(AppStyle.footer_menu)}>
                 <Link className={css(AppStyle.footer_link)}to='/delivery'>Доставка</Link><br/>
-                <Link className={css(AppStyle.footer_link)} to='/recipes'>Рецепты</Link></div>
+                <Link className={css(AppStyle.footer_link)} to='/blog'>Рецепты</Link></div>
             <div>
                 <div className={css(AppStyle.phoneNumber)}>
                     <a href='tel:+88007070794'><nobr>8 800 707-07-94</nobr></a>

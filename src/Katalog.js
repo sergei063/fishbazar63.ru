@@ -445,38 +445,8 @@ const Katalog = {
         return r;
     },
 
-    getRenderedShowcase: (items) => {
-        return (
-            <ul className={css(HomeStyle.ul)}>
-                {
-                    items.map(p => (
-                        <li className={css(HomeStyle.li)} key={p.id}>
-                            <Link className={css(HomeStyle.card)} to={`/production/${p.id}`}>
-                                <div className={css(HomeStyle.productPhoto)}>
-                                    <img className={css(HomeStyle.productPhotoImg)}
-                                         src={p.img} alt={p.info}></img>
-                                </div>
-                                <div className={css(HomeStyle.productNameDiv)}>
 
-                                    <div className={css(HomeStyle.productName)} dangerouslySetInnerHTML={{__html: p.showCaseName||""}}></div>
-                                    <div className={css(HomeStyle.productPrice)}>
-                                        <b>{p.price}</b>
-                                        <small><nobr>руб/кг</nobr></small>
-                                    </div>
-                                </div>
-                            </Link>
-                        </li>
-                    ))
-                }
-            </ul>
-        )
 
-    },
-    getRenderedShowcaseStyle: (items) => {
-        return (
-            <AllCards items={items}/>
-        )
-    },
 
     /**
      * Получает элементы для витрины
@@ -484,7 +454,7 @@ const Katalog = {
      */
     getHitItems: function () {
         const isProduct = p => p.hit == true;
-//getHitItems
+
         let res = [];
         for (let el in Katalog) {
             let group = Katalog[el];
@@ -577,16 +547,7 @@ const Katalog = {
 
 
     },
-    updatePounch: () => {
 
-        let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-
-        if (shoppingCart == null) {
-            shoppingCart = {}
-        }
-        //$('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
-
-    },
 
     /**
      * @deprecated

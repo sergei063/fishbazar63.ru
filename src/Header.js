@@ -49,7 +49,7 @@ class Header extends React.Component {
 
                         <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
                             <li className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Морепродукты</Link></li>
-                            <li className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/recipes'>Рецепты</Link></li>
+                            <li className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/blog'>Рецепты</Link></li>
                             <li className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/delivery'>Доставка</Link></li>
                             <li className={css(AppStyle.menu_inline, AppStyle.menu_inline_logo)}><Link onClick={hideMobileMenu} to='/'> <img src={require('./img/logo_full.png')} width='152px' height='99px'></img></Link></li>
                             <li className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/quality_assurance'>Гарантия качества</Link></li>

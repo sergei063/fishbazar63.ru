@@ -1,5 +1,12 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaFont, MetaSerifProFont} from "../../css/AppStyle";
+import {
+    FuturaBoldFont,
+    FuturaMediumFont,
+    FuturaMediumFontOld,
+    MetaSerifProBookFont,
+    MetaSerifProFont
+} from "../../css/Fonts";
+import {FuturaFont} from "../../css/Fonts";
 
 
 const DeliveryStyle = StyleSheet.create({
@@ -11,7 +18,7 @@ const DeliveryStyle = StyleSheet.create({
 
     },
     h1: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontSize: '42px',
         textAlign: 'center',
         fontWeight:'bold',
@@ -61,8 +68,8 @@ const DeliveryStyle = StyleSheet.create({
         width: '70%'
     },
     columnCaption: {
-        fontFamily: [FuturaFont, "sans-serif"],
-        fontSize: '22px',
+        fontFamily: [FuturaBoldFont, "sans-serif"],
+        fontSize: '18px',
         fontWeight: 'bold',
         fontStyle: 'normal',
         fontStretch: 'normal',
@@ -71,14 +78,15 @@ const DeliveryStyle = StyleSheet.create({
         textAlign: 'left',
         color: '#7794e6',
         ':nth-child(1n) > :first-child':{
-            fontSize: '15px',
+            fontFamily: [FuturaMediumFont, "sans-serif"],
+            fontSize: '12px',
             marginTop: '16px',
             fontWeight: '500',
             letterSpacing: '0.4px',
         }
     },
     columnText: {
-        fontFamily: [MetaSerifProFont, 'sans-serif'],
+        fontFamily: [MetaSerifProBookFont, 'sans-serif'],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',

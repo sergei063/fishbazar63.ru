@@ -13,13 +13,14 @@ import QualityAssurance from "../QualityAssurance/QualityAssurance";
 import Recipes from "./RecipesBlog/RecipesBlog";
 import DeliveryStyle from "../Delivery/DeliveryStyle";
 import AllSeafood from "../Seafood/AllSeafood";
+import RecipesBlogStyle from "./RecipesBlog/RecipesBlogStyle";
 
 
 
 //<img className={css(HomeStyle.productPhotoImg)} src={require(`${p.img}`)} alt=""></img>
 class AllShowcase extends React.Component {
     componentDidMount(){
-        Katalog.updatePounch();
+
     }
 
     render()
@@ -32,10 +33,7 @@ class AllShowcase extends React.Component {
                 <SocialNetworkBlock/>
                 <QualityAssurance isMinimize={true}/>
                 <Recipes/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                <div style={{backgroundColor: '#f9f9f9',height:'120px'}}></div>
             </div>
         )
     }

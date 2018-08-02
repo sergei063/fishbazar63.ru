@@ -4,6 +4,8 @@ import {css} from "aphrodite/no-important";
 import RecipesBlogStyle from "./RecipesBlogStyle";
 import QualityAssuranceStyle from "../../QualityAssurance/QualityAssuranceStyle";
 import AppStyle from "../../../css/AppStyle";
+import Katalog from "../../../Katalog";
+import {Link} from "react-router-dom";
 
 
 const RecipesBlog = (props) => {
@@ -29,6 +31,9 @@ const RecipesBlog = (props) => {
                         <li className={css(RecipesBlogStyle.LI)}>700 г филе трески</li>
                         <li className={css(RecipesBlogStyle.LI)}>горсть листьев петрушки и укропа</li>
                     </ul></div>
+                    <div className={css(RecipesBlogStyle.button_bock)}><button style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Весь рецепт</button>
+                    <span><Link className={css(AppStyle.link_red,RecipesBlogStyle.overRecipes)} to='/blog'>Другие рецепты</Link></span>
+                    </div>
                 </div>
                 <div className={css(RecipesBlogStyle.fish)}>
                     <img src={require('../../../img/Recipes/Cod_in_green_sauce/fish.jpg')}

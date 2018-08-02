@@ -10,6 +10,8 @@ import ProductionStyle from "../../css/ProductionStyle";
 import Counter from "../../components/Counter/Counter";
 import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
+import Iinfo from "../../components/Iinfo/Iinfo";
+import AllCards from "../../components/Cards/AllCards";
 
 
 const BreadCrumbs = (props) => {
@@ -41,6 +43,7 @@ const SeafoodItem = (props) => {
         return <div>Ничего не найдено</div>
     }
     let weightOfOneFishText = (item.weightOfOneFish)?`dd${item.weightOfOneFish}`:"&nbps;";
+    let groupItems = Katalog.getGroupItems(null, 3);
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
             <div className={css(SeafoodItemStyle.h124)}></div>
@@ -51,13 +54,13 @@ const SeafoodItem = (props) => {
                         <div><img src={item.img} width='304px' height='172px'></img></div>
                         <div>{(item.catchDate)?`Вылов: ${item.catchDate}`:"&nbsp;"}</div>
                         <div>&nbsp;</div>
-                        <div>{(item.producer)?`Производитель: ${item.producer}`:"&nbsp;"}</div>
+                        <div style={{width:'80%'}}>{(item.producer)?`Производитель: ${item.producer}`:"&nbsp;"}</div>
                     </div>
                 </div>
 
                 <div className={css(SeafoodItemStyle.infoContainer, SeafoodItemStyle.width50P)}>
 
-                    <div>{item.name}&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
+                    <div className={css(SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
                         {item.info}
                     </div>
                     <Counter id="countFish" packaging={item.packaging}/>
@@ -75,7 +78,7 @@ const SeafoodItem = (props) => {
 
                     <div className={css( (item.packaging==='шт'?SeafoodItemStyle.aboutDelivery:AppStyle.hidden))}>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
                         рыбы<br/>
-                        <span className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</span>
+                        <Iinfo/><span style={{marginLeft:'16px'}} className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</span>
 
                     </div>
 
@@ -83,6 +86,14 @@ const SeafoodItem = (props) => {
 
             </div>
 
+            <div style={{height:'178px'}}></div>
+            <div className={css(SeafoodItemStyle.withBuy)}>С этим товаром покупают</div>
+            <div style={{height:'48px'}}></div>
+            <div className={css(SeafoodItemStyle.withBuyDiv)}>
+                <AllCards items={groupItems}/>
+            </div>
+
+            <div style={{height:'93px'}}></div>
         </div>
     )
 }

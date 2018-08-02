@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {css} from "aphrodite/no-important";
+import {css, StyleSheet} from "aphrodite/no-important";
 import AppStyle from "../../css/AppStyle";
 import ProductionStyle from "../../css/ProductionStyle";
 import Katalog from "../../Katalog";
+import {LucidaGrandeFont, LucidaGrandeFontB} from "../../css/Fonts";
 
 
 const CatalogGroups = (props) => {
@@ -19,7 +20,7 @@ const CatalogGroups = (props) => {
     }
 
     return (
-        <ul>
+        <ul className={css(Style.ul)}>
             <OneGroup history={history} pathname={props.history.location.pathname} filter={filter} urlFilter={null} text={`Все`}/>
             <OneGroup history={history} pathname={props.history.location.pathname} filter={filter} urlFilter={`hit`} text={`Хит`}/>
             {
@@ -36,7 +37,6 @@ const CatalogGroups = (props) => {
     );
 }
 
-
 const OneGroup = (props) => {
     let {history, pathname, filter, urlFilter, text} = props;
     return (
@@ -44,11 +44,45 @@ const OneGroup = (props) => {
             history.push({pathname: pathname, state: {filter: urlFilter}});
             /*this.scrollToProductuionContainer(); */
         }}
-            className={css(ProductionStyle.marginRight15, ProductionStyle.gpoupItem, AppStyle.right_text)}>
+            className={css(Style.marginRight15, Style.gpoupItem, AppStyle.right_text)}>
             <span className={css((filter === urlFilter) ? AppStyle.link_active : AppStyle.link)}>{text}</span>
         </li>
     );
 }
+
+const Style = StyleSheet.create({
+
+    ul: {
+        marginRight:'52px'
+    },
+    marginRight15: {
+        marginRight: '1.5em',
+        '@media (max-width: 840px)': {
+            display:"table"
+        }
+    },
+    gpoupItem: {
+        fontFamily: [LucidaGrandeFontB, "sans-serif"],
+        textTransform: 'uppercase',
+        lineHeight:'3.08',
+
+
+        fontWeight: 'bold',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '3.08',
+        letterSpacing: '0.4px',
+        textAlign: 'right',
+        fontSize:'12px',
+
+
+        '@media (max-width: 840px)': {
+            width:"100%",
+            fontSize:"1.8em",
+            marginBottom:"0.5em"
+        }
+    },
+});
 
 
 export default CatalogGroups;
