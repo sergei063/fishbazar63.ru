@@ -12,7 +12,7 @@ const Instagram = (props) => {
             </img>
         </a>
     );
-}
+};
 
 
 const Style = StyleSheet.create({

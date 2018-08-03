@@ -2,11 +2,7 @@ import {StyleSheet} from 'aphrodite/no-important';
 import {
     FuturaBoldFont,
     FuturaMediumFont,
-    FuturaMediumFontOld,
-    MetaSerifProBookFont,
-    MetaSerifProFont
-} from "../../css/Fonts";
-import {FuturaFont} from "../../css/Fonts";
+    MetaSerifProBookFont} from "../../css/Fonts";
 
 
 const DeliveryStyle = StyleSheet.create({

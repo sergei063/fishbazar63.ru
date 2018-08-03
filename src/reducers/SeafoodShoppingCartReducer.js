@@ -6,15 +6,14 @@ const getInitialState = ()=> {
         seafoodShoppingCart = { allFish: {},totalCost:0}
     }
     return seafoodShoppingCart
-}
+};
 
 const getCost = (fish,count) => {
 
     let weightOfOneFish = (fish.weightOfOneFish) ? fish.weightOfOneFish : 1;
-    let cost = count * fish.price * weightOfOneFish;
+    return count * fish.price * weightOfOneFish;
 
-    return cost
-}
+};
 
 const getTotalCost = (catalog) => {
 
@@ -27,7 +26,7 @@ const getTotalCost = (catalog) => {
 
 
     return totalSum
-}
+};
 
 const saveToLocalStorage = (allFish,totalCost) => {
 
@@ -36,7 +35,7 @@ const saveToLocalStorage = (allFish,totalCost) => {
     seafoodShoppingCart.allFish = allFish;
     seafoodShoppingCart.totalCost = totalCost;
     localStorage.setItem('seafoodShoppingCart', JSON.stringify(seafoodShoppingCart))
-}
+};
 
 const SeafoodShoppingCartReducer = function (state = getInitialState(), action) {
 
@@ -64,6 +63,6 @@ const SeafoodShoppingCartReducer = function (state = getInitialState(), action) 
             return state
     }
 
-}
+};
 
 export default SeafoodShoppingCartReducer;

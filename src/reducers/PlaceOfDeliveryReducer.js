@@ -1,4 +1,3 @@
-import SeafoodShoppingCartReducer from "./SeafoodShoppingCartReducer";
 
 
 const initialState = {
@@ -19,5 +18,5 @@ const PlaceOfDeliveryReducer = function (state = initialState, action) {
             return state
     }
 
-}
+};
 export default PlaceOfDeliveryReducer;

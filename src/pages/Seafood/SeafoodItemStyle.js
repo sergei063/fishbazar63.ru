@@ -59,6 +59,7 @@ const SeafoodItemStyle = StyleSheet.create({
     },
     infoContainer:{
         display:'flex',
+        height:'500px',
         flexDirection:'column',
         flexWrap:'nowrap',
         justifyContent:' space-between',

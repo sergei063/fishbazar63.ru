@@ -35,6 +35,6 @@ const Delivery = (props) => {
 
         </div>
     );
-}
+};
 
 export default Delivery;

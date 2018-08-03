@@ -1,31 +1,17 @@
 import React from 'react';
 
 
-import {  HashRouter, Switch, Route, Link } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite/no-important';
+import {  Link } from 'react-router-dom';
+import { css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 
 import Carousel from './components/Carousel';
-import HeaderStyle from "./css/HeaderStyle";
 import PouchIcon from "./containers/PouchIcon/PouchIcon";
 
 
-const carousel = new Carousel();
 
-const bntClick = (event) => {
-    event.preventDefault();
 
-    switch (event.target.id) {
-        case "slider_prev_btn": {
-            carousel.prev()
-            break;
-        }
-        case "slider_next_btn": {
-            carousel.next()
-            break;
-        }
-    }
-}
+
 
 const Slider = () => {
 
@@ -52,5 +38,5 @@ const Slider = () => {
         <div id="slider_navigate_this"></div>
 
     </div>)
-}
+};
 export default Slider;

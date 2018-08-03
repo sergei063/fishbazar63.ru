@@ -1,7 +1,6 @@
 
 import React from 'react';
-import {StyleSheet, css} from 'aphrodite/no-important';
-import {Link} from 'react-router-dom';
+import {css} from 'aphrodite/no-important';
 import AboutStyle from '../css/AboutStyle';
 import AppStyle from '../css/AppStyle';
 
@@ -41,5 +40,5 @@ const AboutFish = () => (
         <div className={css(AppStyle.bottomLine, AboutStyle.line)}></div>
         <br/><br/><br/><br/><br/>
     </div>
-)
+);
 export default AboutFish;

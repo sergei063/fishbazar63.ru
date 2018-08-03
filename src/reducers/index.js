@@ -9,6 +9,6 @@ const allReducers = combineReducers({
     shoppingCart:ShoppingCartReducer,
     placeOfDelivery:PlaceOfDeliveryReducer,
     seafoodShoppingCart:SeafoodShoppingCartReducer
-})
+});
 
 export default allReducers

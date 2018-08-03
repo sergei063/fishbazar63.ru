@@ -1,12 +1,10 @@
 import React from 'react';
-import {HashRouter, Switch, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Katalog from "../../Katalog";
 import {css} from "aphrodite/no-important";
 import SeafoodItemStyle from "./SeafoodItemStyle";
-import DeliveryStyle from "../Delivery/DeliveryStyle";
 import AppStyle from "../../css/AppStyle";
 import $ from "jquery";
-import ProductionStyle from "../../css/ProductionStyle";
 import Counter from "../../components/Counter/Counter";
 import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
@@ -34,15 +32,15 @@ const BreadCrumbs = (props) => {
             }} className={css(SeafoodItemStyle.link)} to='/production'>{props.item.name}</Link>
         </div>
     )
-}
+};
 
 const SeafoodItem = (props) => {
 
-    const item = Katalog.get(props.match.params.id)
+    const item = Katalog.get(props.match.params.id);
     if (!item) {
         return <div>Ничего не найдено</div>
     }
-    let weightOfOneFishText = (item.weightOfOneFish)?`dd${item.weightOfOneFish}`:"&nbps;";
+
     let groupItems = Katalog.getGroupItems(null, 3);
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
@@ -96,15 +94,15 @@ const SeafoodItem = (props) => {
             <div style={{height:'93px'}}></div>
         </div>
     )
-}
+};
 const AddShoppingCart = (fish, countFishEl,props) => {
-    let countFish = Number.parseInt(countFishEl[0].value);
+    let countFish = Number.parseInt(countFishEl[0].value,10);
     Katalog.addShoppingCart(fish, countFish);
 
     props.addSeafoodItem(fish, countFish)
-    alert("Добавлено в корзину: " + fish.name + " (" + countFish + " " + fish.packaging + ")");
+    //alert("Добавлено в корзину: " + fish.name + " (" + countFish + " " + fish.packaging + ")");
 
-}
+};
 
 
 
@@ -114,6 +112,6 @@ const matchDispatchToProps = (dispatch) => ({
     addSeafoodItem:(fish, countFish)=>{
         dispatch(addFishToSeafoodShoppingCart(fish,countFish))
     }
-})
+});
 
 export default connect(mapStateToProps,matchDispatchToProps) (SeafoodItem);

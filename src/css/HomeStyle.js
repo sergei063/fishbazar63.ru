@@ -1,4 +1,4 @@
-import {StyleSheet, css} from 'aphrodite/no-important';
+import {StyleSheet} from 'aphrodite/no-important';
 
 
 const HomeStyle = StyleSheet.create({

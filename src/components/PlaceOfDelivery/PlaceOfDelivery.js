@@ -1,9 +1,8 @@
 import React from 'react';
 import {StyleSheet, css} from "aphrodite/no-important";
 import {MetaSerifProFont} from "../../css/Fonts";
-import Katalog from "../../Katalog";
 import {connect} from "react-redux";
-import {addFishToSeafoodShoppingCart, setPlaceOfDelivery} from "../../actions";
+import {setPlaceOfDelivery} from "../../actions";
 
 
 const delivery = [
@@ -22,7 +21,7 @@ const getDeliveryByWhere = (where) => {
         }
     }
     return null;
-}
+};
 
 class PlaceOfDelivery extends React.Component {
     constructor(props) {
@@ -197,6 +196,6 @@ const matchDispatchToProps = (dispatch) => ({
     setPlaceOfDelivery: (placeOfDelivery) => {
         dispatch(setPlaceOfDelivery(placeOfDelivery))
     }
-})
+});
 
 export default connect(mapStateToProps, matchDispatchToProps)(PlaceOfDelivery);

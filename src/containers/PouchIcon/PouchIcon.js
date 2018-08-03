@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Switch, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {css, StyleSheet} from "aphrodite/no-important";
 import {connect} from "react-redux";
 
@@ -11,7 +11,7 @@ const PouchIcon = (props) => {
         <Link id="header_pouch" className={css((lenght===0)?Style.displayNone:Style.pouchA)} to='/shopping_cart'><span
             className={css(Style.pouch_a_span)}>{lenght}</span></Link>
     );
-}
+};
 
 const Style = StyleSheet.create({
 

@@ -3,7 +3,7 @@ import Katalog from "../Katalog";
 const initialState = {
     allItems: Katalog.getShoppingCart(),
     totalSum: 1
-}
+};
 
 
 const ShoppingCartReducer = function (state = initialState, action) {
@@ -19,6 +19,6 @@ const ShoppingCartReducer = function (state = initialState, action) {
             return state
     }
 
-}
+};
 
 export default ShoppingCartReducer;

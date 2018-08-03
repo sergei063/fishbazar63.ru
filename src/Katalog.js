@@ -1,13 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import ProductionStyle from './css/ProductionStyle';
-import {StyleSheet, css} from 'aphrodite/no-important';
-import $ from 'jquery'
-import HomeStyle from './css/HomeStyle';
+import {css} from 'aphrodite/no-important';
 import AppStyle from "./css/AppStyle";
-import AllCards from "./components/Cards/AllCards";
-import CatalogGroups from "./components/CatalogGroups/CatalogGroups";
-
 
 
 const Price = {
@@ -426,7 +421,7 @@ const Katalog = {
                 if (el) {
                     el.parent = {};
                     el.parent.id = fish;
-                    el.parent.catalog_tittle = group.catalog_tittle
+                    el.parent.catalog_tittle = group.catalog_tittle;
                     return el;
                 }
             }
@@ -531,7 +526,7 @@ const Katalog = {
         if (shoppingCart == null) {
             shoppingCart = {}
         }
-        shoppingCart[fish.id] = {...fish, count: countFish,}
+        shoppingCart[fish.id] = {...fish, count: countFish,};
         localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
         //$('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
@@ -541,7 +536,7 @@ const Katalog = {
         if (shoppingCart == null) {
             shoppingCart = {}
         }
-        delete shoppingCart[fishId]
+        delete shoppingCart[fishId];
         localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
         //$('#header_pouch span').html(Object.keys(shoppingCart).length || 0);
 
@@ -561,10 +556,10 @@ const Katalog = {
         Katalog.getGroup().map(p => {
             r.push(<span  key={key}  id={p.name} onClick={() => {props.history.push({pathname: `/production/`,state: { filter: p.name }}); /*this.scrollToProductuionContainer();*/   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter===p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
             ++key;
-        })
+        });
         return r;
     }
-}
+};
 
 
 export default Katalog;

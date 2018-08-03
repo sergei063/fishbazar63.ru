@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-import {HashRouter, Switch, Route, Link} from 'react-router-dom';
-import {StyleSheet, css} from 'aphrodite/no-important';
+import {Link} from 'react-router-dom';
+import {css} from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 import HeaderStyle from './css/HeaderStyle';
 import $ from 'jquery'
@@ -13,20 +13,20 @@ const mobileMenuClick = (event) => {
         event.preventDefault();
 
     let display = $('#menu_inline_ul').css("display");
-    display = (display == "none") ? "block" : "none";
+    display = (display === "none") ? "block" : "none";
     $('#menu_inline_ul').css("display", display);
 
-}
+};
 const hideMobileMenu = (event) => {
     if ($('#menu_inline_ul').css("display"))
         $('#menu_inline_ul').css("display", "");
 
-}
+};
 class Header extends React.Component {
 
     state = {
         isMobile: this.props.isMobile.any()
-    }
+    };
 
     render() {
 
@@ -129,5 +129,6 @@ class Header extends React.Component {
             </header>
         )
     }
-};
+}
+
 export default Header;

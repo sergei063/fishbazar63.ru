@@ -1,9 +1,7 @@
 import React from 'react';
-import {HashRouter, Switch, Route, Link} from 'react-router-dom'
 import {css} from "aphrodite/no-important";
 import AppStyle from "../../css/AppStyle";
 import SeafoodStyle from "./SeafoodStyle";
-import Seafood from "./Seafood";
 import Katalog from "../../Katalog";
 import CatalogGroups from "../../components/CatalogGroups/CatalogGroups";
 import AllCards from "../../components/Cards/AllCards";
@@ -51,6 +49,6 @@ const AllSeafood = (props) => {
 
         </div>
     );
-}
+};
 
 export default AllSeafood;

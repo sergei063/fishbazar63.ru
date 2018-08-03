@@ -7,25 +7,44 @@ import {FuturaBoldFont, FuturaMediumFont, MetaSerifProBookFont} from "../../../c
 import {StyleSheet} from 'aphrodite/no-important';
 import Instagram from "../../SocialNetwork/Instagram";
 import VK from "../../SocialNetwork/Vk";
-import AppStyle from "../../../css/AppStyle";
+import Katalog from "../../../Katalog";
+import AllCards from "../../Cards/AllCards";
+import CardStyle from "../../Cards/css/CardStyle";
+import {_try} from "../../lib";
+
 
 
 const MenuBlogFilter = (props) => {
 
+    let blogFilter =_try(() => props.history.location.state.blogFilter, '');
     return (
         <div className={css(MenuBlogStyle.cnt_filter)}>
             {Recipes.getGroup().map((group, index) => (
-                    <div className={css(MenuBlogStyle.el_filter)} key={index.toString()}>
+                    <div className={css(MenuBlogStyle.el_filter, (blogFilter===group.catalog_tittle)?MenuBlogStyle.el_filter_selected:null)} key={index.toString()}
+                         onClick={() => {
+                             props.history.push({pathname: '/blog', state: {blogFilter: group.catalog_tittle}});
+                         }}>
                         {group.catalog_tittle}
                     </div>
                 )
             )}
         </div>
     );
-}
+};
+
+const findFishForRecipe = (fish) => {
+    if (!fish) return [];
+
+    return fish.map((fishId) => (Katalog.get(fishId)));
+
+};
+
+
+
+
 
 const MenuBlog = (props) => {
-
+    let fishForRecipe = findFishForRecipe(props.fish_for_recipe);
 
     return (
         <div className={css(MenuBlogStyle.menu)}>
@@ -39,7 +58,7 @@ const MenuBlog = (props) => {
                 </div>
             </div>
             <div style={{height: '35px'}}></div>
-            <MenuBlogFilter/>
+            <MenuBlogFilter history={props.history}/>
             <div style={{height: '59px'}}></div>
             <div className={css(MenuBlogStyle.socialNetworkWatchDiv)}>
                 <div>Следите за новыми рецептами в соцсетях</div>
@@ -48,9 +67,28 @@ const MenuBlog = (props) => {
                             <VK/></span></div>
 
             </div>
+            <div style={{height: '56px'}}></div>
+            <AllCards items={fishForRecipe} inStyle={FishForRecipeCardStyle}/>
         </div>
     );
-}
+};
+
+const FishForRecipeCardStyle = StyleSheet.create({
+
+    ul: {
+        ...CardStyle.ul._definition,
+        padding:'0'
+    },
+    li: {
+        ...CardStyle.li._definition,
+        margin:'0'
+    },
+    card: {
+        ...CardStyle.card._definition,
+        margin:'0'
+    }
+
+});
 
 
 const MenuBlogStyle = StyleSheet.create({
@@ -81,7 +119,15 @@ const MenuBlogStyle = StyleSheet.create({
         letterSpacing: "0.5px",
         textAlign: "left",
         color: "#1e232c",
-        textTransform:'uppercase'
+        textTransform:'uppercase',
+        ':hover':{
+            backgroundColor: '#fe545b',
+            boxShadow: '0 1px 10px 0 rgba(53, 66, 92, 0.08)',
+            color: '#ffffff'
+        }
+    },
+    el_filter_selected: {
+        color: "#fe545b"
     },
     menu: {
         position: 'sticky',

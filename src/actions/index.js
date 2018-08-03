@@ -1,8 +1,7 @@
-import PlaceOfDelivery from "../components/PlaceOfDelivery/PlaceOfDelivery";
 
 export const  select = (item) => {
 
-}
+};
 
 export const  addFishToSeafoodShoppingCart = (fish,count) => {
     return {
@@ -10,7 +9,7 @@ export const  addFishToSeafoodShoppingCart = (fish,count) => {
         fish:fish,
         count:count
     }
-}
+};
 
 export const  setPlaceOfDelivery = (placeOfDelivery) => {
     return {
@@ -18,5 +17,5 @@ export const  setPlaceOfDelivery = (placeOfDelivery) => {
         where:placeOfDelivery.where,
         price:placeOfDelivery.price
     }
-}
+};
 

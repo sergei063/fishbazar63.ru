@@ -1,9 +1,5 @@
 import React from 'react';
 import {StyleSheet, css} from "aphrodite/no-important";
-import ProductionStyle from "../../css/ProductionStyle";
-import AppStyle from "../../css/AppStyle";
-import $ from "jquery";
-import Katalog from "../../Katalog";
 
 //const
 class Counter extends React.Component {

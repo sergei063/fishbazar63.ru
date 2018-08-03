@@ -1,7 +1,6 @@
 
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaBoldFont, LucidaGrandeFontB, MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
-import {FuturaFont} from "../../../css/Fonts";
+import {FuturaBoldFont, LucidaGrandeFontB, MetaSerifProBookFont} from "../../../css/Fonts";
 
 
 const RecipesBlogStyle = StyleSheet.create({

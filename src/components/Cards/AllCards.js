@@ -6,16 +6,18 @@ import CardStyle from "./css/CardStyle";
 
 const AllCards = (props) => {
     let {items} = props;
+
+    let Style = Object.assign({}, CardStyle,props.inStyle);
     return (
-        <ul className={css(CardStyle.ul)}>
+        <ul className={css(Style.ul)}>
             {
                 items.map((p, index) => (
-                        <Card key={index} p={p}/>
+                        <Card key={index} p={p} inStyle={Style}/>
                     )
                 )
             }
         </ul>
     );
-}
+};
 
 export default AllCards;

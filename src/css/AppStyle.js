@@ -14,7 +14,7 @@ const sliderBase = {
     transition: 'background 2s ease 0s',
     minWidth: '10px',
     width: '100%'
-}
+};
 
 const menu_inline_ul = {
     listStyleType: 'disc',
@@ -23,7 +23,7 @@ const menu_inline_ul = {
     webkitMarginStart: '0px',
     webkitMarginEnd: '0px',
     webkitPaddingStart: '40px'
-}
+};
 
 const AppStyle = StyleSheet.create({
 
@@ -129,7 +129,6 @@ const AppStyle = StyleSheet.create({
 
         display: 'table-cell',
         verticalAlign: 'top',
-        color: 'white',
         '@media (max-width: 1020px)': {
             fontSize: '1em',
         },

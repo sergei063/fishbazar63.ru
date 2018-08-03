@@ -2,14 +2,12 @@ import React from 'react';
 
 import {css} from "aphrodite/no-important";
 import RecipesBlogStyle from "./RecipesBlogStyle";
-import QualityAssuranceStyle from "../../QualityAssurance/QualityAssuranceStyle";
 import AppStyle from "../../../css/AppStyle";
-import Katalog from "../../../Katalog";
 import {Link} from "react-router-dom";
 
 
 const RecipesBlog = (props) => {
-    let {items} = props;
+
     return (
         <div className={css(RecipesBlogStyle.cnt)}>
             <div className={css(RecipesBlogStyle.h116)}></div>
@@ -46,6 +44,6 @@ const RecipesBlog = (props) => {
 
         </div>
     );
-}
+};
 
 export default RecipesBlog;

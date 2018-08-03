@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import $ from 'jquery'
@@ -16,10 +15,7 @@ import allReducers from "./reducers";
 import {Provider} from "react-redux";
 import {
     ConnectedRouter,
-    routerReducer,
-    routerMiddleware,
-    push
-} from "react-router-redux";
+    routerMiddleware} from "react-router-redux";
 
 
 
@@ -42,7 +38,7 @@ const store = createStore(allReducers, enhancer);
 //const store = createStore(allReducers, applyMiddleware(middleware));
 store.subscribe(()=>{
     console.log('subscribe',store.getState())
-})
+});
 
 history.listen((location, action) => {
     //console.log(location);
@@ -93,10 +89,10 @@ const listenScrollEvent = () => {
         /* elem.css('top', 0);
          elem.css('position', 'fixed');*/
     }
-}
+};
 const getRandomArbitrary = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 //window.addEventListener('scroll', listenScrollEvent);
 
 //alert($(window).width())

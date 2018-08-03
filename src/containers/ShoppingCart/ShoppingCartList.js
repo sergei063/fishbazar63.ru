@@ -3,21 +3,19 @@ import Katalog from "../../Katalog";
 import ShoppingCartStyle from "../../css/ShoppingCartStyle";
 import {css} from "aphrodite/no-important";
 import ProductionStyle from "../../css/ProductionStyle";
-import AppStyle from "../../css/AppStyle";
 import Counter from "../../components/Counter/Counter";
 import $ from "jquery";
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
 
 
 const calbackFn = (id, props) => {
     let fish = Katalog.get(id);
     let count = $(`#fishNum_${id}`);
-    let countFish = Number.parseInt(count[0].value);
+    let countFish = Number.parseInt(count[0].value,10);
 
     props.addSeafoodItem(fish, countFish);
-}
+};
 class ShoppingCartList extends React.Component {
 
     componentDidMount() {
@@ -42,14 +40,14 @@ class ShoppingCartList extends React.Component {
 
 
 
-        if ((catalog == null) || (catalog.length == 0)) {
+        if ((catalog === null) || (catalog.length === 0)) {
             return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
         }
 
 
 
         let i = 0;
-        let k = 0;
+
         return (
             <div className={css(ShoppingCartStyle.divTable)}>
                 <div className={css(ShoppingCartStyle.divTableBody)}>
@@ -136,6 +134,6 @@ const matchDispatchToProps = (dispatch) => ({
     addSeafoodItem:(fish, countFish)=>{
         dispatch(addFishToSeafoodShoppingCart(fish,countFish))
     }
-})
+});
 
 export default connect(mapStateToProps,matchDispatchToProps) (ShoppingCartList);

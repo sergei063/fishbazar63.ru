@@ -1,10 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 import {css, StyleSheet} from "aphrodite/no-important";
 import AppStyle from "../../css/AppStyle";
-import ProductionStyle from "../../css/ProductionStyle";
-import Katalog from "../../Katalog";
-import {LucidaGrandeFont, LucidaGrandeFontB} from "../../css/Fonts";
+import {LucidaGrandeFontB} from "../../css/Fonts";
 
 
 const CatalogGroups = (props) => {
@@ -35,7 +32,7 @@ const CatalogGroups = (props) => {
         </ul>
 
     );
-}
+};
 
 const OneGroup = (props) => {
     let {history, pathname, filter, urlFilter, text} = props;
@@ -48,7 +45,7 @@ const OneGroup = (props) => {
             <span className={css((filter === urlFilter) ? AppStyle.link_active : AppStyle.link)}>{text}</span>
         </li>
     );
-}
+};
 
 const Style = StyleSheet.create({
 

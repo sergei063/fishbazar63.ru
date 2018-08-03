@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, css} from "aphrodite/no-important";
-import SocialNetworkBlockStyle from "../../pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle";
 
 const VK = (props) => {
     return (
@@ -12,7 +11,7 @@ const VK = (props) => {
             </img>
         </a>
     );
-}
+};
 
 
 const Style = StyleSheet.create({

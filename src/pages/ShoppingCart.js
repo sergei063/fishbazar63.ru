@@ -1,18 +1,10 @@
 import React from 'react';
-import {HashRouter, Switch, Route, Redirect, Link} from 'react-router-dom';
-import {StyleSheet, css} from 'aphrodite/no-important';
-import createHistory from 'history/createBrowserHistory'
+import {Switch, Route} from 'react-router-dom';
+import {css} from 'aphrodite/no-important';
 import ProductionStyle from '../css/ProductionStyle';
 import AppStyle from '../css/AppStyle';
-import Katalog from '../Katalog';
 import ShoppingCartStyle from '../css/ShoppingCartStyle';
-import $ from 'jquery'
-import Counter from "../components/Counter/Counter";
 import Iinfo from "../components/Iinfo/Iinfo";
-import DeliveryStyle from "./Delivery/DeliveryStyle";
-import SeafoodItemStyle from "./Seafood/SeafoodItemStyle";
-import AllSeafood from "./Seafood/AllSeafood";
-import SeafoodItem from "./Seafood/SeafoodItem";
 import PlaceOfDelivery from "../components/PlaceOfDelivery/PlaceOfDelivery";
 import ShoppingCartList from "../containers/ShoppingCart/ShoppingCartList";
 import {connect} from "react-redux";
@@ -24,7 +16,7 @@ const ShoppingCart = (props) => {
             <Route path='/shopping_cart/:num' params={props} component={BasketConfirmed}/>
         </Switch>
     )
-}
+};
 
 
 
@@ -99,7 +91,7 @@ const Basket = (props) => {
             </div>
         </div>
     )
-}
+};
 
 
 const BasketConfirmed = (props) => {
@@ -124,7 +116,7 @@ const BasketConfirmed = (props) => {
 
         </div>
     )
-}
+};
 
 
 const mapStateToProps = (state) => ({seafoodShoppingCart: state.seafoodShoppingCart, placeOfDelivery: state.placeOfDelivery});

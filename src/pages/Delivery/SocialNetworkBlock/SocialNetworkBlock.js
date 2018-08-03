@@ -10,7 +10,7 @@ import VK from "../../../components/SocialNetwork/Vk";
 
 
 const SocialNetworkBlock = (props) => {
-    let {items} = props;
+
     return (
         <div className={css(SocialNetworkBlockStyle.cnt)}>
 
@@ -35,6 +35,6 @@ const SocialNetworkBlock = (props) => {
 
         </div>
     );
-}
+};
 
 export default SocialNetworkBlock;

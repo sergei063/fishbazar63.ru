@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Header from './Header';
 import Slider from './Slider';
 import Home from './pages/Home/Home';
 import About from './pages/About';
 import AboutFish from './pages/AboutFish';
-import Production from './pages/Production';
 import ShoppingCart from './pages/ShoppingCart';
 import Recipes from './pages/Recipes';
 import Location from './pages/Location';
-import { StyleSheet, css } from 'aphrodite/no-important';
+import {css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
-import {  HashRouter, Switch, Route, Link } from 'react-router-dom'
-import Katalog from './Katalog'
+import {  Switch, Route, Link } from 'react-router-dom'
 import News from "./pages/News";
 import SocialNetworkBlockStyle from "./pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle";
 import Instagram from "./components/SocialNetwork/Instagram";
@@ -22,7 +20,6 @@ import VK from "./components/SocialNetwork/Vk";
 import QualityAssurance from "./pages/QualityAssurance/QualityAssurance";
 import DeliveryPage from "./pages/Delivery/DeliveryPage";
 import Seafood from "./pages/Seafood/Seafood";
-import {connect} from "react-redux";
 import Blog from "./pages/Blog/Blog";
 
 const Main = () => (
@@ -41,7 +38,7 @@ const Main = () => (
             <Route path='/delivery' component={DeliveryPage}/>
         </Switch>
     </main>
-)
+);
 const Footer = () => (
         <div className={css(AppStyle.footer, AppStyle.textAlignCenter)}>
             <div><img src={require('./img/design/footer_logo/footer_logo.png')}
@@ -69,7 +66,7 @@ const Footer = () => (
                target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/46654176/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style={{width:"88px", height:"31px", border:"0"}} alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="46654176" data-lang="ru" /></a>*/}
         </div>
 
-)
+);
 
 class App extends React.Component {
     componentWillMount() {

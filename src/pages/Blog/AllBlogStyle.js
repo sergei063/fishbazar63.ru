@@ -1,13 +1,10 @@
-import React from 'react';
+
 
 import {StyleSheet} from 'aphrodite/no-important';
 import {
     FuturaBoldFont,
-    FuturaFont,
-    FuturaMediumFont,
     LucidaGrandeFontB,
     MetaSerifProBookFont,
-    MetaSerifProFont
 } from "../../css/Fonts";
 
 

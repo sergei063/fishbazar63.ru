@@ -1,6 +1,5 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaBoldFont, MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
-import {FuturaFont} from "../../../css/Fonts";
+import {FuturaBoldFont, MetaSerifProBookFont} from "../../../css/Fonts";
 
 
 const SocialNetworkBlockStyle = StyleSheet.create({

@@ -66,6 +66,6 @@ const QualityAssurance = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default QualityAssurance;

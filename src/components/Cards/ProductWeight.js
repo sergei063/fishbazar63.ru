@@ -2,7 +2,7 @@
 import React from 'react';
 
 import {css, StyleSheet} from "aphrodite/no-important";
-import {FuturaFont, LucidaGrandeFontB} from "../../css/Fonts";
+import {FuturaFont} from "../../css/Fonts";
 
 
 const ProductWeight = (props) =>  {
@@ -14,7 +14,7 @@ const ProductWeight = (props) =>  {
             <span className={css((price.weightFish && price.weightFish.size==="l")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>L</span>
         </div>
     );
-}
+};
 const productWeightFishSpan ={
     fontFamily: [FuturaFont, "sans-serif"],
     fontSize: '16px',
@@ -27,7 +27,7 @@ const productWeightFishSpan ={
     letterSpacing: '0.5px',
     textAlign: 'left',
     cursor:'pointer'
-}
+};
 const Style = StyleSheet.create({
     productWeightFishBlock:{
         position:'absolute',

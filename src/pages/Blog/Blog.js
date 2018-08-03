@@ -1,16 +1,12 @@
 import React from 'react';
-import {HashRouter, Switch, Route, Redirect, Link} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaBoldFont, FuturaFont, FuturaMediumFont, MetaSerifProBookFont, MetaSerifProFont} from "../../css/Fonts";
 import {css} from "aphrodite";
 import AppStyle from "../../css/AppStyle";
-import SocialNetworkBlockStyle from "../Delivery/SocialNetworkBlock/SocialNetworkBlockStyle";
-import VK from "../../components/SocialNetwork/Vk";
-import Instagram from "../../components/SocialNetwork/Instagram";
-import Katalog from "../../Katalog";
 import AllBlogStyle from "./AllBlogStyle";
 import MenuBlog from "../../components/Blog/Menu/MenuBlog";
+import {_try} from "../../components/lib";
+import SeafoodItemStyle from "../Seafood/SeafoodItemStyle";
 
 
 const RecipesDB = {
@@ -41,6 +37,7 @@ const RecipesDB = {
                 "1 ст. л. рисового винного уксуса",
                 "соль, свежемолотый черный перец"
             ],
+            "fish_for_recipe": ["treska_15", "shrimp_tiger"],
             "html_text": "<p>Вскипятите воду в&nbsp;кастрюле. Положите рисовую лапшу и&nbsp;варите 5&nbsp;мин., до&nbsp;готовности. Откиньте на&nbsp;дуршлаг, затем промойте холодной водой. Остудите.</p>\n" +
             "<p>Очистите креветки от&nbsp;панциря, удалите голову и&nbsp;хвостик. Надрежьте вдоль спинки острым ножом и&nbsp;удалите темную вену. Вскипятите воду в&nbsp;сотейнике, посолите и&nbsp;отварите креветки до&nbsp;готовности, 2&nbsp;мин. Остудите.</p>\n" +
             "<p>Для заправки очистите имбирь и&nbsp;натрите на&nbsp;мелкой терке. Смешайте все компоненты заправки в&nbsp;банке с&nbsp;завинчивающейся крышкой и&nbsp;хорошо потрясите. Очистите морковь и&nbsp;нарежьте тонкой соломкой или натрите на&nbsp;терке для корейской моркови. Зеленый лук нарежьте наискосок. Огурец разрежьте вдоль пополам и&nbsp;нарежьте ломтиками. Крупно порубите листья кинзы. Красный лук нарежьте тонкими четвертинками колец. Выложите овощи и&nbsp;зелень в&nbsp;миску.</p>\n" +
@@ -59,6 +56,7 @@ const RecipesDB = {
             "tittle": "Жаренные лангустины",
             "img": require('../../img/Recipes/fried_scallops/fried_scallops.jpg'),
             "date": "2018-02-23",
+            "fish_for_recipe": ["salmon_of_chile_m"],
             "ingredients": [
                 "250 г крупных креветок",
                 "100 г рисовой лапши",
@@ -150,8 +148,34 @@ export const Recipes = {
         }
         return res;
     },
-    getAllSordItems: () => {
-        return Recipes.getAllItems().sort(function (a, b) {
+    getAllFilteredGroupItems: (groupName) => {
+        let res = [];
+        for (let el in Recipes) {
+
+
+            let group = Recipes[el];
+
+            if ((group.catalog_tittle) && (group.catalog_tittle===groupName)) {
+                let r = group.items.map((recipe, index) => {
+                    recipe.parent = {};
+                    recipe.parent.id = el;
+                    recipe.parent.catalog_tittle = group.catalog_tittle;
+                    recipe.dateObj = new Date(recipe.date);
+                    return recipe;
+                });
+
+                if (r) {
+                    res = res.concat(...r);
+                }
+
+            }
+        }
+        return res;
+    },
+    getAllSordItems: (groupNameFilter) => {
+        //getAllFilteredGroupItems()
+        let items = (groupNameFilter)? Recipes.getAllFilteredGroupItems(groupNameFilter): Recipes.getAllItems();
+        return items.sort(function (a, b) {
             return new Date(b.date).getTime() - new Date(a.date).getTime()
         });
     },
@@ -194,14 +218,20 @@ const dateOptions = {
     day: "numeric"
 };
 
+
 const AllBlog = (props) => {
-    let recipes = Recipes.getAllSordItems();
+
+    let recipes = Recipes.getAllSordItems(_try(() => props.history.location.state.blogFilter, null));
 
     return (
         <div className={css(AllBlogStyle.cnt)}>
 
             <div className={css(AllBlogStyle.cntFlex)}>
                 <div style={{width: '65%'}}>
+
+                    <div className={css((recipes.length>0)?AppStyle.displayNone:AppStyle.displayBlock)}>В категории <span style={{textTransform:'lowercase'}}>{_try(() => props.history.location.state.blogFilter, '')}</span> пока нет рецептов.</div>
+
+
                     {recipes.map((recipe, index) => (
                             <div key={index.toString()}>
                                 <h1 className={css(AllBlogStyle.h1)}>{recipe.tittle}</h1>
@@ -211,7 +241,7 @@ const AllBlog = (props) => {
                                     <button style={{width: '134px'}} className={css(AppStyle.buttonRed)} onClick={() => {
 
                                         props.history.push({
-                                            state: {selectedRecipe: recipe},
+                                            state: {...props.history.location.state, selectedRecipe: recipe},
                                             pathname: `${props.history.location.pathname}/${recipe.name}`
                                         });
                                     }}>Рецепт
@@ -221,17 +251,39 @@ const AllBlog = (props) => {
                         )
                     )}
                 </div>
-                <MenuBlog/>
+                <MenuBlog history={props.history}/>
             </div>
 
             <div style={{height: '164px'}}></div>
         </div>
     );
-}
+};
 
+
+const BreadCrumbs = (props)  => {
+    return (
+        <div>
+            <Link onClick={(event) => {
+                event.preventDefault();
+                props.history.push({pathname: '/blog', state: {...props.history.location.state,blogFilter: null}});
+                /*this.scrollToProductuionContainer(); */
+            }} className={css(SeafoodItemStyle.link)} to='/blog'>Рецепты</Link>
+            &nbsp;/&nbsp;
+            <Link onClick={(event) => {
+                event.preventDefault();
+                props.history.push({pathname: '/blog', state: {...props.history.location.state,blogFilter: props.item.parent.catalog_tittle}});
+
+            }} className={css(SeafoodItemStyle.link)} to='/blog'>{props.item.parent.catalog_tittle}</Link>
+            &nbsp;/&nbsp;
+            <Link onClick={(event) => {
+                event.preventDefault();
+            }} className={css(SeafoodItemStyle.link)} to='/blog'>{props.item.tittle}</Link>
+        </div>
+    )
+};
 
 const OneBlog = (props) => {
-    let selectedRecipe = {}
+    let selectedRecipe = {};
     try {
         selectedRecipe = props.history.location.state.selectedRecipe;
     } catch (e) {
@@ -239,10 +291,9 @@ const OneBlog = (props) => {
 
     }
 
-    console.log(selectedRecipe)
     return (
         <div className={css(AllBlogStyle.cnt)}>
-
+            <BreadCrumbs item={selectedRecipe} history={props.history}/>
             <div className={css(AllBlogStyle.cntFlex)}>
                 <div style={{width: '65%'}}>
                     <h1 className={css(AllBlogStyle.h1)}>{selectedRecipe.tittle}</h1>
@@ -278,13 +329,13 @@ const OneBlog = (props) => {
                          dangerouslySetInnerHTML={{__html: selectedRecipe.html_text || ""}}>{}</div>
                 </div>
 
-                <MenuBlog/>
+                <MenuBlog history={props.history} fish_for_recipe={selectedRecipe.fish_for_recipe}/>
             </div>
 
             <div style={{height: '164px'}}></div>
         </div>
     );
-}
+};
 
 
 const Blog = (props) => {
@@ -294,7 +345,7 @@ const Blog = (props) => {
             <Route path='/blog/:recipe' params={props} component={connect(mapStateToProps)(OneBlog)}/>
         </Switch>
     )
-}
+};
 
 const mapStateToProps = (state) => ({
     seafoodShoppingCart: state.seafoodShoppingCart,
