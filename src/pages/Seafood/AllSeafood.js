@@ -39,7 +39,7 @@ const AllSeafood = (props) => {
 
                 <br/>&nbsp;
             </div>
-            <div className={css(AppStyle.textAlignRigh)}>
+            <div className={css(SeafoodStyle.catalogGroupsDiv)}>
                 <CatalogGroups history={props.history} productItems={Katalog.getGroup()}/>
                 <br/>
                 <img src={require('../../img/design/seafood_layer/seafood_layer.png')}

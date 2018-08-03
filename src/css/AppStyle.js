@@ -6,14 +6,17 @@ const sliderBase = {
     borderSpacing: '135px 135px',
     //minWidth: '100%',
     height: '556px',
-    minHeight: '430px',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
-    display: 'table',
+    //display: 'table',
     textShadow: 'black 0.1em 0.1em 0.2em',
     transition: 'background 2s ease 0s',
     minWidth: '10px',
-    width: '100%'
+    width: '100%',
+    '@media (max-width: 900px)': {
+        height: '314px',
+        borderSpacing: '40px',
+    }
 };
 
 const menu_inline_ul = {
@@ -42,13 +45,16 @@ const AppStyle = StyleSheet.create({
     slider: {
         ...sliderBase,
         backgroundImage: "url(" + require('../img/fon.jpg') + "), url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "),url(" + require('../img/fons/krevetki.jpg') + "), linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0) 51%, #000000)",
-        '@media (max-width: 750px)': {
+
+        /*'@media (max-width: 750px)': {
             backgroundImage: "url(" + require('../img/fon.jpg') + ")",
             fontSize: '0.7em',
             height: '45vh',
-            minHeight: '0'
+            minHeight: '0',
 
-        }
+            backgroundSize: 'cover'
+
+        }*/
     },
 
     map: {

@@ -70,14 +70,7 @@ const Style = StyleSheet.create({
         lineHeight: '3.08',
         letterSpacing: '0.4px',
         textAlign: 'right',
-        fontSize:'12px',
-
-
-        '@media (max-width: 840px)': {
-            width:"100%",
-            fontSize:"1.8em",
-            marginBottom:"0.5em"
-        }
+        fontSize:'12px'
     },
 });
 

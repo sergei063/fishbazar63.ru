@@ -76,11 +76,13 @@ const RecipesBlogStyle = StyleSheet.create({
         color: '#1e232c',
     },
     button_bock: {
-        position:'absolute',
+       /* position:'absolute',
         left:'81px',
-        bottom:'37px',
-
+        bottom:'37px',*/
+        margin: '0 auto',
         maxWidth:'325px',
+        lineHeight: '4',
+        textAlign: 'center'
     },
     overRecipes:{
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -96,34 +98,51 @@ const RecipesBlogStyle = StyleSheet.create({
     table:{
         display: 'table',
         height:'160px',
-        margin: '0 auto'
+        margin: '0 auto',
+        '@media (max-width: 900px)': {
+            display: 'none'
+        }
     },
     flexContainer:{
-        position:'relative'
-       /* display: 'flex',
+        position:'relative',
+        display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'flex-start',
-        alignContent: 'flex-start'*/
+        alignContent: 'flex-start'
     },
     recipeDiv:{
-        position:'absolute',
+       /* position:'absolute',
         left:'127px',
-        top:'50px',
-        backgroundColor:"#fff",
-        width:'464px',
+        top:'50px',*/
+        position:'relative',
+
+        maxWidth:'464px',
+        width:'30%',
+        maxHeight:'435px',
         zIndex:'1',
-        height:'435px',
+
         boxShadow: '0 1px 10px 0 rgba(53, 66, 92, 0.08)'
     },
-    fish:{
+    recipeDivAbsolute:{
         position:'absolute',
+        backgroundColor:"#fff",
+        minWidth: '304px',
+        left:'55px',
+        top:'50px',
+        width: '100%'
+
+
+    },
+    fish:{
+        /*position:'absolute',
         left:'531px',
-        top:'0',
+        top:'0',*/
         zIndex:'0',
-        width:'464px',
-        height:'435px',
+        maxWidth:'704px',
+        maxHeight:'440px',
+        width:'60%',
         boxShadow: '0 1px 10px 0 rgba(53, 66, 92, 0.08)'
     }
 

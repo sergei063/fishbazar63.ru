@@ -21,5 +21,12 @@ const SeafoodStyle = StyleSheet.create({
         '@media (max-width: 1400px)': {}
     },
     textAlignCenter: {textAlign: 'center'}
+    ,catalogGroupsDiv:{
+        textAlign: 'right',
+
+        '@media (max-width: 530px)': {
+            display:'none',
+        }
+    }
 });
 export default SeafoodStyle;

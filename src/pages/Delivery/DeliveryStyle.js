@@ -9,7 +9,7 @@ const DeliveryStyle = StyleSheet.create({
     cnt: {
         marginTop: '0px',
         textIndent: '0',
-        height:'779px',
+        //height:'779px',
         backgroundColor:'#f9f9f9'
 
     },
@@ -24,6 +24,12 @@ const DeliveryStyle = StyleSheet.create({
         letterSpacing:'1.4px',
         color:'#1e232c',
     },
+    footerDiv:{
+        height:'81px',
+        '@media (max-width: 900px)': {
+         display:'none'
+        }
+    },
     h116: {
         height:'116px'
 
@@ -34,7 +40,12 @@ const DeliveryStyle = StyleSheet.create({
         flexWrap: 'nowrap',
         justifyContent: 'space-around',
         alignItems: 'stretch',
-        alignContent: 'stretch'
+        alignContent: 'stretch',
+        '@media (max-width: 900px)': {
+            flexDirection: 'column-reverse',
+            justifyContent: 'flex-end',
+            alignItems:'center'
+        }
     },
 
     flexContainerInfoRow: {
@@ -43,7 +54,12 @@ const DeliveryStyle = StyleSheet.create({
         flexWrap: 'nowrap',
         justifyContent: 'space-around',
         alignItems: 'stretch',
-        alignContent: 'stretch'
+        alignContent: 'stretch',
+        width: '40%',
+        '@media (max-width: 900px)': {
+            width:'80%',
+            height: '400px'
+        }
     },
 
     flexContainerInfoCell: {
@@ -58,6 +74,23 @@ const DeliveryStyle = StyleSheet.create({
     width40Percent: {
         width: '40%'
     },
+    imgDiv: {
+        width: '40%',
+        '@media (max-width: 900px)': {
+            paddingTop: "64px",
+            paddingBottom: "72px"
+        }
+
+    },
+    img: {
+        width:'518px',
+        height:'400px',
+        '@media (max-width: 900px)': {
+            width:'272px',
+            height:'236px',
+        }
+    },
+
     width30Percent: {
         width: '30%'
     }, width70Percent: {
