@@ -13,8 +13,46 @@ const mobileMenuClick = (event) => {
         event.preventDefault();
 
     let display = $('#menu_inline_ul').css("display");
+
+    if($('#menu_inline_ul').hasClass(css(HeaderStyle.menuInlineUl))){
+        //show
+        //alert("show");
+        $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUl));
+        $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUlBlock))
+
+        $('#header_pouch_mobile_menu_close_span').removeClass(css(HeaderStyle.mobileMenuBtnHidden));
+        $('#header_pouch_mobile_menu_close_span').addClass(css(HeaderStyle.mobileMenuBtn));
+
+        $('#header_pouch_mobile_menu_span').removeClass(css(HeaderStyle.mobileMenuBtn));
+        $('#header_pouch_mobile_menu_span').addClass(css(HeaderStyle.mobileMenuBtnHidden));
+
+        $('#header_pouch_mobile_menu_cnt').addClass(css(HeaderStyle.floatMenuBlockWidthMobile));
+
+    } else {
+        //hide
+        //alert("hide");
+        $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUl))
+        $('#header_pouch_mobile_menu_close_span').addClass(css(HeaderStyle.mobileMenuBtnHidden));
+        $('#header_pouch_mobile_menu_close_span').removeClass(css(HeaderStyle.mobileMenuBtn));
+
+        $('#header_pouch_mobile_menu_cnt').removeClass(css(HeaderStyle.floatMenuBlockWidthMobile));
+        $('#header_pouch_mobile_menu_span').removeClass(css(HeaderStyle.mobileMenuBtnHidden));
+        $('#header_pouch_mobile_menu_span').addClass(css(HeaderStyle.mobileMenuBtn));
+        $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUlBlock))
+    }
+
+    let unDisplay = (display === "none") ? "none" : "block";
     display = (display === "none") ? "block" : "none";
-    $('#menu_inline_ul').css("display", display);
+
+    let width = (display === "block") ? "375px" : "0px";
+    //$('#menu_inline_ul').css("display", display);
+
+
+    //$('#header_pouch_mobile_menu_close_span').css("display", display);
+    //$('#header_pouch_mobile_menu_span').css("display", unDisplay);
+
+
+    //$('#header_pouch_mobile_menu_cnt').css("width", width);
 
 };
 const hideMobileMenu = (event) => {
@@ -32,20 +70,26 @@ class Header extends React.Component {
 
         return (<header>
                 <nav>
-                    <div className={css(AppStyle.zI2, HeaderStyle.floatMenuBlock, HeaderStyle.nav_urls)}>
-                        <span className={css(HeaderStyle.mobileMenuBtn)}>
+                    <div id="header_pouch_mobile_menu_cnt"  className={css(AppStyle.zI2, HeaderStyle.floatMenuBlock, HeaderStyle.floatMenuBlockWidth, HeaderStyle.nav_urls)}>
+                        <span id="header_pouch_mobile_menu_close_span" className={css(HeaderStyle.mobileMenuBtn)+ " " +css(HeaderStyle.mobileMenuBtnHidden)}>
+                            <a id="header_pouch_mobile_menu_close" onClick={mobileMenuClick}
+                               className={css(HeaderStyle.pouchMobileMenuClose)} href='#'></a>
+                            <br/>
+                            <br/>
+                        </span>
+                        <span  id="header_pouch_mobile_menu_span" className={css(HeaderStyle.mobileMenuBtn)+ " " +css(HeaderStyle.mobileMenuMarginLeft60)}>
                             <a id="header_pouch_mobile_menu" onClick={mobileMenuClick}
                                className={css(HeaderStyle.pouchMobileMenu)} href='#'></a>
                             <br/>
                             <br/>
                         </span>
-                        <span className={css(HeaderStyle.mobileMenuBtn, AppStyle.paddingLeft10)}>
+                        {/*<span className={css(HeaderStyle.mobileMenuBtn, AppStyle.paddingLeft10)}>
                             <a id="header_pouch_phone_menu"
                                className={(this.state.isMobile) ? css(HeaderStyle.pouchPhoneMenu) : css(HeaderStyle.pouchPhoneMenu)}
                                href='tel:+79171682771'></a>
                             <br/>
                             <br/>
-                        </span>
+                        </span>*/}
 
                         <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
                             <li className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Морепродукты</Link></li>

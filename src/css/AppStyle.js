@@ -267,12 +267,18 @@ const AppStyle = StyleSheet.create({
         ':hover': {
             color:'#fe545b'
         },
-        '@media (max-width: 750px)': {
+        '@media (max-width: 900px)': {
             marginRight: '0.5em',
-            fontSize: '1.5em',
-            textAlign: 'left',
-            lineHeight: '1.5em',
-            display: 'block'
+            display: 'block',
+            fontWeight: "bold",
+            fontStyle: "normal",
+            fontStretch: "normal",
+            lineHeight: "32px",
+            letterSpacing: "0.5px",
+            textAlign: "center",
+            color: "#000000",
+            width:'100%'
+
         }
     },
     menu_inline_tel: {

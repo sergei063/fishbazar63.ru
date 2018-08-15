@@ -30,6 +30,10 @@ const Style = StyleSheet.create({
             background: '#fe545b',
             boxShadow: 'none'
             /*border: '1px solid #fe545b'*/
+        },
+        '@media (max-width: 900px)': {
+            top:'-16px',
+            right:'38px',
         }
     },
     pouch_a_span: {
