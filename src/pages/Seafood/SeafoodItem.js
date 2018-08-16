@@ -10,6 +10,8 @@ import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
 import Iinfo from "../../components/Iinfo/Iinfo";
 import AllCards from "../../components/Cards/AllCards";
+import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
+import PouchIcon from "../../containers/PouchIcon/PouchIcon";
 
 
 const BreadCrumbs = (props) => {
@@ -40,27 +42,38 @@ const SeafoodItem = (props) => {
     if (!item) {
         return <div>Ничего не найдено</div>
     }
+    let countFishFoGroups = (document.body.clientWidth <=1305)? 2:3;
 
-    let groupItems = Katalog.getGroupItems(null, 3);
+
+    let groupItems = Katalog.getGroupItems(null, countFishFoGroups);
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
+            {(MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
             <div className={css(SeafoodItemStyle.h124)}></div>
             <div className={css(SeafoodItemStyle.flexContainer)}>
                 <div className={css(SeafoodItemStyle.fishContainer, SeafoodItemStyle.width50P)}>
                     <div className={css(SeafoodItemStyle.fishContainerFirst)}>
-                        <BreadCrumbs item={item} history={props.history}/>
-                        <div><img src={item.img} width='304px' height='172px'></img></div>
-                        <div>{(item.catchDate)?`Вылов: ${item.catchDate}`:"&nbsp;"}</div>
-                        <div>&nbsp;</div>
-                        <div style={{width:'80%'}}>{(item.producer)?`Производитель: ${item.producer}`:"&nbsp;"}</div>
+                        <div className={css(SeafoodItemStyle.mobileShow650,SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
+                            {item.info}
+                        </div>
+                        <div className={css(SeafoodItemStyle.mobileHidden650)}><BreadCrumbs item={item} history={props.history}/></div>
+                        <div><img className={css(SeafoodItemStyle.img)} src={item.img} ></img></div>
+
+                        <div className={css(SeafoodItemStyle.mobileHidden650)}>
+                            <div>{(item.catchDate) ? `Вылов: ${item.catchDate}` : "&nbsp;"}</div>
+                            <div>&nbsp;</div>
+                            <div
+                                style={{width: '80%'}}>{(item.producer) ? `Производитель: ${item.producer}` : "&nbsp;"}</div>
+                        </div>
                     </div>
                 </div>
 
                 <div className={css(SeafoodItemStyle.infoContainer, SeafoodItemStyle.width50P)}>
 
-                    <div className={css(SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
+                    <div className={css(SeafoodItemStyle.mobileHidden650,SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
                         {item.info}
                     </div>
+
                     <Counter id="countFish" packaging={item.packaging}/>
                     <div>
                         <button onClick={() => {
@@ -84,11 +97,13 @@ const SeafoodItem = (props) => {
 
             </div>
 
-            <div style={{height:'178px'}}></div>
-            <div className={css(SeafoodItemStyle.withBuy)}>С этим товаром покупают</div>
-            <div style={{height:'48px'}}></div>
-            <div className={css(SeafoodItemStyle.withBuyDiv)}>
-                <AllCards items={groupItems}/>
+            <div className={css(SeafoodItemStyle.mobileHidden)}>
+                <div style={{height: '178px'}}></div>
+                <div className={css(SeafoodItemStyle.withBuy)}>С этим товаром покупают</div>
+                <div style={{height: '48px'}}></div>
+                <div className={css(SeafoodItemStyle.withBuyDiv)}>
+                    <AllCards items={groupItems}/>
+                </div>
             </div>
 
             <div style={{height:'93px'}}></div>

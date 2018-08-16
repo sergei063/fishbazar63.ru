@@ -56,6 +56,9 @@ const HeaderStyle = StyleSheet.create({
             textAlign:"left",
             //float: 'left',
             padding:"23px 0px 0px 5px"
+        },
+        '@media (max-width: 500px)': {
+            top: '-5px'
         }
     },
     floatMenuBlockWidth: {
@@ -64,7 +67,8 @@ const HeaderStyle = StyleSheet.create({
             width:'100%',
         },
         '@media (max-width: 900px)': {
-            width:"0px"
+            width:"0px",
+            boxShadow: 'none'
         }
     },floatMenuBlockWidthMobile: {
 
@@ -73,6 +77,9 @@ const HeaderStyle = StyleSheet.create({
         },
         '@media (max-width: 900px)': {
             width:"375px"
+        },
+        '@media (max-width: 500px)': {
+            width:"98%"
         }
     },
 
@@ -81,10 +88,10 @@ const HeaderStyle = StyleSheet.create({
         '@media (max-width: 900px)': {
             display:'block',
             position: "relative",
-            borderRadius: "15px",
             backgroundColor:'white',
             textAlign:"left",
             width:"100%",
+            height:"100%",
 
             //float: 'left',
             padding:"0",
@@ -111,13 +118,35 @@ const HeaderStyle = StyleSheet.create({
     menuInlineUl:{
         display:'flex',
         flexDirection: 'row',
+        margin:'0',
         flexWrap: 'nowrap',
         justifyContent:'space-around',
-        alignItems:'baseline',
-
+        //alignItems:'baseline',
+        alignItems:'center',
         '@media (max-width: 900px)': {
             marginLeft: "-35px",
             display:"none"
+        }
+    },
+    menuLogoFull:{
+        display:'inline',
+        '@media (max-width: 500px)': {
+            display:"none"
+        }
+    },menuLogoShort:{
+        display:'none',
+        '@media (max-width: 500px)': {
+            display:"inline"
+        }
+    },
+
+    logo:{
+        textAlign:'center',
+        flexGrow: '1',
+        marginLeft: '20%',
+
+        '@media (max-width: 500px)': {
+            marginLeft: '0px',
         }
     },
     menuInlineUlBlock:{
@@ -137,10 +166,14 @@ const HeaderStyle = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'nowrap',
         justifyContent:'center',
-        alignItems:'baseline',
+
         alignContent:'center',
         '@media (max-width: 900px)': {
-            display:'flex'
+            display:'flex',
+            margin:'0',
+            height:"100%",
+            alignItems:'flex-end',
+            //paddingTop:'14px'
         }
 
     },
@@ -154,6 +187,8 @@ const HeaderStyle = StyleSheet.create({
     mobileMenuMarginLeft60:{
         '@media (max-width: 900px)': {
             marginLeft: '60px'
+        },'@media (max-width: 500px)': {
+            marginLeft: '19px'
         }
     },
     mobileMenuBtnHidden:{

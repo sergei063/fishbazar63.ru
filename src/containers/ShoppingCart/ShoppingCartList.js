@@ -34,18 +34,120 @@ class ShoppingCartList extends React.Component {
         return res;
     }
 
-    render() {
+    renderMobile(catalog) {
+        let i = 0;
+        return (
+            <div>{catalog.map(p => {
+                i++;
+                let weightOfOneFish = (p.weightOfOneFish) ? p.weightOfOneFish : 1;
+                let cost = p.count * p.price * weightOfOneFish;
+                this.totalSum += cost;
 
-        let catalog = this.getSeafoodShoppingCartInArray();
+                return (
+                    <div>
+                        <div className={css(ShoppingCartStyle.divTable)}>
+                            <div className={css(ShoppingCartStyle.divTableBody)}>
+                                <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeader)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>Товар</div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>Цена</div>
+                                </div>
+
+                                <div
+                                    className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+
+                                <div id={p.id} key={p.id}
+                                     className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowText)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>{p.showCaseName}</div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>{p.price} руб/кг</div>
+
+                                </div>
+
+
+                                <div
+                                    className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
 
 
-        if ((catalog === null) || (catalog.length === 0)) {
-            return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
-        }
+                        <div className={css(ShoppingCartStyle.divTable)}>
+                            <div className={css(ShoppingCartStyle.divTableBody)}>
+                                <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeader)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>Кол-во</div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>Cтоимость</div>
+                                </div>
+
+                                <div
+                                    className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+
+                                <div id={p.id} key={p.id}
+                                     className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowText)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <Counter id={`fishNum_${p.id}`} counter={p.count} packaging={p.packaging}
+                                                 calbackFn={() => {
+                                                     calbackFn(p.id, this.props);
+                                                     /*{
+                                                         this.props.onChangeShoppingCart(totalSum)
+                                                     }*/
+                                                 }}/>
+                                    </div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}><span
+                                        className={css(ShoppingCartStyle.price)}><nobr>{cost} руб</nobr></span></div>
+                                </div>
+
+
+                                <div
+                                    className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div style={{height:'35px'}}></div>
+                    </div>
 
 
 
+                )
+            })}</div>
+        )
+    }
+
+
+
+
+
+
+    renderAll(catalog) {
         let i = 0;
 
         return (
@@ -119,6 +221,14 @@ class ShoppingCartList extends React.Component {
                 </div>
             </div>
         )
+    }
+    render(){
+        let catalog = this.getSeafoodShoppingCartInArray();
+        if ((catalog === null) || (catalog.length === 0)) {
+            return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
+        }
+
+        return (document.body.clientWidth <=634)? this.renderMobile(catalog):this.renderAll(catalog);
     }
 }
 

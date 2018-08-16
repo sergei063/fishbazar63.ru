@@ -30,8 +30,18 @@ const DeliveryStyle = StyleSheet.create({
          display:'none'
         }
     },
-    h116: {
-        height:'116px'
+    allSeafoodArea: {
+        height:'116px',
+        '@media (max-width: 900px)': {
+            height:'90px',
+        }
+
+    },
+    deliveryArea: {
+        height:'116px',
+        '@media (max-width: 900px)': {
+            height:'56px',
+        }
 
     },
     flexContainer: {
@@ -45,6 +55,9 @@ const DeliveryStyle = StyleSheet.create({
             flexDirection: 'column-reverse',
             justifyContent: 'flex-end',
             alignItems:'center'
+        },
+        '@media (max-width: 500px)': {
+            alignItems:'flex-start'
         }
     },
 
@@ -59,6 +72,10 @@ const DeliveryStyle = StyleSheet.create({
         '@media (max-width: 900px)': {
             width:'80%',
             height: '400px'
+        },
+        '@media (max-width: 500px)': {
+            width:'100%',
+            height: '700px'
         }
     },
 
@@ -68,7 +85,11 @@ const DeliveryStyle = StyleSheet.create({
         flexWrap: 'nowrap',
         justifyContent: 'space-between',
         alignItems: 'stretch',
-        alignContent: 'stretch'
+        alignContent: 'stretch',
+        '@media (max-width: 500px)': {
+            flexDirection: 'column',
+            alignItems: 'center',
+        }
     },
 
     width40Percent: {
@@ -79,6 +100,10 @@ const DeliveryStyle = StyleSheet.create({
         '@media (max-width: 900px)': {
             paddingTop: "64px",
             paddingBottom: "72px"
+        },
+        '@media (max-width: 500px)': {
+            textAlign:'center',
+            width: '100%',
         }
 
     },
@@ -88,13 +113,25 @@ const DeliveryStyle = StyleSheet.create({
         '@media (max-width: 900px)': {
             width:'272px',
             height:'236px',
+        },
+        '@media (max-width: 500px)': {
+
+            width:'217px',
+            height:'188px',
         }
     },
 
     width30Percent: {
-        width: '30%'
+        width: '30%',
+        '@media (max-width: 500px)': {
+            width: '80%',
+            marginBottom:'32px'
+        }
     }, width70Percent: {
-        width: '70%'
+        width: '70%',
+        '@media (max-width: 500px)': {
+            width: '80%',
+        }
     },
     columnCaption: {
         fontFamily: [FuturaBoldFont, "sans-serif"],

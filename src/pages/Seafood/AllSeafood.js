@@ -5,10 +5,12 @@ import SeafoodStyle from "./SeafoodStyle";
 import Katalog from "../../Katalog";
 import CatalogGroups from "../../components/CatalogGroups/CatalogGroups";
 import AllCards from "../../components/Cards/AllCards";
+import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
+import PouchIcon from "../../containers/PouchIcon/PouchIcon";
 
 const AllSeafood = (props) => {
     let filter, filterCount;
-
+    let {isMinimize} = props;
     try {
         filterCount = props.history.location.state.filterCount;
         if (!filterCount){filterCount = Katalog.FILTER_COUNT;}
@@ -25,6 +27,7 @@ const AllSeafood = (props) => {
 
     return (
         <div className={css(SeafoodStyle.cnt)}>
+            {(!isMinimize && MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
             <div className={css(AppStyle.textAlignCenter)}>
                 <AllCards items={groupItems}/>
                 <br/>
@@ -42,7 +45,7 @@ const AllSeafood = (props) => {
             <div className={css(SeafoodStyle.catalogGroupsDiv)}>
                 <CatalogGroups history={props.history} productItems={Katalog.getGroup()}/>
                 <br/>
-                <img src={require('../../img/design/seafood_layer/seafood_layer.png')}
+                <img className={css(SeafoodStyle.seafood_img_Layer)} src={require('../../img/design/seafood_layer/seafood_layer.png')}
                      srcSet={`${require('../../img/design/seafood_layer/seafood_layer2x.png')} 2x, ${require('../../img/design/seafood_layer/seafood_layer3x.png')} 3x`}
                      width='214px' height='175px'></img>
             </div>

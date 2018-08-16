@@ -2,14 +2,17 @@ import React from 'react';
 
 import {css} from "aphrodite/no-important";
 import DeliveryStyle from "./DeliveryStyle";
+import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
+import PouchIcon from "../../containers/PouchIcon/PouchIcon";
 
 
 
 const Delivery = (props) => {
-    let {items} = props;
+    let {isMinimize} = props;
     return (
         <div className={css(DeliveryStyle.cnt)}>
-            <div className={css(DeliveryStyle.h116)}></div>
+            {(!isMinimize && MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
+            <div className={css(DeliveryStyle.deliveryArea)}></div>
             <div className={css(DeliveryStyle.h1)}>Доставка</div>
             <div style={{ height:'115px'}}></div>
             <div className={css(DeliveryStyle.flexContainer)}>
@@ -28,7 +31,7 @@ const Delivery = (props) => {
                     </div>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>
                         <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Стоимость</div>
-                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>Минимальная сумма заказа <span className={css(DeliveryStyle.redText)}>600 руб</span><br/>г. Самара&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>150 руб</span><br/>Сухая Самарка, Жилой район Волгарь,116км. &mdash; <span className={css(DeliveryStyle.redText)}>100руб</span><br/>г. Новокуйбышевск, п.Гранный&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span><br/></div>
+                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>Минимальная сумма заказа <span className={css(DeliveryStyle.redText)}>600&nbsp;руб</span><br/>г. Самара&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>150&nbsp;руб</span><br/>Сухая Самарка, Жилой район Волгарь,116км. &mdash; <span className={css(DeliveryStyle.redText)}>100&nbsp;руб</span><br/>г. Новокуйбышевск, п.Гранный&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span><br/></div>
                     </div>
                 </div>
 

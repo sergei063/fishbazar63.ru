@@ -7,7 +7,11 @@ const ShoppingCartStyle = StyleSheet.create({
         width: '625px',
         margin: '0 auto',
         position: 'relative',
-        overflow: "hidden"
+        overflow: "hidden",
+        '@media (max-width: 750px)': {
+            width: '100%',
+
+        }
     },
     h1: {
         fontFamily: [LucidaGrandeFont, "sans-serif"],
@@ -117,7 +121,11 @@ const ShoppingCartStyle = StyleSheet.create({
         flexWrap: 'nowrap',
         justifyContent: 'space-between',
         alignItems: 'stretch',
-        alignContent: 'space-between'
+        alignContent: 'space-between',
+        '@media (max-width: 650px)': {
+            display:'none'
+
+        }
     },
     ////
 

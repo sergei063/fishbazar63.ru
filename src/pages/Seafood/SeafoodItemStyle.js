@@ -12,6 +12,14 @@ const SeafoodItemStyle = StyleSheet.create({
         backgroundColor: '#f9f9f9'
 
     },
+    img:{
+        width:'304px',
+        height:'172px',
+        '@media (max-width: 650px)': {
+            width:'224px',
+            height:'132px',
+        }
+    },
     h1: {
         fontFamily: [FuturaFont, "sans-serif"],
         fontSize: '18px',
@@ -35,7 +43,10 @@ const SeafoodItemStyle = StyleSheet.create({
         color: '#ffffff',
     },
     h124:{
-        height:'124px'
+        height:'124px',
+        '@media (max-width: 650px)': {
+            height:'33px',
+        }
     },
     flexContainer: {
         display: 'flex',
@@ -44,7 +55,12 @@ const SeafoodItemStyle = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         alignItems: 'strech',
-        alignContent: 'flex-start'
+        alignContent: 'flex-start',
+        '@media (max-width: 650px)': {
+            flexDirection: 'column',
+            justifyContent:'space-around',
+            height:'inherit',
+        }
     },
     fishContainer: {
         display:'flex',
@@ -64,7 +80,11 @@ const SeafoodItemStyle = StyleSheet.create({
         flexWrap:'nowrap',
         justifyContent:' space-between',
         alignItems:'stretch',
-        alignContent:'center'
+        alignContent:'center',
+        '@media (max-width: 650px)': {
+            marginLeft:'35px',
+            height:'350px',
+        }
     },
     fishContainerFirst: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -76,14 +96,23 @@ const SeafoodItemStyle = StyleSheet.create({
         lineHeight: "1.71",
         letterSpacing: "0.5px",
         textAlign: "left",
-        color: "#1e232c"
+        color: "#1e232c",
+        '@media (max-width: 1050px)': {
+            marginLeft:'73px',
+        },
+        '@media (max-width: 720px)': {
+            marginLeft:'35px',
+        }
 
     },
     width40P:{
         width:'40%'
     },
     width50P:{
-        width:'50%'
+        width:'50%',
+        '@media (max-width: 650px)': {
+            width:'inherit',
+        }
     },
 
     link: {
@@ -132,7 +161,10 @@ const SeafoodItemStyle = StyleSheet.create({
         textAlign: "left",
         color: "#1e232c",
 
-        width: '303px'
+        width: '303px',
+        '@media (max-width: 650px)': {
+            width: '100%',
+        }
     },
     nameDiv: {
         fontFamily: [MetaSerifProLightFont, "sans-serif"],
@@ -178,9 +210,33 @@ const SeafoodItemStyle = StyleSheet.create({
         textAlign: "center",
         color: "#7794e6"
     },
+    mobileHidden:{
+        display:'block',
+        '@media (max-width: 730px)': {
+            display:'none',
+        }
+    },
+
+    mobileHidden650:{
+        display:'block',
+        '@media (max-width: 650px)': {
+            display:'none',
+        }
+    },
+    mobileShow650:{
+        display:'none',
+        '@media (max-width: 650px)': {
+            display:'block',
+        }
+    },
+
+
     withBuyDiv:{
         margin:'0 auto',
-       width: '80%'
+       width: '80%',
+        '@media (max-width: 1050px)': {
+            width: '100%'
+        }
     }
 
 });

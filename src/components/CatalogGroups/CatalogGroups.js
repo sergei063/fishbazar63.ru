@@ -70,7 +70,10 @@ const Style = StyleSheet.create({
         lineHeight: '3.08',
         letterSpacing: '0.4px',
         textAlign: 'right',
-        fontSize:'12px'
+        fontSize:'12px',
+        '@media (max-width: 900px)': {
+            display:"inline"
+        }
     },
 });
 

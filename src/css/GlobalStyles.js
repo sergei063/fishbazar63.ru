@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
             cursor:'pointer'
         },
         '*' :{
-            outline: '0 !important'
+            outline: '0 !important',
+
         },
 
 
@@ -56,19 +57,25 @@ const styles = StyleSheet.create({
         },
         nav: {
             backgroundColor: "white",
-            padding:'0px 5px 0 0',
-
-            '@media (max-width: 750px)': {
-                /* top: '25%',
-                 width:'100%',
-                 height:'60%'*/
+            height:'156px',
+            '@media (max-width: 900px)': {
+                height:'110px',
+            },
+            '@media (max-width: 500px)': {
+                height:'64px',
             }
 
         },
         header: {
             height:'156px',
             zIndex: '10000',
-            backgroundColor: "white"
+            backgroundColor: "white",
+            '@media (max-width: 900px)': {
+                height:'110px',
+            },
+            '@media (max-width: 500px)': {
+                height:'64px',
+            }
         },
         ul: {
             listStyle:'none'

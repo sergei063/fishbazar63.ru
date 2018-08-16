@@ -18,7 +18,11 @@ const CardStyle = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'baseline',
-        alignContent: 'stretch'
+        alignContent: 'stretch',
+        '@media (max-width: 500px)': {
+            marginRight:'0px',
+            padding:'0px'
+        }
 
     },
 

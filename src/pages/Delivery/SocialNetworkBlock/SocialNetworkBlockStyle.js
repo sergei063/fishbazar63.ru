@@ -11,9 +11,17 @@ const SocialNetworkBlockStyle = StyleSheet.create({
 
     },
     delivery_small:{
+        display:'none',
         position:'absolute',
         right:'0',
-        bottom:'-116px'
+        bottom:'-116px',
+        width:"273px",
+        height:"463px",
+        '@media (max-width: 900px)': {
+            width:"154px",
+            height:"261px",
+            bottom:'11px',
+        }
     },
     h1: {
         fontFamily: [FuturaBoldFont, "sans-serif"],
@@ -25,7 +33,10 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         letterSpacing: '0.6px',
         textAlign: 'left',
         color: '#ffffff',
-        flex: '0 0 73px'
+        flex: '0 0 73px',
+        '@media (max-width: 500px)': {
+            fontSize: '16px',
+        }
     },
     h2: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -38,7 +49,13 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         maxWidth:'306px',
         textAlign: 'left',
         color: '#ffffff',
-        flex: '0 0 80px'
+        flex: '0 0 80px',
+        '@media (max-width: 500px)': {
+            maxWidth:'227px',
+            textAlign: 'center',
+            lineHeight: "normal",
+
+        }
     },
     PL20:{
         paddingLeft:'20px'
@@ -54,7 +71,10 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'stretch',
         alignContent: 'stretch',
-        height: '395px'
+        height: '395px',
+        '@media (max-width: 500px)':{
+            height: '348px',
+        }
     },
 
     flexContainerInfoRow: {
@@ -65,7 +85,13 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         alignItems: 'stretch',
         alignContent: 'stretch',
         paddingLeft: '96px',
-        paddingTop: '89px'
+        paddingTop: '89px',
+        '@media (max-width: 500px)':{
+            alignItems: "center",
+            padding: "0",
+            width: "100%",
+            justifyContent:'center'
+        }
     },
 
     flexContainerInfoCell: {
@@ -79,7 +105,10 @@ const SocialNetworkBlockStyle = StyleSheet.create({
 
     width40Percent: {
         width: '40%',
-        maxWidth: '595px'
+        maxWidth: '595px',
+        '@media (max-width: 500px)': {
+           display:'none'
+        }
     },
     width30Percent: {
         width: '30%'

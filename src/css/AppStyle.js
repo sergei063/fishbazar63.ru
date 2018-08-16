@@ -1,5 +1,5 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {coolFont, FuturaFont, FuturaMediumFont, LucidaGrandeFont, MetaSerifProFont} from "./Fonts";
+import {coolFont, FuturaBoldFont, FuturaFont, FuturaMediumFont, LucidaGrandeFont, MetaSerifProFont} from "./Fonts";
 
 const sliderBase = {
     position: 'relative',
@@ -16,6 +16,10 @@ const sliderBase = {
     '@media (max-width: 900px)': {
         height: '314px',
         borderSpacing: '40px',
+    },
+    '@media (max-width: 500px)': {
+        borderSpacing: '0px',
+        height: '192px',
     }
 };
 
@@ -119,7 +123,7 @@ const AppStyle = StyleSheet.create({
 
 
     siteTitle: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
 
         width: '645px',
         height: '100px',
@@ -131,15 +135,15 @@ const AppStyle = StyleSheet.create({
         letterSpacing: '1.4px',
         textAlign: 'left',
         color: '#ffffff',
-
-
         display: 'table-cell',
         verticalAlign: 'top',
-        '@media (max-width: 1020px)': {
-            fontSize: '1em',
+        '@media (max-width: 900px)': {
+            fontSize: '32px',
         },
-        '@media (max-width: 1500px)': {
-            fontSize: '1.5em',
+        '@media (max-width: 500px)': {
+            fontSize: '16px',
+            paddingLeft: "35px",
+            paddingTop: "40px"
         }
 
     },
@@ -156,6 +160,9 @@ const AppStyle = StyleSheet.create({
         letterSpacing: '0.7px',
         textAlign: 'left',
         color: '#ffffff',
+        '@media (max-width: 500px)': {
+            fontSize: '12px',
+        }
 
     },
     fastDeliveryText:{
@@ -165,7 +172,10 @@ const AppStyle = StyleSheet.create({
         width:'100%',
         textAlign:'center',
         fontSize:'19px',
-        color: '#ffffff'
+        color: '#ffffff',
+        '@media (max-width: 500px)': {
+         display:'none'
+        }
     },
     clearBoth: {
         clear: 'both',
@@ -251,6 +261,7 @@ const AppStyle = StyleSheet.create({
     },
     menu_inline_logo: {
         flexGrow: '2',
+        height:'160px',
         '@media (max-width: 900px)': {
            display:'none'
         }
@@ -283,7 +294,14 @@ const AppStyle = StyleSheet.create({
     },
     menu_inline_tel: {
         fontFamily: [FuturaFont, "sans-serif"],
-        fontSize:'18px'
+        fontSize:'18px',
+
+    },
+    menu_inline_tel_hidden: {
+
+        '@media (max-width: 500px)': {
+         display:'none'
+        }
     },
     menu_inline_ul: {
         ...menu_inline_ul
@@ -420,10 +438,16 @@ const AppStyle = StyleSheet.create({
         alignContent: 'flex-start',
 
         backgroundColor: '#1e232c',
-        height: '192px'
+        height: '192px',
+        '@media (max-width: 500px)':{
+            "flexDirection": "column",
+            "height": "300px",
+            paddingTop:'40px',
+            paddingBottom:'40px',
+        }
     },
     footer_link:{
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaMediumFont, "sans-serif"],
         fontSize: '14px',
         fontWeight: '500',
         fontStyle: 'normal',
@@ -437,7 +461,7 @@ const AppStyle = StyleSheet.create({
         lineHeight: '34px'
     },
     phoneNumber:{
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaMediumFont, "sans-serif"],
         fontSize: '18px',
         fontWeight: '500',
         fontStyle: 'normal',
@@ -446,6 +470,17 @@ const AppStyle = StyleSheet.create({
         letterSpacing: '0.6px',
         textAlign: 'right',
         color: '#ffffff'
+    },
+    phoneNumberMobileHide:{
+        display:'block',
+        '@media (max-width: 500px)':{
+            display:'none'
+        }
+    },phoneNumberMobileShow:{
+        display:'none',
+        '@media (max-width: 500px)':{
+            display:'block'
+        }
     }
 });
 export default AppStyle;

@@ -18,14 +18,25 @@ const SeafoodStyle = StyleSheet.create({
         marginTop: '118px',
         position: 'relative',
         overflow: "hidden",
-        '@media (max-width: 1400px)': {}
+        '@media (max-width: 900px)': {
+            flexDirection: 'column-reverse',
+            marginTop: '48px',
+        }
     },
     textAlignCenter: {textAlign: 'center'}
     ,catalogGroupsDiv:{
         textAlign: 'right',
+        '@media (max-width: 900px)': {
+            textAlign: 'center',
+        },
 
         '@media (max-width: 530px)': {
             display:'none',
+        }
+    },
+    seafood_img_Layer:{
+        '@media (max-width: 900px)': {
+            display: 'none',
         }
     }
 });

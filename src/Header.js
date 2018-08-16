@@ -12,52 +12,42 @@ const mobileMenuClick = (event) => {
     if (event)
         event.preventDefault();
 
-    let display = $('#menu_inline_ul').css("display");
-
     if($('#menu_inline_ul').hasClass(css(HeaderStyle.menuInlineUl))){
         //show
         //alert("show");
-        $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUl));
-        $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUlBlock))
-
-        $('#header_pouch_mobile_menu_close_span').removeClass(css(HeaderStyle.mobileMenuBtnHidden));
-        $('#header_pouch_mobile_menu_close_span').addClass(css(HeaderStyle.mobileMenuBtn));
-
-        $('#header_pouch_mobile_menu_span').removeClass(css(HeaderStyle.mobileMenuBtn));
-        $('#header_pouch_mobile_menu_span').addClass(css(HeaderStyle.mobileMenuBtnHidden));
-
-        $('#header_pouch_mobile_menu_cnt').addClass(css(HeaderStyle.floatMenuBlockWidthMobile));
-
+        showMobileMenu();
     } else {
         //hide
         //alert("hide");
-        $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUl))
-        $('#header_pouch_mobile_menu_close_span').addClass(css(HeaderStyle.mobileMenuBtnHidden));
-        $('#header_pouch_mobile_menu_close_span').removeClass(css(HeaderStyle.mobileMenuBtn));
-
-        $('#header_pouch_mobile_menu_cnt').removeClass(css(HeaderStyle.floatMenuBlockWidthMobile));
-        $('#header_pouch_mobile_menu_span').removeClass(css(HeaderStyle.mobileMenuBtnHidden));
-        $('#header_pouch_mobile_menu_span').addClass(css(HeaderStyle.mobileMenuBtn));
-        $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUlBlock))
+        hideMobileMenu();
     }
 
-    let unDisplay = (display === "none") ? "none" : "block";
-    display = (display === "none") ? "block" : "none";
-
-    let width = (display === "block") ? "375px" : "0px";
-    //$('#menu_inline_ul').css("display", display);
-
-
-    //$('#header_pouch_mobile_menu_close_span').css("display", display);
-    //$('#header_pouch_mobile_menu_span').css("display", unDisplay);
-
-
-    //$('#header_pouch_mobile_menu_cnt').css("width", width);
 
 };
-const hideMobileMenu = (event) => {
-    if ($('#menu_inline_ul').css("display"))
-        $('#menu_inline_ul').css("display", "");
+const showMobileMenu = () => {
+    $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUl));
+    $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUlBlock))
+
+    $('#header_pouch_mobile_menu_close_span').removeClass(css(HeaderStyle.mobileMenuBtnHidden));
+    $('#header_pouch_mobile_menu_close_span').addClass(css(HeaderStyle.mobileMenuBtn));
+
+    $('#header_pouch_mobile_menu_span').removeClass(css(HeaderStyle.mobileMenuBtn));
+    $('#header_pouch_mobile_menu_span').addClass(css(HeaderStyle.mobileMenuBtnHidden));
+
+    $('#header_pouch_mobile_menu_cnt').addClass(css(HeaderStyle.floatMenuBlockWidthMobile));
+
+
+};
+
+const hideMobileMenu = () => {
+    $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUl))
+    $('#header_pouch_mobile_menu_close_span').addClass(css(HeaderStyle.mobileMenuBtnHidden));
+    $('#header_pouch_mobile_menu_close_span').removeClass(css(HeaderStyle.mobileMenuBtn));
+
+    $('#header_pouch_mobile_menu_cnt').removeClass(css(HeaderStyle.floatMenuBlockWidthMobile));
+    $('#header_pouch_mobile_menu_span').removeClass(css(HeaderStyle.mobileMenuBtnHidden));
+    $('#header_pouch_mobile_menu_span').addClass(css(HeaderStyle.mobileMenuBtn));
+    $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUlBlock))
 
 };
 class Header extends React.Component {
@@ -103,8 +93,13 @@ class Header extends React.Component {
 
                     <div className={css(AppStyle.zI1, HeaderStyle.floatMenuBlockTablet, HeaderStyle.nav_urls)}>
                         <ul className={css(HeaderStyle.menuInlineUlTablet)}>
-                            <li style={{textAlign:'center',flexGrow: '1',marginLeft: '20%'}} className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'> <img src={require('./img/logo_full.png')} width='152px' height='99px'></img></Link></li>
-                            <li  style={{marginRight: '20px'}}  className={css(AppStyle.menu_inline,AppStyle.menu_inline_tel)}><a href='tel:+79171682771'><nobr>8 (917) 168 27 71</nobr></a></li>
+                            <li className={css(AppStyle.menu_inline, HeaderStyle.logo)}>
+                                <Link onClick={hideMobileMenu} to='/'>
+                                    <img className={css(HeaderStyle.menuLogoFull)} src={require('./img/design/logo/logo_full.png')} width='152px' height='99px'></img>
+                                    <img className={css(HeaderStyle.menuLogoShort)} src={require('./img/design/logo/logo_short.png')} width='130px' height='34px'></img>
+                                </Link>
+                            </li>
+                            <li  style={{marginRight: '20px'}}  className={css(AppStyle.menu_inline,AppStyle.menu_inline_tel,AppStyle.menu_inline_tel_hidden)}><a href='tel:+79171682771'><nobr>8 (917) 168 27 71</nobr></a></li>
                         </ul>
                     </div>
                 </nav>
