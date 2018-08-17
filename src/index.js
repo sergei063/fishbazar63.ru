@@ -79,7 +79,7 @@ const listenScrollEvent = () => {
         elem = $('nav');
 
 
-    if ((top < h_hght) || ($(window).width()<=750)) {
+    if ((top < h_hght) /*|| ($(window).width()<=750)*/) {
         //elem.css('top', '');
         elem.addClass(css(AppStyle.menu_inline_ul));
         elem.removeClass(css(AppStyle.menu_inline_ul_scroll));
@@ -93,7 +93,7 @@ const listenScrollEvent = () => {
 const getRandomArbitrary = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
 };
-//window.addEventListener('scroll', listenScrollEvent);
+window.addEventListener('scroll', listenScrollEvent);
 
 //alert($(window).width())
 

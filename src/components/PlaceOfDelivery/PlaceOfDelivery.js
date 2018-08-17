@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, css} from "aphrodite/no-important";
-import {MetaSerifProFont} from "../../css/Fonts";
+import {FuturaBoldFont, MetaSerifProBookFont, MetaSerifProFont} from "../../css/Fonts";
 import {connect} from "react-redux";
 import {setPlaceOfDelivery} from "../../actions";
 
@@ -153,7 +153,7 @@ const Style = StyleSheet.create({
 
     },
     tableRowText: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',
@@ -162,13 +162,16 @@ const Style = StyleSheet.create({
         letterSpacing: '0.5px',
         textAlign: 'left',
         color: '#1e232c',
+        '@media (max-width: 320px)': {
+            fontSize: '15px',
+        }
     },
     divTableCell: {
         display: 'table-cell',
         lineHeight: '2.38'
     },
     tableRowHeader: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '12px',
         fontWeight: 'normal',
         fontStyle: 'normal',

@@ -14,11 +14,11 @@ import {_try} from "../../lib";
 
 
 
-const MenuBlogFilter = (props) => {
+export const MenuBlogFilter = (props) => {
 
     let blogFilter =_try(() => props.history.location.state.blogFilter, '');
     return (
-        <div className={css(MenuBlogStyle.cnt_filter)}>
+        <div className={css(MenuBlogFilterStyle.cnt_filter)}>
             {Recipes.getGroup().map((group, index) => (
                     <div className={css(MenuBlogStyle.el_filter, (blogFilter===group.catalog_tittle)?MenuBlogStyle.el_filter_selected:null)} key={index.toString()}
                          onClick={() => {
@@ -91,6 +91,22 @@ const FishForRecipeCardStyle = StyleSheet.create({
 });
 
 
+const MenuBlogFilterStyle = StyleSheet.create({
+    cnt_filter: {
+        /*width:'90%',
+        height:'50px',*/
+        display: 'grid',
+        justifyItems:'flex-start',
+        rowGap: '23px',
+        gridTemplateColumns: '1fr 1fr',
+        '@media (max-width: 1000px)':{
+
+        },
+        ':nth-child(1n) > :nth-child(2)':{
+            marginLeft:'-65px'
+        }
+    },
+});
 const MenuBlogStyle = StyleSheet.create({
     cnt_filter: {
         width:'90%',

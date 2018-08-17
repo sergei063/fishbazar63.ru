@@ -1,5 +1,12 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaFont, LucidaGrandeFont, MetaSerifProFont} from "./Fonts";
+import {
+    FuturaBoldFont,
+    FuturaFont,
+    LucidaGrandeFont,
+    LucidaGrandeFontB,
+    MetaSerifProBookFont,
+    MetaSerifProFont
+} from "./Fonts";
 
 const ShoppingCartStyle = StyleSheet.create({
 
@@ -9,12 +16,31 @@ const ShoppingCartStyle = StyleSheet.create({
         position: 'relative',
         overflow: "hidden",
         '@media (max-width: 750px)': {
-            width: '100%',
+            width: '90%',
 
         }
     },
+    cnt: {
+        backgroundColor:'#f9f9f9',
+    },
+    cntArea: {
+        height:'73px',
+        '@media (max-width: 900px)': {
+           height:'82px'
+        },'@media (max-width: 650px)': {
+           height:'57px'
+        }
+    },
+    cntAreaConfirmed: {
+        height:'193px',
+        '@media (max-width: 900px)': {
+            height:'165px',
+        },'@media (max-width: 650px)': {
+           height:'57px'
+        }
+    },
     h1: {
-        fontFamily: [LucidaGrandeFont, "sans-serif"],
+        fontFamily: [LucidaGrandeFontB, "sans-serif"],
         fontSize: '18px',
         textAlign: 'center',
         fontWeight: 'bold',
@@ -23,10 +49,16 @@ const ShoppingCartStyle = StyleSheet.create({
         lineHeight: '1.19',
         letterSpacing: '1.4px',
         color: '#1e232c',
-        marginLeft: '-80px'
+        marginLeft: '-80px',
+        '@media (max-width: 650px)': {
+            fontFamily: [FuturaBoldFont, "sans-serif"],
+            marginLeft: 'inherit',
+        }
     },
+
+
     confirmedText: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',
@@ -83,7 +115,12 @@ const ShoppingCartStyle = StyleSheet.create({
     },
     divTableCell: {
         display: 'table-cell',
-        lineHeight: '2.38'
+        width:'25%',
+        lineHeight: '2.38',
+        '@media (max-width: 650px)': {
+            width:'50%',
+
+        }
     },
 
     input: {
@@ -92,11 +129,14 @@ const ShoppingCartStyle = StyleSheet.create({
         width: '166px',
         height: '40px',
         paddingLeft: '20px',
-        '::placeholder': {}
+        '@media (max-width: 650px)': {
+            width:'80%',
+
+        }
     },
     totalText: {
         textAlign: 'right',
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',
@@ -104,6 +144,9 @@ const ShoppingCartStyle = StyleSheet.create({
         lineHeight: '1.5',
         letterSpacing: '0.5px',
         color: '#1e232c',
+        '@media (max-width: 650px)': {
+            textAlign: 'left',
+        }
     },
 
     price: {
@@ -123,8 +166,23 @@ const ShoppingCartStyle = StyleSheet.create({
         alignItems: 'stretch',
         alignContent: 'space-between',
         '@media (max-width: 650px)': {
-            display:'none'
+            flexDirection: 'column-reverse',
 
+
+        }
+    },
+    deliveryMan: {
+        display: 'block',
+        '@media (max-width: 650px)': {
+            display: 'none'
+        }
+    },
+    deliveryInfoInputDiv:{
+        width:'304px',
+
+        '@media (max-width: 650px)': {
+            width:'90%',
+            margin:'0 auto'
         }
     },
     ////
@@ -170,6 +228,50 @@ const ShoppingCartStyle = StyleSheet.create({
         '@media (max-width: 500px)': {
             width: "75px",
             height: "50px",
+        }
+    },
+
+    coupon:{
+        width:'100%',
+        alignContent:'center',
+        display: "grid",
+        gridTemplateColumns: "40px 1fr 1fr 1fr",
+        '@media (max-width: 650px)': {
+            marginTop:'65px',
+            gridRowGap: '32px',
+            gridTemplateColumns: "40px 2fr 1fr",
+            //gridTemplateRows: '100px 50px'
+        }
+    },
+    couponInfoIcon:{
+        marginLeft: '2px',alignSelf:"center"
+    },
+    couponInfotext:{
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
+        fontSize: "12px",
+        fontWeight: "normal",
+        fontStyle: "normal",
+        fontStretch: "normal",
+        lineHeight: "normal",
+        letterSpacing: "0.4px",
+        textAlign: "left",
+        color: "rgba(31, 35, 44, 0.4)",
+
+        justifySelf:"center",
+        alignSelf:"center",
+        '@media (max-width: 650px)': {
+            gridColumn: '2 / 3'
+        }
+    },
+    couponInfoNum:{
+        '@media (max-width: 650px)': {
+            gridColumn: '1 / 3'
+        }
+    },
+    mobileShow:{
+        display:'none',
+        '@media (max-width: 650px)':{
+            display:'block'
         }
     }
 });

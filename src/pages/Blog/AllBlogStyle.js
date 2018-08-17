@@ -14,7 +14,10 @@ const AllBlogStyle = StyleSheet.create({
         paddingTop: '80px',
         paddingLeft: '132px',
         textIndent: '0',
-        backgroundColor: '#f9f9f9'
+        backgroundColor: '#f9f9f9',
+        '@media (max-width: 600px)':{
+            paddingLeft: '35px',
+        }
 
     },
     cntFlex: {
@@ -25,6 +28,12 @@ const AllBlogStyle = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "baseline",
         alignContent: "flex-start"
+    },
+    recipeBlock:{
+        width: '65%',
+        '@media (max-width: 700px)':{
+            width: '95%',
+        }
     },
     h1: {
         fontFamily: [FuturaBoldFont, "sans-serif"],
@@ -61,7 +70,10 @@ const AllBlogStyle = StyleSheet.create({
         lineHeight: "2",
         letterSpacing: "0.5px",
         textAlign: "left",
-        color: "#1e232c"
+        color: "#1e232c",
+        '@media (max-width: 700px)':{
+            lineHeight: "1.5"
+        }
 
     },
     ingredientsSpan:{
@@ -89,6 +101,33 @@ const AllBlogStyle = StyleSheet.create({
     },
     ingredientsLI:{
         listStyleType:'disc'
+    },
+    menuBlogFilterStyle:{
+        width:'280px',
+        '@media (max-width: 1000px)':{
+            marginBottom:'56px'
+        }
+    },
+
+    tabletShow:{
+        display:'none',
+        '@media (max-width: 1000px)':{
+            display:'block'
+        }
+    },tabletHide:{
+        display:'block',
+        '@media (max-width: 1000px)':{
+            display:'none'
+        }
+    },
+
+    img:{
+        width:'543px',
+        height:'339px',
+        '@media (max-width: 700px)':{
+            width:'280px',
+            height:'165px'
+        }
     }
 
 

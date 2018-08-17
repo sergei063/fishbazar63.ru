@@ -311,7 +311,7 @@ const AppStyle = StyleSheet.create({
     menu_inline_ul_scroll: {
         ...menu_inline_ul,
         width: '100%',
-        opacity: '0.9',
+        //opacity: '0.9',
         textAlign: 'center',
         top: '0px',
         position: 'fixed',

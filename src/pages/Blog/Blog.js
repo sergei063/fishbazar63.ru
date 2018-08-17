@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {css} from "aphrodite";
 import AppStyle from "../../css/AppStyle";
 import AllBlogStyle from "./AllBlogStyle";
-import MenuBlog from "../../components/Blog/Menu/MenuBlog";
+import MenuBlog, {MenuBlogFilter} from "../../components/Blog/Menu/MenuBlog";
 import {_try} from "../../components/lib";
 import SeafoodItemStyle from "../Seafood/SeafoodItemStyle";
 
@@ -225,7 +225,9 @@ const AllBlog = (props) => {
 
     return (
         <div className={css(AllBlogStyle.cnt)}>
+           <div className={css(AllBlogStyle.tabletShow, AllBlogStyle.menuBlogFilterStyle)} > <MenuBlogFilter history={props.history}/>
 
+           </div>
             <div className={css(AllBlogStyle.cntFlex)}>
                 <div style={{width: '65%'}}>
 
@@ -236,7 +238,7 @@ const AllBlog = (props) => {
                             <div key={index.toString()}>
                                 <h1 className={css(AllBlogStyle.h1)}>{recipe.tittle}</h1>
                                 <h2 className={css(AllBlogStyle.h2)}>{recipe.parent.catalog_tittle}&nbsp;&nbsp;|&nbsp;&nbsp;{recipe.dateObj.toLocaleString('ru', dateOptions)}  </h2>
-                                <div><img src={recipe.img} width='543px' height='339px'></img></div>
+                                <div><img className={css(AllBlogStyle.img)} src={recipe.img}></img></div>
                                 <div style={{marginTop: '36px', marginBottom: '64px'}}>
                                     <button style={{width: '134px'}} className={css(AppStyle.buttonRed)} onClick={() => {
 
@@ -251,7 +253,7 @@ const AllBlog = (props) => {
                         )
                     )}
                 </div>
-                <MenuBlog history={props.history}/>
+                <div className={css(AllBlogStyle.tabletHide)}><MenuBlog history={props.history}/></div>
             </div>
 
             <div style={{height: '164px'}}></div>
@@ -295,10 +297,10 @@ const OneBlog = (props) => {
         <div className={css(AllBlogStyle.cnt)}>
             <BreadCrumbs item={selectedRecipe} history={props.history}/>
             <div className={css(AllBlogStyle.cntFlex)}>
-                <div style={{width: '65%'}}>
+                <div className={css(AllBlogStyle.recipeBlock)}>
                     <h1 className={css(AllBlogStyle.h1)}>{selectedRecipe.tittle}</h1>
                     <h2 className={css(AllBlogStyle.h2)}>{selectedRecipe.parent.catalog_tittle}&nbsp;&nbsp;|&nbsp;&nbsp;{selectedRecipe.dateObj.toLocaleString('ru', dateOptions)}  </h2>
-                    <div><img src={selectedRecipe.img} width='543px' height='339px'></img></div>
+                    <div><img  className={css(AllBlogStyle.img)} src={selectedRecipe.img}></img></div>
                     <div  style={{  marginTop: '52px', marginBottom: '40px',}}>
                         <img src={require('../../img/logo_fish.png')}
                              width='38px' height='38px'></img>
@@ -328,8 +330,7 @@ const OneBlog = (props) => {
                     <div className={css(AllBlogStyle.recipeHtmlText)}
                          dangerouslySetInnerHTML={{__html: selectedRecipe.html_text || ""}}>{}</div>
                 </div>
-
-                <MenuBlog history={props.history} fish_for_recipe={selectedRecipe.fish_for_recipe}/>
+                <div className={css(AllBlogStyle.tabletHide)}><MenuBlog history={props.history} fish_for_recipe={selectedRecipe.fish_for_recipe}/></div>
             </div>
 
             <div style={{height: '164px'}}></div>
