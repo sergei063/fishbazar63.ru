@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
         nav: {
             backgroundColor: "white",
             height:'156px',
+            boxShadow: '0 1px 10px 0 rgba(53, 66, 92, 0.08)',
             '@media (max-width: 900px)': {
                 height:'110px',
             },
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
 
         },
         header: {
-            height:'156px',
+            height:'166px',
             zIndex: '10000',
             backgroundColor: "white",
             '@media (max-width: 900px)': {

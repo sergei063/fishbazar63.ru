@@ -14,7 +14,6 @@ const QualityAssurance = (props) => {
 
     return (
         <div className={css(QualityAssuranceStyle.cnt, (!isMinimize)? QualityAssuranceStyle.cnt_grey:null)}>
-            {(!isMinimize && MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
 
             <div className={css(QualityAssuranceStyle.quality_assurance_area)}></div>
             <div className={css(QualityAssuranceStyle.h1)}>Гарантия качества</div>

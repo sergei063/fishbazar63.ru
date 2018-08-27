@@ -262,6 +262,7 @@ const AppStyle = StyleSheet.create({
     menu_inline_logo: {
         flexGrow: '2',
         height:'160px',
+        marginTop: '17px',
         '@media (max-width: 900px)': {
            display:'none'
         }
@@ -317,8 +318,8 @@ const AppStyle = StyleSheet.create({
         position: 'fixed',
         //transition: 'top 2s',
         zIndex: 999999,
-        transition: 'transform 0.4s ease 0s, background 0.4s ease 0s',
-        boxShadow: '10px 10px 10px rgba(0, 0, 1, 0.06)'
+        //transition: 'transform 0.4s ease 0s, background 0.4s ease 0s'
+        //boxShadow: '10px 10px 10px rgba(0, 0, 1, 0.06)'
 
     },
 

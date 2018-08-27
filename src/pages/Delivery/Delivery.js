@@ -11,7 +11,6 @@ const Delivery = (props) => {
     let {isMinimize} = props;
     return (
         <div className={css(DeliveryStyle.cnt)}>
-            {(!isMinimize && MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
             <div className={css(DeliveryStyle.deliveryArea)}></div>
             <div className={css(DeliveryStyle.h1)}>Доставка</div>
             <div style={{ height:'115px'}}></div>

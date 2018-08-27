@@ -34,7 +34,6 @@ const Slider = () => {
             <p id="slider_text_4" className={css(AppStyle.displayNone)} ><Link to='/production/shrimp_angular'>...Не нужно платить за лед.<br/>Наши креветки <u>100%</u> без глазури.</Link></p>
         </div>
         <div className={css(AppStyle.fastDeliveryText)}>Быстрая доставка к вам домой</div>
-        <PouchIcon/>
         <div id="slider_navigate_this"></div>
 
     </div>)

@@ -7,6 +7,7 @@ import CatalogGroups from "../../components/CatalogGroups/CatalogGroups";
 import AllCards from "../../components/Cards/AllCards";
 import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
 import PouchIcon from "../../containers/PouchIcon/PouchIcon";
+import DeliveryStyle from "../Delivery/DeliveryStyle";
 
 const AllSeafood = (props) => {
     let filter, filterCount;
@@ -27,12 +28,12 @@ const AllSeafood = (props) => {
 
     return (
         <div className={css(SeafoodStyle.cnt)}>
-            {(!isMinimize && MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
             <div className={css(AppStyle.textAlignCenter)}>
                 <AllCards items={groupItems}/>
                 <br/>
-                <button hidden={(filter != null)} onClick={() => {
+                <button hidden={(filter != null) || (filterCount > groupItems.length)} onClick={(event) => {
                     if (filterCount > groupItems.length) {
+                        event.currentTarget.hidden='hidden';
                         return;
                     }
 
@@ -40,7 +41,7 @@ const AllSeafood = (props) => {
                 }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Еще
                 </button>
 
-                <br/>&nbsp;
+                <div className={css(DeliveryStyle.allSeafoodArea)}></div>
             </div>
             <div className={css(SeafoodStyle.catalogGroupsDiv)}>
                 <CatalogGroups history={props.history} productItems={Katalog.getGroup()}/>

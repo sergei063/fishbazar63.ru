@@ -50,27 +50,33 @@ const OneGroup = (props) => {
 const Style = StyleSheet.create({
 
     ul: {
-        marginRight:'52px'
+        marginRight:'52px',
+        '@media (max-width: 500px)': {
+            marginRight: '0px',
+            paddingLeft: '0px',
+            paddingTop: '40px'
+        }
     },
     marginRight15: {
         marginRight: '1.5em',
         '@media (max-width: 840px)': {
             display:"table"
+        },
+        '@media (max-width: 500px)': {
+            marginRight: '5px',
         }
     },
     gpoupItem: {
         fontFamily: [LucidaGrandeFontB, "sans-serif"],
         textTransform: 'uppercase',
         lineHeight:'3.08',
-
-
         fontWeight: 'bold',
         fontStyle: 'normal',
         fontStretch: 'normal',
         lineHeight: '3.08',
         letterSpacing: '0.4px',
         textAlign: 'right',
-        fontSize:'12px',
+
         '@media (max-width: 900px)': {
             display:"inline"
         }

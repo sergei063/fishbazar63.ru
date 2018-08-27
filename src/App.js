@@ -88,6 +88,7 @@ class App extends React.Component {
         return (
             <div className={css(AppStyle.container)}>
                 <Header isMobile={this.props.isMobile} />
+                <PouchIcon/>
                 {history.location.pathname==='/'&&
                 <Slider/>
                 }

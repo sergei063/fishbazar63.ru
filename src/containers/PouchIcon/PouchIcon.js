@@ -9,25 +9,51 @@ const PouchIcon = (props) => {
     let lenght = Object.keys(props.seafoodShoppingCart.allFish).length;
 
     return (
-        <Link id="header_pouch" style={props.positionStyle} className={css((lenght===0)?Style.displayNone:Style.pouchA)} to='/shopping_cart'><span
+        <Link id="header_pouch"  className={css((lenght===0)?Style.displayNone:Style.pouchA)} to='/shopping_cart'><span
             className={css(Style.pouch_a_span)}>{lenght}</span></Link>
     );
+};
+const translateKeyframes = {
+    '0%': {
+        transform: 'translateX(0)',
+        right: '-100px'
+    },
+
+    '100%': {
+        transform: 'translateX(0px)',
+    },
 };
 
 const Style = StyleSheet.create({
 
     displayNone: {display:'none'},
+    positionStyle: {
+
+
+        '@media (max-width: 900px)': {
+            top:'148px',right:'15px'
+        },
+    },
     pouchA: {
+        animationName: [translateKeyframes],
+        animationDuration: '2s, 1000ms',
+        animationIterationCount: '1',
+
+
+        position:'fixed',
         zIndex:'9999',
         background: "#ffffff url(" + require('../../img/bucket/normal.png') + ") no-repeat 50% 19px",
         height: '68px', width: '68px',
         borderRadius: '44px',
-        position: 'absolute',
-        top:'19px',
+        //position: 'absolute',
+        top:'185px',
         right:'27px',
         boxShadow: '0 1px 22px 0 rgba(0, 0, 0, 0.08)',
+        transition: 'right 2s ease 0s',
         ':hover': {
             backgroundImage: "url(" + require('../../img/bucket/hover.png') + ")",
+
+
         },
         ':hover span': {
             background: '#fe545b',
@@ -35,8 +61,7 @@ const Style = StyleSheet.create({
             /*border: '1px solid #fe545b'*/
         },
         '@media (max-width: 900px)': {
-            top:'-16px',
-            right:'38px',
+            top:'148px',right:'15px'
         },
         '@media (max-width: 500px)': {
             top:'83px',

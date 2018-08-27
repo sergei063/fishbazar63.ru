@@ -26,12 +26,13 @@ const SeafoodStyle = StyleSheet.create({
     textAlignCenter: {textAlign: 'center'}
     ,catalogGroupsDiv:{
         textAlign: 'right',
+        fontSize:'12px',
         '@media (max-width: 900px)': {
             textAlign: 'center',
         },
 
         '@media (max-width: 530px)': {
-            display:'none',
+            fontSize:'10px'
         }
     },
     seafood_img_Layer:{

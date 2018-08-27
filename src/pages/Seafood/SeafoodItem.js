@@ -48,7 +48,6 @@ const SeafoodItem = (props) => {
     let groupItems = Katalog.getGroupItems(null, countFishFoGroups);
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
-            {(MobileAgent.any())  && <PouchIcon positionStyle={{top:'148px',right:'15px', position:'fixed'}}/>}
             <div className={css(SeafoodItemStyle.h124)}></div>
             <div className={css(SeafoodItemStyle.flexContainer)}>
                 <div className={css(SeafoodItemStyle.fishContainer, SeafoodItemStyle.width50P)}>

@@ -23,7 +23,7 @@ class AllShowcase extends React.Component {
         return (
             <div>
                 <AllSeafood isMinimize={true}  {...this.props}/>
-                <div className={css(DeliveryStyle.allSeafoodArea)}></div>
+
                 <Delivery isMinimize={true} />
                 <SocialNetworkBlock/>
 
