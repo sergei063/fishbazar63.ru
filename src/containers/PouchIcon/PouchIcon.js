@@ -3,16 +3,37 @@ import {Link} from 'react-router-dom';
 import {css, StyleSheet} from "aphrodite/no-important";
 import {connect} from "react-redux";
 import {_try} from "../../components/lib";
+import $ from 'jquery'
+
+class PouchIcon extends React.Component {
+
+    componentDidMount() {
+
+    }
 
 
-const PouchIcon = (props) => {
-    let lenght = Object.keys(props.seafoodShoppingCart.allFish).length;
+    componentWillUpdate() {
+        let span = $('#header_pouch span');
+        if ($('#header_pouch').hasClass(css(Style.pouchA))) {
+            span.addClass(css(Style.pouch_a_span_animation));
+        }
 
-    return (
-        <Link id="header_pouch"  className={css((lenght===0)?Style.displayNone:Style.pouchA)} to='/shopping_cart'><span
-            className={css(Style.pouch_a_span)}>{lenght}</span></Link>
-    );
-};
+
+        setTimeout(() => span.removeClass(css(Style.pouch_a_span_animation)), 1000);
+    }
+    render() {
+
+        let lenght = Object.keys(this.props.seafoodShoppingCart.allFish).length;
+
+        return (
+            <Link id="header_pouch" className={css((lenght === 0) ? Style.displayNone : Style.pouchA)}
+                  to='/shopping_cart'>
+                <span className={css(Style.pouch_a_span)}>{lenght}</span></Link>
+        );
+    }
+
+}
+
 const translateKeyframes = {
     '0%': {
         transform: 'translateX(0)',
@@ -21,6 +42,18 @@ const translateKeyframes = {
 
     '100%': {
         transform: 'translateX(0px)',
+    },
+};
+const PouchASpanKeyframe = {
+    '0%': {
+        transform: 'scale(1,1)',
+    },
+    '50%': {
+        transform: 'scale(1.5,1.5)',
+    },
+
+    '100%': {
+        transform: 'scale(1,1)',
     },
 };
 
@@ -64,11 +97,21 @@ const Style = StyleSheet.create({
             top:'148px',right:'15px'
         },
         '@media (max-width: 500px)': {
-            top:'83px',
+            top:'148px',
             right:'16px',
         }
     },
+    pouch_a_span_animation:{
+        animationName: [PouchASpanKeyframe],
+        animationDuration: '1.5s',
+        animationIterationCount: '1',
+    },
     pouch_a_span: {
+
+
+
+
+
 
         position: 'absolute',
         bottom: '13px',

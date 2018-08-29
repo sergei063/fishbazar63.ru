@@ -45,7 +45,7 @@ const SeafoodItemStyle = StyleSheet.create({
     h124:{
         height:'124px',
         '@media (max-width: 650px)': {
-            height:'33px',
+            height:'63px',
         }
     },
     flexContainer: {
