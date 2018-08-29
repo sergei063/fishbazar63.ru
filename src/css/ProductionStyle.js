@@ -1,4 +1,4 @@
-import {StyleSheet, css} from 'aphrodite/no-important';
+import {StyleSheet} from 'aphrodite/no-important';
 import SourceSansProRegularFonts from './AppStyle'
 
 const coolFont = {
@@ -8,7 +8,9 @@ const coolFont = {
     fontStyle: 'normal'
 };
 
+// noinspection Annotator
 const ProductionStyle = StyleSheet.create({
+
     a:{fontFamily: 'PT Sans Narrow',
         color: '#303F9F',
         fontWeight:'bold'
@@ -58,6 +60,19 @@ const ProductionStyle = StyleSheet.create({
         }
     },
     gpoupItem: {
+        textTransform: 'uppercase',
+
+
+
+        fontWeight: 'bold',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '3.08',
+        letterSpacing: '0.4px',
+        textAlign: 'right',
+        fontSize:'12px',
+
+
         '@media (max-width: 840px)': {
            width:"100%",
             fontSize:"1.8em",
@@ -80,7 +95,6 @@ const ProductionStyle = StyleSheet.create({
         float: 'left',
 
     }, count: {
-        width: '1em',
         padding: '.7em 0em',
         width:'3em',
         textAlign:'center'

@@ -1,4 +1,4 @@
-import {StyleSheet, css} from 'aphrodite/no-important';
+import {StyleSheet} from 'aphrodite/no-important';
 
 const HeaderStyle = StyleSheet.create({
 
@@ -23,21 +23,7 @@ const HeaderStyle = StyleSheet.create({
         position: 'relative',
         float: 'left'
     },
-    pouchA: {
-        background: "#424242 url(" + require('../img/bg_pouch.png') + ") no-repeat 50% 13px",
-        height: '44px', width: '44px',
-        borderRadius: '44px',
-        float: 'left',
-        position: 'relative',
-        ':hover': {
-            backgroundColor: '#697a7c'
-        },
-        ':hover span': {
-            background: '#3fa59e',
-            boxShadow: 'none',
-            border: '1px solid #3fa59e'
-        }
-    },
+
     pouchInstagram: {
         background: "#424242 url(" + require('../img/bg_pouch_inst.png') + ") no-repeat 50% 13px",
         height: '44px', width: '44px',
@@ -59,37 +45,65 @@ const HeaderStyle = StyleSheet.create({
         }
     },
 
-    pouch_a_span: {
 
-        position: 'absolute',
-        top: '-4px',
-        right: '-6px',
-        display: 'block',
-        background: '#c1953d',
-        fontSize: '12px',
-        lineHeight: '19px',
-        height: '19px',
-        width: '19px',
-        textAlign: 'center',
-        borderRadius: '19px',
-        border: '1px solid #b0893e',
-        boxShadow: 'inset 0 20px 20px -10px #eec77c',
-        color: '#fff',
-        textShadow: '0 1px #634d23',
-        webkitFontSmoothing: 'auto'
-    },
     floatMenuBlock: {
-
-        float: 'right',
-        '@media (max-width: 750px)': {
+        '@media (max-width:1150px)': {
+        },
+        '@media (max-width: 900px)': {
             position: "absolute",
-            borderRadius: "15px",
+            boxShadow: "0 1px 10px 0 rgba(53, 66, 92, 0.08)",
             backgroundColor:'white',
             textAlign:"left",
-            width:"40%",
-            float: 'left',
-            padding:"14px 0px 0px 5px"
+            //float: 'left',
+            padding:"23px 0px 0px 5px"
+        },
+        '@media (max-width: 500px)': {
+            top: '-5px'
         }
+    },
+    floatMenuBlockWidth: {
+        width:'80%',
+        '@media (max-width:1150px)': {
+            width:'100%',
+        },
+        '@media (max-width: 900px)': {
+            width:"0px",
+            boxShadow: 'none'
+        }
+    },floatMenuBlockWidthMobile: {
+
+        '@media (max-width:1150px)': {
+
+        },
+        '@media (max-width: 900px)': {
+            width:"375px"
+        },
+        '@media (max-width: 500px)': {
+            width:"98%"
+        }
+    },
+
+    floatMenuBlockTablet: {
+        display:'none',
+        '@media (max-width: 900px)': {
+            display:'block',
+            position: "relative",
+            backgroundColor:'white',
+            textAlign:"left",
+            width:"100%",
+            height:"100%",
+
+            //float: 'left',
+            padding:"0",
+
+        }
+    },
+    nav_urls: {
+        textAlign:'justify',
+        /*maxWidth:'1104px',*/
+        margin: '0 auto',
+        //minWidth:'712px',
+
     },
     phoneNumberMenuBlock: {
 
@@ -102,31 +116,118 @@ const HeaderStyle = StyleSheet.create({
         }
     },
     menuInlineUl:{
-        '@media (max-width: 750px)': {
+        display:'flex',
+        flexDirection: 'row',
+        margin:'0',
+        flexWrap: 'nowrap',
+        justifyContent:'space-around',
+        //alignItems:'baseline',
+        alignItems:'center',
+        '@media (max-width: 900px)': {
             marginLeft: "-35px",
             display:"none"
+        }
+    },
+    menuLogoFull:{
+        display:'inline',
+        '@media (max-width: 500px)': {
+            display:"none"
+        }
+    },menuLogoShort:{
+        display:'none',
+        '@media (max-width: 500px)': {
+            display:"inline"
+        }
+    },
+
+    logo:{
+        textAlign:'center',
+        flexGrow: '1',
+        marginLeft: '20%',
+
+        '@media (max-width: 500px)': {
+            marginLeft: '0px',
+        }
+    },
+    menuInlineUlBlock:{
+        display:'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent:'space-around',
+        alignItems:'baseline',
+
+        '@media (max-width: 900px)': {
+            marginLeft: "-35px",
+            display:"block"
+        }
+    },
+    menuInlineUlTablet:{
+        display:"none",
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent:'center',
+
+        alignContent:'center',
+        '@media (max-width: 900px)': {
+            display:'flex',
+            margin:'0',
+            height:"100%",
+            alignItems:'flex-end',
+            //paddingTop:'14px'
         }
 
     },
     mobileMenuBtn:{
         display:"none",
-        '@media (max-width: 750px)': {
+        '@media (max-width: 900px)': {
             display:"inline-block",
             position:"relative"
-
         }
-
     },
+    mobileMenuMarginLeft60:{
+        '@media (max-width: 900px)': {
+            marginLeft: '60px'
+        },'@media (max-width: 500px)': {
+            marginLeft: '19px'
+        }
+    },
+    mobileMenuBtnHidden:{
+        display:"none",
+        '@media (max-width: 900px)': {
+            display:"none",
+        }
+    },
+
+    /**
+     * <img src={require('../img/design/deliveryman/deliveryman.png')}
+     srcSet={`${require('../img/design/deliveryman/deliveryman2x.png')} 2x, ${require('../img/design/deliveryman/deliveryman3x.png')} 3x`}
+     width='264px' height='205px'></img>
+
+     image-set(
+     url(examples/images/image-384.jpg) 1x,
+     url(examples/images/image-768.jpg) 2x,
+     )
+
+     */
     pouchMobileMenu: {
-        background: "#424242 url(" + require('../img/iconmenu.png') + ") no-repeat 50% 13px",
+        background: "#fff  image-set(url(" + require('../img/design/icon_menu/menu.png') + ") 1x, url(" + require('../img/design/icon_menu/menu2x.png') + ") 2x, url(" + require('../img/design/icon_menu/menu3x.png') + ") 3x     ) no-repeat 50% 0px",
         height: '44px', width: '44px',
-        borderRadius: '44px',
         float: 'left',
         position: 'relative',
         ':hover': {
-            backgroundColor: '#697a7c'
+
         }
-    },pouchPhoneMenu: {
+    },
+    pouchMobileMenuClose: {
+        background: "#fff  image-set(url(" + require('../img/design/menu_close/menu-close.png') + ") 1x, url(" + require('../img/design/menu_close/menu-close2x.png') + ") 2x, url(" + require('../img/design/menu_close/menu-close3x.png') + ") 3x     ) no-repeat 50% 0px",
+        height: '44px', width: '44px',
+        float: 'left',
+        position: 'relative',
+        ':hover': {
+
+        }
+    },
+    pouchPhoneMenu: {
         background: "#424242 url(" + require('../img/phone_pounch.png') + ") no-repeat 50% 13px",
         height: '44px', width: '44px',
         borderRadius: '44px',

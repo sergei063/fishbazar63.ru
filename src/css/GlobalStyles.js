@@ -27,7 +27,10 @@ const styles = StyleSheet.create({
             color: 'inherit',
             cursor:'pointer'
         },
+        '*' :{
+            outline: '0 !important',
 
+        },
 
 
         body: {
@@ -43,9 +46,9 @@ const styles = StyleSheet.create({
         },
         main: {
             //left: '10%',
-            backgroundColor:'#efefef',
-            textIndent: '2em',
-            padding:'10px',
+            backgroundColor:'#fff',
+            textIndent: '0em',
+            padding:'0px',
             '@media (max-width: 750px)': {
                /* top: '25%',
                 width:'100%',
@@ -54,20 +57,26 @@ const styles = StyleSheet.create({
         },
         nav: {
             backgroundColor: "white",
-            padding:'26px 5px 0 0',
-            textAlign:'right',
-
-            '@media (max-width: 750px)': {
-                /* top: '25%',
-                 width:'100%',
-                 height:'60%'*/
+            height:'156px',
+            boxShadow: '0 1px 10px 0 rgba(53, 66, 92, 0.08)',
+            '@media (max-width: 900px)': {
+                height:'110px',
+            },
+            '@media (max-width: 500px)': {
+                height:'64px',
             }
 
         },
         header: {
-            height:'118px',
+            height:'166px',
             zIndex: '10000',
-            backgroundColor: "white"
+            backgroundColor: "white",
+            '@media (max-width: 900px)': {
+                height:'110px',
+            },
+            '@media (max-width: 500px)': {
+                height:'64px',
+            }
         },
         ul: {
             listStyle:'none'

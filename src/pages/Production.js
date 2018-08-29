@@ -1,34 +1,18 @@
 import React from 'react';
-import {StyleSheet, css} from 'aphrodite/no-important';
-import {HashRouter, Switch, Route, Link} from 'react-router-dom'
+import {css} from 'aphrodite/no-important';
+import {Switch, Route, Link} from 'react-router-dom'
 import ProductionStyle from '../css/ProductionStyle';
 import AppStyle from '../css/AppStyle';
 import Katalog from '../Katalog';
 import NumericInput from 'react-numeric-input';
 import createHistory from 'history/createBrowserHistory'
 import $ from 'jquery'
-import uniqid  from 'uniqid';
-const history = createHistory()
+
+const history = createHistory();
 
 
 const PriceDB = Katalog;
-const PlayerAPI = {
-    players: [
-        {number: 1, name: "Ben Blocker", position: "G"},
-        {number: 2, name: "Dave Defender", position: "D"},
-        {number: 3, name: "Sam Sweeper", position: "D"},
-        {number: 4, name: "Matt Midfielder", position: "M"},
-        {number: 5, name: "William Winger", position: "M"},
-        {number: 6, name: "Fillipe Forward", position: "F"}
-    ],
-    all: function () {
-        return this.players
-    },
-    get: function (id) {
-        const isPlayer = p => p.number === id
-        return this.players.find(isPlayer)
-    }
-}
+
 
 class AllProducts extends React.Component {
     render() {
@@ -40,23 +24,10 @@ class AllProducts extends React.Component {
             filter=null
         }
 
-        const getLIproduct = ()=> {
-
-
-            let key=0, r = [];
-            r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }});this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span key={key} className={css((!filter)? AppStyle.link_active:AppStyle.link)}>Все</span></span>);
-            ++key;
-
-            Katalog.getGroup().map(p => {
-                r.push(<span  key={key}  id={p.name} onClick={() => {this.props.history.push({pathname: `/production/`,state: { filter: p.name }}); this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter==p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
-                ++key;
-            })
-            return r;
-        }
 
         return (
             <div>
-                <div  className={css(ProductionStyle.groupProduct)}>{getLIproduct()}</div>
+                <div  className={css(ProductionStyle.groupProduct)}>{Katalog.getProductGroup(this.props,filter)}</div>
             <div id='productuion_container' className={css(ProductionStyle.productCnt)}>
                 <br/>
                 <br/>
@@ -69,6 +40,20 @@ class AllProducts extends React.Component {
             </div>
             </div>
         )
+    }
+
+    getLIproduct(filter) {
+
+
+        let key=0, r = [];
+        r.push(<span id="filter_btn_all"  key={key} onClick={() => { this.props.history.push({pathname: `/production/`,state: { filter: null }});this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span key={key} className={css((!filter)? AppStyle.link_active:AppStyle.link)}>Все</span></span>);
+        ++key;
+
+        Katalog.getGroup().map(p => {
+            r.push(<span  key={key}  id={p.name} onClick={() => {this.props.history.push({pathname: `/production/`,state: { filter: p.name }}); this.scrollToProductuionContainer();   }  } className={css(ProductionStyle.marginRight15,ProductionStyle.gpoupItem, AppStyle.center_text)}><span  key={key} className={css((filter===p.name)? AppStyle.link_active:AppStyle.link)}> {p.catalog_tittle}</span> </span>);
+            ++key;
+        });
+        return r;
     }
 
     scrollToProductuionContainer(){
@@ -94,11 +79,8 @@ class AllProducts extends React.Component {
 const backClick = (event) => {
     event.preventDefault();
     history.goBack();
-}
-const catalogBackClick = (event) => {
-    event.preventDefault();
-    history.goBack();
-}
+};
+
 
 const AddShoppingCart = (fish, countFish) => {
     Katalog.addShoppingCart(fish, countFish);
@@ -106,19 +88,19 @@ const AddShoppingCart = (fish, countFish) => {
 
     alert("Добавлено в корзину: "+fish.name+" ("+countFish[0].getValueAsNumber()+" "+fish.packaging+")");
 
-}
+};
 
 const countFormatKg = (num) => (
     num + ' /кг'
-)
+);
 const countFormatPc = (num) => (
     num + ' /шт'
-)
+);
 //require('../img/katalog/keta.jpg')
 
 class Player extends React.Component {
     render(){
-        const player = PriceDB.get(this.props.match.params.id)
+        const player = PriceDB.get(this.props.match.params.id);
         if (!player) {
             return <div>Ничего не найдено</div>
         }
@@ -143,7 +125,7 @@ class Player extends React.Component {
                         input: {
                             width: '9em', height: '3em'
                         }
-                    }} format={(player.packaging=="кг")?countFormatKg:countFormatPc}/> &nbsp;&nbsp;</span>
+                    }} format={(player.packaging==="кг")?countFormatKg:countFormatPc}/> &nbsp;&nbsp;</span>
 
                         <span onClick={() => {
                             AddShoppingCart(player, $('#countFish'))
@@ -203,8 +185,8 @@ class Player extends React.Component {
 
 const Production = () => (
     <Switch>
-        <Route exact path='/production' component={AllProducts}/>
-        <Route path='/production/:id' component={Player}/>
+        <Route exact path='/production1' component={AllProducts}/>
+        <Route path='/production1/:id' component={Player}/>
     </Switch>
-)
+);
 export default Production;

@@ -1,6 +1,5 @@
 import React from 'react';
-import {StyleSheet, css} from 'aphrodite/no-important';
-import {Link} from 'react-router-dom';
+import {css} from 'aphrodite/no-important';
 import NewsStyle from '../css/NewsStyle';
 import AppStyle from '../css/AppStyle';
 import ProductionStyle from "../css/ProductionStyle";
@@ -24,7 +23,7 @@ const generateOneNews = (date,inNskText,inSamaraText) => {
             <a className={css(ProductionStyle.a)}  target="_blank" href='http://fishbazar63.ru/'>fishbazar63</a><br/>
     </p>
     )
-}
+};
 
 const News = () => (
     <div className={css(NewsStyle.cnt)}>
@@ -125,5 +124,5 @@ const News = () => (
         <div className={css(AppStyle.bottomLine, NewsStyle.line)}></div>
         <br/><br/><br/><br/><br/>
     </div>
-)
+);
 export default News;

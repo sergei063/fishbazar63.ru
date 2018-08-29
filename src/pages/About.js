@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, css} from 'aphrodite/no-important';
+import {css} from 'aphrodite/no-important';
 import {Link} from 'react-router-dom';
 import AboutStyle from '../css/AboutStyle';
 import AppStyle from '../css/AppStyle';
@@ -34,5 +34,5 @@ const About = () => (
         <div className={css(AppStyle.bottomLine, AboutStyle.line)}></div>
         <br/><br/><br/><br/><br/>
     </div>
-)
+);
 export default About;
