@@ -57,13 +57,15 @@ const Footer = () => (
             <Link className={css(AppStyle.footer_link)} to='/production'>Морепродукты</Link><br/>
             <Link className={css(AppStyle.footer_link)} to='/quality_assurance'>Гарантия качества</Link>
         </div>
+
         <div className={css(AppStyle.footer_menu)}>
             <Link className={css(AppStyle.footer_link)} to='/delivery'>Доставка</Link><br/>
-            <Link className={css(AppStyle.footer_link)} to='/blog'>Рецепты</Link></div>
+            <Link className={css(AppStyle.footer_link)} to='/blog'>Рецепты</Link>
+        </div>
         <div className={css(AppStyle.phoneNumberMobileHide)}>
             <div className={css(AppStyle.phoneNumber)}>
                 <a href='tel:+88007070794'>
-                    <nobr>8 800 707-07-94</nobr>
+                    <nobr>8 (917) 168 27 71</nobr>
                 </a>
             </div>
             <Instagram/><span className={css(SocialNetworkBlockStyle.PL20)}>

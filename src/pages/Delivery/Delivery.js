@@ -21,7 +21,7 @@ const Delivery = (props) => {
 
                 <div className={css(DeliveryStyle.flexContainerInfoRow)}>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>
-                        <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Гибкое время<div >пн-вс, с 7 до 20</div></div>
+                        <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Гибкое время<div >пн-вс, с 7 до 19</div></div>
                         <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>Наш курьер доставит заказ c&nbsp;пн&nbsp;по&nbsp;вс, в&nbsp;удобное для вас время с&nbsp;7:00 до&nbsp;20:00. Мы&nbsp;перевозим морепродукты в&nbsp;холодном термобоксе, он&nbsp;защищает продукты от&nbsp;размораживания.</div>
                     </div>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>

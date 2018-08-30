@@ -50,7 +50,7 @@ const SeafoodItem = (props) => {
         <div className={css(SeafoodItemStyle.cnt)}>
             <div className={css(SeafoodItemStyle.h124)}></div>
             <div className={css(SeafoodItemStyle.flexContainer)}>
-                <div className={css(SeafoodItemStyle.fishContainer, SeafoodItemStyle.width50P)}>
+                <div className={css(SeafoodItemStyle.fishContainer, SeafoodItemStyle.width40P)}>
                     <div className={css(SeafoodItemStyle.fishContainerFirst)}>
                         <div className={css(SeafoodItemStyle.mobileShow650,SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
                             {item.info}
@@ -67,7 +67,7 @@ const SeafoodItem = (props) => {
                     </div>
                 </div>
 
-                <div className={css(SeafoodItemStyle.infoContainer, SeafoodItemStyle.width50P)}>
+                <div className={css(SeafoodItemStyle.infoContainer, SeafoodItemStyle.width30P)}>
 
                     <div className={css(SeafoodItemStyle.mobileHidden650,SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
                         {item.info}
@@ -87,11 +87,9 @@ const SeafoodItem = (props) => {
                     </div>
 
                     <div className={css( (item.packaging==='шт'?SeafoodItemStyle.aboutDelivery:AppStyle.hidden))}>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
-                        рыбы<br/>
-                        <Iinfo/><span style={{marginLeft:'16px'}} className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</span>
-
+                        рыбы
                     </div>
-
+                    <div><Iinfo/><span style={{marginLeft:'16px'}}  className={css(SeafoodItemStyle.hidden_text)}><Link to='/delivery'>Подробнее о бесплатной доставке</Link></span></div>
                 </div>
 
             </div>

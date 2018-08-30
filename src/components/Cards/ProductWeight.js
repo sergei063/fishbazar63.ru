@@ -8,38 +8,43 @@ import {FuturaFont} from "../../css/Fonts";
 const ProductWeight = (props) =>  {
     let {price} = props;
     return (
-        <div style={{display: (price.weightFish)?'block' : 'none'}} className={css(Style.productWeightFishBlock)}>
-            <span className={css((price.weightFish && price.weightFish.size==="s")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>S</span>
-            <span className={css((price.weightFish && price.weightFish.size==="m")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>M</span>
-            <span className={css((price.weightFish && price.weightFish.size==="l")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>L</span>
+        <div style={{display: (price.weightFish)?'table' : 'none'}} className={css(Style.productWeightFishBlock)}>
+            <div className={css((price.weightFish && price.weightFish.size==="s")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>S</div>
+            <div className={css((price.weightFish && price.weightFish.size==="m")?[Style.productWeightFishSpanChecked] :Style.productWeightFishSpan)}>M</div>
+            <div className={css((price.weightFish && price.weightFish.size==="l")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>L</div>
         </div>
     );
 };
 const productWeightFishSpan ={
     fontFamily: [FuturaFont, "sans-serif"],
+    display:'table-cell',
     fontSize: '16px',
     width:'14px',
-    height:'21px',
     fontWeight: '500',
+    padding:'0',
     fontStyle: 'normal',
     fontStretch: 'normal',
     lineHeight: 'normal',
     letterSpacing: '0.5px',
-    textAlign: 'left',
+    verticalAlign: "middle",
+    textAlign: "center",
     cursor:'pointer'
 };
 const Style = StyleSheet.create({
     productWeightFishBlock:{
         position:'absolute',
+        height:'21px',
         top:'0',
         left:'0',
-        zIndex:'1'
+        zIndex:'1',
+        borderCollapse:'collapse'
+
     },
     productWeightFishSpanChecked: {
         ...productWeightFishSpan,
-        display:'inline',
+        //display:'inline',
         color: '#ff565c',
-        border: 'solid 1px #ff565c;'
+        border: 'double 1px #ff565c;'
     },
     productWeightFishSpan: {
         ...productWeightFishSpan,

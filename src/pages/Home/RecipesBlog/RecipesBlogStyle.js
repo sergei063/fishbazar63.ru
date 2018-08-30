@@ -37,6 +37,7 @@ const RecipesBlogStyle = StyleSheet.create({
     h2: {
         fontFamily: [LucidaGrandeFontB, "sans-serif"],
         fontSize: '18px',
+        marginTop:'10px',
         fontWeight: 'bold',
         textAlign:'center',
         fontStyle: 'normal',
@@ -80,6 +81,7 @@ const RecipesBlogStyle = StyleSheet.create({
         left:'81px',
         bottom:'37px',*/
         margin: '0 auto',
+        marginBottom:'32px',
         maxWidth:'325px',
         lineHeight: '4',
         textAlign: 'center'
@@ -128,7 +130,7 @@ const RecipesBlogStyle = StyleSheet.create({
     recipeDivAbsolute:{
         position:'absolute',
         backgroundColor:"#fff",
-        minWidth: '304px',
+        minWidth: '358px',
         left:'55px',
         top:'50px',
         width: '100%'

@@ -63,8 +63,8 @@ const HeaderStyle = StyleSheet.create({
     },
     floatMenuBlockWidth: {
         width:'80%',
-        '@media (max-width:1150px)': {
-            width:'100%',
+        '@media (max-width:1300px)': {
+            width:'99%',
         },
         '@media (max-width: 900px)': {
             width:"0px",
@@ -123,6 +123,9 @@ const HeaderStyle = StyleSheet.create({
         justifyContent:'space-around',
         //alignItems:'baseline',
         alignItems:'center',
+        '@media (max-width: 1030px)': {
+            padding: "0px",
+        },
         '@media (max-width: 900px)': {
             marginLeft: "-35px",
             display:"none"

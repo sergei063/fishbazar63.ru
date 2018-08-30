@@ -1,9 +1,52 @@
 import React from 'react';
-
+import {StyleSheet} from 'aphrodite/no-important';
 import {css} from "aphrodite/no-important";
 import RecipesBlogStyle from "./RecipesBlogStyle";
 import AppStyle from "../../../css/AppStyle";
 import {Link} from "react-router-dom";
+import {FuturaBoldFont, LucidaGrandeFontB, MetaSerifProBookFont} from "../../../css/Fonts";
+
+
+
+const RecipeNameStyle = StyleSheet.create({
+    cnt:{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        justifyContent: "center",
+        alignItems: "center",
+        alignContent: "flex-start",
+        margin: '0 auto',
+        width: '80%',
+        minWidth:'328px'
+    },
+
+    h3: {
+        display: 'table',
+
+        minWidth:'306px',
+        fontFamily: [FuturaBoldFont, "sans-serif"],
+        fontSize: '18px',
+        fontWeight: 'bold',
+        textAlign:'center',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '1.56',
+        letterSpacing: '0.5px',
+        color: '#000000',
+        maxWidth:'243px',
+
+    }
+});
+const RecipeName = (props) => {
+    let {tittle} = props;
+    return (
+        <div className={css(RecipeNameStyle.cnt)}>
+            <div><img src={require('../../../img/logo_fish.png')} width='60px' height='60px'></img>&nbsp;&nbsp;</div>
+            <div className={css(RecipeNameStyle.h3)}>{tittle}</div>
+        </div>
+    )
+}
 
 
 const RecipesBlog = (props) => {
@@ -20,11 +63,9 @@ const RecipesBlog = (props) => {
                 <div className={css(RecipesBlogStyle.recipeDiv)}>
                     <div className={css(RecipesBlogStyle.recipeDivAbsolute)}>
                         <div className={css(RecipesBlogStyle.h59)}></div>
-                        <div className={css(RecipesBlogStyle.h3)}>
-                            <img src={require('../../../img/logo_fish.png')}
-                                 width='60px' height='60px'></img>&nbsp;&nbsp;
-                            Треска в зеленом соусе
-                        </div>
+
+                        <RecipeName tittle={'Треска в зеленом соусе'}/>
+
                         <div className={css(RecipesBlogStyle.table)}>
                             <ul className={css(RecipesBlogStyle.UL)}>
                                 <li className={css(RecipesBlogStyle.LI)}>125 мл оливкового масла</li>

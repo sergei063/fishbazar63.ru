@@ -24,20 +24,20 @@ const AllSeafood = (props) => {
         filter = null;
         filterCount = Katalog.FILTER_COUNT;
     }
-    let groupItems = Katalog.getGroupItems(filter, filterCount);
 
+    let groupItems = Katalog.getGroupItems(filter, filterCount);
     return (
         <div className={css(SeafoodStyle.cnt)}>
             <div className={css(AppStyle.textAlignCenter)}>
                 <AllCards items={groupItems}/>
                 <br/>
-                <button hidden={(filter != null) || (filterCount > groupItems.length)} onClick={(event) => {
+                <button hidden={/*(filter != null) || */(filterCount > groupItems.length)} onClick={(event) => {
                     if (filterCount > groupItems.length) {
                         event.currentTarget.hidden='hidden';
                         return;
                     }
 
-                    props.history.push({pathname: props.history.location.pathname, state: {filterCount: filterCount + Katalog.FILTER_COUNT}});
+                    props.history.push({pathname: props.history.location.pathname, state: {filter:filter, filterCount: filterCount + Katalog.FILTER_COUNT}});
                 }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Еще
                 </button>
 

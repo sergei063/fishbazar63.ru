@@ -53,7 +53,7 @@ const SeafoodItemStyle = StyleSheet.create({
         height:'500px',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'strech',
         alignContent: 'flex-start',
         '@media (max-width: 650px)': {
@@ -67,7 +67,7 @@ const SeafoodItemStyle = StyleSheet.create({
         flexDirection:'column',
         flexWrap:'nowrap',
         justifyContent:'flex-start',
-        alignItems:'stretch',
+        alignItems:'center',
         alignContent:'center',
         fontFamily: [MetaSerifProLightFont, "sans-serif"],
         fontSize:'14px'
@@ -88,7 +88,7 @@ const SeafoodItemStyle = StyleSheet.create({
     },
     fishContainerFirst: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
-        marginLeft:'211px',
+        marginLeft:'unset',
         fontSize: "14px",
         fontWeight: "normal",
         fontStyle: "normal",
@@ -97,8 +97,9 @@ const SeafoodItemStyle = StyleSheet.create({
         letterSpacing: "0.5px",
         textAlign: "left",
         color: "#1e232c",
+        width:'100%',
         '@media (max-width: 1050px)': {
-            marginLeft:'73px',
+           // marginLeft:'73px',
         },
         '@media (max-width: 720px)': {
             marginLeft:'35px',
@@ -110,6 +111,11 @@ const SeafoodItemStyle = StyleSheet.create({
     },
     width50P:{
         width:'50%',
+        '@media (max-width: 650px)': {
+            width:'inherit',
+        }
+    },width30P:{
+        width:'30%',
         '@media (max-width: 650px)': {
             width:'inherit',
         }

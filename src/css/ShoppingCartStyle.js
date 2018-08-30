@@ -234,7 +234,8 @@ const ShoppingCartStyle = StyleSheet.create({
     coupon:{
         width:'100%',
         alignContent:'center',
-        display: "grid",
+        display: "none",
+        //display: "grid", //todo временно отключен блок
         gridTemplateColumns: "40px 1fr 1fr 1fr",
         '@media (max-width: 650px)': {
             marginTop:'65px',

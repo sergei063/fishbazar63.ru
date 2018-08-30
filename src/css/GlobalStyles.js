@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 
         },
         header: {
-            height:'166px',
+            height:'156px',
             zIndex: '10000',
             backgroundColor: "white",
             '@media (max-width: 900px)': {

@@ -38,7 +38,7 @@ const QualityAssurance = (props) => {
                         </div>
 
                         <div style={(isMinimize) ? {display: 'none'} : {display: 'block'}}>
-                            <div className={css(QualityAssuranceStyle.h20)}></div>
+                            <div style={{height:'40px'}}></div>
                             <div className={css(QualityAssuranceStyle.caption)}>Качество подтвержденное
                                 сертификатами<br/>добычи
                             </div>

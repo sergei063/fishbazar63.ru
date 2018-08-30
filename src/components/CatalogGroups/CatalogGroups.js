@@ -2,6 +2,7 @@ import React from 'react';
 import {css, StyleSheet} from "aphrodite/no-important";
 import AppStyle from "../../css/AppStyle";
 import {LucidaGrandeFontB} from "../../css/Fonts";
+import {_try} from "../lib";
 
 
 const CatalogGroups = (props) => {

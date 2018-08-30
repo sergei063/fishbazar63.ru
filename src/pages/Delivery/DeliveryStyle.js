@@ -69,6 +69,7 @@ const DeliveryStyle = StyleSheet.create({
         alignItems: 'stretch',
         alignContent: 'stretch',
         width: '40%',
+        height: '60vh',
         '@media (max-width: 900px)': {
             width:'80%',
             height: '400px'
@@ -97,13 +98,17 @@ const DeliveryStyle = StyleSheet.create({
     },
     imgDiv: {
         width: '40%',
+        minWidth:'518px',
+
         '@media (max-width: 900px)': {
             paddingTop: "64px",
-            paddingBottom: "72px"
+            paddingBottom: "72px",
+            minWidth:'unset'
         },
         '@media (max-width: 500px)': {
             textAlign:'center',
             width: '100%',
+            minWidth:'unset'
         }
 
     },
@@ -129,6 +134,7 @@ const DeliveryStyle = StyleSheet.create({
         }
     }, width70Percent: {
         width: '70%',
+        maxWidth:'303px',
         '@media (max-width: 500px)': {
             width: '80%',
         }

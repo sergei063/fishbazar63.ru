@@ -32,7 +32,7 @@ const Price = {
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue": "Калории 127ккал<br/>Белки. 19г<br/>Жиры 5,6г<br/>Углеводы. 0г<br/>Омега3(г). 1г",
-                "hit": false,
+                "hit": true,
                 "weightOfOneFish":1.9,
                 "img": require('./img/seafood/chum.png'),
                 "producer":"АО \"Хайрюзовский рыбоконсервный завод\" Россия Камчатский край Тигильский район с. Усть-Хайрюзово",
@@ -225,7 +225,7 @@ const Price = {
                 "info": "Без головы,белобрюхая, икряная",
                 "packaging": "кг",
                 "packagingInfo" : "",
-                "hit": false,
+                "hit": true,
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
@@ -300,7 +300,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "nutritionalValue":"Калории 100ккал<br/>                Белки. 18г<br/>            Жиры 2,2г<br/>            Углеводы. 2г<br/>            Омега3(г). 1,4г",
-                "hit": false,
+                "hit": true,
                 "img": require('./img/seafood/squid.png'),
                 "producer":"АО \"Северо-Курильская база Северного флота\" Россия Сахалинская обл г Северо-Курильск",
                 "catchDate":"13.06.2018",
@@ -320,7 +320,7 @@ const Price = {
                 "packaging": "кг",
                 "packagingInfo" : "Размер 90 -120",
                 "nutritionalValue" : "Калории 87ккал<br/>Белки. 18,3г<br/>Жиры 1,2г<br/>Углеводы. 0,8г<br/>Омега3(г). 0,5г",
-                "hit": true,
+                "hit": false,
                 "img": require('./img/seafood/shrimp.png'),
                 "producer":"ООО\" ДЕФА фишинг\"(судно\"Арктик Лайон\")",
                 "catchDate":"07.03.2018",
@@ -334,7 +334,7 @@ const Price = {
                 "packaging": "кг",
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "",
-                "hit": true,
+                "hit": false,
                 "img": require('./img/seafood/Tiger shrimp.png'),
                 "price": 790
             },
@@ -346,8 +346,8 @@ const Price = {
                 "packaging": "кг",
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "Размер 90 -120",
-                "hit": true,
-                "img": require('./img/katalog/greenland_shrimp.jpg'),
+                "hit": false,
+                "img": require('./img/seafood/shrimp.png'),
                 "price": 550
             }
 
@@ -364,7 +364,7 @@ const Price = {
                 "packaging": "кг",
                 "nutritionalValue" : "Калории 143ккал<br>Белки. 26,4г<br>Жиры 1,9г<br>Углеводы. 3,1г<br>Омега3(г). 0,5г",
                 "packagingInfo" : "",
-                "hit": false,
+                "hit": true,
                 "producer":"Аргентина",
                 "catchDate":"01.12.2018",
                 "img": require('./img/seafood/langoustines.png'),
@@ -380,7 +380,7 @@ const Price = {
 const Katalog = {
     ...Price,
 
-    FILTER_COUNT : 9,
+    FILTER_COUNT : 12,
     creatLinkProductMenu: (name, arr) => {
         return (<div className={css(ProductionStyle.cnt)}>
             {name}
@@ -473,7 +473,7 @@ const Katalog = {
                 return this.getHitItems();
             }
             else {
-                return Katalog[groupName].items;
+                return Katalog[groupName].items.slice(0,filterCount);
             }
         }
         if (!filterCount)

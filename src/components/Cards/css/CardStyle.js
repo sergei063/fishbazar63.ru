@@ -1,5 +1,5 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
+import {FuturaMediumFont, MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
 
 
 
@@ -16,7 +16,7 @@ const CardStyle = StyleSheet.create({
 
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'baseline',
         alignContent: 'stretch',
         '@media (max-width: 500px)': {
@@ -28,7 +28,7 @@ const CardStyle = StyleSheet.create({
 
     li: {
         position: "relative",
-        color: '#3F51B5',
+        color: '#1e232c',
         display: 'block',
         width: '318px',
         transition: 'width .2s',
@@ -40,7 +40,7 @@ const CardStyle = StyleSheet.create({
         boxShadow: ' 0 1px 10px 0 rgba(53, 66, 92, 0.08)',
 
         ':hover': {
-            //color: 'white',
+            color: '#fe545b'
             //boxShadow: '15px 15px 15px rgba(0, 0, 1, 0.06)',
         }
 
@@ -60,6 +60,7 @@ const CardStyle = StyleSheet.create({
             color:'#fff',
             left: '17px',
             top: '17px',
+            fontFamily: [FuturaMediumFont, 'sans-serif'],
             fontSize: '14px'
         }
     },
@@ -69,7 +70,7 @@ const CardStyle = StyleSheet.create({
         //borderRadius: '3px',
         position: 'relative',
         background: '#fff',
-        margin: '0 0px 20px 0',
+        padding: '0 0px 20px 0',
         textDecoration: 'none',
         zIndex: '0',
 
@@ -116,7 +117,7 @@ const CardStyle = StyleSheet.create({
         fontStretch: 'normal',
         lineHeight: 'normal',
         letterSpacing: '0.5px',
-        color: '#1e232c',
+
         ':hover': {
             color: '#fe545b'
         }

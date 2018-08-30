@@ -167,12 +167,20 @@ const AppStyle = StyleSheet.create({
     },
     fastDeliveryText:{
         position:'absolute',
+        fontFamily: [FuturaMediumFont,'sans-serif'],
         left:'0px',
         bottom:'54px',
         width:'100%',
         textAlign:'center',
-        fontSize:'19px',
         color: '#ffffff',
+       fontSize: "14px",
+       fontWeight: "500",
+       fontStyle: "normal",
+       fontStretch: "normal",
+       lineHeight: "normal",
+       letterSpacing: "0.5",
+
+
         '@media (max-width: 500px)': {
          display:'none'
         }
@@ -270,9 +278,9 @@ const AppStyle = StyleSheet.create({
     menu_inline: {
         fontFamily: [FuturaMediumFont, "sans-serif"],
         color: '#212121',
-        minWidth:'138px',
-        width:'15%',
-
+        //minWidth:'150px',
+        //width:'15%',
+        flexGrow:'1',
         fontWeight:'bold',
         fontSize: '18px',
         //backgroundColor: 'white',
@@ -296,6 +304,7 @@ const AppStyle = StyleSheet.create({
     menu_inline_tel: {
         fontFamily: [FuturaFont, "sans-serif"],
         fontSize:'18px',
+        textAlign:'right'
 
     },
     menu_inline_tel_hidden: {
@@ -449,17 +458,17 @@ const AppStyle = StyleSheet.create({
     },
     footer_link:{
         fontFamily: [FuturaMediumFont, "sans-serif"],
-        fontSize: '14px',
+        fontSize: '17px',
         fontWeight: '500',
         fontStyle: 'normal',
         fontStretch: 'normal',
         lineHeight: 'normal',
         letterSpacing: '0.5px',
-        textAlign: 'center',
         color: '#ffffff'
     },
     footer_menu:{
-        lineHeight: '34px'
+        lineHeight: '34px',
+        textAlign:'left'
     },
     phoneNumber:{
         fontFamily: [FuturaMediumFont, "sans-serif"],
@@ -470,7 +479,8 @@ const AppStyle = StyleSheet.create({
         lineHeight: '1.78',
         letterSpacing: '0.6px',
         textAlign: 'right',
-        color: '#ffffff'
+        color: '#ffffff',
+        marginBottom:'15px'
     },
     phoneNumberMobileHide:{
         display:'block',
