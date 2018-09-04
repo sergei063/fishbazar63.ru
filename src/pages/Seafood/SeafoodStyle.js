@@ -5,6 +5,7 @@ import {StyleSheet} from 'aphrodite/no-important';
 
 const SeafoodStyle = StyleSheet.create({
     cnt: {
+        overflow:'unset',
 
         backgroundColor:'#fff',
         display: 'flex',
@@ -17,7 +18,7 @@ const SeafoodStyle = StyleSheet.create({
         width: '100%',
         marginTop: '118px',
         position: 'relative',
-        overflow: "hidden",
+        //overflow: "hidden",
         '@media (max-width: 900px)': {
             flexDirection: 'column-reverse',
             marginTop: '48px',
@@ -27,12 +28,24 @@ const SeafoodStyle = StyleSheet.create({
     ,catalogGroupsDiv:{
         textAlign: 'right',
         fontSize:'12px',
+
+        "top": "250px",
+        "position": "sticky",
+        "height": "500px",
+        zIndex:'9',
+
         '@media (max-width: 900px)': {
             textAlign: 'center',
+            "height": "60px",
+            "top": "100px",
+
+
         },
 
         '@media (max-width: 530px)': {
-            fontSize:'10px'
+            fontSize:'10px',
+            "height": "20px",
+            "top": "50px",
         }
     },
     seafood_img_Layer:{

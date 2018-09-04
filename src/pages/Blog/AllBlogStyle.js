@@ -114,13 +114,19 @@ const AllBlogStyle = StyleSheet.create({
         '@media (max-width: 1000px)':{
             display:'block'
         }
-    },tabletHide:{
+    },
+    tabletHide:{
         display:'block',
         '@media (max-width: 1000px)':{
             display:'none'
         }
     },
+    stickyBlock: {
+        position: 'sticky',
+        top: '120px'
 
+
+    },
     img:{
         width:'543px',
         height:'339px',

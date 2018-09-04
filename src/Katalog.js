@@ -22,7 +22,7 @@ const Price = {
                 "weightOfOneFish":1.5,
                 "producer":"Рыболовецкая Артель \"Нижнее Пронге\" Россия Хабаровский край",
                 "catchDate":"26.06.2018",
-                "price": 245
+                "price": 255
             },
             {
                 "id": "chum",
@@ -37,7 +37,7 @@ const Price = {
                 "img": require('./img/seafood/chum.png'),
                 "producer":"АО \"Хайрюзовский рыбоконсервный завод\" Россия Камчатский край Тигильский район с. Усть-Хайрюзово",
                 "catchDate":"01.07.2018",
-                "price": 340
+                "price": 365
             }/*,
              {
              "id": "red_salmon",
@@ -61,7 +61,7 @@ const Price = {
                 "hit": false,
                 "weightOfOneFish":2,
                 "img": require('./img/seafood/coho.png'),
-                "price": 480
+                "price": 495
             },
             {
                 "id": "salmon_of_chile_s",
@@ -79,7 +79,7 @@ const Price = {
                     "size":"s",
                     "help":"2-3кг"
                 },
-                "price":680
+                "price":720
 
             },
             {
@@ -98,7 +98,7 @@ const Price = {
                     "size":"m",
                     "help":"3-4кг"
                 },
-                "price":700
+                "price":730
 
             },{
                 "id": "salmon_of_chile_l",
@@ -116,7 +116,7 @@ const Price = {
                     "size":"l",
                     "help":"5-6кг"
                 },
-                "price":710
+                "price":740
 
 
             },{
@@ -135,7 +135,7 @@ const Price = {
                     "size":"xl",
                     "help":"6-7кг"
                 },
-                "price":730
+                "price":750
             },
 
 
@@ -149,7 +149,7 @@ const Price = {
                 "packagingInfo": "Реализуется штучно.  Ориентировочный вес 2-3 кг",
                 "hit": true,
                 "img": require('./img/seafood/trout.png'),
-                "price": 750
+                "price": 780
             },
             {
                 "id": "treska_15",
@@ -203,7 +203,7 @@ const Price = {
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
-                "price": 165
+                "price": 185
             },
             {
                 "id": "Flounder_m",
@@ -216,7 +216,7 @@ const Price = {
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
-                "price": 175
+                "price": 195
             },
             {
                 "id": "Flounder_l",
@@ -229,7 +229,7 @@ const Price = {
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
-                "price": 279
+                "price": 210
             },
             {
                 "id": "osmeridae",

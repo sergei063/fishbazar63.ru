@@ -52,10 +52,11 @@ const Style = StyleSheet.create({
 
     ul: {
         marginRight:'52px',
+        "backgroundColor": "#fff",
         '@media (max-width: 500px)': {
             marginRight: '0px',
             paddingLeft: '0px',
-            paddingTop: '40px'
+            paddingTop: '0px'
         }
     },
     marginRight15: {

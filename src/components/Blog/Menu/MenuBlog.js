@@ -146,8 +146,6 @@ const MenuBlogStyle = StyleSheet.create({
         color: "#fe545b"
     },
     menu: {
-        position: 'sticky',
-        top: '30px',
         width: '304px'
 
     },
