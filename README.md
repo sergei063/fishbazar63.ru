@@ -11,6 +11,19 @@ git clone https://github.com/sergei063/fishbazar63.ru.git
 
 https://github.com/sergei063/fishbazar63.ru/blob/master/public.rar
 
+Обновить пакеты 
+npm update --save
+
+
+Проверить пакет на устаревшие зависимости
+npm outdated
+
+npm home  babel-loader
+npm home  webpack-cli
+
+ncu --loglevel verbose --packageFile package.json
+
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
