@@ -29,9 +29,7 @@ const SocialNetworkBlock = (props) => {
                 </div>
 
             </div>
-            <div className={css(SocialNetworkBlockStyle.delivery_small)}><img src={require('../../../img/design/delivery_small/small.png')}
-                      srcSet={`${require('../../../img/design/delivery_small/small2x.png')} 2x, ${require('../../../img/design/delivery_small/small3x.png')} 3x`}
-                      width='100%' height='100%'></img></div>
+            <div className={css(SocialNetworkBlockStyle.delivery_small)}><img src={require('../../../img/design/delivery_small/delivery.png')} width='100%' height='100%'></img></div>
 
         </div>
     );

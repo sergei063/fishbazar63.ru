@@ -37,7 +37,7 @@ const AllSeafood = (props) => {
                         return;
                     }
 
-                    props.history.push({pathname: props.history.location.pathname, state: {filter:filter, filterCount: filterCount + Katalog.FILTER_COUNT}});
+                    props.history.push({pathname: props.history.location.pathname, state: {filter:filter, filterCount: filterCount + Katalog.FILTER_COUNT}, notScrollToTop: true});
                 }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Еще
                 </button>
 

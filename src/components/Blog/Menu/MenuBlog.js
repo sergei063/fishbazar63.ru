@@ -22,7 +22,7 @@ export const MenuBlogFilter = (props) => {
             {Recipes.getGroup().map((group, index) => (
                     <div className={css(MenuBlogStyle.el_filter, (blogFilter===group.catalog_tittle)?MenuBlogStyle.el_filter_selected:null)} key={index.toString()}
                          onClick={() => {
-                             props.history.push({pathname: '/blog', state: {blogFilter: group.catalog_tittle}});
+                             props.history.push({pathname: '/blog', state: {blogFilter: group.catalog_tittle},notScrollToTop: true});
                          }}>
                         {group.catalog_tittle}
                     </div>

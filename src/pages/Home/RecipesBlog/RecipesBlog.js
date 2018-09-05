@@ -83,7 +83,7 @@ const RecipesBlog = (props) => {
                 </div>
 
                 <div className={css(RecipesBlogStyle.fish)}>
-                    <img src={require('../../../img/Recipes/Cod_in_green_sauce/fish.jpg')}
+                    <img src={require('../../../img/Recipes/cod_in_green_sauce.jpg')}
                          width='100%' height='100%'></img>
                 </div>
 

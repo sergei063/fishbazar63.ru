@@ -42,9 +42,10 @@ const Main = () => (
 );
 const Footer = () => (
     <div className={css(AppStyle.footer, AppStyle.textAlignCenter)}>
-        <div><img src={require('./img/design/footer_logo/footer_logo.png')}
-                  srcSet={`${require('./img/design/footer_logo/footer_logo2x.png')} 2x, ${require('./img/design/footer_logo/footer_logo3x.png')} 3x`}
-                  width='136px' height='96px'></img>
+        <div><Link to={`/`}>
+            <img src={require('./img/design/footer_logo/footer_logo.png')}
+                 srcSet={`${require('./img/design/footer_logo/footer_logo2x.png')} 2x, ${require('./img/design/footer_logo/footer_logo3x.png')} 3x`}
+                 width='136px' height='96px'></img></Link>
         </div>
         <div className={css(AppStyle.footer_menu)}>
             <div className={css(AppStyle.phoneNumberMobileShow)}>

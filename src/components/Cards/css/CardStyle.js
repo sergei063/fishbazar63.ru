@@ -12,7 +12,8 @@ const CardStyle = StyleSheet.create({
         listStyle: 'none',
         maxWidth: '1334px',
         display: 'flex',
-
+        padding:'0px',
+        margin:'0px',
 
         flexDirection: 'row',
         flexWrap: 'wrap',

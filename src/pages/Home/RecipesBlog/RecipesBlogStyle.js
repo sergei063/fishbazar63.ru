@@ -129,6 +129,7 @@ const RecipesBlogStyle = StyleSheet.create({
     },
     recipeDivAbsolute:{
         position:'absolute',
+        clipPath: "polygon(0 0,0% 100%, 100% 100%, 100% 20%,90% 15%,100% 10%,100% 0% )",
         backgroundColor:"#fff",
         minWidth: '358px',
         left:'55px',

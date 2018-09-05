@@ -41,7 +41,12 @@ store.subscribe(()=>{
 });
 
 history.listen((location, action) => {
+
+    if (!location.notScrollToTop){
+        window.scrollTo(0, 0)
+    }
     //console.log(location);
+    //console.log(action);
 });
 
 var isMobile = {

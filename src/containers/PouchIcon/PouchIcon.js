@@ -69,7 +69,7 @@ const Style = StyleSheet.create({
     },
     pouchA: {
         animationName: [translateKeyframes],
-        animationDuration: '2s, 1000ms',
+        animationDuration: '500ms, 1000ms',
         animationIterationCount: '1',
 
 
@@ -103,7 +103,7 @@ const Style = StyleSheet.create({
     },
     pouch_a_span_animation:{
         animationName: [PouchASpanKeyframe],
-        animationDuration: '1.5s',
+        animationDuration: '0.5s',
         animationIterationCount: '1',
     },
     pouch_a_span: {

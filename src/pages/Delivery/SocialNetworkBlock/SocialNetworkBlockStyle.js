@@ -11,12 +11,12 @@ const SocialNetworkBlockStyle = StyleSheet.create({
 
     },
     delivery_small:{
-        display:'none',
         position:'absolute',
         right:'0',
         bottom:'-116px',
         width:"273px",
         height:"463px",
+        zIndex:'2',
         '@media (max-width: 900px)': {
             width:"154px",
             height:"261px",

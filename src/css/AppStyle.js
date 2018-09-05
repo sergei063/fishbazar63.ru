@@ -440,6 +440,8 @@ const AppStyle = StyleSheet.create({
     },
 
     footer: {
+        position:'relative',
+        zIndex:'100',
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',

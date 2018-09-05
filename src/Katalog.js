@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import ProductionStyle from './css/ProductionStyle';
 import {css} from 'aphrodite/no-important';
 import AppStyle from "./css/AppStyle";
+import {_try} from "./components/lib";
 
 
 const Price = {
@@ -14,12 +15,16 @@ const Price = {
                 "showCaseName": "Горбуша",
                 "name": "Горбуша",
                 "info": "Неразделанная",
+                "isRedFish":true,
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 20,5г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/>            Омега3(г). 1,6г<br/>",
                 "hit": true,
                 "img": require('./img/seafood/pink salmon.png'),
                 "weightOfOneFish":1.5,
+                "weightFish":{
+                    "help":"1-2кг"
+                },
                 "producer":"Рыболовецкая Артель \"Нижнее Пронге\" Россия Хабаровский край",
                 "catchDate":"26.06.2018",
                 "price": 255
@@ -29,32 +34,27 @@ const Price = {
                 "showCaseName": "Кета",
                 "name": "Кета",
                 "info": "Потрошеная  без головы",
+                "isRedFish":true,
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue": "Калории 127ккал<br/>Белки. 19г<br/>Жиры 5,6г<br/>Углеводы. 0г<br/>Омега3(г). 1г",
                 "hit": true,
                 "weightOfOneFish":1.9,
+                "weightFish":{
+                    "help":"1-2кг"
+                },
                 "img": require('./img/seafood/chum.png'),
                 "producer":"АО \"Хайрюзовский рыбоконсервный завод\" Россия Камчатский край Тигильский район с. Усть-Хайрюзово",
                 "catchDate":"01.07.2018",
                 "price": 365
-            }/*,
-             {
-             "id": "red_salmon",
-             "showCaseName": "Нерка",
-             "name": "Нерка",
-             "info": "потрошеная безголовая",
-             "packaging": "шт",
-             "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
-             "hit": false,
-             "img": require('./img/katalog/red_salmon.jpg'),
-             "price": 1
-             }*/,
+
+            },
             {
                 "id": "coho",
                 "showCaseName": "Кижуч",
                 "name": "Кижуч",
                 "info": "Потрошеный с головой",
+                "isRedFish":true,
                 "packaging": "шт",
                 "nutritionalValue":"Калории 140ккал<br/>                Белки. 21,6г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/> Омега3(г). 0г",
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
@@ -62,12 +62,14 @@ const Price = {
                 "weightOfOneFish":2,
                 "img": require('./img/seafood/coho.png'),
                 "price": 495
+
             },
             {
                 "id": "salmon_of_chile_s",
                 "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
+                "isRedFish":true,
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
@@ -87,6 +89,7 @@ const Price = {
                 "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
+                "isRedFish":true,
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
@@ -105,6 +108,7 @@ const Price = {
                 "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
                 "info": "Потрошеная с головой",
+                "isRedFish":true,
                 "packaging": "шт",
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
@@ -119,41 +123,24 @@ const Price = {
                 "price":740
 
 
-            },{
-                "id": "salmon_of_chile_xl",
-                "showCaseName": "Семга Premium",
-                "name": "Семга Чили",
-                "info": "Потрошеная с головой",
-                "packaging": "шт",
-                "packagingInfo": "Реализуется штучно.",
-                "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
-                "hit": false,
-                "img": require('./img/seafood/salmon.png'),
-                "producer":"Chile Ventisqueros S.A.",
-                "weightOfOneFish":7.5,
-                "weightFish":{
-                    "size":"xl",
-                    "help":"6-7кг"
-                },
-                "price":750
             },
-
 
             {
                 "id": "Trout_of_chile",
                 "showCaseName": "Форель Чили Premium",
                 "name": "Форель Premium Чили",
+                "isRedFish":true,
                 "info": "Потрошеная без головы, (2-3)кг Prem Чили",
                 "packaging": "шт",
                 "nutritionalValue": "Калории 141ккал<br>Белки. 19,9г<br>Жиры 6,2г<br>Углеводы. 0г<br>Омега3(г). 0,9г",
                 "packagingInfo": "Реализуется штучно.  Ориентировочный вес 2-3 кг",
-                "hit": true,
+                "hit": false,
                 "img": require('./img/seafood/trout.png'),
                 "price": 780
             },
             {
                 "id": "treska_15",
-                "showCaseName": "Треска (0,5-1,5)кг",
+                "showCaseName": "Треска",
                 "name": "Треска",
                 "info": "Тихоокеанская потрошеная без головы (0,5-1,5)кг",
                 "packaging": "кг",
@@ -161,24 +148,38 @@ const Price = {
                 "nutritionalValue":"Калории 69ккал<br/>                Белки. 15,3г<br/>            Жиры 0,4г<br/>            Углеводы. 3,3г<br/>            Омега3(г). 0,1г",
                 "hit": true,
                 "img": require('./img/seafood/cod.png'),
-                "price": 220
+                "producer":"ООО «Морские ресурсы»",
+                "catchDate":"05.08.2018",
+                "weightOfOneFish":0.75,
+                "weightFish":{
+                    "size":"s",
+                    "help":"0,5-1кг"
+                },
+                "price": 246
 
             }, {
                 "id": "treska_03",
-                "showCaseName": "Треска (0,3-0,5)кг",
+                "showCaseName": "Треска",
                 "name": "треска",
                 "info": "Тихоокеанская потрошеная без головы  (0,3-0,5)кг",
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
                 "img": require('./img/seafood/cod.png'),
-                "price": 205
+                "producer":"ООО «Морские ресурсы»",
+                "catchDate":"05.08.2018",
+                "weightOfOneFish":1.5,
+                "weightFish":{
+                    "size":"l",
+                    "help":"2-3кг"
+                },
+                "price": 264
 
 
             },
             {
                 "id": "mintay",
-                "showCaseName": "Минтай (0,3-0,6)кг",
+                "showCaseName": "Минтай",
                 "name": "Минтай",
                 "info": "Потрошеный без головы (0,3-0,6)кг<br/>",
                 "packaging": "кг",
@@ -188,13 +189,18 @@ const Price = {
                 "img": require('./img/seafood/pollock.png'),
                 "producer":"ООО ПКФ\"Южно-Курильский рыбокомбинат\" Россия Сазалинская обл. п.г.т. Южно-Курильск",
                 "catchDate":"25.04.2018",
+                "weightOfOneFish":0.45,
+                "weightFish":{
+                    "size":"l",
+                    "help":"0,3-0,6кг"
+                },
                 "price": 117
 
             },
             {
                 "id": "Flounder_s",
-                "showCaseName": "Камбала S",
-                "name": "Камбала S [290-310]",
+                "showCaseName": "Камбала",
+                "name": "Камбала S",
                 "info": "Без головы,белобрюхая,  частично икряная",
                 "packaging": "кг",
                 "packagingInfo" : "",
@@ -203,12 +209,17 @@ const Price = {
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
+                "weightOfOneFish":0.2,
+                "weightFish":{
+                    "size":"s",
+                    "help":"150-250г"
+                },
                 "price": 185
             },
             {
                 "id": "Flounder_m",
                 "showCaseName": "Камбала M",
-                "name": "Камбала, М[250-350]",
+                "name": "Камбала",
                 "info": "Без головы,Белобрюхая",
                 "packaging": "кг",
                 "packagingInfo" : "",
@@ -216,22 +227,32 @@ const Price = {
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
+                "weightOfOneFish":0.3,
+                "weightFish":{
+                    "size":"m",
+                    "help":"250-350г"
+                },
                 "price": 195
             },
             {
                 "id": "Flounder_l",
-                "showCaseName": "Камбала L",
-                "name": "Камбала,  L",
+                "showCaseName": "Камбала",
+                "name": "Камбала",
                 "info": "Без головы,белобрюхая, икряная",
                 "packaging": "кг",
                 "packagingInfo" : "",
-                "hit": true,
+                "hit": false,
                 "img": require('./img/seafood/flounder.png'),
                 "producer":"ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate":"03.04.2018",
-                "price": 210
+                "price": 210,
+                "weightOfOneFish":0.4,
+                "weightFish":{
+                    "size":"l",
+                    "help":"от 350г"
+                },
             },
-            {
+            /*{
                 "id": "osmeridae",
                 "showCaseName": "Корюшка",
                 "name": "Корюшка",
@@ -241,7 +262,7 @@ const Price = {
                 "hit": false,
                 "img": require('./img/seafood/smelt.png'),
                 "price": 265
-            },
+            },*/
             {
                 "id": "herring",
                 "showCaseName": "Сельдь Атлантика",
@@ -252,6 +273,11 @@ const Price = {
                 "nutritionalValue":"Калории 248ккал<br/>Белки. 17,7г<br/>Жиры 19,5г<br/>Углеводы. 0г<br/>Омега3(г). 0г",
                 "hit": false,
                 "img": require('./img/seafood/herring.png'),
+                "weightOfOneFish":0.275,
+                "weightFish":{
+                    "size":"m",
+                    "help":"0,25-0,3кг"
+                },
                 "price": 105
             },
             {
@@ -264,6 +290,11 @@ const Price = {
                 "packagingInfo" : "",
                 "hit": false,
                 "img": require('./img/seafood/mackerel.png'),
+                "weightOfOneFish":0.275,
+                "weightFish":{
+                    "size":"m",
+                    "help":"0,25-0,3кг"
+                },
                 "price": 180
             },
         ]
@@ -278,7 +309,7 @@ const Price = {
                 "info": "",
                 "packaging": "кг",
                 "packagingInfo" : "",
-                "hit": false,
+                "hit": true,
                 "nutritionalValue":"Калории 77ккал<br>Белки. 11,5г<br>Жиры 2г<br>Углеводы. 3,3г<br>Омега3(г). 0г",
                 "img": require('./img/seafood/mussels.png'),
                 "price": 590
@@ -346,7 +377,7 @@ const Price = {
                 "packaging": "кг",
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "Размер 90 -120",
-                "hit": false,
+                "hit": true,
                 "img": require('./img/seafood/shrimp.png'),
                 "price": 550
             }
@@ -368,7 +399,7 @@ const Price = {
                 "producer":"Аргентина",
                 "catchDate":"01.12.2018",
                 "img": require('./img/seafood/langoustines.png'),
-                "price": 650
+                "price": 690
             },
 
         ]
@@ -451,14 +482,22 @@ const Katalog = {
         const isProduct = p => p.hit == true;
 
         let res = [];
-        for (let el in Katalog) {
-            let group = Katalog[el];
+        for (let fish in Katalog) {
+            let group = Katalog[fish];
             if (group.catalog_tittle) {
-                let el = group.items.filter(isProduct);
 
+                let filtredData = group.items.filter(isProduct);
+                let el = filtredData.map(f=>{
+                    f.parent = {};
+                    f.parent.id = fish;
+                    f.parent.catalog_tittle = group.catalog_tittle;
+                    return f;
+                });
                 if (el) {
+
                     res = res.concat(...el);
                 }
+
             }
         }
 
@@ -482,6 +521,46 @@ const Katalog = {
         return this.getAllItems().slice(0,filterCount);
 
 
+    },
+
+    /**
+     * На всю красную рыбу (горбуша,кета,семга,кижуч,форель)- ставим (минтай,кальмар, креветка гренл,камбала,лангустины)
+     * На остальную( минтай,треска,камбала, сельдь,скумбрия) ставим( кета, семга,крев гренл,лангустины,кальмар)
+     * На морепродукты(кальмар,все креветки,лангустины,гребешек,мидии) ставим кета,горбуша,семга,минтай,камбала)
+     * @param fishItem
+     * @param countFishFoGroups
+     * @returns {*}
+     */
+    getWithThisProductBuy: function(fishItem,countFishFoGroups){
+        const returnArr = [];
+        let hitItems = Katalog.getHitItems();
+
+
+        const redFish = hitItems.filter(fish => fish.parent.id==='fish' && fish.isRedFish && fish.id!==fishItem.id).sort((a,b) =>Math.random() - 0.5).slice(0,1)[0];
+        const whiteFish = hitItems.filter(fish => fish.parent.id==='fish' && !fish.isRedFish).sort((a,b) =>Math.random() - 0.5).slice(0,1)[0];
+        const shrimpsAndLangoustines = hitItems.filter(fish => fish.parent.id==='Shrimp' ||fish.parent.id==='Langoustines' && fish.id!==fishItem.id).sort((a,b) =>Math.random() - 0.5).slice(0,1)[0];
+        const shellfish =  hitItems.filter(fish => fish.parent.id==='Shellfish' && fish.id!==fishItem.id).sort((a,b) =>Math.random() - 0.5).slice(0,1)[0];
+
+        if(fishItem.isRedFish) {
+            returnArr[0]  = whiteFish;
+            returnArr[1]  = shellfish
+            returnArr[2]  = shrimpsAndLangoustines
+
+        } else if (fishItem.parent.id==='fish'){
+            returnArr[0]  = redFish;
+            returnArr[1]  = shellfish
+            returnArr[2]  = shrimpsAndLangoustines
+        } else if (fishItem.parent.id!=='Shrimp' || fishItem.parent.id!=='Langoustines'){
+            returnArr[0]  = redFish;
+            returnArr[1]  = whiteFish
+            returnArr[2]  = shellfish
+        }else if (fishItem.parent.id!=='Shellfish'){
+            returnArr[0]  = redFish;
+            returnArr[1]  = whiteFish
+            returnArr[2]  = shrimpsAndLangoustines
+        }
+
+        return returnArr;
     },
 
     /**

@@ -27,7 +27,7 @@ const Card = (props) =>  {
                         <small><nobr>руб/кг</nobr></small>
                     </div>
                     <div className={css(Style.productWeightFish)}>
-                        {(p.weightFish)? "Вес одной рыбы - "+p.weightFish.help:""}
+                        {(p.weightFish)? `Вес одной рыбы - ${p.weightFish.help}` : (p.weightOfOneFish) && `Вес одной рыбы - ${p.weightOfOneFish} кг`}
                     </div>
                 </div>
             </Link>

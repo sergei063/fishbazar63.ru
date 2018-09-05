@@ -30,7 +30,7 @@ const Delivery = (props) => {
                     </div>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>
                         <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Стоимость</div>
-                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>Минимальная сумма заказа <span className={css(DeliveryStyle.redText)}>600&nbsp;руб</span><br/>г. Самара&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>150&nbsp;руб</span><br/>Сухая Самарка, Жилой район Волгарь,116км. &mdash; <span className={css(DeliveryStyle.redText)}>100&nbsp;руб</span><br/>г. Новокуйбышевск, п.Гранный&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span><br/></div>
+                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>г. Самара&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>150&nbsp;руб</span><br/>Сухая Самарка, Жилой район Волгарь,116км. &mdash; <span className={css(DeliveryStyle.redText)}>100&nbsp;руб</span><br/>г. Новокуйбышевск, п.Гранный&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span><br/>Минимальная сумма заказа <span className={css(DeliveryStyle.redText)}>600&nbsp;руб</span><br/></div>
                     </div>
                 </div>
 

@@ -45,7 +45,9 @@ const SeafoodItem = (props) => {
     let countFishFoGroups = (document.body.clientWidth <=1305)? 2:3;
 
 
-    let groupItems = Katalog.getGroupItems(null, countFishFoGroups);
+    //let groupItems = Katalog.getGroupItems(null, countFishFoGroups);
+    let groupItems = Katalog.getWithThisProductBuy(item, countFishFoGroups);
+
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
             <div className={css(SeafoodItemStyle.h124)}></div>
@@ -59,10 +61,10 @@ const SeafoodItem = (props) => {
                         <div><img className={css(SeafoodItemStyle.img)} src={item.img} ></img></div>
 
                         <div className={css(SeafoodItemStyle.mobileHidden650)}>
-                            <div>{(item.catchDate) ? `Вылов: ${item.catchDate}` : "&nbsp;"}</div>
+                            <div>{(item.catchDate) ? `Вылов: ${item.catchDate}` : ""}</div>
                             <div>&nbsp;</div>
                             <div
-                                style={{width: '80%'}}>{(item.producer) ? `Производитель: ${item.producer}` : "&nbsp;"}</div>
+                                style={{width: '80%'}}>{(item.producer) ? `Производитель: ${item.producer}` : ""}</div>
                         </div>
                     </div>
                 </div>
@@ -89,7 +91,14 @@ const SeafoodItem = (props) => {
                     <div className={css( (item.packaging==='шт'?SeafoodItemStyle.aboutDelivery:AppStyle.hidden))}>Это весовой товар, после отправки заказа мы позвоним вам и сообщим точную стоимость одной
                         рыбы
                     </div>
-                    <div><Iinfo/><span style={{marginLeft:'16px'}}  className={css(SeafoodItemStyle.hidden_text)}><Link to='/delivery'>Подробнее о бесплатной доставке</Link></span></div>
+                    <div>
+                        <Link to='/delivery'>
+                            <div className={css(SeafoodItemStyle.deliveryMore)}>
+                                <div><Iinfo/></div>
+                                <div className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</div>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
 
             </div>
@@ -99,7 +108,7 @@ const SeafoodItem = (props) => {
                 <div className={css(SeafoodItemStyle.withBuy)}>С этим товаром покупают</div>
                 <div style={{height: '48px'}}></div>
                 <div className={css(SeafoodItemStyle.withBuyDiv)}>
-                    <AllCards items={groupItems}/>
+                   <div> <AllCards items={groupItems}/></div>
                 </div>
             </div>
 

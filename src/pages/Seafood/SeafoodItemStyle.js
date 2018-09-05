@@ -238,11 +238,21 @@ const SeafoodItemStyle = StyleSheet.create({
 
 
     withBuyDiv:{
-        margin:'0 auto',
-       width: '80%',
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "nowrap",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "alignContent": "flex-start",
+
         '@media (max-width: 1050px)': {
             width: '100%'
         }
+    },
+
+    deliveryMore:{
+        display: "grid",
+        gridTemplateColumns: "30px 1fr",
     }
 
 });
