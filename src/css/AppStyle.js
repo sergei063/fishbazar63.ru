@@ -1,5 +1,13 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {coolFont, FuturaBoldFont, FuturaFont, FuturaMediumFont, LucidaGrandeFont, MetaSerifProFont} from "./Fonts";
+import {
+    coolFont,
+    FuturaBoldFont,
+    FuturaCondensedExtraBold,
+    FuturaFont,
+    FuturaMediumFont, FuturaMediumFontOld,
+    LucidaGrandeFont,
+    MetaSerifProFont
+} from "./Fonts";
 
 const sliderBase = {
     position: 'relative',
@@ -276,13 +284,16 @@ const AppStyle = StyleSheet.create({
         }
     },
     menu_inline: {
-        fontFamily: [FuturaMediumFont, "sans-serif"],
+        fontFamily: [FuturaMediumFontOld,"sans-serif"],
         color: '#212121',
         //minWidth:'150px',
         //width:'15%',
         flexGrow:'1',
-        fontWeight:'bold',
-        fontSize: '18px',
+        marginTop:'15px',
+        fontWeight: '700',
+        "fontSize": "18px",
+        "lineHeight": "1.29",
+        "letterSpacing": "0.5px",
         //backgroundColor: 'white',
         ':hover': {
             color:'#fe545b'
@@ -303,7 +314,7 @@ const AppStyle = StyleSheet.create({
     },
     menu_inline_tel: {
         fontFamily: [FuturaFont, "sans-serif"],
-        fontSize:'18px',
+        fontSize:'22px',
         textAlign:'right'
 
     },

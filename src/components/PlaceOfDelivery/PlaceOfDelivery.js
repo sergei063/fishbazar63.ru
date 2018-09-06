@@ -3,6 +3,7 @@ import {StyleSheet, css} from "aphrodite/no-important";
 import {FuturaBoldFont, MetaSerifProBookFont, MetaSerifProFont} from "../../css/Fonts";
 import {connect} from "react-redux";
 import {setPlaceOfDelivery} from "../../actions";
+import AppStyle from "../../css/AppStyle";
 
 
 const delivery = [
@@ -62,9 +63,9 @@ class PlaceOfDelivery extends React.Component {
 
             <div className={css(Style.divTable)}>
                 <div className={css(Style.divTableBody)}>
-                    <div className={css(Style.divTableRow, Style.tableRowHeader)}>
+                    <div  style={{height:'45px'}} className={css(Style.divTableRow, Style.tableRowHeader)}>
                         <div className={css(Style.divTableCell)}>Выберите место доставки</div>
-                        <div className={css(Style.divTableCell)}>Стоимость</div>
+                        <div className={css(Style.divTableCell,AppStyle.textAlignRigh)}>Стоимость</div>
                     </div>
 
 
@@ -81,7 +82,7 @@ class PlaceOfDelivery extends React.Component {
                                         <span className={css(Style.label)}> {p.where}</span>
                                     </label>
                                 </div>
-                                <div className={css(Style.divTableCell)}>{p.price}&nbsp;руб</div>
+                                <div className={css(Style.divTableCell,AppStyle.textAlignRigh)}>{p.price}&nbsp;руб</div>
                             </div>
 
                         )

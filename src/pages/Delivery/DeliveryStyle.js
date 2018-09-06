@@ -48,7 +48,7 @@ const DeliveryStyle = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'nowrap',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'stretch',
         alignContent: 'stretch',
         '@media (max-width: 900px)': {

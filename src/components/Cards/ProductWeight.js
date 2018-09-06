@@ -8,7 +8,7 @@ import {FuturaFont} from "../../css/Fonts";
 const ProductWeight = (props) =>  {
     let {price} = props;
     return (
-        <div style={{display: (price.weightFish)?'table' : 'none'}} className={css(Style.productWeightFishBlock)}>
+        <div style={{display: (price.weightFish && price.weightFish.size)?'table' : 'none'}} className={css(Style.productWeightFishBlock)}>
             <div className={css((price.weightFish && price.weightFish.size==="s")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>S</div>
             <div className={css((price.weightFish && price.weightFish.size==="m")?[Style.productWeightFishSpanChecked] :Style.productWeightFishSpan)}>M</div>
             <div className={css((price.weightFish && price.weightFish.size==="l")?Style.productWeightFishSpanChecked :Style.productWeightFishSpan)}>L</div>

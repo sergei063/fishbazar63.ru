@@ -93,7 +93,7 @@ const SeafoodItem = (props) => {
                     </div>
                     <div>
                         <Link to='/delivery'>
-                            <div className={css(SeafoodItemStyle.deliveryMore)}>
+                            <div className={css(SeafoodItemStyle.deliveryMore)} title={"Подробнее о бесплатной доставке"}>
                                 <div><Iinfo/></div>
                                 <div className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</div>
                             </div>

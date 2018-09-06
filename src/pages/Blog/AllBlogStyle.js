@@ -50,6 +50,7 @@ const AllBlogStyle = StyleSheet.create({
     h2: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '12px',
+        textTransform: 'uppercase',
         margin: '0',
         fontWeight: 'normal',
         fontStyle: 'normal',

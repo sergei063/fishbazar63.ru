@@ -20,7 +20,13 @@ export const FuturaFont = {
 };
 export const FuturaMediumFontOld = {
     fontFamily: "Futura-Medium",
-    src: ' url("' + require('../fonts/Futura/Futura-Medium/futura-medium.eot') + '"), url("' + require('../fonts/Futura/Futura-Medium/futura-medium.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/Futura/Futura-Medium/futura-medium.woff') + '") format("woff")',
+    src: ' url("' + require('../fonts/Futura/Futura-Medium/Futura-Medium-01.eot') + '"), url("' + require('../fonts/Futura/Futura-Medium/Futura-Medium-01.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/Futura/Futura-Medium/Futura-Medium-01.woff') + '") format("woff"), url("' + require('../fonts/Futura/Futura-Medium/Futura-Medium-01.woff2') + '") format("woff2")',
+};
+
+export const FuturaCondensedExtraBold = {
+    fontFamily: "Futura-Medium",
+    src: ' url("' + require('../fonts/Futura/Futura-CondensedExtraBold/Futura-CondensedExtraBold-05.eot') + '"), url("' + require('../fonts/Futura/Futura-CondensedExtraBold/Futura-CondensedExtraBold-05.eot?#iefix') + '") format("embedded-opentype"), url("' + require('../fonts/Futura/Futura-CondensedExtraBold/Futura-CondensedExtraBold-05.woff') + '") format("woff"), url("' + require('../fonts/Futura/Futura-CondensedExtraBold/Futura-CondensedExtraBold-05.woff2') + '") format("woff2")',
+    fontStyle: 'normal'
 };
 
 export const FuturaMediumFont = {

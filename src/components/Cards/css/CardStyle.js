@@ -1,5 +1,13 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaMediumFont, MetaSerifProBookFont, MetaSerifProFont} from "../../../css/Fonts";
+import {
+    FuturaBoldFont,
+    FuturaCondensedExtraBold,
+    FuturaFont,
+    FuturaMediumFont,
+    FuturaMediumFontOld,
+    MetaSerifProBookFont,
+    MetaSerifProFont
+} from "../../../css/Fonts";
 
 
 
@@ -124,7 +132,7 @@ const CardStyle = StyleSheet.create({
         }
     },
     productPrice: {
-        fontFamily: [MetaSerifProFont, 'sans-serif'],
+        fontFamily: [FuturaBoldFont, 'sans-serif'],
         color: '#7794e6',
         fontSize:'14px',
         display: "table-cell",

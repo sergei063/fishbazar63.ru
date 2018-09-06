@@ -132,6 +132,7 @@ const Price = {
                 "isRedFish":true,
                 "info": "Потрошеная без головы, (2-3)кг Prem Чили",
                 "packaging": "шт",
+                "weightOfOneFish":2.7,
                 "nutritionalValue": "Калории 141ккал<br>Белки. 19,9г<br>Жиры 6,2г<br>Углеводы. 0г<br>Омега3(г). 0,9г",
                 "packagingInfo": "Реализуется штучно.  Ориентировочный вес 2-3 кг",
                 "hit": false,

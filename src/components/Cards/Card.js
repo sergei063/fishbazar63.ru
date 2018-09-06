@@ -24,7 +24,7 @@ const Card = (props) =>  {
                     <div className={css(Style.productName)} dangerouslySetInnerHTML={{__html: p.showCaseName||""}}></div>
                     <div className={css(Style.productPrice)}>
                         <b>{p.price}</b>
-                        <small><nobr>руб/кг</nobr></small>
+                        &nbsp;<small><nobr>руб/кг</nobr></small>
                     </div>
                     <div className={css(Style.productWeightFish)}>
                         {(p.weightFish)? `Вес одной рыбы - ${p.weightFish.help}` : (p.weightOfOneFish) && `Вес одной рыбы - ${p.weightOfOneFish} кг`}

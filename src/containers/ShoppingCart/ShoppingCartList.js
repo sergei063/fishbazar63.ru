@@ -7,6 +7,8 @@ import Counter from "../../components/Counter/Counter";
 import $ from "jquery";
 import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
+import AppStyle from "../../css/AppStyle";
+import Iinfo from "../../components/Iinfo/Iinfo";
 
 
 const calbackFn = (id, props) => {
@@ -157,20 +159,20 @@ class ShoppingCartList extends React.Component {
                         <div className={css(ShoppingCartStyle.divTableCell)}>Товар</div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>Цена</div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>Кол-во</div>
-                        <div className={css(ShoppingCartStyle.divTableCell)}>Cтоимость</div>
+                        <div className={css(ShoppingCartStyle.divTableCell,AppStyle.textAlignRigh)}>Cтоимость</div>
                     </div>
                     <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                     </div>
 
@@ -183,10 +185,10 @@ class ShoppingCartList extends React.Component {
 
                         return (
                             <div id={p.id} key={p.id}
-                                 className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowText)}>
-                                <div className={css(ShoppingCartStyle.divTableCell)}>{p.showCaseName}</div>
-                                <div className={css(ShoppingCartStyle.divTableCell)}>{p.price} руб/кг</div>
-                                <div className={css(ShoppingCartStyle.divTableCell)}>
+                                 className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.divTableRowHeight, ShoppingCartStyle.tableRowText)}>
+                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign)}>{p.showCaseName}</div>
+                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign)}>{p.price} руб/кг</div>
+                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign)}>
                                     <Counter id={`fishNum_${p.id}`} counter={p.count} packaging={p.packaging}
                                              calbackFn={() => {
                                                  calbackFn(p.id, this.props);
@@ -195,8 +197,8 @@ class ShoppingCartList extends React.Component {
                                                  }*/
                                              }}/>
                                 </div>
-                                <div className={css(ShoppingCartStyle.divTableCell)}><span
-                                    className={css(ShoppingCartStyle.price)}><nobr>{cost} руб</nobr></span></div>
+                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign,AppStyle.textAlignRigh)}><span
+                                   style={{marginRight:'24px'}} className={css(ShoppingCartStyle.price,ShoppingCartStyle.divTableCellVerticalAlign)}><nobr>{cost} руб</nobr></span><Iinfo/></div>
                             </div>
 
                         )
@@ -205,16 +207,16 @@ class ShoppingCartList extends React.Component {
 
                     <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
-                            <hr/>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
                     </div>
 

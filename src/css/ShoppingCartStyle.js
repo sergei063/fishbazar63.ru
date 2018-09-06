@@ -5,7 +5,7 @@ import {
     LucidaGrandeFont,
     LucidaGrandeFontB,
     MetaSerifProBookFont,
-    MetaSerifProFont
+    MetaSerifProFont, MetaSerifProLightFont
 } from "./Fonts";
 
 const ShoppingCartStyle = StyleSheet.create({
@@ -80,8 +80,11 @@ const ShoppingCartStyle = StyleSheet.create({
         display: 'table-row',
 
     },
+    divTableRowHeight: {
+        height: '88px'
+    },
     tableRowText: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '16px',
         fontWeight: 'normal',
         fontStyle: 'normal',
@@ -92,7 +95,7 @@ const ShoppingCartStyle = StyleSheet.create({
         color: '#1e232c',
     },
     tableRowHeader: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '12px',
         fontWeight: 'normal',
         fontStyle: 'normal',
@@ -122,9 +125,20 @@ const ShoppingCartStyle = StyleSheet.create({
 
         }
     },
+    divTableCellLine: {
+        "backgroundColor": "rgba(31, 35, 44, 0.1)",
+        "height": "1px",
+        "border": "unset"
+    },
+    divTableCellVerticalAlign: {
+       verticalAlign:'middle'
+    },
 
     input: {
         borderRadius: '100px',
+        backgroundColor: 'unset',
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
+        fontSize:'14px',
         border: 'solid 1px rgba(31, 35, 44, 0.4)',
         width: '166px',
         height: '40px',
@@ -132,7 +146,29 @@ const ShoppingCartStyle = StyleSheet.create({
         '@media (max-width: 650px)': {
             width:'80%',
 
-        }
+        },
+        ':focus': {
+            '::placeholder': {
+                color: 'blue'
+            }
+        },
+        'label + :required ': {
+            ':after': {
+                display: 'block',
+                content: "'*Обязательное поле1'",
+                color: 'blue'
+            },
+
+            color: 'red'
+        },
+        /*'label': {
+            ':after': {
+                display: 'block',
+                content: '*Обязательное поле1',
+                color: 'blue'
+            }
+        }*/
+
     },
     totalText: {
         textAlign: 'right',
@@ -150,7 +186,7 @@ const ShoppingCartStyle = StyleSheet.create({
     },
 
     price: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontWeight: 'bold',
         fontStyle: 'normal',
         fontStretch: 'normal',
@@ -186,7 +222,18 @@ const ShoppingCartStyle = StyleSheet.create({
         }
     },
     ////
-
+    requiredField:{
+        fontFamily: [MetaSerifProBookFont, "sans-serif"],
+        "fontSize": "12px",
+        "fontWeight": "normal",
+        "fontStyle": "normal",
+        "fontStretch": "normal",
+        "lineHeight": "normal",
+        "letterSpacing": "0.4px",
+        "textAlign": "left",
+        "color": "#fe545b",
+        marginBottom:'12px'
+    },
 
     table: {
         borderCollapse: "collapse",

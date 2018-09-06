@@ -38,7 +38,7 @@ const Basket = (props) => {
                 <ShoppingCartList history={props.history}/>
                 <br/><br/><br/>
 
-                <div className={css(ShoppingCartStyle.h1)}>Доставка</div>
+                <div  style={{    marginBottom: '15px'}} className={css(ShoppingCartStyle.h1)}>Доставка</div>
                 <PlaceOfDelivery/>
 
                 <div className={css(ShoppingCartStyle.coupon)}>
@@ -60,7 +60,7 @@ const Basket = (props) => {
 
                 <div style={{height: '73px'}}></div>
                 <div className={css(ShoppingCartStyle.h1)}>Информация для доставки</div>
-                <div style={{height: '39px'}}></div>
+                <div style={{height: '59px'}}></div>
 
 
                 <div className={css(ShoppingCartStyle.deliveryInfo)}>
@@ -70,12 +70,21 @@ const Basket = (props) => {
                         width='264px' height='205px'></img>
                     </div>
                     <div className={css(ShoppingCartStyle.deliveryInfoInputDiv)}>
-                        <input placeholder={'Ваше Имя'}
-                               className={css(ShoppingCartStyle.input)} style={{width: '90%'}}/>
+                        <div className={css(ShoppingCartStyle.requiredField)}>*Обязательное поле</div>
+
+                        <label htmlFor="name"></label>
+                        <input id={'name'} placeholder={'Ваше Имя'}
+                               className={css(ShoppingCartStyle.input)} required style={{width: '90%'}}/>
+
+
                         <div style={{height: '24px'}}></div>
+
+
+                        <div className={css(ShoppingCartStyle.requiredField)}>*Обязательное поле</div>
                         <input placeholder={'Телефон'}
                                className={css(ShoppingCartStyle.input)} style={{width: '90%'}}/>
                         <div style={{height: '24px'}}></div>
+                        <div className={css(ShoppingCartStyle.requiredField)}>*Обязательное поле</div>
                         <input placeholder={'Улица, номер дома и квартиры'}
                                className={css(ShoppingCartStyle.input)} style={{width: '90%'}}/>
                         <div style={{height: '28px'}}></div>
