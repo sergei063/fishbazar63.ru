@@ -134,41 +134,15 @@ const ShoppingCartStyle = StyleSheet.create({
        verticalAlign:'middle'
     },
 
-    input: {
-        borderRadius: '100px',
-        backgroundColor: 'unset',
-        fontFamily: [MetaSerifProBookFont, "sans-serif"],
+
+    inputDiv: {
         fontSize:'14px',
-        border: 'solid 1px rgba(31, 35, 44, 0.4)',
-        width: '166px',
+        width: '95%',
         height: '40px',
-        paddingLeft: '20px',
+        marginBottom:'24px',
         '@media (max-width: 650px)': {
-            width:'80%',
-
-        },
-        ':focus': {
-            '::placeholder': {
-                color: 'blue'
-            }
-        },
-        'label + :required ': {
-            ':after': {
-                display: 'block',
-                content: "'*Обязательное поле1'",
-                color: 'blue'
-            },
-
-            color: 'red'
-        },
-        /*'label': {
-            ':after': {
-                display: 'block',
-                content: '*Обязательное поле1',
-                color: 'blue'
-            }
-        }*/
-
+            width:'95%',
+        }
     },
     totalText: {
         textAlign: 'right',
@@ -215,25 +189,15 @@ const ShoppingCartStyle = StyleSheet.create({
     },
     deliveryInfoInputDiv:{
         width:'304px',
+        marginBottom:'156px',
 
         '@media (max-width: 650px)': {
             width:'90%',
-            margin:'0 auto'
+            marginLeft:'0 auto'
         }
     },
-    ////
-    requiredField:{
-        fontFamily: [MetaSerifProBookFont, "sans-serif"],
-        "fontSize": "12px",
-        "fontWeight": "normal",
-        "fontStyle": "normal",
-        "fontStretch": "normal",
-        "lineHeight": "normal",
-        "letterSpacing": "0.4px",
-        "textAlign": "left",
-        "color": "#fe545b",
-        marginBottom:'12px'
-    },
+
+
 
     table: {
         borderCollapse: "collapse",

@@ -8,6 +8,7 @@ import Iinfo from "../components/Iinfo/Iinfo";
 import PlaceOfDelivery from "../components/PlaceOfDelivery/PlaceOfDelivery";
 import ShoppingCartList from "../containers/ShoppingCart/ShoppingCartList";
 import {connect} from "react-redux";
+import InputTextBox from "../components/InputTextBox/InputTextBox";
 
 const ShoppingCart = (props) => {
     return (
@@ -25,7 +26,10 @@ const Basket = (props) => {
     if (props.seafoodShoppingCart.totalCost < 1) {
         return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
     }
-
+    let nameInput = React.createRef();
+    let phoneNumber = React.createRef();
+    let address = React.createRef();
+    let placeOfDeliveryRef = React.createRef();
     return (
         <div className={css(ShoppingCartStyle.cnt)}>
             <div className={css(ShoppingCartStyle.cntArea)}></div>
@@ -39,7 +43,7 @@ const Basket = (props) => {
                 <br/><br/><br/>
 
                 <div  style={{    marginBottom: '15px'}} className={css(ShoppingCartStyle.h1)}>Доставка</div>
-                <PlaceOfDelivery/>
+                <PlaceOfDelivery ref={placeOfDeliveryRef}/>
 
                 <div className={css(ShoppingCartStyle.coupon)}>
                     <div className={css(ShoppingCartStyle.couponInfoIcon)}><Iinfo/></div>
@@ -70,30 +74,30 @@ const Basket = (props) => {
                         width='264px' height='205px'></img>
                     </div>
                     <div className={css(ShoppingCartStyle.deliveryInfoInputDiv)}>
-                        <div className={css(ShoppingCartStyle.requiredField)}>*Обязательное поле</div>
-
-                        <label htmlFor="name"></label>
-                        <input id={'name'} placeholder={'Ваше Имя'}
-                               className={css(ShoppingCartStyle.input)} required style={{width: '90%'}}/>
+                        <div className={css(ShoppingCartStyle.inputDiv)}>
+                            <InputTextBox ref={nameInput} id={'name'} placeholder={'Ваше Имя'}/>
+                        </div>
 
 
-                        <div style={{height: '24px'}}></div>
+                        <div className={css(ShoppingCartStyle.inputDiv)}>
+                            <InputTextBox ref={phoneNumber}  id={'phoneNumber'} placeholder={'Телефон'}/>
+                        </div>
+                        <div className={css(ShoppingCartStyle.inputDiv)}>
+                            <InputTextBox ref={address}  id={'address'} placeholder={'Улица, номер дома и квартиры'}/>
+                        </div>
 
-
-                        <div className={css(ShoppingCartStyle.requiredField)}>*Обязательное поле</div>
-                        <input placeholder={'Телефон'}
-                               className={css(ShoppingCartStyle.input)} style={{width: '90%'}}/>
-                        <div style={{height: '24px'}}></div>
-                        <div className={css(ShoppingCartStyle.requiredField)}>*Обязательное поле</div>
-                        <input placeholder={'Улица, номер дома и квартиры'}
-                               className={css(ShoppingCartStyle.input)} style={{width: '90%'}}/>
-                        <div style={{height: '28px'}}></div>
                         <button onClick={() => {
-                            //console.log(this.placeOfDeliveryRef.current.state)
-                            props.history.push({pathname: `/shopping_cart/ok`})
-                        }} style={{width: '100%'}} className={css(AppStyle.buttonRed)}>Оформить заказ
+                            if (placeOfDeliveryRef.current.wrappedInstance.validate()
+                                & nameInput.current.validate()
+                                & phoneNumber.current.validate()
+                                & address.current.validate()
+                            ) {
+                                props.history.push({pathname: `/shopping_cart/ok`})
+                            }
+
+                        }} style={{width: '95%'}} className={css(AppStyle.buttonRed)}>Оформить заказ
                         </button>
-                        <div style={{height: '156px'}}></div>
+
 
                     </div>
                 </div>

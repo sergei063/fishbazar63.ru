@@ -27,6 +27,9 @@ const getDeliveryByWhere = (where) => {
 class PlaceOfDelivery extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            required: false
+        }
         /* this.state = {
              where:0
          };*/
@@ -37,24 +40,21 @@ class PlaceOfDelivery extends React.Component {
 
 
     handleOptionChange(changeEvent) {
-
-
         this.props.setPlaceOfDelivery(getDeliveryByWhere(changeEvent.target.value));
+    }
+    validate(){
 
-        /*this.setState({
-            where: getDeliveryByWhere(changeEvent.target.value),
-        }, function () {
-            console.log(this.state)
-            if (this.calbackFn) {
-                this.calbackFn.apply()
-            }
-        });*/
-
+        if (!this.props.placeOfDelivery.where){
+          this.setState({required:true})
+            return false;
+        }
+        this.setState({required:false})
+        return true;
 
     }
-
     componentDidUpdate() {
-//
+
+
     }
 
     render() {
@@ -64,7 +64,7 @@ class PlaceOfDelivery extends React.Component {
             <div className={css(Style.divTable)}>
                 <div className={css(Style.divTableBody)}>
                     <div  style={{height:'45px'}} className={css(Style.divTableRow, Style.tableRowHeader)}>
-                        <div className={css(Style.divTableCell)}>Выберите место доставки</div>
+                        <div className={` ${css(Style.divTableCell, Style.requiredText)} ${(this.state.required)? css(Style.isRequiredText):null}`}></div>
                         <div className={css(Style.divTableCell,AppStyle.textAlignRigh)}>Стоимость</div>
                     </div>
 
@@ -171,6 +171,19 @@ const Style = StyleSheet.create({
         display: 'table-cell',
         lineHeight: '2.38'
     },
+    requiredText: {
+
+        ':before': {
+            content: "'Выберите место доставки'",
+        }
+
+    },
+    isRequiredText: {
+        ':after': {
+            content: "', это обязательное поле'",
+        },
+        color:'red'
+    },
     tableRowHeader: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
         fontSize: '12px',
@@ -202,4 +215,5 @@ const matchDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps, matchDispatchToProps)(PlaceOfDelivery);
+export default connect(mapStateToProps, matchDispatchToProps,null, { withRef: true })(PlaceOfDelivery);
+
