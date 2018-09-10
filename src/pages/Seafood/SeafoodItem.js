@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Katalog from "../../Katalog";
-import {css} from "aphrodite/no-important";
+import {css, StyleSheet} from "aphrodite/no-important";
 import SeafoodItemStyle from "./SeafoodItemStyle";
 import AppStyle from "../../css/AppStyle";
 import $ from "jquery";
@@ -10,8 +10,6 @@ import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
 import Iinfo from "../../components/Iinfo/Iinfo";
 import AllCards from "../../components/Cards/AllCards";
-import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
-import PouchIcon from "../../containers/PouchIcon/PouchIcon";
 
 
 const BreadCrumbs = (props) => {
@@ -92,12 +90,10 @@ const SeafoodItem = (props) => {
                         рыбы
                     </div>
                     <div>
-                        <Link to='/delivery'>
-                            <div className={css(SeafoodItemStyle.deliveryMore)} title={"Подробнее о бесплатной доставке"}>
-                                <div><Iinfo/></div>
-                                <div className={css(SeafoodItemStyle.hidden_text)}>Подробнее о бесплатной доставке</div>
-                            </div>
-                        </Link>
+                        <Iinfo style={tooltiptMobileStyle}
+                               visibleSocialBlock={true}
+                               text={"Подробнее о бесплатной доставке"}
+                               tooltip={"Два раза в неделю мы доставляем морепродукты бесплатно! Подпишитесь на нас в соц.сетях и узнайте подробности акции на этой неделе"}/>
                     </div>
                 </div>
 
@@ -116,6 +112,21 @@ const SeafoodItem = (props) => {
         </div>
     )
 };
+
+const tooltiptMobileStyle = StyleSheet.create({
+    tooltiptext:{
+        width:'200px',
+        left: "40px",
+        marginLeft: "-60px",
+        ':after': {
+            marginLeft: "-115px",
+        }
+    }
+
+
+
+});
+
 const AddShoppingCart = (fish, countFishEl,props) => {
     let countFish = Number.parseInt(countFishEl[0].value,10);
     Katalog.addShoppingCart(fish, countFish);

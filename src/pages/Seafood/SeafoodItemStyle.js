@@ -136,7 +136,7 @@ const SeafoodItemStyle = StyleSheet.create({
     },
 
     price: {
-        fontFamily: [FuturaFont, "sans-serif"],
+        fontFamily: [FuturaBoldFont, "sans-serif"],
         fontWeight: 'bold',
         fontStyle: 'normal',
         fontStretch: 'normal',

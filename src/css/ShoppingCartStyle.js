@@ -14,7 +14,7 @@ const ShoppingCartStyle = StyleSheet.create({
         width: '625px',
         margin: '0 auto',
         position: 'relative',
-        overflow: "hidden",
+
         '@media (max-width: 750px)': {
             width: '90%',
 
@@ -166,7 +166,8 @@ const ShoppingCartStyle = StyleSheet.create({
         fontStretch: 'normal',
         lineHeight: 'normal',
         color: '#7794e6',
-        fontSize: '14px'
+        fontSize: '14px',
+        marginRight:'16px'
     },
     deliveryInfo: {
         display: 'flex',

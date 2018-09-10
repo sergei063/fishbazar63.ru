@@ -1,7 +1,6 @@
 import React from "react";
 import Katalog from "../../Katalog";
 import ShoppingCartStyle from "../../css/ShoppingCartStyle";
-import {css} from "aphrodite/no-important";
 import ProductionStyle from "../../css/ProductionStyle";
 import Counter from "../../components/Counter/Counter";
 import $ from "jquery";
@@ -9,7 +8,9 @@ import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
 import AppStyle from "../../css/AppStyle";
 import Iinfo from "../../components/Iinfo/Iinfo";
-
+import {Link} from 'react-router-dom';
+import {MetaSerifProBookFont} from "../../css/Fonts";
+import {StyleSheet,css} from 'aphrodite/no-important';
 
 const calbackFn = (id, props) => {
     let fish = Katalog.get(id);
@@ -118,7 +119,10 @@ class ShoppingCartList extends React.Component {
                                                  }}/>
                                     </div>
                                     <div className={css(ShoppingCartStyle.divTableCell)}><span
-                                        className={css(ShoppingCartStyle.price)}><nobr>{cost} руб</nobr></span></div>
+                                        className={css(ShoppingCartStyle.price)}><nobr>{cost} руб</nobr></span>
+                                        <Iinfo style={tooltiptMobileStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам,\n" +
+                                        "и сообщим точную стоимость заказа"}/>
+                                    </div>
                                 </div>
 
 
@@ -173,6 +177,7 @@ class ShoppingCartList extends React.Component {
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
                             <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
+
                         </div>
                     </div>
 
@@ -197,8 +202,10 @@ class ShoppingCartList extends React.Component {
                                                  }*/
                                              }}/>
                                 </div>
-                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign,AppStyle.textAlignRigh)}><span
-                                   style={{marginRight:'24px'}} className={css(ShoppingCartStyle.price,ShoppingCartStyle.divTableCellVerticalAlign)}><nobr>{cost} руб</nobr></span><Iinfo/></div>
+                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign,AppStyle.textAlignRigh)}>
+                                    <span className={css(ShoppingCartStyle.price,ShoppingCartStyle.divTableCellVerticalAlign)}><nobr>{cost} руб</nobr></span>
+                                    <Iinfo Iinfo style={tooltiptStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам, и сообщим точную стоимость заказа"}/>
+                                </div>
                             </div>
 
                         )
@@ -234,7 +241,23 @@ class ShoppingCartList extends React.Component {
     }
 }
 
-
+const tooltiptStyle = StyleSheet.create({
+    tooltiptext:{
+        ':after': {
+            marginLeft: "0px",
+        }
+    }
+});
+const tooltiptMobileStyle = StyleSheet.create({
+    tooltiptext:{
+        width:'230px',
+        left: "-180px",
+        marginLeft: "-60px",
+        ':after': {
+            marginLeft: "90px",
+        }
+    }
+});
 const mapStateToProps = (state) => ({shoppingCart: state.shoppingCart,seafoodShoppingCart: state.seafoodShoppingCart});
 //const mapStateToProps = (state) => (state);
 

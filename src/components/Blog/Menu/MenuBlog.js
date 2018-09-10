@@ -3,7 +3,7 @@ import {css} from "aphrodite";
 import {Recipes} from "../../../pages/Blog/Blog";
 import SocialNetworkBlockStyle from "../../../pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle";
 import AllBlogStyle from "../../../pages/Blog/AllBlogStyle";
-import {FuturaBoldFont, FuturaMediumFont, MetaSerifProBookFont} from "../../../css/Fonts";
+import {FuturaBoldFont, FuturaMediumFont, LucidaGrandeFontB, MetaSerifProBookFont} from "../../../css/Fonts";
 import {StyleSheet} from 'aphrodite/no-important';
 import Instagram from "../../SocialNetwork/Instagram";
 import VK from "../../SocialNetwork/Vk";
@@ -81,7 +81,8 @@ const FishForRecipeCardStyle = StyleSheet.create({
     },
     li: {
         ...CardStyle.li._definition,
-        margin:'0'
+        margin:'56px 0px 0px 0px'
+
     },
     card: {
         ...CardStyle.card._definition,
@@ -119,7 +120,7 @@ const MenuBlogStyle = StyleSheet.create({
         alignContent: "space-between"
     },
     el_filter: {
-        fontFamily: [FuturaMediumFont, "sans-serif"],
+        fontFamily: [LucidaGrandeFontB, "sans-serif"],
         //marginRight: '48px',
         paddingRight: '15px',
         paddingLeft: '15px',

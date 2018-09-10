@@ -19,6 +19,7 @@ const RecipesDB = {
                 "tittle": "Треска в зеленом соусе”",
                 "img": require('../../img/Recipes/cod_in_green_sauce.jpg'),
                 "date": "2018-09-01",
+                "fish_for_recipe":["treska_15"],
                 "ingredients": [
                     "125 мл оливкового масла",
                     "1 ст.л. мелко нарезанного чеснока",
@@ -45,6 +46,7 @@ const RecipesDB = {
                     "зелень укропа, лавровый лист",
                     "соль,чёрный перец"
                 ],
+                "fish_for_recipe":["Flounder_s"],
                 "html_text": "<p><span>Заранее из&nbsp;пергамента вырезать 8&nbsp;кругов диаметром 14&nbsp;см. Рыбу вымыть, обсушить. Лук очистить, нарезать тонкими полукольцами. Перцы вымыть, разрезать пополам и&nbsp;удалить сердцевину, нарезать тонкой соломкой. Укроп вымыть, обсушить и&nbsp;измельчить.</span></p>\n" +
                 "<p><span>На&nbsp;4&nbsp;круга положить по&nbsp;куску рыбы. На&nbsp;рыбу положить по&nbsp;кружку лимона, а&nbsp;затем&nbsp;— нарезанные овощи. Посолить, поперчить, сбрызнуть вином.</span></p>\n" +
                 "<p><span>Духовку разогреть до&nbsp;180 °С.&nbsp;Противень сбрызнуть маслом. Накрыть рыбу с&nbsp;овощами вторым кружком пергамента, завернуть края. Сверху смазать пергамент маслом. Поставить в&nbsp;духовку, готовить 30&nbsp;мин. Подавать к&nbsp;столу в&nbsp;пергаменте, сделав посередине разрез и&nbsp;отогнув края. Перед подачей блюдо можно сбрызнуть бальзамическим уксусом или лимонным соком, посыпать рыбу мелко нарезанным укропом или кинзой.</span></p>"
@@ -62,6 +64,7 @@ const RecipesDB = {
                     "соль, свежемолотый черный перец",
                     "шнитт-лук для подачи"
                 ],
+                "fish_for_recipe":["salmon_of_chile_s"],
                 "to_sauce": [
                     "2 желтка",
                     "185 г сливочного масла",
@@ -81,7 +84,7 @@ const RecipesDB = {
                 "tittle": "Форель в кисло-сладком соусе",
                 "img": require('../../img/Recipes/trout_in_sweet_and_sour_sauce.jpg'),
                 "date": "2018-09-04",
-
+                "fish_for_recipe":["Trout_of_chile"],
                 "html_text": "<p><span>Форель очистить, выпотрошить и&nbsp;тщательно промыть. Удалить голову, хвост и&nbsp;плавники.</span></p>\n" +
                 "<p><span>Лук очистить и&nbsp;измельчить. С&nbsp;лимона снять цедру, из&nbsp;мякоти выжать сок. Горошины перца раздавить. Укроп и&nbsp;петрушку вымыть и&nbsp;измельчить. Перцы нарезать небольшими кубиками. Снять листики базилика со&nbsp;стеблей. Стебли измельчить. Перцы и&nbsp;базилик отложить.</span></p>\n" +
                 "<p><span>Смешать в&nbsp;миске растительное масло, коньяк, соус-маринад. Добавить лук, цедру и&nbsp;сок лимона, перец, укроп, петрушку, сахар и&nbsp;соль по&nbsp;вкусу. Выложить форель на&nbsp;блюдо и&nbsp;полить маринадом. Оставить на&nbsp;15&nbsp;мин., затем перевернуть на&nbsp;другую сторону и&nbsp;оставить еще на&nbsp;15&nbsp;мин.</span></p>\n" +
@@ -93,6 +96,7 @@ const RecipesDB = {
             {
                 "name": "salmon_with_fennel",
                 "tittle": "Семга с фенхелем",
+                "fish_for_recipe":["salmon_of_chile_s"],
                 "img": require('../../img/Recipes/salmon_with_fennel.jpg'),
                 "date": "2018-09-05",
                 "ingredients": [
@@ -131,6 +135,7 @@ const RecipesDB = {
                     "по 1 ч. л. светлых и черных семян кунжута",
                     "соль"
                 ],
+                "fish_for_recipe":["shrimp_angular"],
                 "to_refill": [
                     "3 см корня имбиря",
                     "1 ст. л. меда",
@@ -151,6 +156,7 @@ const RecipesDB = {
                 "tittle": "Тосканский салат с тигровыми креветками и белой фасолью",
                 "img": require('../../img/Recipes/tuscan_salad_with_tiger_prawns_and_white_beans.jpg'),
                 "date": "2018-09-06",
+                "fish_for_recipe":["shrimp_tiger"],
                 "ingredients": [
                     "руккола – 300 г",
                     "тигровые креветки – 200 г",
@@ -185,6 +191,7 @@ const RecipesDB = {
                 "tittle": "Морские гребешки с соусом мисо",
                 "img": require('../../img/Recipes/scallops_with_miso_sauce.jpg'),
                 "date": "2018-09-06",
+                "fish_for_recipe":["scallop"],
                 "ingredients": [
                     "сливки – 2 ст. л.",
                     "паста мисо – 2 ст. л.",
@@ -208,6 +215,7 @@ const RecipesDB = {
                 "tittle": "Кальмары на гриле",
                 "img": require('../../img/Recipes/grilled_squid.jpg'),
                 "date": "2018-09-06",
+                "fish_for_recipe":["squid"],
                 "html_text": "<p><span>Размораживать кальмары, следует либо в&nbsp;холодильнике, либо при комнатной температуре. </span></p>\n" +
                 "<p><b><br/>\n" +
                 " \t</b> \n" +
@@ -232,6 +240,7 @@ const RecipesDB = {
                 "tittle": "Мидии с чесночным маслом",
                 "img": require('../../img/Recipes/mussels_with_garlic_butter.jpg'),
                 "date": "2018-09-06",
+                "fish_for_recipe":["mussels"],
                 "ingredients":["20 мидий",
                     "50 г сливочного масла",
                     "2 ст. л. оливкового масла",
@@ -434,10 +443,15 @@ const OneBlog = (props) => {
                     <div  style={{  marginTop: '52px', marginBottom: '40px',}}>
 
                         {(selectedRecipe.ingredients && selectedRecipe.ingredients.length > 0) &&
-                        <div><img src={require('../../img/logo_fish.png')}
-                                  width='38px' height='38px'></img>
+                        <div>
+                            <div className={css(AllBlogStyle.ingredientsHeader)}>
+                                <div><img src={require('../../img/logo_fish.png')} width='38px' height='38px'></img>
+                                </div>
 
-                            <span className={css(AllBlogStyle.ingredientsSpan)}>Ингредиенты</span>
+                                <div
+                                    className={css(AllBlogStyle.ingredientsSpan, AllBlogStyle.ingredientsSpanPL40)}>Ингредиенты
+                                </div>
+                            </div>
                             <ul className={css(AllBlogStyle.ingredientsUL)}>
                                 {selectedRecipe.ingredients.map((ingredient, index) => (
                                         <li key={index.toString()} className={css(AllBlogStyle.ingredientsLI)}>

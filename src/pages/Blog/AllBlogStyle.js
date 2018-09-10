@@ -58,7 +58,8 @@ const AllBlogStyle = StyleSheet.create({
         lineHeight: 'normal',
         letterSpacing: '0.4px',
         textAlign: 'left',
-        color: 'rgba(31, 35, 44, 0.4)'
+        color: 'rgba(31, 35, 44, 0.4)',
+        marginBottom:'14px'
     },
     recipeHtmlText: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -77,9 +78,17 @@ const AllBlogStyle = StyleSheet.create({
         }
 
     },
+    ingredientsHeader:{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        alignContent: "center"
+    },
     ingredientsSpan:{
         fontFamily: [LucidaGrandeFontB, "sans-serif"],
-        paddingLeft:'40px',
+        paddingLeft:'0px',
         fontSize: "18px",
         fontWeight: "bold",
         fontStyle: "normal",
@@ -88,6 +97,9 @@ const AllBlogStyle = StyleSheet.create({
         letterSpacing: "0.6px",
         textAlign: "left",
         color: "#000000"
+    },
+    ingredientsSpanPL40:{
+        paddingLeft:'40px',
     },
     ingredientsUL:{
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
