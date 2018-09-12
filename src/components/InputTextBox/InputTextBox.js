@@ -2,10 +2,17 @@ import React from 'react';
 import {StyleSheet, css} from "aphrodite/no-important";
 import ShoppingCartStyle from "../../css/ShoppingCartStyle";
 import {MetaSerifProBookFont} from "../../css/Fonts";
+import {connect} from "react-redux";
+import {addFishToSeafoodShoppingCart, setAllFormsValue} from "../../actions";
 
 class InputTextBox extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            text: props.text||""
+        };
+        //this.props.setAllFormsValue(props.id,props.text|| "");
+
         this.input = React.createRef();
     }
     validate(){
@@ -22,17 +29,22 @@ class InputTextBox extends React.Component {
 
     }
     render(){
+        let value = (!this.props.allForms[this.props.id])? this.props.text:this.props.allForms[this.props.id]
         return (
 
             <div className={css(Style.cnt)}>
-                <input ref={this.input} id={this.props.id} onKeyUp={this.validate.bind(this)} placeholder={this.props.placeholder} className={css(Style.input)}/>
+                <input ref={this.input}  id={this.props.id} className={css(Style.input)} onKeyUp={this.validate.bind(this)}
+                       placeholder={this.props.placeholder}
+                       value={value ? value : ""}
+                       onChange={e => {this.props.setAllFormsValue(e.target.id,e.target.value)}}
+                />
                 <label className={css(Style.error)} htmlFor={this.props.id}></label>
             </div>
         );
     }
 }
 
-
+//
 const Style = StyleSheet.create({
     cnt:{
         width: '100%', height: '100%',
@@ -95,4 +107,14 @@ const Style = StyleSheet.create({
 
 
 });
-export default InputTextBox;
+//export default InputTextBox;
+
+const mapStateToProps = (state) => ({allForms: state.allForms});
+const matchDispatchToProps = (dispatch) => ({
+    setAllFormsValue:(id,value)=>{
+        dispatch(setAllFormsValue(id,value))
+    }
+});
+
+
+export default connect(mapStateToProps, matchDispatchToProps,null, { withRef: true })(InputTextBox);

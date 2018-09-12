@@ -4,6 +4,7 @@ import {FuturaBoldFont, MetaSerifProBookFont, MetaSerifProFont} from "../../css/
 import {connect} from "react-redux";
 import {setPlaceOfDelivery} from "../../actions";
 import AppStyle from "../../css/AppStyle";
+import * as ReactDOM from "react-dom";
 
 
 const delivery = [
@@ -42,16 +43,24 @@ class PlaceOfDelivery extends React.Component {
     handleOptionChange(changeEvent) {
         this.props.setPlaceOfDelivery(getDeliveryByWhere(changeEvent.target.value));
     }
-    validate(){
 
-        if (!this.props.placeOfDelivery.where){
-          this.setState({required:true})
+    validate(isScrollIntoView) {
+
+        if (!this.props.placeOfDelivery.where) {
+            this.setState({required: true})
+            if (isScrollIntoView) {
+                const domNode = ReactDOM.findDOMNode(this);
+                domNode.scrollIntoView({block: isScrollIntoView.block, behavior: isScrollIntoView.behavior})
+                //domNode.scrollIntoView({block: 'end', behavior: 'smooth'})
+            }
+
             return false;
         }
-        this.setState({required:false})
+        this.setState({required: false})
         return true;
 
     }
+
     componentDidUpdate() {
 
 
@@ -63,9 +72,10 @@ class PlaceOfDelivery extends React.Component {
 
             <div className={css(Style.divTable)}>
                 <div className={css(Style.divTableBody)}>
-                    <div  style={{height:'45px'}} className={css(Style.divTableRow, Style.tableRowHeader)}>
-                        <div className={` ${css(Style.divTableCell, Style.requiredText)} ${(this.state.required)? css(Style.isRequiredText):null}`}></div>
-                        <div className={css(Style.divTableCell,AppStyle.textAlignRigh)}>Стоимость</div>
+                    <div style={{height: '45px'}} className={css(Style.divTableRow, Style.tableRowHeader)}>
+                        <div
+                            className={` ${css(Style.divTableCell, Style.requiredText)} ${(this.state.required) ? css(Style.isRequiredText) : null}`}></div>
+                        <div className={css(Style.divTableCell, AppStyle.textAlignRigh)}>Стоимость</div>
                     </div>
 
 
@@ -82,7 +92,8 @@ class PlaceOfDelivery extends React.Component {
                                         <span className={css(Style.label)}> {p.where}</span>
                                     </label>
                                 </div>
-                                <div className={css(Style.divTableCell,AppStyle.textAlignRigh)}>{p.price}&nbsp;руб</div>
+                                <div className={css(Style.divTableCell, AppStyle.textAlignRigh)}>{p.price}&nbsp;руб
+                                </div>
                             </div>
 
                         )
@@ -182,7 +193,7 @@ const Style = StyleSheet.create({
         ':after': {
             content: "', это обязательное поле'",
         },
-        color:'red'
+        color: 'red'
     },
     tableRowHeader: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -215,5 +226,5 @@ const matchDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps, matchDispatchToProps,null, { withRef: true })(PlaceOfDelivery);
+export default connect(mapStateToProps, matchDispatchToProps, null, {withRef: true})(PlaceOfDelivery);
 

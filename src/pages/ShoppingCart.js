@@ -9,6 +9,7 @@ import PlaceOfDelivery from "../components/PlaceOfDelivery/PlaceOfDelivery";
 import ShoppingCartList from "../containers/ShoppingCart/ShoppingCartList";
 import {connect} from "react-redux";
 import InputTextBox from "../components/InputTextBox/InputTextBox";
+import * as ReactDOM from "react-dom";
 
 const ShoppingCart = (props) => {
     return (
@@ -87,10 +88,11 @@ const Basket = (props) => {
                         </div>
 
                         <button onClick={() => {
-                            if (placeOfDeliveryRef.current.wrappedInstance.validate()
-                                & nameInput.current.validate()
-                                & phoneNumber.current.validate()
-                                & address.current.validate()
+
+                            if (placeOfDeliveryRef.current.wrappedInstance.validate({block: 'end', behavior: 'smooth'})
+                                & nameInput.current.wrappedInstance.validate()
+                                & phoneNumber.current.wrappedInstance.validate()
+                                & address.current.wrappedInstance.validate()
                             ) {
                                 props.history.push({pathname: `/shopping_cart/ok`})
                             }

@@ -72,6 +72,10 @@ const Style = StyleSheet.create({
         display: "inline-block",
         cursor:'pointer',
 
+        "borderTop":"4px solid transparent",
+        ':hover': {
+
+        },
         ':hover  span': {
             display: "inline-block",
             opacity: "1",
@@ -117,6 +121,11 @@ const Style = StyleSheet.create({
         left: "-250%",
         marginLeft: "-60px",
         width: '250px',
+
+        ':hover': {
+            display: "inline-block",
+            opacity: "1",
+        },
         ':after': {
             content: "''",
             position: "absolute",

@@ -52,8 +52,11 @@ const SeafoodItem = (props) => {
             <div className={css(SeafoodItemStyle.flexContainer)}>
                 <div className={css(SeafoodItemStyle.fishContainer, SeafoodItemStyle.width40P)}>
                     <div className={css(SeafoodItemStyle.fishContainerFirst)}>
-                        <div className={css(SeafoodItemStyle.mobileShow650,SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
-                            {item.info}
+                        <div className={css(SeafoodItemStyle.mobileShow650,SeafoodItemStyle.nameDiv)}>
+                            <span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr>
+                            </span><br/>
+                            <span dangerouslySetInnerHTML={{__html: item.info}}></span>
                         </div>
                         <div className={css(SeafoodItemStyle.mobileHidden650)}><BreadCrumbs item={item} history={props.history}/></div>
                         <div><img className={css(SeafoodItemStyle.img)} src={item.img} ></img></div>
@@ -70,7 +73,7 @@ const SeafoodItem = (props) => {
                 <div className={css(SeafoodItemStyle.infoContainer, SeafoodItemStyle.width30P)}>
 
                     <div className={css(SeafoodItemStyle.mobileHidden650,SeafoodItemStyle.nameDiv)}><span className={css(SeafoodItemStyle.name)}>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className={css(SeafoodItemStyle.price)}><nobr>{item.price}руб/кг</nobr></span><br/>
-                        {item.info}
+                        <span dangerouslySetInnerHTML={{__html: item.info}}></span>
                     </div>
 
                     <Counter id="countFish" packaging={item.packaging}/>

@@ -19,3 +19,11 @@ export const  setPlaceOfDelivery = (placeOfDelivery) => {
     }
 };
 
+export const  setAllFormsValue = (id,value) => {
+    return {
+        type: 'SET_ALL_FORMS_VALUE',
+        id:id,
+        value:value
+    }
+};
+
