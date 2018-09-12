@@ -195,7 +195,7 @@ const Price = {
                     "size":"l",
                     "help":"0,3-0,6кг"
                 },
-                "price": 117
+                "price": 123
 
             },
             {
@@ -308,7 +308,7 @@ const Price = {
                 "showCaseName": "Мидии",
                 "name": "Мидии New Zealand",
                 "info": "",
-                "packaging": "кг",
+                "packaging": "кор",
                 "packagingInfo" : "",
                 "hit": true,
                 "nutritionalValue":"Калории 77ккал<br>Белки. 11,5г<br>Жиры 2г<br>Углеводы. 3,3г<br>Омега3(г). 0г",
@@ -363,7 +363,7 @@ const Price = {
                 "showCaseName": "Тигровая креветка",
                 "name": "Тигровая креветка",
                 "info": "Индия",
-                "packaging": "кг",
+                "packaging": "кор",
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "",
                 "hit": false,
@@ -374,7 +374,7 @@ const Price = {
                 "id": "greenland_shrimp",
                 "showCaseName": "Гренландская креветка",
                 "name": "Гренландская креветка",
-                "info": "Гренландия",
+                "info": "Креветка гренландская 90-110. Глазурь не более 3%",
                 "packaging": "кг",
                 "nutritionalValue" : "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo" : "Размер 90 -120",
@@ -393,12 +393,12 @@ const Price = {
                 "showCaseName": "Лангустины L1",
                 "name": "Лангустины  аргентинские L1",
                 "info": "Дикий улов. Упаковка 2кг",
-                "packaging": "кг",
+                "packaging": "кор",
                 "nutritionalValue" : "Калории 143ккал<br>Белки. 26,4г<br>Жиры 1,9г<br>Углеводы. 3,1г<br>Омега3(г). 0,5г",
                 "packagingInfo" : "",
                 "hit": true,
                 "producer":"Аргентина",
-                "catchDate":"01.12.2018",
+                "catchDate":"01.12.2017",
                 "img": require('./img/seafood/langoustines.png'),
                 "price": 690
             },

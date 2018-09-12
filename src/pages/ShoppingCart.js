@@ -59,7 +59,7 @@ const Basket = (props) => {
 
                 <div style={{height: '36px'}}></div>
                 <div className={css(ShoppingCartStyle.totalText)}>Итоговая сумма: <span
-                    className={css(ShoppingCartStyle.price)}><nobr>{props.seafoodShoppingCart.totalCost + props.placeOfDelivery.price} руб</nobr></span>
+                    className={css(ShoppingCartStyle.price)}><nobr>{(props.seafoodShoppingCart.totalCost + props.placeOfDelivery.price).toFixed(0)} руб</nobr></span>
                 </div>
 
                 <div style={{height: '73px'}}></div>

@@ -22,7 +22,7 @@ const Delivery = (props) => {
                 <div className={css(DeliveryStyle.flexContainerInfoRow)}>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>
                         <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Гибкое время<div >пн-вс, с 7 до 19</div></div>
-                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>Наш курьер доставит заказ c&nbsp;пн&nbsp;по&nbsp;вс, в&nbsp;удобное для вас время с&nbsp;7:00 до&nbsp;20:00. Мы&nbsp;перевозим морепродукты в&nbsp;холодном термобоксе, он&nbsp;защищает продукты от&nbsp;размораживания.</div>
+                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>Наш курьер доставит заказ c&nbsp;пн&nbsp;по&nbsp;вс, в&nbsp;удобное для вас время с&nbsp;7:00 до&nbsp;19:00. Мы&nbsp;перевозим морепродукты в&nbsp;холодном термобоксе, он&nbsp;защищает продукты от&nbsp;размораживания.</div>
                     </div>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>
                         <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Способы оплаты</div>
@@ -30,7 +30,7 @@ const Delivery = (props) => {
                     </div>
                     <div className={css(DeliveryStyle.flexContainerInfoCell)}>
                         <div className={css(DeliveryStyle.width30Percent, DeliveryStyle.columnCaption)}>Стоимость</div>
-                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>г. Самара&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>150&nbsp;руб</span><br/>Сухая Самарка, Жилой район Волгарь,116км. &mdash; <span className={css(DeliveryStyle.redText)}>100&nbsp;руб</span><br/>г. Новокуйбышевск, п.Гранный&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span><br/>Минимальная сумма заказа <span className={css(DeliveryStyle.redText)}>600&nbsp;руб</span><br/></div>
+                        <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>г. Самара&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>150&nbsp;руб</span><br/>Сухая Самарка, Жилой район Волгарь,116км. &mdash; <span className={css(DeliveryStyle.redText)}>100&nbsp;руб</span><br/>г. Новокуйбышевск, п.Гранный&nbsp;&mdash;  <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span><br/>Минимальная сумма заказа <span className={css(DeliveryStyle.redText)}>700&nbsp;руб</span><br/></div>
                     </div>
                 </div>
 
