@@ -30,7 +30,7 @@ const Iinfo = (props) => {
 
 
     return (
-        <div className={css(Style.cnt)}>
+        <div className={css(Style.cnt, Style.cntDisplay)}>
             <div className={css(Style.container)}>
                 <div>
                     <span  className={(props.tooltip) ? css(Style.tooltiptext, _try(() => props.style.tooltiptext, null)) : null}
@@ -54,6 +54,8 @@ const Style = StyleSheet.create({
     container: {
         display: "grid",
         gridTemplateColumns: "30px 1fr",
+        "height": "100%",
+        "alignContent": "center"
     },
     hidden_text: {
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -66,12 +68,15 @@ const Style = StyleSheet.create({
         textAlign: "left",
         color: "rgba(31, 35, 44, 0.4)"
     },
+    cntDisplay:{
+        display: "block",
+    },
 
     cnt: {
         position: "relative",
-        display: "inline-block",
-        cursor:'pointer',
 
+        cursor:'pointer',
+        borderBottom: '4px solid transparent',
         "borderTop":"4px solid transparent",
         ':hover': {
 

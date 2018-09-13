@@ -20,7 +20,7 @@ const QualityAssuranceStyle = StyleSheet.create({
     },
     mobileShow:{
         display:'none',
-        '@media (max-width: 500px)': {
+        '@media (max-width: 730px)': {
             display:'block',
         }
     },
@@ -39,57 +39,6 @@ const QualityAssuranceStyle = StyleSheet.create({
         }
     },
     h2: {
-        fontFamily: [MetaSerifProFont, "sans-serif"],
-        fontSize: '16px',
-        fontWeight: 'normal',
-        fontStyle: 'normal',
-        fontStretch: 'normal',
-        lineHeight: '1.39',
-        letterSpacing: '0.5px',
-        textAlign: 'left',
-        color: '#ffffff',
-    },
-
-    flexContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        alignContent: 'stretch',
-    },
-    flexContainer2: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        alignContent: 'stretch',
-        '@media (max-width: 900px)': {
-            flexDirection: 'column',
-        }
-    },
-    seafood_layer2: {
-        width: '341px',
-        height: '392px',
-        '@media (max-width: 500px)': {
-            display:'none'
-        }
-    },
-    w304:{
-        width:'304px',
-        '@media (max-width: 500px)': {
-            width:'90%',
-        }
-    },
-    MR96:{
-        marginRight:'96px',
-        '@media (max-width: 500px)': {
-            margin:'0 auto',
-        }
-    },
-
-    caption:{
         fontFamily: [FuturaBoldFont, "sans-serif"],
         fontSize:'18px',
         fontWeight:'bold',
@@ -97,8 +46,59 @@ const QualityAssuranceStyle = StyleSheet.create({
         fontStretch:'normal',
         lineHeight:'normal',
         letterSpacing:'0.6px',
-        textAlign:'left',
         color:'#7794e6',
+    },
+
+
+    gridBaseContainer:{
+        "display": "grid",
+        //"height": "100%",
+        "gridTemplateColumns": "[a] 341px [b]1fr",
+        "gridTemplateRows": "",
+        "gap": "1px 110px",
+
+        marginBottom:'140px',
+        '@media (max-width: 1000px)': {
+            "gap": "1px 66px",
+        },
+        '@media (max-width: 730px)': {
+            "gridTemplateColumns": "unset",
+            gridTemplateRows: "1fr",
+        }
+    },
+    gridContainer:{
+        display: "grid",
+        //height: "100%",
+        justifyContent: 'start',
+        gridTemplateColumns: "auto auto",
+        //gridTemplateRows: "1fr 1fr",
+        gridGap: '65px 96px',
+        '@media (max-width: 1000px)': {
+            gridTemplateColumns:'unset',
+            gridGap: '22px',
+            gridTemplateRows: "1fr 1fr 1fr 1fr"
+        }
+
+    },
+    gridCell:{
+        maxWidth: '304px',
+        '@media (max-width: 730px)': {
+            marginLeft:'35px'
+        }
+    },
+
+    seafood_layer2: {
+        width: '341px',
+        height: '392px',
+        '@media (max-width: 730px)': {
+            display:'none'
+        }
+    },
+
+
+    caption:{
+        textAlign:'left',
+        marginBottom:'44px'
     },
     text:{
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -110,15 +110,6 @@ const QualityAssuranceStyle = StyleSheet.create({
         letterSpacing: '0.5px',
         textAlign: 'left',
         color: '#1e232c',
-    },
-    h44:{
-        height:'44px'
-    },
-    h20:{
-        height:'20px'
-    },
-    h116:{
-        height:'116px'
     }
 
 

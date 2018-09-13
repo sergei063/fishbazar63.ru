@@ -93,11 +93,14 @@ class ShoppingCartList extends React.Component {
                             <div className={css(ShoppingCartStyle.divTableBody)}>
                                 <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeader)}>
                                     <div className={css(ShoppingCartStyle.divTableCell)}>Кол-во</div>
-                                    <div className={css(ShoppingCartStyle.divTableCell)}>Cтоимость</div>
+                                    <div className={css(ShoppingCartStyle.divTableCell, AppStyle.textAlignCenter)}>Cтоимость</div>
                                 </div>
 
                                 <div
                                     className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div>
                                     <div className={css(ShoppingCartStyle.divTableCell)}>
                                         <hr/>
                                     </div>
@@ -118,8 +121,9 @@ class ShoppingCartList extends React.Component {
                                                      }*/
                                                  }}/>
                                     </div>
-                                    <div className={css(ShoppingCartStyle.divTableCell)}><span
-                                        className={css(ShoppingCartStyle.price)}><nobr>{cost.toFixed(0)} руб</nobr></span>
+                                    <div className={css(ShoppingCartStyle.divTableCell, AppStyle.textAlignCenter)}><span className={css(ShoppingCartStyle.price)}><nobr>{cost.toFixed(0)} руб</nobr></span>
+                                    </div>
+                                    <div className={css(ShoppingCartStyle.divTableCell)}>
                                         <Iinfo style={tooltiptMobileStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам,\n" +
                                         "и сообщим точную стоимость заказа"}/>
                                     </div>
@@ -132,6 +136,8 @@ class ShoppingCartList extends React.Component {
                                         <hr/>
                                     </div>
                                     <div className={css(ShoppingCartStyle.divTableCell)}>
+                                        <hr/>
+                                    </div> <div className={css(ShoppingCartStyle.divTableCell)}>
                                         <hr/>
                                     </div>
                                 </div>
@@ -164,6 +170,7 @@ class ShoppingCartList extends React.Component {
                         <div className={css(ShoppingCartStyle.divTableCell)}>Цена</div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>Кол-во</div>
                         <div className={css(ShoppingCartStyle.divTableCell,AppStyle.textAlignRigh)}>Cтоимость</div>
+                        <div className={css(ShoppingCartStyle.divTableCell,AppStyle.textAlignRigh)}></div>
                     </div>
                     <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
@@ -174,6 +181,10 @@ class ShoppingCartList extends React.Component {
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
                             <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
+                        </div>
+                        <div className={css(ShoppingCartStyle.divTableCell)}>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
+
                         </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
                             <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
@@ -204,7 +215,9 @@ class ShoppingCartList extends React.Component {
                                 </div>
                                 <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign,AppStyle.textAlignRigh)}>
                                     <span className={css(ShoppingCartStyle.price,ShoppingCartStyle.divTableCellVerticalAlign)}><nobr>{cost.toFixed(0)} руб</nobr></span>
-                                    <Iinfo Iinfo style={tooltiptStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам, и сообщим точную стоимость заказа"}/>
+                                </div>
+                                <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign,ShoppingCartStyle.divTableCellInfo,AppStyle.textAlignRigh)}>
+                                    <Iinfo style={tooltiptStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам, и сообщим точную стоимость заказа"}/>
                                 </div>
                             </div>
 
@@ -213,6 +226,9 @@ class ShoppingCartList extends React.Component {
 
 
                     <div className={css(ShoppingCartStyle.divTableRow, ShoppingCartStyle.tableRowHeaderLine)}>
+                        <div className={css(ShoppingCartStyle.divTableCell)}>
+                            <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
+                        </div>
                         <div className={css(ShoppingCartStyle.divTableCell)}>
                             <hr className={css(ShoppingCartStyle.divTableCellLine)}/>
                         </div>
@@ -244,13 +260,13 @@ class ShoppingCartList extends React.Component {
 const tooltiptStyle = StyleSheet.create({
     tooltiptext:{
         ':after': {
-            marginLeft: "0px",
+            marginLeft: "-30px",
         }
     }
 });
 const tooltiptMobileStyle = StyleSheet.create({
     tooltiptext:{
-        width:'230px',
+        width:'200px',
         left: "-180px",
         marginLeft: "-60px",
         ':after': {

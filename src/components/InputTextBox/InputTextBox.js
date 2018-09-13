@@ -53,6 +53,7 @@ const Style = StyleSheet.create({
 
     input: {
         borderRadius: '100px',
+        fontSize:'14px',
         backgroundColor: 'unset',
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
 

@@ -120,7 +120,7 @@ const MenuBlogStyle = StyleSheet.create({
         alignContent: "space-between"
     },
     el_filter: {
-        fontFamily: [LucidaGrandeFontB, "sans-serif"],
+        fontFamily: [FuturaMediumFont, "sans-serif"],
         //marginRight: '48px',
         paddingRight: '15px',
         paddingLeft: '15px',

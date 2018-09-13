@@ -118,6 +118,7 @@ const ShoppingCartStyle = StyleSheet.create({
     },
     divTableCell: {
         display: 'table-cell',
+        verticalAlign:'middle',
         width:'25%',
         lineHeight: '2.38',
         '@media (max-width: 650px)': {
@@ -132,6 +133,9 @@ const ShoppingCartStyle = StyleSheet.create({
     },
     divTableCellVerticalAlign: {
        verticalAlign:'middle'
+    },
+    divTableCellInfo: {
+       padding:'5px 0px 0px 22px'
     },
 
 
@@ -167,7 +171,7 @@ const ShoppingCartStyle = StyleSheet.create({
         lineHeight: 'normal',
         color: '#7794e6',
         fontSize: '14px',
-        marginRight:'16px'
+
     },
     deliveryInfo: {
         display: 'flex',

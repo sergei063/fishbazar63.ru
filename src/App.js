@@ -34,7 +34,6 @@ const Main = () => (
             <Route path='/about_fish' component={AboutFish}/>
             <Route path='/shopping_cart' component={ShoppingCart}/>
             <Route path='/location' component={Location}/>
-            <Route path='/recipes' component={Recipes}/>
             <Route path='/quality_assurance' component={QualityAssurance}/>
             <Route path='/delivery' component={DeliveryPage}/>
         </Switch>
