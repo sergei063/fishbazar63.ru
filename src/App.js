@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About';
 import AboutFish from './pages/AboutFish';
 import ShoppingCart from './pages/ShoppingCart';
-import Recipes from './pages/Recipes';
+
 import Location from './pages/Location';
 import {css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
