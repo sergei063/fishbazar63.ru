@@ -98,7 +98,7 @@ const MenuBlogFilterStyle = StyleSheet.create({
         height:'50px',*/
         display: 'grid',
         justifyItems:'flex-start',
-        rowGap: '23px',
+        gap: '23px',
         gridTemplateColumns: '1fr 1fr',
         '@media (max-width: 1000px)':{
 

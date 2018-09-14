@@ -434,7 +434,7 @@ const OneBlog = (props) => {
 
     return (
         <div className={css(AllBlogStyle.cnt)}>
-            <BreadCrumbs item={selectedRecipe} history={props.history}/>
+            <div className={css(AllBlogStyle.mobileHide)}><BreadCrumbs item={selectedRecipe} history={props.history}/></div>
             <div className={css(AllBlogStyle.cntFlex)}>
                 <div className={css(AllBlogStyle.recipeBlock)}>
                     <h1 className={css(AllBlogStyle.h1)}>{selectedRecipe.tittle}</h1>

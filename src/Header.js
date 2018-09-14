@@ -61,12 +61,15 @@ class Header extends React.Component {
         return (<header>
                 <nav>
                     <div id="header_pouch_mobile_menu_cnt"  className={css(AppStyle.zI2, HeaderStyle.floatMenuBlock, HeaderStyle.floatMenuBlockWidth, HeaderStyle.nav_urls)}>
-                        <span id="header_pouch_mobile_menu_close_span" className={css(HeaderStyle.mobileMenuBtn)+ " " +css(HeaderStyle.mobileMenuBtnHidden)}>
+                        <div id="header_pouch_mobile_menu_close_span" className={css(HeaderStyle.mobileMenuBtn)+ " " +css(HeaderStyle.mobileMenuBtnHidden)}>
                             <a id="header_pouch_mobile_menu_close" onClick={mobileMenuClick}
                                className={css(HeaderStyle.pouchMobileMenuClose)} href='#'></a>
+                            <div>
+                                <div style={{margin:'0 auto', width:'130px'}}><Link onClick={hideMobileMenu} to='/'><img className={css()} src={require('./img/design/logo/logo_short.png')} width='130px' height='34px'></img></Link></div>
+                            </div>
                             <br/>
                             <br/>
-                        </span>
+                        </div>
                         <span  id="header_pouch_mobile_menu_span" className={css(HeaderStyle.mobileMenuBtn)+ " " +css(HeaderStyle.mobileMenuMarginLeft60)}>
                             <a id="header_pouch_mobile_menu" onClick={mobileMenuClick}
                                className={css(HeaderStyle.pouchMobileMenu)} href='#'></a>
@@ -107,67 +110,6 @@ class Header extends React.Component {
         )
     }
 
-
-    renderOld() {
-
-        return (<header>
-                <nav>
-                    <div className={css(AppStyle.zI2, AppStyle.floatLeft)}>
-                        <ul className={css(HeaderStyle.headBarUl)}>
-                            <li className={css(HeaderStyle.headBarLI)}>
-                                <a id="header_pouch" className={css(HeaderStyle.pouchInstagram)} target="_blank"
-                                   href='https://www.instagram.com/fishbazar63/'></a>
-
-                            </li>
-                            <li className={css(HeaderStyle.headBarLI)}>
-                                <a id="header_pouch" className={css(HeaderStyle.pouchVk)} target="_blank"
-                                   href='https://vk.com/id454817122'></a>
-                            </li>
-                            <li className={css(HeaderStyle.headBarLI)}>
-                                <Link id="header_pouch" className={css(HeaderStyle.pouchA)} to='/shopping_cart'><span
-                                    className={css(HeaderStyle.pouch_a_span)}>0</span></Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className={css(AppStyle.zI1, HeaderStyle.floatMenuBlock)}>
-                        <span className={css(HeaderStyle.mobileMenuBtn)}>
-                            <a id="header_pouch_mobile_menu" onClick={mobileMenuClick}
-                               className={css(HeaderStyle.pouchMobileMenu)} href='#'></a>
-                            <br/>
-                            <br/>
-                        </span>
-                        <span className={css(HeaderStyle.mobileMenuBtn, AppStyle.paddingLeft10)}>
-                            <a id="header_pouch_phone_menu" className={ (this.state.isMobile) ? css(HeaderStyle.pouchPhoneMenu) : css(HeaderStyle.pouchPhoneMenu)} href='tel:+79171682771'></a>
-                    <br/>
-                    <br/>
-                </span>
-
-                        <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
-                            <li id="page_production" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/production'>Рыба&nbsp;и&nbsp;морепродукты</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/recipes'>Рецепты</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/recipes'>Доставка</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/recipes'>Гарантия качества</Link></li>
-
-                            {/*<li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/'>Главная</Link></li>
-                            <li id="page_news" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/news'>Новости</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/location'>Контакты</Link></li>
-                            <li id="page_about" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/about'>О&nbsp;нас</Link></li>
-                            <li id="page_home" className={css(AppStyle.menu_inline)}><Link onClick={hideMobileMenu} to='/about_fish'>О рыбе</Link></li>*/}
-
-                        </ul>
-                    </div>
-
-                    <div className={css(AppStyle.zI1, HeaderStyle.phoneNumberMenuBlock)}>
-                        <a href='tel:+79171682771'>8(917)168-27-71</a>
-
-                    </div>
-
-
-                </nav>
-            </header>
-        )
-    }
 }
 
 export default Header;

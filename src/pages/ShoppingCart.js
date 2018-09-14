@@ -97,7 +97,7 @@ const Basket = (props) => {
                                 props.history.push({pathname: `/shopping_cart/ok`})
                             }
 
-                        }} style={{width: '95%'}} className={css(AppStyle.buttonRed)}>Оформить заказ
+                        }} className={css(AppStyle.buttonRed,ShoppingCartStyle.button)}>Оформить заказ
                         </button>
 
 

@@ -145,9 +145,17 @@ const ShoppingCartStyle = StyleSheet.create({
         height: '40px',
         marginBottom:'24px',
         '@media (max-width: 650px)': {
-            width:'95%',
+            width:'100%',
         }
     },
+    button: {
+
+        width: '95%',
+        '@media (max-width: 650px)': {
+            width:'100%',
+        }
+    },
+
     totalText: {
         textAlign: 'right',
         fontFamily: [MetaSerifProBookFont, "sans-serif"],
@@ -182,6 +190,7 @@ const ShoppingCartStyle = StyleSheet.create({
         alignContent: 'space-between',
         '@media (max-width: 650px)': {
             flexDirection: 'column-reverse',
+            alignItems: 'center'
 
 
         }
@@ -197,7 +206,7 @@ const ShoppingCartStyle = StyleSheet.create({
         marginBottom:'156px',
 
         '@media (max-width: 650px)': {
-            width:'90%',
+            width:'100%',
             marginLeft:'0 auto'
         }
     },

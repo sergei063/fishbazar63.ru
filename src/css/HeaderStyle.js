@@ -55,7 +55,7 @@ const HeaderStyle = StyleSheet.create({
             backgroundColor:'white',
             textAlign:"left",
             //float: 'left',
-            padding:"23px 0px 0px 5px"
+            padding:"23px 0px 0px 0px"
         },
         '@media (max-width: 500px)': {
             top: '-5px'
@@ -76,10 +76,11 @@ const HeaderStyle = StyleSheet.create({
 
         },
         '@media (max-width: 900px)': {
-            width:"375px"
+            width:"100%"
         },
         '@media (max-width: 500px)': {
-            width:"98%"
+            width:"100%",
+            height:'386px'
         }
     },
 
@@ -183,7 +184,7 @@ const HeaderStyle = StyleSheet.create({
     mobileMenuBtn:{
         display:"none",
         '@media (max-width: 900px)': {
-            display:"inline-block",
+            display:"block",
             position:"relative"
         }
     },

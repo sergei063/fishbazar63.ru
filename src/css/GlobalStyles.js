@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
             cursor:'pointer'
         },
         '*' :{
-            outline: '0 !important',
+            outline: 'unset !important',
 
         },
 

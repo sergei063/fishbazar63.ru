@@ -17,6 +17,7 @@ const AllBlogStyle = StyleSheet.create({
         backgroundColor: '#f9f9f9',
         '@media (max-width: 600px)':{
             paddingLeft: '35px',
+            paddingTop: '33px',
         }
 
     },
@@ -134,6 +135,13 @@ const AllBlogStyle = StyleSheet.create({
             display:'none'
         }
     },
+    mobileHide:{
+        display:'block',
+        '@media (max-width: 700px)':{
+            display:'none'
+        }
+    },
+
     stickyBlock: {
         position: 'sticky',
         top: '120px'

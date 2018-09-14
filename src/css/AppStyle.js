@@ -56,7 +56,12 @@ const AppStyle = StyleSheet.create({
 
     slider: {
         ...sliderBase,
-        backgroundImage: "url(" + require('../img/fon.jpg') + "), url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "),url(" + require('../img/fons/krevetki.jpg') + "), linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0) 51%, #000000)",
+        backgroundImage: "url(" + require('../img/fon.jpg') + ")",
+
+
+/*
+ backgroundImage: "url(" + require('../img/fon.jpg') + "), url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "),url(" + require('../img/fons/krevetki.jpg') + "), linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0) 51%, #000000)",
+*/
 
         /*'@media (max-width: 750px)': {
             backgroundImage: "url(" + require('../img/fon.jpg') + ")",
@@ -462,7 +467,7 @@ const AppStyle = StyleSheet.create({
 
         backgroundColor: '#1e232c',
         height: '192px',
-        '@media (max-width: 500px)':{
+        '@media (max-width: 600px)':{
             "flexDirection": "column",
             "height": "300px",
             paddingTop:'40px',
@@ -479,9 +484,15 @@ const AppStyle = StyleSheet.create({
         letterSpacing: '0.5px',
         color: '#ffffff'
     },
+
     footer_menu:{
         lineHeight: '34px',
-        textAlign:'left'
+        textAlign:'left',
+        '@media (max-width: 600px)':{
+            width:'100%',
+            textAlign:'center'
+
+        }
     },
     phoneNumber:{
         fontFamily: [FuturaMediumFont, "sans-serif"],
@@ -493,16 +504,20 @@ const AppStyle = StyleSheet.create({
         letterSpacing: '0.6px',
         textAlign: 'right',
         color: '#ffffff',
-        marginBottom:'15px'
+        marginBottom:'15px',
+        '@media (max-width: 600px)':{
+            textAlign:'center'
+
+        }
     },
     phoneNumberMobileHide:{
         display:'block',
-        '@media (max-width: 500px)':{
+        '@media (max-width: 600px)':{
             display:'none'
         }
     },phoneNumberMobileShow:{
         display:'none',
-        '@media (max-width: 500px)':{
+        '@media (max-width: 600px)':{
             display:'block'
         }
     }

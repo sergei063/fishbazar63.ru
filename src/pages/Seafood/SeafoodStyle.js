@@ -43,6 +43,7 @@ const SeafoodStyle = StyleSheet.create({
         },
 
         '@media (max-width: 530px)': {
+            display:'none',
             fontSize:'10px',
             "height": "20px",
             "top": "50px",
