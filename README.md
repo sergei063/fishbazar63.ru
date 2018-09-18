@@ -24,6 +24,15 @@ npm home  webpack-cli
 ncu --loglevel verbose --packageFile package.json
 
 
+
+====Mongo
+mongoimport.exe --jsonArray --db api_fishbazar  --collection fish_catalog  --file /d/fish_catalog.json
+
+
+mongoexport --db api_fishbazar --collection fish_catalog --out /d/fish_catalog.json
+mongoexport --db api_fishbazar --collection recipes --out /d/recipes.json
+
+=========
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
