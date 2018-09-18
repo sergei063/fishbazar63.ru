@@ -27,3 +27,10 @@ export const  setAllFormsValue = (id,value) => {
     }
 };
 
+export const  setPrice = (document) => {
+    return {
+        type: 'SET_PRICE',
+        document:document,
+    }
+};
+

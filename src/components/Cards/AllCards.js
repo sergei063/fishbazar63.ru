@@ -8,11 +8,16 @@ const AllCards = (props) => {
     let {items} = props;
 
     let Style = Object.assign({}, CardStyle,props.inStyle);
+
+    if (!items || items.length===0) {
+        return (<div>Подождите...</div>)
+    }
+
     return (
         <ul className={css(Style.ul)}>
             {
                 items.map((p, index) => (
-                        <Card key={index} p={p} inStyle={Style}/>
+                    (p) && <Card key={index} p={p} inStyle={Style}/>
                     )
                 )
             }

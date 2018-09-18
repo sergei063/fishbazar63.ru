@@ -4,7 +4,10 @@ import ProductionStyle from './css/ProductionStyle';
 import {css} from 'aphrodite/no-important';
 import AppStyle from "./css/AppStyle";
 import {_try} from "./components/lib";
+import {connect} from "react-redux";
 
+const imageCatalog = `./img/seafood/`;
+let assetRequire = require.context('./img/seafood/', true, /\.(png|jpg|svg)$/);
 
 const Price = {
     "fish":{
@@ -103,7 +106,8 @@ const Price = {
                 },
                 "price":730
 
-            },{
+            },
+            {
                 "id": "salmon_of_chile_l",
                 "showCaseName": "Семга Premium",
                 "name": "Семга Чили",
@@ -410,44 +414,32 @@ const Price = {
 };
 
 const Katalog = {
-    ...Price,
+    price:{},
 
     FILTER_COUNT : 12,
-    creatLinkProductMenu: (name, arr) => {
-        return (<div className={css(ProductionStyle.cnt)}>
-            {name}
-            <ul className={css(ProductionStyle.ul)}>
-                {
-                    arr.map(p => (
-                        <li key={p.id} className={css(ProductionStyle.li)}>
-                            <Link to={`/production/${p.id}`}>{p.name}</Link>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>)
-    },
 
-    creatMenu: () => {
-        let res = [];
-        let i = 0;
-        for (let el in Katalog) {
-            let group = Katalog[el];
+    setPrice: function (price) {
+
+        for (let groupName in price) {
+
+            let group = price[groupName];
             if (group.catalog_tittle) {
-
-                res.push(<div key={i}>{Katalog.creatLinkProductMenu(group.catalog_tittle, group.items)}</div>);
-                i++;
+                for (let fishName in group.items) {
+                    let fish = group.items[fishName];
+                    fish.img =  assetRequire(fish.img.replace(imageCatalog,"./"));
+                }
             }
         }
+        Katalog.price = price;
 
-        return res;
     },
+
     get: function (id) {
         const isProduct = p => p.id === id;
 
 
-        for (let fish in Katalog) {
-            let group = Katalog[fish];
+        for (let fish in Katalog.price) {
+            let group = Katalog.price[fish];
             if (group.catalog_tittle) {
                 let el = group.items.find(isProduct);
                 if (el) {
@@ -462,8 +454,8 @@ const Katalog = {
 
     getGroup: function () {
         let r = [];
-        for (let el in Katalog) {
-            let group = Katalog[el];
+        for (let el in Katalog.price) {
+            let group = Katalog.price[el];
             if (group.catalog_tittle) {
                 r.push({name: el, catalog_tittle: group.catalog_tittle})
             }
@@ -483,8 +475,8 @@ const Katalog = {
         const isProduct = p => p.hit == true;
 
         let res = [];
-        for (let fish in Katalog) {
-            let group = Katalog[fish];
+        for (let fish in Katalog.price) {
+            let group = Katalog.price[fish];
             if (group.catalog_tittle) {
 
                 let filtredData = group.items.filter(isProduct);
@@ -513,7 +505,12 @@ const Katalog = {
                 return this.getHitItems();
             }
             else {
-                return Katalog[groupName].items.slice(0,filterCount);
+                try {
+                    return Katalog.price[groupName].items.slice(0, filterCount);
+                } catch (e) {
+                    console.log(e)
+                    return []
+                }
             }
         }
         if (!filterCount)
@@ -570,8 +567,8 @@ const Katalog = {
      */
     getAllItems: () => {
         let res = [];
-        for (let el in Katalog) {
-            let group = Katalog[el];
+        for (let el in Katalog.price) {
+            let group = Katalog.price[el];
             if (group.catalog_tittle) {
                 let el = group.items;
                 if (el) {
@@ -643,3 +640,6 @@ const Katalog = {
 
 
 export default Katalog;
+/*
+const mapStateToProps = (state) => ({});
+export default connect(mapStateToProps) (Katalog);*/

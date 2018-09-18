@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About';
 import AboutFish from './pages/AboutFish';
 import ShoppingCart from './pages/ShoppingCart';
-
+import axios from 'axios';
 import Location from './pages/Location';
 import {css } from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
@@ -22,6 +22,9 @@ import DeliveryPage from "./pages/Delivery/DeliveryPage";
 import Seafood from "./pages/Seafood/Seafood";
 import Blog from "./pages/Blog/Blog";
 import PouchIcon from "./containers/PouchIcon/PouchIcon";
+import {connect} from "react-redux";
+import {setPlaceOfDelivery, setPrice} from "./actions";
+import Katalog from "./Katalog";
 
 const Main = () => (
     <main>
@@ -81,6 +84,11 @@ const Footer = () => (
 );
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+
+    }
     componentWillMount() {
 
     }
@@ -100,6 +108,15 @@ class App extends React.Component {
         )
     }
     componentDidMount(){
+        axios.get(`http://localhost:3212/catalog`)
+            .then(res => {
+
+                const price = res.data;
+                Katalog.setPrice(res.data);
+                this.forceUpdate();
+                //console.log(price);
+                //this.props.setPrice(price);
+            })
 
 
     }
@@ -115,3 +132,13 @@ export default App;
 
 
 //export default connect(mapStateToProps) (App);
+
+/*const mapStateToProps = (state) => ({});
+
+const matchDispatchToProps = (dispatch) => ({
+    setPrice: (document) => {
+        dispatch(setPrice(document))
+    }
+});
+
+export default connect(mapStateToProps, matchDispatchToProps, null, {withRef: true})(App);*/
