@@ -29,7 +29,7 @@ const AllSeafood = (props) => {
     return (
         <div className={css(SeafoodStyle.cnt)}>
             <div className={css(AppStyle.textAlignCenter)}>
-                <AllCards items={groupItems}/>
+                <AllCards isShowAddFish={true} items={groupItems}/>
                 <br/>
                 <button hidden={/*(filter != null) || */(filterCount > groupItems.length)} onClick={(event) => {
                     if (filterCount > groupItems.length) {

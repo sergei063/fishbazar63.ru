@@ -2,10 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {css} from "aphrodite/no-important";
 import ProductWeight from "./ProductWeight";
+import SeafoodItemStyle from "../../pages/Seafood/SeafoodItemStyle";
 
 
 const Card = (props) =>  {
-    let {p} = props;
+    let {p,isShowAddFish} = props;
 
     let Style = Object.assign({}, props.inStyle);
     return (
@@ -19,6 +20,7 @@ const Card = (props) =>  {
                          src={p.img} alt={p.info}></img>
                 </div>
 
+
                 <div className={css(Style.productNameDiv)}>
 
                     <div className={css(Style.productName)} dangerouslySetInnerHTML={{__html: p.showCaseName||""}}></div>
@@ -31,6 +33,8 @@ const Card = (props) =>  {
                     </div>
                 </div>
             </Link>
+            {isShowAddFish && <Link className={css(SeafoodItemStyle.link)} to={`/production/change/${p.id}`}>Изменить</Link>}
+
         </li>
     );
 };

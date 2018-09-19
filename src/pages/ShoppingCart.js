@@ -76,15 +76,15 @@ const Basket = (props) => {
                     </div>
                     <div className={css(ShoppingCartStyle.deliveryInfoInputDiv)}>
                         <div className={css(ShoppingCartStyle.inputDiv)}>
-                            <InputTextBox ref={nameInput} id={'name'} placeholder={'Ваше Имя'}/>
+                            <InputTextBox setLocalStorage={true} ref={nameInput} id={'name'} required={true} placeholder={'Ваше Имя'}/>
                         </div>
 
 
                         <div className={css(ShoppingCartStyle.inputDiv)}>
-                            <InputTextBox ref={phoneNumber}  id={'phoneNumber'} placeholder={'Телефон'}/>
+                            <InputTextBox setLocalStorage={true} ref={phoneNumber}  id={'phoneNumber'} required={true} placeholder={'Телефон'}/>
                         </div>
                         <div className={css(ShoppingCartStyle.inputDiv)}>
-                            <InputTextBox ref={address}  id={'address'} placeholder={'Улица, номер дома и квартиры'}/>
+                            <InputTextBox setLocalStorage={true} ref={address}  id={'address'} required={true} placeholder={'Улица, номер дома и квартиры'}/>
                         </div>
 
                         <button onClick={() => {

@@ -87,6 +87,7 @@ const CardStyle = StyleSheet.create({
     productPhoto: {
         position: 'relative',
         paddingBottom: '60%',
+        backgroundColor:'#f9f9f9',
         overflow: 'hidden'
     },
     productPhotoImg: {
