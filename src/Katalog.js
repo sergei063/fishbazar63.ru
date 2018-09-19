@@ -8,7 +8,9 @@ import {connect} from "react-redux";
 
 const imageCatalog = `./img/seafood/`;
 let assetRequire = require.context('./img/seafood/', true, /\.(png|jpg|svg)$/);
-
+/**
+ * Исключить packagingInfo, nutritionalValue
+ */
 const Price = {
     "fish":{
         "catalog_tittle": "Рыба",

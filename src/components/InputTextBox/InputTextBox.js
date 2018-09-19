@@ -4,18 +4,24 @@ import ShoppingCartStyle from "../../css/ShoppingCartStyle";
 import {MetaSerifProBookFont} from "../../css/Fonts";
 import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart, setAllFormsValue} from "../../actions";
+import {_try} from "../lib";
 
 class InputTextBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: props.text||""
+            text: props.text||"",
+            required: props.required || false,
+            setLocalStorage: props.setLocalStorage || false
         };
         //this.props.setAllFormsValue(props.id,props.text|| "");
 
         this.input = React.createRef();
     }
     validate(){
+        if (!this.state.required){
+            return true;
+        }
         if (this.input.current.value.trim()===''){
             this.input.current.required='required';
             return false;
@@ -29,14 +35,17 @@ class InputTextBox extends React.Component {
 
     }
     render(){
-        let value = (!this.props.allForms[this.props.id])? this.props.text:this.props.allForms[this.props.id]
+
+
+        let value = (!this.props.text)?_try(() => this.props.allForms[this.props.id], "123"):this.props.text;
+
         return (
 
             <div className={css(Style.cnt)}>
                 <input ref={this.input}  id={this.props.id} className={css(Style.input)} onKeyUp={this.validate.bind(this)}
                        placeholder={this.props.placeholder}
-                       value={value ? value : ""}
-                       onChange={e => {this.props.setAllFormsValue(e.target.id,e.target.value)}}
+                       defaultValue={value ? value : ""}
+                       onChange={e => {if (this.state.setLocalStorage) this.props.setAllFormsValue(e.target.id,e.target.value)}}
                 />
                 <label className={css(Style.error)} htmlFor={this.props.id}></label>
             </div>
