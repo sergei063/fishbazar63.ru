@@ -10,6 +10,7 @@ import {connect} from "react-redux";
 import {addFishToSeafoodShoppingCart} from "../../actions";
 import Iinfo from "../../components/Iinfo/Iinfo";
 import AllCards from "../../components/Cards/AllCards";
+import config from "../../config";
 
 
 const BreadCrumbs = (props) => {
@@ -45,7 +46,11 @@ const SeafoodItem = (props) => {
 
     //let groupItems = Katalog.getGroupItems(null, countFishFoGroups);
     let groupItems = Katalog.getWithThisProductBuy(item, countFishFoGroups);
-
+    let imgFile = null
+    try {
+        imgFile = config.imgRequire(item.img)
+    } catch (e) {
+    }
     return (
         <div className={css(SeafoodItemStyle.cnt)}>
             <div className={css(SeafoodItemStyle.h124)}></div>
@@ -59,7 +64,7 @@ const SeafoodItem = (props) => {
                             <span dangerouslySetInnerHTML={{__html: item.info}}></span>
                         </div>
                         <div className={css(SeafoodItemStyle.mobileHidden650)}><BreadCrumbs item={item} history={props.history}/></div>
-                        <div><img className={css(SeafoodItemStyle.img)} src={item.img} ></img></div>
+                        <div><img className={css(SeafoodItemStyle.img)} src={imgFile} ></img></div>
 
                         <div className={css(SeafoodItemStyle.mobileHidden650)}>
                             <div>{(item.catchDate) ? `Вылов: ${item.catchDate}` : ""}</div>

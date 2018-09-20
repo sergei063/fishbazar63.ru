@@ -1,7 +1,12 @@
+
+
 var express = require('express');
+var bodyParser = require('body-parser');
+var formidable = require('formidable');
+var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
-
+var seafoodPath = '/../src/img/seafood/'
 var db;
 var app = express();
 var allowCrossDomain = function(req, res, next) {
@@ -11,11 +16,72 @@ var allowCrossDomain = function(req, res, next) {
     next();
 }
 app.use(allowCrossDomain);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/set_catalog1', function (req, res) {
 
 
-    db.collection("fish_catalog").insertOne(Price, function (err, result) {
+app.get('/set_catalog123', function (req, res) {
+
+    db.collection("fish_catalog").deleteOne({}, function (err, result) {
+        if (err) {
+            console.log(err);
+            return res.sendStatus(500)
+        }
+        db.collection("fish_catalog").insertOne(Price, function (err, result) {
+            if (err) {
+                console.log(err);
+                return res.sendStatus(500)
+            }
+            res.send(Price)
+        })
+    })
+});
+
+app.post('/set_catalog', function(req, res) {
+    if (req.body.catalog){
+        db.collection("fish_catalog").deleteOne({}, function (err, result) {
+            if (err) {
+                console.log(err);
+                return res.sendStatus(500)
+            }
+            db.collection("fish_catalog").insertOne(req.body.catalog, function (err, result) {
+                if (err) {
+                    console.log(err);
+                    return res.sendStatus(500)
+                }
+                res.send(req.body)
+            })
+        })
+
+
+    }
+
+
+});
+
+app.post('/file-upload', function(req, res) {
+    var form = new formidable.IncomingForm();
+    form.parse(req);
+    form.on('fileBegin', function (name, file){
+
+        file.path = __dirname + seafoodPath + file.name;
+    });
+    form.on('file', function (name, file){
+        console.log('Uploaded ' + file.name);
+    });
+
+
+
+
+
+
+});
+
+app.get('/del_catalog', function (req, res) {
+
+
+    db.collection("fish_catalog").deleteOne({}, function (err, result) {
         if (err) {
             console.log(err);
             return res.sendStatus(500)
@@ -24,7 +90,8 @@ app.get('/set_catalog1', function (req, res) {
     })
 
 });
-app.get('/set_blog', function (req, res) {
+
+app.get('/set_blog1', function (req, res) {
 
 
     db.collection("recipes").insertOne(RecipesDB, function (err, result) {
@@ -79,8 +146,6 @@ app.get('/catalog/:id', function (req, res) {
 
 
 
-
-
 var Price = {
     "fish": {
         "catalog_tittle": "Рыба",
@@ -95,7 +160,7 @@ var Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 1-2 кг",
                 "nutritionalValue": "Калории 140ккал<br/>                Белки. 20,5г<br/>            Жиры 6г<br/>            Углеводы. 0г<br/>            Омега3(г). 1,6г<br/>",
                 "hit": true,
-                "img": "./img/seafood/pink salmon.png",
+                "img": "./pink salmon.png",
                 "weightOfOneFish": 1.5,
                 "weightFish": {
                     "help": "1-2кг"
@@ -118,7 +183,7 @@ var Price = {
                 "weightFish": {
                     "help": "1-2кг"
                 },
-                "img": "./img/seafood/chum.png",
+                "img": "./chum.png",
                 "producer": "АО \"Хайрюзовский рыбоконсервный завод\" Россия Камчатский край Тигильский район с. Усть-Хайрюзово",
                 "catchDate": "01.07.2018",
                 "price": 365
@@ -135,7 +200,7 @@ var Price = {
                 "packagingInfo": "Реализуется штучно. Ориентировочный вес 2-3 кг",
                 "hit": false,
                 "weightOfOneFish": 2,
-                "img": "./img/seafood/coho.png",
+                "img": "./coho.png",
                 "price": 495
 
             },
@@ -149,7 +214,7 @@ var Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": true,
-                "img": "./img/seafood/salmon.png",
+                "img": "./salmon.png",
                 "producer": "Chile Ventisqueros S.A.",
                 "weightOfOneFish": 2.5,
                 "weightFish": {
@@ -169,7 +234,7 @@ var Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
-                "img": "./img/seafood/salmon.png",
+                "img": "./salmon.png",
                 "producer": "Chile Ventisqueros S.A.",
                 "weightOfOneFish": 3.5,
                 "weightFish": {
@@ -188,7 +253,7 @@ var Price = {
                 "packagingInfo": "Реализуется штучно.",
                 "nutritionalValue": "Калории 208ккал<br/>Белки. 20,4г<br/>Жиры 13,4г<br/>Углеводы. 0г<br/>Омега3(г). 2,5г",
                 "hit": false,
-                "img": "./img/seafood/salmon.png",
+                "img": "./salmon.png",
                 "producer": "Chile Ventisqueros S.A.",
                 "weightOfOneFish": 5.5,
                 "weightFish": {
@@ -211,7 +276,7 @@ var Price = {
                 "nutritionalValue": "Калории 141ккал<br>Белки. 19,9г<br>Жиры 6,2г<br>Углеводы. 0г<br>Омега3(г). 0,9г",
                 "packagingInfo": "Реализуется штучно.  Ориентировочный вес 2-3 кг",
                 "hit": false,
-                "img": "./img/seafood/trout.png",
+                "img": "./trout.png",
                 "price": 780
             },
             {
@@ -223,7 +288,7 @@ var Price = {
                 "packagingInfo": "",
                 "nutritionalValue": "Калории 69ккал<br/>                Белки. 15,3г<br/>            Жиры 0,4г<br/>            Углеводы. 3,3г<br/>            Омега3(г). 0,1г",
                 "hit": true,
-                "img": "./img/seafood/cod.png",
+                "img": "./cod.png",
                 "producer": "ООО «Морские ресурсы»",
                 "catchDate": "05.08.2018",
                 "weightOfOneFish": 0.75,
@@ -241,7 +306,7 @@ var Price = {
                 "packaging": "кг",
                 "packagingInfo": "",
                 "hit": false,
-                "img": "./img/seafood/cod.png",
+                "img": "./cod.png",
                 "producer": "ООО «Морские ресурсы»",
                 "catchDate": "05.08.2018",
                 "weightOfOneFish": 1.5,
@@ -262,7 +327,7 @@ var Price = {
                 "packagingInfo": "",
                 "nutritionalValue": "Калории 56ккал<br/>Белки. 12,2г<br/>Жиры 0,4г<br/>Углеводы. 0г<br/>Омега3(г). 0,2г",
                 "hit": true,
-                "img": "./img/seafood/pollock.png",
+                "img": "./pollock.png",
                 "producer": "ООО ПКФ\"Южно-Курильский рыбокомбинат\" Россия Сазалинская обл. п.г.т. Южно-Курильск",
                 "catchDate": "25.04.2018",
                 "weightOfOneFish": 0.45,
@@ -282,7 +347,7 @@ var Price = {
                 "packagingInfo": "",
                 "nutritionalValue": "Калории 90ккал<br/>                Белки. 15,7г<br/>           Жиры 3г<br/>            Углеводы. 0г<br/>            Омега3(г). 0г",
                 "hit": false,
-                "img": "./img/seafood/flounder.png",
+                "img": "./flounder.png",
                 "producer": "ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate": "03.04.2018",
                 "weightOfOneFish": 0.2,
@@ -300,7 +365,7 @@ var Price = {
                 "packaging": "кг",
                 "packagingInfo": "",
                 "hit": true,
-                "img": "./img/seafood/flounder.png",
+                "img": "./flounder.png",
                 "producer": "ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate": "03.04.2018",
                 "weightOfOneFish": 0.3,
@@ -318,7 +383,7 @@ var Price = {
                 "packaging": "кг",
                 "packagingInfo": "",
                 "hit": false,
-                "img": "./img/seafood/flounder.png",
+                "img": "./flounder.png",
                 "producer": "ООО \"Морские ресурсы\" Россия САХАЛИНСКСАЯ ОБЛ., Г СЕВЕРО-КУРИЛЬСК",
                 "catchDate": "03.04.2018",
                 "price": 210,
@@ -336,7 +401,7 @@ var Price = {
                 "packaging": "кг",
                 "packagingInfo" : "",
                 "hit": false,
-                "img": "./img/seafood/smelt.png",
+                "img": "./smelt.png",
                 "price": 265
             },*/
             {
@@ -348,7 +413,7 @@ var Price = {
                 "packagingInfo": "",
                 "nutritionalValue": "Калории 248ккал<br/>Белки. 17,7г<br/>Жиры 19,5г<br/>Углеводы. 0г<br/>Омега3(г). 0г",
                 "hit": false,
-                "img": "./img/seafood/herring.png",
+                "img": "./herring.png",
                 "weightOfOneFish": 0.275,
                 "weightFish": {
                     "size": "m",
@@ -365,7 +430,7 @@ var Price = {
                 "packaging": "кг",
                 "packagingInfo": "",
                 "hit": false,
-                "img": "./img/seafood/mackerel.png",
+                "img": "./mackerel.png",
                 "weightOfOneFish": 0.275,
                 "weightFish": {
                     "size": "m",
@@ -387,7 +452,7 @@ var Price = {
                 "packagingInfo": "",
                 "hit": true,
                 "nutritionalValue": "Калории 77ккал<br>Белки. 11,5г<br>Жиры 2г<br>Углеводы. 3,3г<br>Омега3(г). 0г",
-                "img": "./img/seafood/mussels.png",
+                "img": "./mussels.png",
                 "price": 590
             }, {
                 "id": "scallop",
@@ -397,7 +462,7 @@ var Price = {
                 "packaging": "кг",
                 "packagingInfo": "",
                 "hit": false,
-                "img": "./img/seafood/scallop.png",
+                "img": "./scallop.png",
                 "price": 2500
             }, {
                 "id": "squid",
@@ -408,7 +473,7 @@ var Price = {
                 "packagingInfo": "",
                 "nutritionalValue": "Калории 100ккал<br/>                Белки. 18г<br/>            Жиры 2,2г<br/>            Углеводы. 2г<br/>            Омега3(г). 1,4г",
                 "hit": true,
-                "img": "./img/seafood/squid.png",
+                "img": "./squid.png",
                 "producer": "АО \"Северо-Курильская база Северного флота\" Россия Сахалинская обл г Северо-Курильск",
                 "catchDate": "13.06.2018",
                 "price": 235
@@ -428,7 +493,7 @@ var Price = {
                 "packagingInfo": "Размер 90 -120",
                 "nutritionalValue": "Калории 87ккал<br/>Белки. 18,3г<br/>Жиры 1,2г<br/>Углеводы. 0,8г<br/>Омега3(г). 0,5г",
                 "hit": false,
-                "img": "./img/seafood/shrimp.png",
+                "img": "./shrimp.png",
                 "producer": "ООО\" ДЕФА фишинг\"(судно\"Арктик Лайон\")",
                 "catchDate": "07.03.2018",
                 "price": "-- "
@@ -442,7 +507,7 @@ var Price = {
                 "nutritionalValue": "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo": "",
                 "hit": false,
-                "img": "./img/seafood/Tiger shrimp.png",
+                "img": "./Tiger shrimp.png",
                 "price": 790
             },
             {
@@ -454,7 +519,7 @@ var Price = {
                 "nutritionalValue": "Калории 98ккал<br/>Белки. 20,5г<br/>Жиры 1,6г<br/>Углеводы. 0,3г<br/>Омега3(г). 0,3г",
                 "packagingInfo": "Размер 90 -120",
                 "hit": true,
-                "img": "./img/seafood/shrimp.png",
+                "img": "./shrimp.png",
                 "price": 550
             }
 
@@ -474,7 +539,7 @@ var Price = {
                 "hit": true,
                 "producer": "Аргентина",
                 "catchDate": "01.12.2017",
-                "img": "./img/seafood/langoustines.png",
+                "img": "./langoustines.png",
                 "price": 690
             },
 
@@ -744,3 +809,4 @@ MongoClient.connect('mongodb://localhost:27017/', function (err, database) {
         console.log('API fishbazr started')
     })
 });
+

@@ -3,10 +3,16 @@ import {Link} from 'react-router-dom'
 import {css} from "aphrodite/no-important";
 import ProductWeight from "./ProductWeight";
 import SeafoodItemStyle from "../../pages/Seafood/SeafoodItemStyle";
+import config from "../../config";
 
 
 const Card = (props) =>  {
     let {p,isShowAddFish} = props;
+    let imgFile = null
+    try {
+        imgFile = config.imgRequire(p.img)
+    } catch (e) {
+    }
 
     let Style = Object.assign({}, props.inStyle);
     return (
@@ -17,7 +23,7 @@ const Card = (props) =>  {
             <Link className={css(Style.card)} to={`/production/${p.id}`}>
                 <div className={css(Style.productPhoto)}>
                     <img className={css(Style.productPhotoImg)}
-                         src={p.img} alt={p.info}></img>
+                         src={imgFile} alt={p.info}></img>
                 </div>
 
 

@@ -1,12 +1,15 @@
 import React, {Fragment} from 'react';
 import Katalog from "../Katalog";
+import _ from "lodash/core";
 
 class InputSelect extends React.Component {
     constructor(props) {
         super(props);
 
+        this.ref= React.createRef(),
+
         this.state = {
-            value: props.value ||'',
+            value: null,
             text: props.text ||'',
             options:props.options ||[]
 
@@ -19,26 +22,43 @@ class InputSelect extends React.Component {
         this.setState({value: event.target.value});
         //this.props.value = event.target.value;
     }
-    componentDidUpdate(previousProps, previousState) {
-        /*this.state={
-            value: this.props.value ||'',
-            text: this.props.text ||'',
-            options:this.props.options ||[]
-        };
-*/
-
+    getSelectRef() {
+        return this.ref
     }
 
-    render() {
 
+    /*static getDerivedStateFromProps(nextProps, prevState) {
+
+        console.log(nextProps)
+        console.log(prevState)
+        if (!_.isEqual(nextProps,prevState)){
+
+            let r = {
+                value: nextProps.value || '',
+                text: nextProps.text || '',
+                options: nextProps.options || []
+            }
+            console.log(r)
+            return r
+        }
+
+        return null;
+
+    }*/
+
+
+
+
+    render() {
+//selected={(this.props.value === o.text)}
         return (
                 <label>
                     {this.props.text}
-                    <select onChange={this.handleChange}>
+                    <select ref={this.ref} value={this.state.value || this.props.value}  onChange={this.handleChange}>
                         {
 
                             this.props.options.map((o, index) => (
-                                <option key={index} selected={(this.props.value === o.text)}  value={o.value}>{o.text}</option>)
+                                <option key={index}   value={o.value}>{o.text}</option>)
                             )
                         }
                     </select>

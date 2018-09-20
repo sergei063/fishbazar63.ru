@@ -9,6 +9,7 @@ import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
 import PouchIcon from "../../containers/PouchIcon/PouchIcon";
 import DeliveryStyle from "../Delivery/DeliveryStyle";
 
+
 const AllSeafood = (props) => {
     let filter, filterCount;
     let {isMinimize} = props;

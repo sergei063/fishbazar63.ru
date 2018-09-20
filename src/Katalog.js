@@ -6,8 +6,8 @@ import AppStyle from "./css/AppStyle";
 import {_try} from "./components/lib";
 import {connect} from "react-redux";
 
-const imageCatalog = `./img/seafood/`;
-let assetRequire = require.context('./img/seafood/', true, /\.(png|jpg|svg)$/);
+
+
 /**
  * Исключить packagingInfo, nutritionalValue
  */
@@ -418,6 +418,45 @@ const Price = {
 const Katalog = {
     price:{},
 
+    getFishItem:function () {
+        return {
+            id: null,
+            showCaseName: null,
+            name: null,
+            info: null,
+            isRedFish: null,
+            packaging: null,
+            packagingInfo: null,
+            nutritionalValue: null,
+            hit: null,
+            img: null,
+            weightOfOneFish: null,
+            parent:{catalog_tittle: null, id: null},
+            weightFish: {
+                help: null,
+            },
+            producer: null,
+            catchDate: null,
+            price: null,
+
+        };
+    },
+    setFishItem: function(fishGroup, fishItem){
+        const isFish = p => p.id === fishItem.id;
+
+        let index = Katalog.price[fishGroup].items.findIndex(isFish);
+        if(index>=0){
+            if (!fishItem.img){
+                fishItem.img = Katalog.price[fishGroup].items[index].img;
+            }
+            Katalog.price[fishGroup].items[index] = fishItem;
+        } else {
+            Katalog.price[fishGroup].items.push(fishItem);
+        }
+        /*for (let fish in Katalog.price[fishGroup].items) {
+            console.log(fish);
+        }*/
+    },
     FILTER_COUNT : 12,
 
     setPrice: function (price) {
@@ -428,7 +467,7 @@ const Katalog = {
             if (group.catalog_tittle) {
                 for (let fishName in group.items) {
                     let fish = group.items[fishName];
-                    fish.img =  assetRequire(fish.img.replace(imageCatalog,"./"));
+                    //fish.img =  assetRequire(fish.img);
                 }
             }
         }

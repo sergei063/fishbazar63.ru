@@ -10,9 +10,9 @@ import SeafoodItemStyle from "../Seafood/SeafoodItemStyle";
 import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
 import Katalog from "../../Katalog";
 import axios from "axios/index";
+import config from "../../config";
 
 
-let assetRequire = require.context('../../img/Recipes/', true, /\.(png|jpg|svg)$/);
 
 const RecipesDB = {
     "fish": {
@@ -384,7 +384,7 @@ const AllBlog = (props) => {
                             <div key={index.toString()}>
                                 <h1 className={css(AllBlogStyle.h1)}>{recipe.tittle}</h1>
                                 <h2 className={css(AllBlogStyle.h2)}>{recipe.parent.catalog_tittle}&nbsp;&nbsp;|&nbsp;&nbsp;{recipe.dateObj.toLocaleString('ru', dateOptions)}  </h2>
-                                <div><img className={css(AllBlogStyle.img)} src={assetRequire(recipe.img)}></img></div>
+                                <div><img className={css(AllBlogStyle.img)} src={config.imgBlogRequire(recipe.img)}></img></div>
                                 <div style={{marginTop: '36px', marginBottom: '64px'}}>
                                     <button style={{width: '134px'}} className={css(AppStyle.buttonRed)} onClick={() => {
 
@@ -449,7 +449,7 @@ const OneBlog = (props) => {
                 <div className={css(AllBlogStyle.recipeBlock)}>
                     <h1 className={css(AllBlogStyle.h1)}>{selectedRecipe.tittle}</h1>
                     <h2 className={css(AllBlogStyle.h2)}>{selectedRecipe.parent.catalog_tittle}&nbsp;&nbsp;|&nbsp;&nbsp;{selectedRecipe.dateObj.toLocaleString('ru', dateOptions)}  </h2>
-                    <div><img  className={css(AllBlogStyle.img)} src={assetRequire(selectedRecipe.img)}></img></div>
+                    <div><img  className={css(AllBlogStyle.img)} src={config.imgBlogRequire(selectedRecipe.img)}></img></div>
                     <div  style={{  marginTop: '52px', marginBottom: '40px',}}>
 
                         {(selectedRecipe.ingredients && selectedRecipe.ingredients.length > 0) &&
