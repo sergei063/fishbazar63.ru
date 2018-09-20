@@ -25,6 +25,7 @@ import PouchIcon from "./containers/PouchIcon/PouchIcon";
 import {connect} from "react-redux";
 import {setPlaceOfDelivery, setPrice} from "./actions";
 import Katalog from "./Katalog";
+import config from "./config";
 
 const Main = () => (
     <main>
@@ -108,7 +109,7 @@ class App extends React.Component {
         )
     }
     componentDidMount(){
-        axios.get(`http://localhost:3212/catalog`)
+        axios.get(`${config.serverAPI}/catalog`)
             .then(res => {
 
                 const price = res.data;

@@ -105,17 +105,15 @@ class AddFishItem extends React.Component {
         if (imgFile) {
             const formData = new FormData();
             formData.append('myFile', imgFile, imgFile.name);
-            axios.post('http://localhost:3212/file-upload', formData);
+            axios.post(`${config.serverAPI}/file-upload`, formData);
         }
 
-        axios.post(`http://localhost:3212/set_catalog`, {
+        axios.post(`${config.serverAPI}/set_catalog`, {
             catalog: Katalog.price
-        })
-            .then(function (response) {
+        }).then(function (response) {
                 alert('Сохранено')
                 console.log(response);
-            })
-            .catch(function (error) {
+            }).catch(function (error) {
                 alert('Ошибка при сохранении')
                 console.log(error);
             });

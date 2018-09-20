@@ -519,7 +519,7 @@ class Blog extends React.Component {
         )
     }
     componentDidMount(){
-        axios.get(`http://localhost:3212/blog`)
+        axios.get(`${config.serverAPI}/blog`)
             .then(res => {
 
                 Recipes.recipes = res.data
