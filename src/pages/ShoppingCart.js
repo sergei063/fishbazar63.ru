@@ -10,6 +10,10 @@ import ShoppingCartList from "../containers/ShoppingCart/ShoppingCartList";
 import {connect} from "react-redux";
 import InputTextBox from "../components/InputTextBox/InputTextBox";
 import * as ReactDOM from "react-dom";
+import config from "../config";
+import axios from "axios/index";
+import Katalog from "../Katalog";
+import $ from 'jquery';
 
 const ShoppingCart = (props) => {
     return (
@@ -87,14 +91,47 @@ const Basket = (props) => {
                             <InputTextBox setLocalStorage={true} ref={address}  id={'address'} required={true} placeholder={'Улица, номер дома и квартиры'}/>
                         </div>
 
-                        <button onClick={() => {
+                        <button onClick={(event) => {
 
                             if (placeOfDeliveryRef.current.wrappedInstance.validate({block: 'end', behavior: 'smooth'})
                                 & nameInput.current.wrappedInstance.validate()
                                 & phoneNumber.current.wrappedInstance.validate()
                                 & address.current.wrappedInstance.validate()
                             ) {
-                                props.history.push({pathname: `/shopping_cart/ok`})
+                                event.nativeEvent.target.disabled=true;
+                                let nativeEvent = event.nativeEvent.target;
+
+                                let msg = `${nameInput.current.wrappedInstance.getValue()} (${phoneNumber.current.wrappedInstance.getValue()}) сделал заказ на сумму ${(props.seafoodShoppingCart.totalCost + props.placeOfDelivery.price).toFixed(0)} `
+                                for (let el in props.seafoodShoppingCart.allFish) {
+                                    let fish = props.seafoodShoppingCart.allFish[el];
+                                    msg+=`${fish.name} ${fish.count} ${fish.packaging} по ${fish.price} руб  на сумму ${fish.cost} `
+                                }
+                                msg+=`Доставить ${props.placeOfDelivery.where} по адресу ${address.current.wrappedInstance.getValue()}`
+
+
+
+                                $.ajax({
+                                    url: `https://sms.ru/sms/send?api_id=168c57ab-ca50-0e64-8dac-5e7f5106bcc9&to=79277172111&json=1&msg=${encodeURI(msg)}`,
+                                    dataType: 'JSONP',
+                                    jsonpCallback: 'callback',
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        /*
+                                         if (data.status_code === 100) {
+                                             alert("Спасибо, Ваш заказ отправлен в службу доставки! С Вами свяжутся в ближайшее время")
+                                         } else {
+                                             alert("Произошла ошибка: Нет связи с администраторром! Пожалуйста свяжитесь с нами +79277172111")
+                                         }*/
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                    },
+                                    complete: function(jqXHR, textStatus) {
+                                        nativeEvent.disabled=false
+                                        props.history.push({pathname: `/shopping_cart/ok`})
+                                    }
+                                });
+                                //props.history.push({pathname: `/shopping_cart/ok`})
                             }
 
                         }} className={css(AppStyle.buttonRed,ShoppingCartStyle.button)}>Оформить заказ
