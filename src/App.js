@@ -26,12 +26,14 @@ import {connect} from "react-redux";
 import {setPlaceOfDelivery, setPrice} from "./actions";
 import Katalog from "./Katalog";
 import config from "./config";
+import Admin from "./pages/Admin/Admin";
 
 const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/production' component={Seafood}/>
+            <Route path='/fbadmin' component={Admin}/>
             <Route path='/blog' component={Blog}/>
             <Route path='/about' component={About}/>
             <Route path='/news' component={News}/>
@@ -109,6 +111,8 @@ class App extends React.Component {
         )
     }
     componentDidMount(){
+
+
         axios.get(`${config.serverAPI}/catalog`)
             .then(res => {
 

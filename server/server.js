@@ -1,11 +1,10 @@
-
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var formidable = require('formidable');
 var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
+
 var seafoodPath = '/../src/img/seafood/'
 var db;
 var app = express();
@@ -15,11 +14,45 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
+
+var user_data = require('./user_data');
+
+
+//jwt
+app.set("secret","hjhgfjklsdh454fasd44563452534434318fs4e523444frsda");
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+app.post('/test', function (req, res) {
+    var token = req.body.auth_token || null;
+    console.log(token)
+    if (token) {
+        var user = user_data.get_user(token, req.app.get('secret'));
+        res.send(user)
+        return
+    }
+
+    res.send("err")
+
+
+    //res.send("OK")
+});
+app.post('/sign', function (req, res) {
+    if (req.body.user.login && req.body.user.pass) {
+        var autentificate_result = user_data.check_login(req.body.user.login, req.body.user.pass)
+        if (autentificate_result.is_autentificate){
+            var secret = res.app.get("secret")
+            var token = user_data.get_token(autentificate_result.user_name,secret)
+            //res.cookie("auth_token",token)
+            res.send({"auth_token":token});
+            return;
+        }
+    }
+
+    res.send("OK");
+});
 
 app.get('/set_catalog123', function (req, res) {
 
@@ -39,6 +72,25 @@ app.get('/set_catalog123', function (req, res) {
 });
 
 app.post('/set_catalog', function(req, res) {
+    var token = req.body.auth_token || null;
+
+    if (token) {
+        try {
+            var user = user_data.get_user(token, req.app.get('secret'));
+            console.log(user)
+        } catch (e) {
+            return res.sendStatus(404)
+        }
+
+        if (!user){
+            return res.sendStatus(404)
+        }
+    }
+    else {
+        return res.sendStatus(404)
+    }
+
+
     if (req.body.catalog){
         db.collection("fish_catalog").deleteOne({}, function (err, result) {
             if (err) {

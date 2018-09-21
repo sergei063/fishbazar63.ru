@@ -476,7 +476,7 @@ const Katalog = {
     },
 
     get: function (id) {
-        const isProduct = p => p.id === id;
+        const isProduct = p => p && p.id === id;
 
 
         for (let fish in Katalog.price) {
@@ -491,6 +491,28 @@ const Katalog = {
                 }
             }
         }
+    },
+    delete: function (id) {
+
+
+
+        for (let fish in Katalog.price) {
+            let group = Katalog.price[fish];
+            if (group.catalog_tittle) {
+                for (let itemNum in  group.items){
+                    if (group.items[itemNum] && group.items[itemNum].id===id){
+
+                        group.items.splice(itemNum, 1);
+                        return true;
+                    }
+                    /*if (group.items[itemNum]===null){
+                        group.items.splice(itemNum, 1);
+                    }*/
+                }
+
+            }
+        }
+        return false
     },
 
     getGroup: function () {
@@ -513,7 +535,7 @@ const Katalog = {
      * @returns {Array}
      */
     getHitItems: function () {
-        const isProduct = p => p.hit == true;
+        const isProduct = p => p && p.hit == true;
 
         let res = [];
         for (let fish in Katalog.price) {

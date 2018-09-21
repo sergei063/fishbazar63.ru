@@ -69,7 +69,9 @@ class AddFishItem extends React.Component {
     }
 
     getFishItemFromRefs(){
-        const item =  _.clone(Katalog.get(this.idRef.current.wrappedInstance.getValue()) || Katalog.getFishItem());
+
+        const finedItem = _try(() => Katalog.get(this.idRef.current.wrappedInstance.getValue()), null);
+        const item =  _.clone((finedItem)?finedItem: Katalog.getFishItem());
 
 
 
@@ -109,7 +111,8 @@ class AddFishItem extends React.Component {
         }
 
         axios.post(`${config.serverAPI}/set_catalog`, {
-            catalog: Katalog.price
+            catalog: Katalog.price,
+            auth_token: localStorage.getItem('auth_token')
         }).then(function (response) {
                 alert('Сохранено')
                 console.log(response);
@@ -117,6 +120,39 @@ class AddFishItem extends React.Component {
                 alert('Ошибка при сохранении')
                 console.log(error);
             });
+
+
+
+    }
+
+    deleteData(){
+
+        var id = prompt('Если вы хотите удалить товар введите его идентификатор');
+        if (id!==this.idRef.current.wrappedInstance.getValue())
+            return;
+
+        let isDelete =  Katalog.delete(this.idRef.current.wrappedInstance.getValue());
+
+
+
+        if(!isDelete)
+            return;
+
+
+
+
+        var me = this;
+
+        axios.post(`${config.serverAPI}/set_catalog`, {
+            catalog: Katalog.price,
+            auth_token: localStorage.getItem('auth_token')
+        }).then(function (response) {
+            alert('Удалено')
+            me.props.history.push({pathname: `/production`})
+        }).catch(function (error) {
+            alert('Ошибка при сохранении')
+            console.log(error);
+        });
 
     }
 
@@ -138,8 +174,10 @@ class AddFishItem extends React.Component {
 
 
     render() {
+        const param_id =  _try(() =>  this.props.match.params.id, null)
+        console.log(param_id)
 
-        const item = Katalog.get(this.props.match.params.id) || {};
+        const item = (param_id)? Katalog.get(param_id) : {};
 
         /*if (!itemFish) {
             return (<div>Добавление новой продукции</div>)
@@ -210,6 +248,11 @@ class AddFishItem extends React.Component {
                         <button onClick={() => {
                             this.saveData(item);
                         }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Сохранить
+                        </button>
+
+                        <button onClick={() => {
+                            this.deleteData();
+                        }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Удалить
                         </button>
                     </div>
 

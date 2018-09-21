@@ -25,12 +25,12 @@ const AllSeafood = (props) => {
         filter = null;
         filterCount = Katalog.FILTER_COUNT;
     }
-
+    const token = localStorage.getItem('auth_token');
     let groupItems = Katalog.getGroupItems(filter, filterCount);
     return (
         <div className={css(SeafoodStyle.cnt)}>
             <div className={css(AppStyle.textAlignCenter)}>
-                <AllCards isShowAddFish={false} items={groupItems}/>
+                <AllCards isShowAddFish={(token)?true:false} items={groupItems}/>
                 <br/>
                 <button hidden={/*(filter != null) || */(filterCount > groupItems.length)} onClick={(event) => {
                     if (filterCount > groupItems.length) {
