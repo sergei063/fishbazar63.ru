@@ -5,7 +5,9 @@ var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
 
-var seafoodPath = '/../src/img/seafood/'
+//var seafoodPath = '/../src/img/seafood/' //local
+var seafoodPath = '/../fishbazar63.ru/img/src/img/seafood/' //server
+
 var db;
 var app = express();
 var allowCrossDomain = function(req, res, next) {
@@ -120,7 +122,7 @@ app.post('/file-upload', function(req, res) {
         file.path = __dirname + seafoodPath + file.name;
     });
     form.on('file', function (name, file){
-        console.log('Uploaded ' + file.name);
+        console.log('Uploaded ' + __dirname + seafoodPath + file.name);
     });
 
 
