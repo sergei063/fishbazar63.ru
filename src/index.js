@@ -37,7 +37,7 @@ const store = createStore(allReducers, enhancer);
 
 //const store = createStore(allReducers, applyMiddleware(middleware));
 store.subscribe(()=>{
-    console.log('subscribe',store.getState())
+    //console.log('subscribe',store.getState())
 });
 
 history.listen((location, action) => {

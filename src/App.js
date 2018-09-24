@@ -114,7 +114,7 @@ class App extends React.Component {
         (async () => {
             try {
                 const responseCatalog = await axios.get(`${config.serverAPI}/catalog`);
-                console.log(responseCatalog);
+                //console.log(responseCatalog);
                 Katalog.setPrice(responseCatalog.data);
 
 

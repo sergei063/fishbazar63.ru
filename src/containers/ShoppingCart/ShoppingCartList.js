@@ -43,7 +43,7 @@ class ShoppingCartList extends React.Component {
             <div>{catalog.map(p => {
                 i++;
                 let weightOfOneFish = (p.weightOfOneFish) ? p.weightOfOneFish : 1;
-                let cost = p.count * p.price * weightOfOneFish;
+                let cost = p.count * p.price * ((p.packaging!=='кг')?weightOfOneFish:1);
                 this.totalSum += cost;
 
                 return (
@@ -196,7 +196,7 @@ class ShoppingCartList extends React.Component {
                     {catalog.map(p => {
                         i++;
                         let weightOfOneFish = (p.weightOfOneFish) ? p.weightOfOneFish : 1;
-                        let cost = p.count * p.price * weightOfOneFish;
+                        let cost = p.count * p.price * ((p.packaging!=='кг')?weightOfOneFish:1);
                         this.totalSum += cost;
 
                         return (

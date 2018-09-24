@@ -577,7 +577,7 @@ const Katalog = {
                 try {
                     return Katalog.price[groupName].items.slice(0, filterCount);
                 } catch (e) {
-                    console.log(e)
+                    //console.log(e)
                     return []
                 }
             }

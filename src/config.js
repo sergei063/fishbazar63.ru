@@ -9,14 +9,14 @@ const config = {
     //serverImgDir:'/../public/img/src/img/seafood/',
 
     //server
-    //imgRequire :img=>( `${img.replace('./',"img/src/img/seafood/")}`),
-    //serverAPI:'http://api.fishbazar63.ru',
+    imgRequire :img=>( `${img.replace('./',"/img/src/img/seafood/")}`),
+    serverAPI:'http://api.fishbazar63.ru',
 
 
 
     //local
-    imgRequire :img=>( `${img.replace('./',"/img/src/img/seafood/")}`), //local
-    serverAPI:'http://localhost:3212',
+    //imgRequire :img=>( `${img.replace('./',"/img/src/img/seafood/")}`), //local
+    //serverAPI:'http://localhost:3212',
 }
 
 export default config
