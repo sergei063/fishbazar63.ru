@@ -111,17 +111,58 @@ class App extends React.Component {
         )
     }
     componentDidMount(){
+        (async () => {
+            try {
+                const responseCatalog = await axios.get(`${config.serverAPI}/catalog`);
+                console.log(responseCatalog);
+                Katalog.setPrice(responseCatalog.data);
 
 
-        axios.get(`${config.serverAPI}/catalog`)
+
+                if (localStorage.getItem('auth_token')) {
+                    try {
+                        const responseCheckUser = await axios.post(`${config.serverAPI}/check_user`, {auth_token: localStorage.getItem('auth_token')});
+                        this.forceUpdate();
+                    } catch (e) {
+                        localStorage.removeItem("auth_token");
+                        this.forceUpdate();
+                    }
+
+                } else {
+                    this.forceUpdate();
+                }
+
+
+            } catch (error) {
+                console.error(error);
+            }
+        })();
+
+
+      /*  axios.get(`${config.serverAPI}/catalog`)
             .then(res => {
 
                 const price = res.data;
                 Katalog.setPrice(res.data);
                 this.forceUpdate();
-                //console.log(price);
-                //this.props.setPrice(price);
-            })
+
+                if (localStorage.getItem('auth_token')) {
+                    axios.post(`${config.serverAPI}/check_user`, {
+                        catalog: Katalog.price,
+                        auth_token: localStorage.getItem('auth_token')
+                    }).then(function (response) {
+
+                        console.log(response);
+                    }).catch(function (error) {
+                        localStorage.removeItem("auth_token");
+                        console.log(error);
+                    });
+                }
+
+
+            });*/
+
+
 
 
     }

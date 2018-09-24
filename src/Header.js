@@ -60,7 +60,7 @@ class Header extends React.Component {
 
         return (<header>
                 <nav>
-                    <div id="header_pouch_mobile_menu_cnt"  className={css(AppStyle.zI2, HeaderStyle.floatMenuBlock, HeaderStyle.floatMenuBlockWidth, HeaderStyle.nav_urls)}>
+                    <div id="header_pouch_mobile_menu_cnt"  className={css(AppStyle.zI99999, HeaderStyle.floatMenuBlock, HeaderStyle.floatMenuBlockWidth, HeaderStyle.nav_urls)}>
                         <div id="header_pouch_mobile_menu_close_span" className={css(HeaderStyle.mobileMenuBtn)+ " " +css(HeaderStyle.mobileMenuBtnHidden)}>
                             <a id="header_pouch_mobile_menu_close" onClick={mobileMenuClick}
                                className={css(HeaderStyle.pouchMobileMenuClose)} href='#'></a>

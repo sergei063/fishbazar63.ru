@@ -527,7 +527,13 @@ const Katalog = {
         return r;
     },
 
-
+    getWeightFishText: function (fish){
+        const weightFishHelp = _try(() => fish.weightFish.help, null)
+        if (weightFishHelp){
+            return weightFishHelp
+        }
+        return null;
+    },
 
 
     /**

@@ -89,8 +89,8 @@ const SeafoodItem = (props) => {
                         </button>
                     </div>
                     <div  className={css((!item.weightOfOneFish?AppStyle.hidden:SeafoodItemStyle.aboutFish))}>
-                        Вес одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>{item.weightOfOneFish} кг</span> <br/>
-                        Стоимость одной рыбы ~ <span className={css(SeafoodItemStyle.price)}>{(item.weightOfOneFish*item.price).toFixed(0)} руб</span><br/>
+                        Вес одной {(item.packaging==='кор')?'упаковки':'рыбы'} ~ <span className={css(SeafoodItemStyle.price)}>{(item.packaging==='кор')? item.weightOfOneFish:Katalog.getWeightFishText(item)} кг</span> <br/>
+                        Стоимость одной {(item.packaging==='кор')?'упаковки':'рыбы'} ~ <span className={css(SeafoodItemStyle.price)}>{(item.weightOfOneFish*item.price).toFixed(0)} руб</span><br/>
                         <span className={css(SeafoodItemStyle.hidden_text)}>вес может отличатся +/– 200гр</span>
                     </div>
 

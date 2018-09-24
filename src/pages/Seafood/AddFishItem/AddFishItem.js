@@ -21,6 +21,7 @@ class AddFishItem extends React.Component {
         this.idRef=React.createRef();
         this.sizeRef=React.createRef();
         this.imgRef=React.createRef();
+        this.previewRef=React.createRef();
         this.nameRef=React.createRef();
         this.showCaseNameRef=React.createRef();
         this.fishGroupRef=React.createRef();
@@ -68,6 +69,7 @@ class AddFishItem extends React.Component {
         reader.readAsDataURL(file)
     }
 
+
     getFishItemFromRefs(){
 
         const finedItem = _try(() => Katalog.get(this.idRef.current.wrappedInstance.getValue()), null);
@@ -96,30 +98,37 @@ class AddFishItem extends React.Component {
         return item;
 
     }
+
     saveData(selectedFish){
 
-        const newFish = this.getFishItemFromRefs();
 
 
-        Katalog.setFishItem(this.fishGroupRef.current.ref.current.value,newFish)
+        (async () => {
+            try {
+                const newFish = this.getFishItemFromRefs();
 
-        let imgFile = _try(() => this.imgRef.current.files[0], null)
-        if (imgFile) {
-            const formData = new FormData();
-            formData.append('myFile', imgFile, imgFile.name);
-            axios.post(`${config.serverAPI}/file-upload`, formData);
-        }
 
-        axios.post(`${config.serverAPI}/set_catalog`, {
-            catalog: Katalog.price,
-            auth_token: localStorage.getItem('auth_token')
-        }).then(function (response) {
+                Katalog.setFishItem(this.fishGroupRef.current.ref.current.value,newFish)
+
+
+                const responseSetCatalog = await axios.post(`${config.serverAPI}/set_catalog`,{
+                    catalog: Katalog.price,
+                    auth_token: localStorage.getItem('auth_token')
+                });
+                let imgFile = _try(() => this.imgRef.current.files[0], null)
+                if (imgFile) {
+                    const formData = new FormData();
+                    formData.append('myFile', imgFile, imgFile.name);
+                    axios.post(`${config.serverAPI}/file-upload`, formData);
+                }
+
                 alert('Сохранено')
-                console.log(response);
-            }).catch(function (error) {
+
+
+            } catch (error) {
                 alert('Ошибка при сохранении')
-                console.log(error);
-            });
+            }
+        })();
 
 
 
@@ -157,19 +166,18 @@ class AddFishItem extends React.Component {
     }
 
     fileUploadOnChange(changeEvent) {
-        const data = new FormData();
-        data.append('img',changeEvent.target.files[0]);
+        //const data = new FormData();
+        //data.append('img',changeEvent.target.files[0]);
+        //console.log(changeEvent.target.files)
+        //this.previewRef.current.src = changeEvent.target.files[0];
 
-        /*fetch("http://localhost:3001/todo/upload", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: data
-        }).then((response) =>  {
-            return response.text();
-        })*/
+        let reader = new FileReader();
+        let file = changeEvent.target.files[0];
+
+        reader.onloadend = () => {
+            this.previewRef.current.src = reader.result;
+        }
+        reader.readAsDataURL(file);
     }
 
 
@@ -178,10 +186,10 @@ class AddFishItem extends React.Component {
         console.log(param_id)
 
         const item = (param_id)? Katalog.get(param_id) : {};
-
-        /*if (!itemFish) {
-            return (<div>Добавление новой продукции</div>)
-        }*/
+        console.log(Katalog)
+        if (!item) {
+            return <div>Ничего не найдено</div>
+        }
 
         let imgFile = null
         try {
@@ -197,7 +205,7 @@ class AddFishItem extends React.Component {
                         <InputSelect ref={this.fishGroupRef} text={"Группа"} options={this.getFishGroup()} value={ _try(() => item.parent.id, "")}/>
 
                         <div><span className={css(SeafoodItemStyle.img)}>Изображение</span><br/>
-                            {(item.img) && <img className={css(SeafoodItemStyle.img)} src={imgFile}></img>}<br/>
+                            {(imgFile) && <img ref={this.previewRef} className={css(SeafoodItemStyle.img)} src={imgFile}></img>}<br/>
 
                             &nbsp;<input type="file" ref={this.imgRef} onChange={this.fileUploadOnChange}/></div>
 

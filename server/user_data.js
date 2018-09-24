@@ -27,6 +27,23 @@ function get_token (user,secret) {
     return jwt.sign({data: user}, secret, { expiresIn: '1h' });
 };
 function get_user (token,secret) { return jwt.verify(token,secret)}
+function check_admin (req) {
+    var token = req.body.auth_token || null;
+
+    if (token) {
+        try {
+            var user = get_user(token, req.app.get('secret'));
+            return user
+        } catch (e) {
+            return null
+        }
+
+        if (!user){
+            return null
+        }
+    }
+    return null;
+}
 
 
 
@@ -36,4 +53,5 @@ module.exports ={
     check_login:check_login,
     get_token:get_token,
     get_user:get_user,
+    check_admin:check_admin,
 }

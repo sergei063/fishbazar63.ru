@@ -268,6 +268,7 @@ const AppStyle = StyleSheet.create({
     },
     zI1: {zIndex: "1"},
     zI2: {zIndex: "2"},
+    zI99999: {zIndex: "99999"},
 
     blue_text: {
         color: '#3F51B5'

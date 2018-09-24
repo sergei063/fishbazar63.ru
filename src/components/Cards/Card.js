@@ -4,6 +4,7 @@ import {css} from "aphrodite/no-important";
 import ProductWeight from "./ProductWeight";
 import SeafoodItemStyle from "../../pages/Seafood/SeafoodItemStyle";
 import config from "../../config";
+import {_try} from "../lib";
 
 
 const Card = (props) =>  {
@@ -35,7 +36,7 @@ const Card = (props) =>  {
                         &nbsp;<small><nobr>руб/кг</nobr></small>
                     </div>
                     <div className={css(Style.productWeightFish)}>
-                        {(p.weightFish)? `Вес одной рыбы - ${p.weightFish.help}` : (p.weightOfOneFish) && `Вес одной рыбы - ${p.weightOfOneFish} кг`}
+                        {(p.weightFish && p.weightFish.help)? `Вес одной рыбы - ${p.weightFish.help}` :''}
                     </div>
                 </div>
             </Link>

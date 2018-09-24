@@ -23,6 +23,11 @@ const DeliveryStyle = StyleSheet.create({
         lineHeight:'1.19',
         letterSpacing:'1.4px',
         color:'#1e232c',
+        '@media (max-width: 900px)': {
+            fontSize: '32px',
+        },'@media (max-width: 600px)': {
+            fontSize: '18px',
+        }
     },
     footerDiv:{
         height:'81px',

@@ -75,7 +75,7 @@ const Style = StyleSheet.create({
 
         position:'fixed',
         zIndex:'9999',
-        background: "#ffffff url(" + require('../../img/bucket/normal.png') + ") no-repeat 50% 19px",
+        background: "#ffffff  image-set(url(" + require('../../img/bucket/normal.png') + ") 1x, url(" + require('../../img/bucket/normal@2x.png') + ") 2x, url(" + require('../../img/bucket/normal@3x.png') + ") 3x) no-repeat 50% 19px",
         height: '68px', width: '68px',
         borderRadius: '44px',
         //position: 'absolute',
@@ -84,7 +84,8 @@ const Style = StyleSheet.create({
         boxShadow: '0 1px 22px 0 rgba(0, 0, 0, 0.08)',
         transition: 'right 2s ease 0s',
         ':hover': {
-            backgroundImage: "url(" + require('../../img/bucket/hover.png') + ")",
+            backgroundImage: "image-set(url(" + require('../../img/bucket/hover.png') + ") 1x, url(" + require('../../img/bucket/hover@2x.png') + ") 2x, url(" + require('../../img/bucket/hover@3x.png') + ") 3x)",
+
 
 
         },

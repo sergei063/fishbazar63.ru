@@ -217,7 +217,7 @@ class ShoppingCartList extends React.Component {
                                     <span className={css(ShoppingCartStyle.price,ShoppingCartStyle.divTableCellVerticalAlign)}><nobr>{cost.toFixed(0)} руб</nobr></span>
                                 </div>
                                 <div className={css(ShoppingCartStyle.divTableCell,ShoppingCartStyle.divTableCellVerticalAlign,ShoppingCartStyle.divTableCellInfo,AppStyle.textAlignRigh)}>
-                                    <Iinfo style={tooltiptStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам, и сообщим точную стоимость заказа"}/>
+                                    {(p.packaging!=='кор') &&<Iinfo style={tooltiptStyle} tooltip={"Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам, и сообщим точную стоимость заказа"}/>}
                                 </div>
                             </div>
 

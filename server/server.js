@@ -5,8 +5,8 @@ var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
 
-//var seafoodPath = '/../src/img/seafood/' //local
-var seafoodPath = '/../fishbazar63.ru/img/src/img/seafood/' //server
+var seafoodPath = '/../public/img/src/img/seafood/' //local
+//var seafoodPath = '/../fishbazar63.ru/img/src/img/seafood/' //server
 
 var db;
 var app = express();
@@ -27,19 +27,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.post('/test', function (req, res) {
-    var token = req.body.auth_token || null;
-    console.log(token)
-    if (token) {
-        var user = user_data.get_user(token, req.app.get('secret'));
-        res.send(user)
-        return
+app.post('/check_user', function (req, res) {
+    if (!user_data.check_admin(req)) {
+        return res.sendStatus(401)
     }
 
-    res.send("err")
+    res.send("ok")
 
-
-    //res.send("OK")
 });
 app.post('/sign', function (req, res) {
     if (req.body.user.login && req.body.user.pass) {
@@ -56,7 +50,7 @@ app.post('/sign', function (req, res) {
     res.send("OK");
 });
 
-app.get('/set_catalog123', function (req, res) {
+app.get('/set_catalog123987dfasfs', function (req, res) {
 
     db.collection("fish_catalog").deleteOne({}, function (err, result) {
         if (err) {
@@ -74,22 +68,8 @@ app.get('/set_catalog123', function (req, res) {
 });
 
 app.post('/set_catalog', function(req, res) {
-    var token = req.body.auth_token || null;
-
-    if (token) {
-        try {
-            var user = user_data.get_user(token, req.app.get('secret'));
-            console.log(user)
-        } catch (e) {
-            return res.sendStatus(404)
-        }
-
-        if (!user){
-            return res.sendStatus(404)
-        }
-    }
-    else {
-        return res.sendStatus(404)
+    if (!user_data.check_admin(req)) {
+        return res.sendStatus(401)
     }
 
 
@@ -113,6 +93,8 @@ app.post('/set_catalog', function(req, res) {
 
 
 });
+
+
 
 app.post('/file-upload', function(req, res) {
     var form = new formidable.IncomingForm();
