@@ -22,7 +22,7 @@ const AllCards = (props) => {
                     )
                 )
             }
-            {isShowAddFish && <AddFishCard key={777}/>}
+            {isShowAddFish && <AddFishCard/>}
         </ul>
     );
 };

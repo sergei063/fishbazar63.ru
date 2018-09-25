@@ -1,7 +1,6 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {css} from 'aphrodite/no-important';
-import ProductionStyle from '../css/ProductionStyle';
 import AppStyle from '../css/AppStyle';
 import ShoppingCartStyle from '../css/ShoppingCartStyle';
 import Iinfo from "../components/Iinfo/Iinfo";
@@ -9,10 +8,6 @@ import PlaceOfDelivery from "../components/PlaceOfDelivery/PlaceOfDelivery";
 import ShoppingCartList from "../containers/ShoppingCart/ShoppingCartList";
 import {connect} from "react-redux";
 import InputTextBox from "../components/InputTextBox/InputTextBox";
-import * as ReactDOM from "react-dom";
-import config from "../config";
-import axios from "axios/index";
-import Katalog from "../Katalog";
 import $ from 'jquery';
 
 const ShoppingCart = (props) => {
@@ -29,7 +24,10 @@ const ShoppingCart = (props) => {
 
 const Basket = (props) => {
     if (props.seafoodShoppingCart.totalCost < 1) {
-        return (<div className={css(ProductionStyle.text)}>Ваша корзина пуста<br/><br/><br/></div>)
+        return ( <div>
+            <div className={css(ShoppingCartStyle.cntArea)}></div>
+            <div className={css(ShoppingCartStyle.h1)}>Ваша корзина пуста</div>
+        </div>)
     }
     let nameInput = React.createRef();
     let phoneNumber = React.createRef();

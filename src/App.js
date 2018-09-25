@@ -7,12 +7,12 @@ import AboutFish from './pages/AboutFish';
 import ShoppingCart from './pages/ShoppingCart';
 import axios from 'axios';
 import Location from './pages/Location';
-import {css } from 'aphrodite/no-important';
+import {css} from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
-import {  Switch, Route, Link } from 'react-router-dom'
+import {Link, Route, Switch} from 'react-router-dom'
 import News from "./pages/News";
 import SocialNetworkBlockStyle from "./pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle";
 import Instagram from "./components/SocialNetwork/Instagram";
@@ -22,8 +22,6 @@ import DeliveryPage from "./pages/Delivery/DeliveryPage";
 import Seafood from "./pages/Seafood/Seafood";
 import Blog from "./pages/Blog/Blog";
 import PouchIcon from "./containers/PouchIcon/PouchIcon";
-import {connect} from "react-redux";
-import {setPlaceOfDelivery, setPrice} from "./actions";
 import Katalog from "./Katalog";
 import config from "./config";
 import Admin from "./pages/Admin/Admin";
@@ -89,6 +87,7 @@ const Footer = () => (
 class App extends React.Component {
     constructor(props) {
         super(props);
+        console.log(process.env.NODE_ENV)
 
 
     }
@@ -101,11 +100,13 @@ class App extends React.Component {
         return (
             <div className={css(AppStyle.container)}>
                 <Header isMobile={this.props.isMobile} />
-                <PouchIcon/>
-                {history.location.pathname==='/'&&
-                <Slider/>
-                }
-                <Main />
+                <div style={{position:'relative'}}>
+                    <PouchIcon/>
+                    {(history.location.pathname === '/' )&&
+                    <Slider/>
+                    }
+                    <Main/>
+                </div>
                 <Footer />
             </div>
         )

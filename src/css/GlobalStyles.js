@@ -31,9 +31,14 @@ const styles = StyleSheet.create({
             outline: 'unset !important',
 
         },
+        '#root' :{
+            height: '100%'
+
+        },
 
 
         body: {
+            height: '100%',
             /*backgroundImage: "url(" + require('../img/fon.jpg') + ")",
             backgroundSize: 'cover',
             backgroundAttachment: 'fixed',

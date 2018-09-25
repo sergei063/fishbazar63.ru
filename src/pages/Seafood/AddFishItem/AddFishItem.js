@@ -1,11 +1,9 @@
-import React, {Fragment} from 'react';
-import $ from "jquery";
+import React from 'react';
 import {css} from "aphrodite/no-important";
 import SeafoodItemStyle from "../SeafoodItemStyle";
 import AppStyle from "../../../css/AppStyle";
 import InputTextBox from "../../../components/InputTextBox/InputTextBox";
 import Katalog from "../../../Katalog";
-import * as ReactDOM from "react-dom";
 import _ from "lodash/core";
 import {_try} from "../../../components/lib";
 import Checkbox from "../../../components/Checkbox/Checkbox";
@@ -166,16 +164,13 @@ class AddFishItem extends React.Component {
     }
 
     fileUploadOnChange(changeEvent) {
-        //const data = new FormData();
-        //data.append('img',changeEvent.target.files[0]);
-        //console.log(changeEvent.target.files)
-        //this.previewRef.current.src = changeEvent.target.files[0];
-
         let reader = new FileReader();
         let file = changeEvent.target.files[0];
 
         reader.onloadend = () => {
-            this.previewRef.current.src = reader.result;
+            if(this.previewRef.current){
+                this.previewRef.current.src = reader.result;
+            }
         }
         reader.readAsDataURL(file);
     }
@@ -183,10 +178,10 @@ class AddFishItem extends React.Component {
 
     render() {
         const param_id =  _try(() =>  this.props.match.params.id, null)
-        console.log(param_id)
+
 
         const item = (param_id)? Katalog.get(param_id) : {};
-        console.log(Katalog)
+
         if (!item) {
             return <div>Ничего не найдено</div>
         }
@@ -205,7 +200,7 @@ class AddFishItem extends React.Component {
                         <InputSelect ref={this.fishGroupRef} text={"Группа"} options={this.getFishGroup()} value={ _try(() => item.parent.id, "")}/>
 
                         <div><span className={css(SeafoodItemStyle.img)}>Изображение</span><br/>
-                            {(imgFile) && <img ref={this.previewRef} className={css(SeafoodItemStyle.img)} src={imgFile}></img>}<br/>
+                             <img ref={this.previewRef} className={css(SeafoodItemStyle.img)} src={imgFile}></img><br/>
 
                             &nbsp;<input type="file" ref={this.imgRef} onChange={this.fileUploadOnChange}/></div>
 

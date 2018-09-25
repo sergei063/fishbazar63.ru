@@ -1,11 +1,9 @@
 import React from 'react';
-import {StyleSheet} from 'aphrodite/no-important';
-import {css} from "aphrodite/no-important";
+import {css, StyleSheet} from 'aphrodite/no-important';
 import RecipesBlogStyle from "./RecipesBlogStyle";
 import AppStyle from "../../../css/AppStyle";
 import {Link} from "react-router-dom";
-import {FuturaBoldFont, LucidaGrandeFontB, MetaSerifProBookFont} from "../../../css/Fonts";
-
+import {FuturaBoldFont} from "../../../css/Fonts";
 
 
 const RecipeNameStyle = StyleSheet.create({
@@ -76,7 +74,12 @@ const RecipesBlog = (props) => {
                         </div>
                         <div style={{height:'64px'}}></div>
                         <div className={css(RecipesBlogStyle.button_bock)}>
-                            <button style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Весь рецепт</button>
+                            <button style={{width: '174px'}}  className={css(AppStyle.buttonRed)} onClick={(event) => {
+                                event.preventDefault();
+                                console.log(props)
+                                props.history.push({pathname: '/blog/cod_in_green_sauce'});
+
+                            }} >Весь рецепт</button>
                             <span><Link className={css(AppStyle.link_red, RecipesBlogStyle.overRecipes)} to='/blog'>Другие&nbsp;рецепты</Link></span>
                         </div>
                     </div>

@@ -2,6 +2,7 @@ var packageJSON = require('./package.json');
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require ('extract-text-webpack-plugin');
+//UglifyJSPlugin
 
 module.exports = {
     devtool: 'source-map',

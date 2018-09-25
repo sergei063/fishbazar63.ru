@@ -1,16 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import {css} from "aphrodite/no-important";
-import ProductWeight from "./ProductWeight";
 import CardStyle from "./css/CardStyle";
+import _ from "lodash/core";
 
 
 const AddFishCard = (props) =>  {
-    let {key} = props;
+
 
     let Style = CardStyle;
     return (
-        <li className={css(Style.li)} key={key}>
+        <li className={css(Style.li)} key={_.uniqueId('add_fishcard_')}>
 
             <Link className={css(Style.card)} to={`/production/add`}>
                 <div className={css(Style.productPhoto)}>

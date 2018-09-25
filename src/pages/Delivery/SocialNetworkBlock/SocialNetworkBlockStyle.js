@@ -17,10 +17,18 @@ const SocialNetworkBlockStyle = StyleSheet.create({
         width:"273px",
         height:"463px",
         zIndex:'2',
-        '@media (max-width: 900px)': {
+        background: "url(" + require('../../../img/design/delivery_small/delivery.png') + ") no-repeat",
+        backgroundSize:'cover',
+        '@media (max-width: 1025px)': {
             width:"154px",
             height:"261px",
-            bottom:'11px',
+            bottom:'-30px',
+        },
+        '@media (max-width: 600px)': {
+            width:"108px",
+            height:"127px",
+            bottom: "0",
+            backgroundSize: "150% 200%"
         }
     },
     h1: {

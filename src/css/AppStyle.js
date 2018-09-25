@@ -2,9 +2,9 @@ import {StyleSheet} from 'aphrodite/no-important';
 import {
     coolFont,
     FuturaBoldFont,
-    FuturaCondensedExtraBold,
     FuturaFont,
-    FuturaMediumFont, FuturaMediumFontOld,
+    FuturaMediumFont,
+    FuturaMediumFontOld,
     LucidaGrandeFont,
     MetaSerifProFont
 } from "./Fonts";
@@ -41,6 +41,17 @@ const menu_inline_ul = {
 };
 
 const AppStyle = StyleSheet.create({
+
+    container: {
+        display: "grid",
+        gridTemplateColumns: "30px 1fr",
+        "alignContent": "center",
+
+
+        "minHeight": "100%",
+        "gridTemplateRows": "auto 1fr auto",
+        "gridTemplateColumns": "100%"
+    },
 
     displayNone: {display: 'none'},
     hidden: {visibility: 'hidden'},
@@ -268,6 +279,7 @@ const AppStyle = StyleSheet.create({
     },
     zI1: {zIndex: "1"},
     zI2: {zIndex: "2"},
+    zI3: {zIndex: "3"},
     zI99999: {zIndex: "99999"},
 
     blue_text: {
