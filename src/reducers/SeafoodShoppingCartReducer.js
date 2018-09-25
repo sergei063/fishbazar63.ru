@@ -9,8 +9,9 @@ const getInitialState = ()=> {
 };
 
 const getCost = (fish,count) => {
+    //let cost = p.count * p.price * ((p.packaging!=='кг')?weightOfOneFish:1);
 
-    let weightOfOneFish = (fish.weightOfOneFish) ? fish.weightOfOneFish : 1;
+    let weightOfOneFish = (fish.weightOfOneFish && fish.packaging!=='кг') ? fish.weightOfOneFish : 1;
     return count * fish.price * weightOfOneFish;
 
 };

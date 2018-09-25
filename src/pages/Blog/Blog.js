@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import {connect} from "react-redux";
 import {css} from "aphrodite";
 import AppStyle from "../../css/AppStyle";
@@ -8,10 +8,8 @@ import MenuBlog, {MenuBlogFilter} from "../../components/Blog/Menu/MenuBlog";
 import {_try} from "../../components/lib";
 import SeafoodItemStyle from "../Seafood/SeafoodItemStyle";
 import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
-import Katalog from "../../Katalog";
 import axios from "axios/index";
 import config from "../../config";
-
 
 
 const RecipesDB = {
@@ -362,15 +360,18 @@ const dateOptions = {
 };
 
 
+
 const AllBlog = (props) => {
 
     let recipes = Recipes.getAllSordItems(_try(() => props.history.location.state.blogFilter, null));
 
     if (!recipes || recipes.length===0) {
-        return (<div>Подождите...</div>)
+        return noBlogText(props);
     }
+
+
     return (
-        <div className={css(AllBlogStyle.cnt)}>
+        <div className={css(AllBlogStyle.cnt,AllBlogStyle.cntBackground)}>
            <div className={css(AllBlogStyle.tabletShow, AllBlogStyle.menuBlogFilterStyle)}> {MobileAgent.any() && <MenuBlogFilter history={props.history}/>}
 
            </div>
@@ -408,6 +409,18 @@ const AllBlog = (props) => {
 };
 
 
+const noBlogText = (props) => {
+    return (<div className={css(AllBlogStyle.cnt)}>
+        <div className={css(AllBlogStyle.cntFlex)}>
+            <div style={{width: '65%'}}>
+                <h1 className={css(AllBlogStyle.h1)}>В данной категории пока нет рецептов...</h1>
+            </div>
+            <div className={css(AllBlogStyle.tabletHide, AllBlogStyle.stickyBlock)}><MenuBlog history={props.history}/></div>
+        </div>
+    </div>)
+}
+
+
 const BreadCrumbs = (props)  => {
     return (
         <div>
@@ -440,10 +453,10 @@ const OneBlog = (props) => {
     }
 
     if (!selectedRecipe) {
-        return (<div>Подождите...</div>)
+        return (<div>Рецепта не существует...</div>)
     }
     return (
-        <div className={css(AllBlogStyle.cnt)}>
+        <div className={css(AllBlogStyle.cnt, AllBlogStyle.cntBackground)}>
             <div className={css(AllBlogStyle.mobileHide)}><BreadCrumbs item={selectedRecipe} history={props.history}/></div>
             <div className={css(AllBlogStyle.cntFlex)}>
                 <div className={css(AllBlogStyle.recipeBlock)}>

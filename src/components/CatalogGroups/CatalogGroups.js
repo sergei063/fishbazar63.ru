@@ -2,7 +2,6 @@ import React from 'react';
 import {css, StyleSheet} from "aphrodite/no-important";
 import AppStyle from "../../css/AppStyle";
 import {LucidaGrandeFontB} from "../../css/Fonts";
-import {_try} from "../lib";
 
 
 const CatalogGroups = (props) => {
@@ -39,7 +38,7 @@ const OneGroup = (props) => {
     let {history, pathname, filter, urlFilter, text} = props;
     return (
         <li onClick={() => {
-            history.push({pathname: pathname, state: {filter: urlFilter}});
+            history.push({pathname: pathname, state: {filter: urlFilter}, notScrollToTop: true});
             /*this.scrollToProductuionContainer(); */
         }}
             className={css(Style.marginRight15, Style.gpoupItem, AppStyle.right_text)}>

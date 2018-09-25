@@ -4,7 +4,7 @@ var express = require('express');
 
 var jwt  = require("jsonwebtoken");
 
-var admin_user_db = [{login:"admin",pass:"admin"},{login:"root",pass:"pass"}];
+var admin_user_db = [{login:"admin",pass:"FishBazar63"},{login:"root",pass:"pass"}];
 
 function check_login (login,pass)  {
     var isUser = p => p.login === login && p.pass === pass;

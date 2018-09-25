@@ -98,12 +98,15 @@ class AddFishItem extends React.Component {
     }
 
     saveData(selectedFish){
-
-
-
         (async () => {
             try {
+
                 const newFish = this.getFishItemFromRefs();
+                const finedFish = Katalog.get(newFish.id)
+                if (selectedFish.id!==newFish.id && finedFish){
+                    alert(`Ошибка: Товар с данным идентификатором ${newFish.id} существует\nУдалите старый товар ${finedFish.name} или введите другой идентификатор`)
+                    return;
+                }
 
 
                 Katalog.setFishItem(this.fishGroupRef.current.ref.current.value,newFish)
@@ -128,38 +131,48 @@ class AddFishItem extends React.Component {
             }
         })();
 
-
-
     }
 
     deleteData(){
+        (async () => {
+            var id = window.confirm('Вы уверены что хотите удалить запись?');
 
-        var id = prompt('Если вы хотите удалить товар введите его идентификатор');
-        if (id!==this.idRef.current.wrappedInstance.getValue())
-            return;
+            if (!id)
+                return;
 
-        let isDelete =  Katalog.delete(this.idRef.current.wrappedInstance.getValue());
-
-
-
-        if(!isDelete)
-            return;
+            let isDelete =  Katalog.delete(this.idRef.current.wrappedInstance.getValue());
 
 
 
+            if(!isDelete)
+                return;
 
-        var me = this;
 
-        axios.post(`${config.serverAPI}/set_catalog`, {
-            catalog: Katalog.price,
-            auth_token: localStorage.getItem('auth_token')
-        }).then(function (response) {
-            alert('Удалено')
-            me.props.history.push({pathname: `/production`})
-        }).catch(function (error) {
-            alert('Ошибка при сохранении')
-            console.log(error);
-        });
+            try {
+                const response = await axios.post(`${config.serverAPI}/set_catalog`, {
+                    catalog: Katalog.price,
+                    auth_token: localStorage.getItem('auth_token')
+                });
+
+                alert('Удалено')
+                this.props.history.push({pathname: `/production`})
+            } catch (e) {
+                alert('Ошибка при сохранении')
+                console.log(e);
+            }
+
+           /* axios.post(`${config.serverAPI}/set_catalog`, {
+                catalog: Katalog.price,
+                auth_token: localStorage.getItem('auth_token')
+            }).then(function (response) {
+                alert('Удалено')
+                me.props.history.push({pathname: `/production`})
+            }).catch(function (error) {
+                alert('Ошибка при сохранении')
+                console.log(error);
+            });*/
+        })();
+
 
     }
 

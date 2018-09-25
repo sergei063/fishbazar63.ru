@@ -1,11 +1,5 @@
-
-
 import {StyleSheet} from 'aphrodite/no-important';
-import {
-    FuturaBoldFont,
-    LucidaGrandeFontB,
-    MetaSerifProBookFont,
-} from "../../css/Fonts";
+import {FuturaBoldFont, LucidaGrandeFontB, MetaSerifProBookFont,} from "../../css/Fonts";
 
 
 const AllBlogStyle = StyleSheet.create({
@@ -14,12 +8,15 @@ const AllBlogStyle = StyleSheet.create({
         paddingTop: '80px',
         paddingLeft: '132px',
         textIndent: '0',
-        backgroundColor: '#f9f9f9',
+
         '@media (max-width: 600px)':{
             paddingLeft: '35px',
             paddingTop: '33px',
         }
 
+    },
+    cntBackground:{
+        backgroundColor: '#f9f9f9',
     },
     cntFlex: {
         display: "flex",
