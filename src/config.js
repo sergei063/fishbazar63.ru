@@ -14,8 +14,11 @@ const config = {
 
 
     //local
-   /* imgRequire :img=>( `${img.replace('./',"/img/src/img/seafood/")}`), //local
-    serverAPI:'http://localhost:3212',*/
+/*   /!* imgRequire :img=>( `${img.replace('./',"/img/src/img/seafood/")}`), //local
+    serverAPI:'http://localhost:3212',*!/
+
+*/
+
 }
 
 export default config
