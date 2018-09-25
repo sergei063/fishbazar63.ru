@@ -5,8 +5,8 @@ var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
 
-var seafoodPath = '/../public/img/src/img/seafood/' //local
-//var seafoodPath = '/../fishbazar63.ru/img/src/img/seafood/' //server
+//var seafoodPath = '/../public/img/src/img/seafood/' //local
+var seafoodPath = '/../fishbazar63.ru/img/src/img/seafood/' //server
 
 var db;
 var app = express();
