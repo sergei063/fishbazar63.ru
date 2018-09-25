@@ -137,6 +137,12 @@ const tooltiptMobileStyle = StyleSheet.create({
 
 const AddShoppingCart = (fish, countFishEl,props) => {
     let countFish = Number.parseInt(countFishEl[0].value,10);
+
+    if (isNaN(fish.price)){
+        alert("Извините, данного товара нет в наличии")
+        return;
+    }
+
     Katalog.addShoppingCart(fish, countFish);
 
     props.addSeafoodItem(fish, countFish)
