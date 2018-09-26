@@ -3,6 +3,8 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require ('extract-text-webpack-plugin');
 //UglifyJSPlugin
+/*const DEVELOPMENT = process.env.NODE_ENV === "development";
+const PRODUCTION = process.env.NODE_ENV === "production";*/
 
 module.exports = {
     devtool: 'source-map',
@@ -16,7 +18,7 @@ module.exports = {
             debug: true}),
         new webpack.DefinePlugin({
             "process.env": {
-                NODE_ENV: JSON.stringify("development")
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
             }
         }),
         new ExtractTextPlugin('bundle.css')

@@ -5,15 +5,21 @@ import SeafoodStyle from "./SeafoodStyle";
 import Katalog from "../../Katalog";
 import CatalogGroups from "../../components/CatalogGroups/CatalogGroups";
 import AllCards from "../../components/Cards/AllCards";
-import {MobileAgent} from "../../components/MobileAgent/MobileAgent";
-import PouchIcon from "../../containers/PouchIcon/PouchIcon";
 import DeliveryStyle from "../Delivery/DeliveryStyle";
 
 
 const AllSeafood = (props) => {
     let filter, filterCount;
     let {isMinimize} = props;
+
+    /*filterCount = _try(() => props.history.location.state.filterCount, Katalog.FILTER_COUNT)
+    filter = _try(() => props.history.location.state.filter, null);
+    if (!filter){
+        filterCount = Katalog.FILTER_COUNT;
+    }*/
+
     try {
+
         filterCount = props.history.location.state.filterCount;
         if (!filterCount){filterCount = Katalog.FILTER_COUNT;}
     } catch (e) {
@@ -25,6 +31,7 @@ const AllSeafood = (props) => {
         filter = null;
         filterCount = Katalog.FILTER_COUNT;
     }
+
     const token = localStorage.getItem('auth_token');
     let groupItems = Katalog.getGroupItems(filter, filterCount);
     return (
