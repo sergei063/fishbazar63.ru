@@ -9,6 +9,7 @@ import ShoppingCartList from "../containers/ShoppingCart/ShoppingCartList";
 import {connect} from "react-redux";
 import InputTextBox from "../components/InputTextBox/InputTextBox";
 import $ from 'jquery';
+import ym from "react-yandex-metrika";
 
 const ShoppingCart = (props) => {
     return (
@@ -96,6 +97,7 @@ const Basket = (props) => {
                                 & phoneNumber.current.wrappedInstance.validate()
                                 & address.current.wrappedInstance.validate()
                             ) {
+                                ym('reachGoal', 'objective2');
                                 event.nativeEvent.target.disabled=true;
                                 let nativeEvent = event.nativeEvent.target;
 
@@ -105,7 +107,6 @@ const Basket = (props) => {
                                     msg+=`${fish.name} ${fish.count} ${fish.packaging} по ${fish.price} руб  на сумму ${fish.cost} `
                                 }
                                 msg+=`Доставить ${props.placeOfDelivery.where} по адресу ${address.current.wrappedInstance.getValue()}`
-
 
 
                                 $.ajax({

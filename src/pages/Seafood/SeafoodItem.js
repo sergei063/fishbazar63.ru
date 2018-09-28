@@ -11,6 +11,7 @@ import {addFishToSeafoodShoppingCart} from "../../actions";
 import Iinfo from "../../components/Iinfo/Iinfo";
 import AllCards from "../../components/Cards/AllCards";
 import config from "../../config";
+import ym from 'react-yandex-metrika';
 
 
 const BreadCrumbs = (props) => {
@@ -136,6 +137,8 @@ const tooltiptMobileStyle = StyleSheet.create({
 });
 
 const AddShoppingCart = (fish, countFishEl,props) => {
+
+    ym('reachGoal', 'objective1');
     let countFish = Number.parseInt(countFishEl[0].value,10);
 
     if (isNaN(fish.price)){

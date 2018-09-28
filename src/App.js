@@ -25,6 +25,7 @@ import PouchIcon from "./containers/PouchIcon/PouchIcon";
 import Katalog from "./Katalog";
 import config from "./config";
 import Admin from "./pages/Admin/Admin";
+import {YMInitializer} from "react-yandex-metrika";
 
 const Main = () => (
     <main>
@@ -100,6 +101,7 @@ class App extends React.Component {
         let {history} = this.props;
         return (
             <div className={css(AppStyle.container)}>
+                <YMInitializer accounts={[46654176]} />
                 <Header isMobile={this.props.isMobile} />
                 <div style={{position:'relative'}}>
                     <PouchIcon/>
