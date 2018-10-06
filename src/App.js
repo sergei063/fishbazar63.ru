@@ -111,6 +111,7 @@ class App extends React.Component {
                     <Main/>
                 </div>
                 <Footer />
+
             </div>
         )
     }

@@ -26,7 +26,8 @@ let config = {
 if ('production'===process.env.NODE_ENV){
     config = _.assign(serverConfig,config);
 } else {
-    config = _.assign(localConfig,config);
+    //config = _.assign(localConfig,config);
+    config = _.assign(serverConfig,config);
 }
 
 
