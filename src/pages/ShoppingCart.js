@@ -25,7 +25,7 @@ const ShoppingCart = (props) => {
 
 const Basket = (props) => {
     if (props.seafoodShoppingCart.totalCost < 1) {
-        return ( <div>
+        return ( <div style={{height:"300px"}}>
             <div className={css(ShoppingCartStyle.cntArea)}></div>
             <div className={css(ShoppingCartStyle.h1)}>Ваша корзина пуста</div>
         </div>)
@@ -35,7 +35,7 @@ const Basket = (props) => {
     let address = React.createRef();
     let placeOfDeliveryRef = React.createRef();
     return (
-        <div className={css(ShoppingCartStyle.cnt)}>
+    <div className={css(ShoppingCartStyle.cnt)}>
             <div className={css(ShoppingCartStyle.cntArea)}></div>
             <div className={css(ShoppingCartStyle.productCnt)}>
 
@@ -100,14 +100,40 @@ const Basket = (props) => {
                                 ym('reachGoal', 'objective2');
                                 event.nativeEvent.target.disabled=true;
                                 let nativeEvent = event.nativeEvent.target;
+                                let i = 1;
 
-                                let msg = `${nameInput.current.wrappedInstance.getValue()} (${phoneNumber.current.wrappedInstance.getValue()}) сделал заказ на сумму ${(props.seafoodShoppingCart.totalCost + props.placeOfDelivery.price).toFixed(0)} `
+                                let msg = `${nameInput.current.wrappedInstance.getValue()} (${phoneNumber.current.wrappedInstance.getValue()}) сделал заказ на сумму ${(props.seafoodShoppingCart.totalCost + props.placeOfDelivery.price).toFixed(0)} руб.\n`
                                 for (let el in props.seafoodShoppingCart.allFish) {
                                     let fish = props.seafoodShoppingCart.allFish[el];
-                                    msg+=`${fish.name} ${fish.count} ${fish.packaging} по ${fish.price} руб  на сумму ${fish.cost} `
+                                    msg+=`-${i}) ${fish.name} ${fish.count} ${fish.packaging} по ${fish.price} руб  на сумму ${fish.cost}руб.\n`
+                                    i++;
                                 }
                                 msg+=`Доставить ${props.placeOfDelivery.where} по адресу ${address.current.wrappedInstance.getValue()}`
 
+
+
+                                $.ajax({
+                                    url: `http://telegram.fishbazar63.ru/bot274564744:AAEGwFztcyAHcXcuNNR6ZzwiXoY4eY-nXCM/sendMessage?text=<code>${encodeURI(msg)}</code>&parse_mode=HTML&chat_id=92139864`,
+                                    dataType: 'JSONP',
+                                    jsonpCallback: 'callback',
+                                    type: 'GET',
+                                    success: function (data) {
+
+                                        /*
+                                         if (data.status_code === 100) {
+                                             alert("Спасибо, Ваш заказ отправлен в службу доставки! С Вами свяжутся в ближайшее время")
+                                         } else {
+                                             alert("Произошла ошибка: Нет связи с администраторром! Пожалуйста свяжитесь с нами +79277172111")
+                                         }*/
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                    },
+                                    complete: function(jqXHR, textStatus) {
+                                        nativeEvent.disabled=false                                       
+                                        //props.history.push({pathname: `/shopping_cart/ok`})
+                                    }
+                                });
+                           
 
                                 $.ajax({
                                     url: `https://sms.ru/sms/send?api_id=168c57ab-ca50-0e64-8dac-5e7f5106bcc9&to=79277172111&json=1&msg=${encodeURI(msg)}`,
@@ -130,7 +156,7 @@ const Basket = (props) => {
                                         props.history.push({pathname: `/shopping_cart/ok`})
                                     }
                                 });
-                                //props.history.push({pathname: `/shopping_cart/ok`})
+                               
                             }
 
                         }} className={css(AppStyle.buttonRed,ShoppingCartStyle.button)}>Оформить заказ

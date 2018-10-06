@@ -34,7 +34,7 @@
     "start": "cross-env process.env.NODE_ENV=production1 react-scripts start",
     "serv": "nodemon server/server.js",
     "build": "cross-env NODE_ENV=development webpack -d",
-    "production": "cross-env NODE_ENV=production webpack -p --progress",
+    "production": "cross-env NODE_ENV=production1 webpack -p --progress",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
