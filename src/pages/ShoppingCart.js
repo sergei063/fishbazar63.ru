@@ -25,7 +25,7 @@ const ShoppingCart = (props) => {
 
 const Basket = (props) => {
     if (props.seafoodShoppingCart.totalCost < 1) {
-        return ( <div style={{height:"300px"}}>
+        return ( <div style={{minHeight:"60vh"}}>
             <div className={css(ShoppingCartStyle.cntArea)}></div>
             <div className={css(ShoppingCartStyle.h1)}>Ваша корзина пуста</div>
         </div>)
