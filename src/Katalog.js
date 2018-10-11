@@ -500,8 +500,8 @@ const Katalog = {
             let group = Katalog.price[fish];
             if (group.catalog_tittle) {
                 for (let itemNum in  group.items){
-                    if (group.items[itemNum] && group.items[itemNum].id===id){
-
+                    
+                    if (group.items[itemNum] && group.items[itemNum].id===id){                        
                         group.items.splice(itemNum, 1);
                         return true;
                     }
