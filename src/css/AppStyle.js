@@ -70,9 +70,9 @@ const AppStyle = StyleSheet.create({
         backgroundImage: "url(" + require('../img/fon.jpg') + ")",
 
 
-/*
- backgroundImage: "url(" + require('../img/fon.jpg') + "), url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "),url(" + require('../img/fons/krevetki.jpg') + "), linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0) 51%, #000000)",
-*/
+        /*
+         backgroundImage: "url(" + require('../img/fon.jpg') + "), url(" + require('../img/fons/fried_langistines.jpg') + "),url(" + require('../img/fons/langoustine.jpg') + "),url(" + require('../img/fons/mintai.jpg') + "),url(" + require('../img/fons/krevetki.jpg') + "), linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0) 51%, #000000)",
+        */
 
         /*'@media (max-width: 750px)': {
             backgroundImage: "url(" + require('../img/fon.jpg') + ")",
@@ -175,7 +175,7 @@ const AppStyle = StyleSheet.create({
 
         width: '263px',
         height: '26px',
-        fontFamily: [MetaSerifProFont,'sans-serif'],
+        fontFamily: [MetaSerifProFont, 'sans-serif'],
         fontSize: '20px',
         fontWeight: '500',
         fontStyle: 'normal',
@@ -189,24 +189,24 @@ const AppStyle = StyleSheet.create({
         }
 
     },
-    fastDeliveryText:{
-        position:'absolute',
-        fontFamily: [FuturaMediumFont,'sans-serif'],
-        left:'0px',
-        bottom:'54px',
-        width:'100%',
-        textAlign:'center',
+    fastDeliveryText: {
+        position: 'absolute',
+        fontFamily: [FuturaMediumFont, 'sans-serif'],
+        left: '0px',
+        bottom: '54px',
+        width: '100%',
+        textAlign: 'center',
         color: '#ffffff',
-       fontSize: "14px",
-       fontWeight: "500",
-       fontStyle: "normal",
-       fontStretch: "normal",
-       lineHeight: "normal",
-       letterSpacing: "0.5",
+        fontSize: "14px",
+        fontWeight: "500",
+        fontStyle: "normal",
+        fontStretch: "normal",
+        lineHeight: "normal",
+        letterSpacing: "0.5",
 
 
         '@media (max-width: 500px)': {
-         display:'none'
+            display: 'none'
         }
     },
     clearBoth: {
@@ -288,33 +288,33 @@ const AppStyle = StyleSheet.create({
 
 
     inlineBlock: {
-        display:'inline-block'
+        display: 'inline-block'
     },
     width100: {
-        width:'100%'
+        width: '100%'
     },
     menu_inline_logo: {
         flexGrow: '2',
-        height:'160px',
+        height: '160px',
         marginTop: '17px',
         '@media (max-width: 900px)': {
-           display:'none'
+            display: 'none'
         }
     },
     menu_inline: {
-        fontFamily: [FuturaMediumFontOld,"sans-serif"],
+        fontFamily: [FuturaMediumFontOld, "sans-serif"],
         color: '#212121',
         //minWidth:'150px',
         //width:'15%',
-        flexGrow:'1',
-        marginTop:'15px',
+        flexGrow: '1',
+        marginTop: '15px',
         fontWeight: '700',
         "fontSize": "18px",
         "lineHeight": "1.29",
         "letterSpacing": "0.5px",
         //backgroundColor: 'white',
         ':hover': {
-            color:'#fe545b'
+            color: '#fe545b'
         },
         '@media (max-width: 900px)': {
             marginRight: '0.5em',
@@ -326,20 +326,20 @@ const AppStyle = StyleSheet.create({
             letterSpacing: "0.5px",
             textAlign: "center",
             color: "#000000",
-            width:'100%'
+            width: '100%'
 
         }
     },
     menu_inline_tel: {
         fontFamily: [FuturaFont, "sans-serif"],
-        fontSize:'22px',
-        textAlign:'right'
+        fontSize: '22px',
+        textAlign: 'right'
 
     },
     menu_inline_tel_hidden: {
 
         '@media (max-width: 500px)': {
-         display:'none'
+            display: 'none'
         }
     },
     menu_inline_ul: {
@@ -386,14 +386,14 @@ const AppStyle = StyleSheet.create({
 
     buttonRed: {
         color: '#fff',
-        border:'0',
-        fontSize:'14px',
+        border: '0',
+        fontSize: '14px',
         fontFamily: [LucidaGrandeFont, "sans-serif"],
         textDecoration: 'none',
         userSelect: 'none',
         background: '#fe545b',
-        height:'40px',
-        borderRadius:'100px',
+        height: '40px',
+        borderRadius: '100px',
         outline: 'none',
         cursor: 'pointer',
         ':hover': {
@@ -405,15 +405,15 @@ const AppStyle = StyleSheet.create({
     },
     buttonGrey: {
         color: '#000',
-        border:'0',
-        fontSize:'14px',
+        border: '0',
+        fontSize: '14px',
         fontFamily: [LucidaGrandeFont, "sans-serif"],
         textDecoration: 'none',
         userSelect: 'none',
-        fontWeight:'bold',
+        fontWeight: 'bold',
         background: 'rgba(31, 35, 44, 0.1)',
-        height:'40px',
-        borderRadius:'100px',
+        height: '40px',
+        borderRadius: '100px',
         outline: 'none',
         cursor: 'pointer',
         ':hover': {
@@ -469,8 +469,8 @@ const AppStyle = StyleSheet.create({
     },
 
     footer: {
-        position:'relative',
-        zIndex:'100',
+        position: 'relative',
+        zIndex: '100',
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -480,14 +480,14 @@ const AppStyle = StyleSheet.create({
 
         backgroundColor: '#1e232c',
         height: '192px',
-        '@media (max-width: 600px)':{
+        '@media (max-width: 600px)': {
             "flexDirection": "column",
             "height": "300px",
-            paddingTop:'40px',
-            paddingBottom:'40px',
+            paddingTop: '40px',
+            paddingBottom: '40px',
         }
     },
-    footer_link:{
+    footer_link: {
         fontFamily: [FuturaMediumFont, "sans-serif"],
         fontSize: '17px',
         fontWeight: '500',
@@ -498,16 +498,16 @@ const AppStyle = StyleSheet.create({
         color: '#ffffff'
     },
 
-    footer_menu:{
+    footer_menu: {
         lineHeight: '34px',
-        textAlign:'left',
-        '@media (max-width: 600px)':{
-            width:'100%',
-            textAlign:'center'
+        textAlign: 'left',
+        '@media (max-width: 600px)': {
+            width: '100%',
+            textAlign: 'center'
 
         }
     },
-    phoneNumber:{
+    phoneNumber: {
         fontFamily: [FuturaMediumFont, "sans-serif"],
         fontSize: '18px',
         fontWeight: '500',
@@ -517,21 +517,21 @@ const AppStyle = StyleSheet.create({
         letterSpacing: '0.6px',
         textAlign: 'right',
         color: '#ffffff',
-        marginBottom:'15px',
-        '@media (max-width: 600px)':{
-            textAlign:'center'
+        marginBottom: '15px',
+        '@media (max-width: 600px)': {
+            textAlign: 'center'
 
         }
     },
-    phoneNumberMobileHide:{
-        display:'block',
-        '@media (max-width: 600px)':{
-            display:'none'
+    phoneNumberMobileHide: {
+        display: 'block',
+        '@media (max-width: 600px)': {
+            display: 'none'
         }
-    },phoneNumberMobileShow:{
-        display:'none',
-        '@media (max-width: 600px)':{
-            display:'block'
+    }, phoneNumberMobileShow: {
+        display: 'none',
+        '@media (max-width: 600px)': {
+            display: 'block'
         }
     }
 });

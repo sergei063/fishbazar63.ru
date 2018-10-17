@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {css, StyleSheet} from "aphrodite/no-important";
 import {connect} from "react-redux";
-import {_try} from "../../components/lib";
 import $ from 'jquery'
 
 class PouchIcon extends React.Component {
@@ -21,6 +20,7 @@ class PouchIcon extends React.Component {
 
         setTimeout(() => span.removeClass(css(Style.pouch_a_span_animation)), 1000);
     }
+
     render() {
 
         let lenght = Object.keys(this.props.seafoodShoppingCart.allFish).length;
@@ -59,12 +59,12 @@ const PouchASpanKeyframe = {
 
 const Style = StyleSheet.create({
 
-    displayNone: {display:'none'},
+    displayNone: {display: 'none'},
     positionStyle: {
 
 
         '@media (max-width: 900px)': {
-            top:'148px',right:'15px'
+            top: '148px', right: '15px'
         },
     },
     pouchA: {
@@ -73,19 +73,18 @@ const Style = StyleSheet.create({
         animationIterationCount: '1',
 
 
-        position:'fixed',
-        zIndex:'9999',
+        position: "fixed",
+        zIndex: '9999',
         background: "#ffffff  image-set(url(" + require('../../img/bucket/normal.png') + ") 1x, url(" + require('../../img/bucket/normal@2x.png') + ") 2x, url(" + require('../../img/bucket/normal@3x.png') + ") 3x) no-repeat 50% 19px",
         height: '68px', width: '68px',
         borderRadius: '44px',
         //position: 'absolute',
-        top:'185px',
-        right:'27px',
+        top: '235px',
+        right: '27px',
         boxShadow: '0 1px 22px 0 rgba(0, 0, 0, 0.08)',
         transition: 'right 2s ease 0s',
         ':hover': {
             backgroundImage: "image-set(url(" + require('../../img/bucket/hover.png') + ") 1x, url(" + require('../../img/bucket/hover@2x.png') + ") 2x, url(" + require('../../img/bucket/hover@3x.png') + ") 3x)",
-
 
 
         },
@@ -95,23 +94,19 @@ const Style = StyleSheet.create({
             /*border: '1px solid #fe545b'*/
         },
         '@media (max-width: 900px)': {
-            top:'148px',right:'15px'
+            top: '148px', right: '15px'
         },
         '@media (max-width: 500px)': {
-            top:'148px',
-            right:'16px',
+            top: '148px',
+            right: '16px',
         }
     },
-    pouch_a_span_animation:{
+    pouch_a_span_animation: {
         animationName: [PouchASpanKeyframe],
         animationDuration: '0.5s',
         animationIterationCount: '1',
     },
     pouch_a_span: {
-
-
-
-
 
 
         position: 'absolute',
@@ -133,10 +128,8 @@ const Style = StyleSheet.create({
     }
 
 
-
-
 });
 const mapStateToProps = (state) => ({seafoodShoppingCart: state.seafoodShoppingCart});
 
-export default connect(mapStateToProps) (PouchIcon);
+export default connect(mapStateToProps)(PouchIcon);
 

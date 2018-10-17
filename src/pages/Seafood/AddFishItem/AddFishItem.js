@@ -100,9 +100,9 @@ class AddFishItem extends React.Component {
     saveData(selectedFish){
         (async () => {
             try {
-                //Katalog.delete('');                                
+                //Katalog.delete('');
                 const newFish = this.getFishItemFromRefs();
-                
+
                 if (!newFish ||  !newFish.id ||  !newFish.id===''){
                     console.log(newFish);
                     alert(`Ошибка: Не задан идентификатор`)
@@ -114,12 +114,12 @@ class AddFishItem extends React.Component {
                     alert(`Ошибка: Товар с данным идентификатором ${newFish.id} существует\nУдалите старый товар ${finedFish.name} или введите другой идентификатор`)
                     return;
                 }
-                
+
                 if (newFish.img===null){
                     newFish.img = selectedFish.img;
                 }
-                Katalog.setFishItem(this.fishGroupRef.current.ref.current.value,newFish)                
-                                                
+                Katalog.setFishItem(this.fishGroupRef.current.ref.current.value,newFish)
+
 
 
                 const responseSetCatalog = await axios.post(`${config.serverAPI}/set_catalog`,{

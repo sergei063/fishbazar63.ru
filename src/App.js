@@ -45,42 +45,50 @@ const Main = () => (
     </main>
 );
 const Footer = () => (
-    <div className={css(AppStyle.footer, AppStyle.textAlignCenter)}>
-        <div><Link to={`/`}>
-            <img src={require('./img/design/footer_logo/footer_logo.png')}
-                 srcSet={`${require('./img/design/footer_logo/footer_logo2x.png')} 2x, ${require('./img/design/footer_logo/footer_logo3x.png')} 3x`}
-                 width='136px' height='96px'></img></Link>
-        </div>
-        <div className={css(AppStyle.footer_menu)}>
-            <div className={css(AppStyle.phoneNumberMobileShow)}>
+    <div>
+
+        <div className={css(AppStyle.footer, AppStyle.textAlignCenter)}>
+
+
+            <div><Link to={`/`}>
+                <img src={require('./img/design/footer_logo/footer_logo.png')}
+                     srcSet={`${require('./img/design/footer_logo/footer_logo2x.png')} 2x, ${require('./img/design/footer_logo/footer_logo3x.png')} 3x`}
+                     width='136px' height='96px'></img></Link>
+
+            </div>
+
+            <div className={css(AppStyle.footer_menu)}>
+                <div className={css(AppStyle.phoneNumberMobileShow)}>
+                    <div className={css(AppStyle.phoneNumber)}>
+                        <a href='tel:+88007070794'>
+                            <nobr>8 800 707-07-94</nobr>
+                        </a>
+                    </div>
+                </div>
+                <Link className={css(AppStyle.footer_link)} to='/production'>Морепродукты</Link><br/>
+                <Link className={css(AppStyle.footer_link)} to='/quality_assurance'>Гарантия качества</Link>
+            </div>
+
+            <div className={css(AppStyle.footer_menu)}>
+                <Link className={css(AppStyle.footer_link)} to='/delivery'>Доставка</Link><br/>
+                <Link className={css(AppStyle.footer_link)} to='/blog'>Рецепты</Link>
+            </div>
+
+            <div className={css(AppStyle.phoneNumberMobileHide)}>
                 <div className={css(AppStyle.phoneNumber)}>
                     <a href='tel:+88007070794'>
-                        <nobr>8 800 707-07-94</nobr>
+                        <nobr>8 (917) 168 27 71</nobr>
                     </a>
                 </div>
-            </div>
-            <Link className={css(AppStyle.footer_link)} to='/production'>Морепродукты</Link><br/>
-            <Link className={css(AppStyle.footer_link)} to='/quality_assurance'>Гарантия качества</Link>
-        </div>
-
-        <div className={css(AppStyle.footer_menu)}>
-            <Link className={css(AppStyle.footer_link)} to='/delivery'>Доставка</Link><br/>
-            <Link className={css(AppStyle.footer_link)} to='/blog'>Рецепты</Link>
-        </div>
-        <div className={css(AppStyle.phoneNumberMobileHide)}>
-            <div className={css(AppStyle.phoneNumber)}>
-                <a href='tel:+88007070794'>
-                    <nobr>8 (917) 168 27 71</nobr>
-                </a>
-            </div>
-            <Instagram/><span className={css(SocialNetworkBlockStyle.PL20)}>
+                <Instagram/><span className={css(SocialNetworkBlockStyle.PL20)}>
                             <VK/>
                         </span>
-        </div>
+            </div>
 
 
-        {/*<a href="https://metrika.yandex.ru/stat/?id=46654176&amp;from=informer"
+            {/*<a href="https://metrika.yandex.ru/stat/?id=46654176&amp;from=informer"
                target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/46654176/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style={{width:"88px", height:"31px", border:"0"}} alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="46654176" data-lang="ru" /></a>*/}
+        </div>
     </div>
 
 );
@@ -91,37 +99,38 @@ class App extends React.Component {
         //console.log(process.env.NODE_ENV)
 
 
-
     }
+
     componentWillMount() {
 
     }
+
     render() {
 
         let {history} = this.props;
         return (
             <div className={css(AppStyle.container)}>
-                <YMInitializer accounts={[46654176]} />
-                <Header isMobile={this.props.isMobile} />
-                <div style={{position:'relative'}}>
+                <YMInitializer accounts={[46654176]}/>
+                <Header isMobile={this.props.isMobile}/>
+                <div style={{position: 'relative'}}>
                     <PouchIcon/>
-                    {(history.location.pathname === '/' )&&
+                    {(history.location.pathname === '/') &&
                     <Slider/>
                     }
                     <Main/>
                 </div>
-                <Footer />
+                <Footer/>
 
             </div>
         )
     }
-    componentDidMount(){
+
+    componentDidMount() {
         (async () => {
             try {
                 const responseCatalog = await axios.get(`${config.serverAPI}/catalog`);
                 //console.log(responseCatalog);
                 Katalog.setPrice(responseCatalog.data);
-
 
 
                 if (localStorage.getItem('auth_token')) {
@@ -144,34 +153,33 @@ class App extends React.Component {
         })();
 
 
-      /*  axios.get(`${config.serverAPI}/catalog`)
-            .then(res => {
+        /*  axios.get(`${config.serverAPI}/catalog`)
+              .then(res => {
 
-                const price = res.data;
-                Katalog.setPrice(res.data);
-                this.forceUpdate();
+                  const price = res.data;
+                  Katalog.setPrice(res.data);
+                  this.forceUpdate();
 
-                if (localStorage.getItem('auth_token')) {
-                    axios.post(`${config.serverAPI}/check_user`, {
-                        catalog: Katalog.price,
-                        auth_token: localStorage.getItem('auth_token')
-                    }).then(function (response) {
+                  if (localStorage.getItem('auth_token')) {
+                      axios.post(`${config.serverAPI}/check_user`, {
+                          catalog: Katalog.price,
+                          auth_token: localStorage.getItem('auth_token')
+                      }).then(function (response) {
 
-                        console.log(response);
-                    }).catch(function (error) {
-                        localStorage.removeItem("auth_token");
-                        console.log(error);
-                    });
-                }
-
-
-            });*/
+                          console.log(response);
+                      }).catch(function (error) {
+                          localStorage.removeItem("auth_token");
+                          console.log(error);
+                      });
+                  }
 
 
+              });*/
 
 
     }
-    componentDidUpdate(){
+
+    componentDidUpdate() {
 
     }
 }
