@@ -219,7 +219,7 @@ const HeaderStyle = StyleSheet.create({
     ':hover': {},
   },
   pouchMobileMenuClose: {
-    background: `#fff  image-set(url(${require('../img/design/menu_close/menu-close.png')}) 1x, url(${require('../img/design/menu_close/menu-close2x.png')}) 2x, url(${require('../img/design/menu_close/menu-close3x.png')}) 3x     ) no-repeat 50% 0px`,
+    background: `image-set(url(${require('../img/design/menu_close/menu-close.png')}) 1x, url(${require('../img/design/menu_close/menu-close2x.png')}) 2x, url(${require('../img/design/menu_close/menu-close3x.png')}) 3x     ) no-repeat 50% 0px`,
     height: '44px',
     width: '44px',
     float: 'left',

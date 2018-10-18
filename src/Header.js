@@ -5,6 +5,7 @@ import {css} from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 import HeaderStyle from './css/HeaderStyle';
 import $ from 'jquery';
+import HeaderSales from "./components/HeaderSales";
 
 const mobileMenuClick = (event) => {
   if (event) event.preventDefault();
@@ -19,27 +20,7 @@ const mobileMenuClick = (event) => {
     hideMobileMenu();
   }
 };
-const scrollToFooter = (showSales) => {
 
-
-  if (showSales) {
-    $('.header_sales').css('height', '60vh');
-
-    $('.header_sales')
-      .find('div:not(:first-child)')
-      .css('display', 'block');
-  } else {
-    $('.header_sales').css('height', '');
-    $('.header_sales')
-      .find('div:not(:first-child)')
-      .css('display', 'none');
-  }
-  //  window.location = "https://vk.com/id454817122?w=wall454817122_189%2Fall";
-  //  window.open('https://vk.com/id454817122?w=wall454817122_189%2Fall', '_blank');
-  //  https://vk.com/id454817122?w=wall454817122_189%2Fall
-
-  //  $('html,body').animate({scrollTop: document.body.scrollHeight},{duration: 1000});
-};
 const showMobileMenu = () => {
   $('#menu_inline_ul').removeClass(css(HeaderStyle.menuInlineUl));
   $('#menu_inline_ul').addClass(css(HeaderStyle.menuInlineUlBlock));
@@ -88,7 +69,6 @@ class Header extends React.Component {
   };
 
   render() {
-    scrollToFooter(this.state.showSales);
     return (
       <header>
         <nav>
@@ -236,36 +216,7 @@ class Header extends React.Component {
               </li>
             </ul>
           </div>
-          <div
-            className={[
-              `${css(HeaderStyle.sales, HeaderStyle.salesH1)} header_sales`,
-            ]}
-            onClick={(event) => {
-              event.preventDefault();
-              this.setState({ showSales: !this.state.showSales });
-            }}
-          >
-            <div className={css(HeaderStyle.salesFirstChild)}>
-              Получи скидку до 7 %
-            </div>
-            <div className={css(HeaderStyle.salesChild)}>
-              -Каждый,купивший у&nbsp;нас 8&nbsp;и&nbsp;более кг&nbsp;продукции
-              в&nbsp;месяц, частями или единовременно,получает скидку 4%.
-            </div>
-            <div className={css(HeaderStyle.salesChild)}>
-              Скидка распространяется на&nbsp;текущий и&nbsp;следующий месяц.{' '}
-            </div>
-            <div className={css(HeaderStyle.salesChild)}>
-              -В следующем месяце при покупке от&nbsp;8&nbsp;кг
-              продукции,получаете скидку уже 7%
-            </div>
-            <div className={css(HeaderStyle.salesChild)}>
-              -А каждому новому покупателю подарим скидку 4%
-            </div>
-            <div className={css(HeaderStyle.salesChild)}>
-              -За более подробной информацией об&nbsp;акции звоните 89171682771
-            </div>
-          </div>
+          <HeaderSales/>
         </nav>
       </header>
     );
