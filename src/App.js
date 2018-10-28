@@ -1,198 +1,188 @@
 import React from 'react';
+import axios from 'axios';
+import {css} from 'aphrodite/no-important';
 import Header from './Header';
 import Slider from './Slider';
 import Home from './pages/Home/Home';
 import About from './pages/About';
 import AboutFish from './pages/AboutFish';
 import ShoppingCart from './pages/ShoppingCart';
-import axios from 'axios';
 import Location from './pages/Location';
-import {css} from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
-import {Link, Route, Switch} from 'react-router-dom'
-import News from "./pages/News";
-import SocialNetworkBlockStyle from "./pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle";
-import Instagram from "./components/SocialNetwork/Instagram";
-import VK from "./components/SocialNetwork/Vk";
-import QualityAssurance from "./pages/QualityAssurance/QualityAssurance";
-import DeliveryPage from "./pages/Delivery/DeliveryPage";
-import Seafood from "./pages/Seafood/Seafood";
-import Blog from "./pages/Blog/Blog";
-import PouchIcon from "./containers/PouchIcon/PouchIcon";
-import Katalog from "./Katalog";
-import config from "./config";
-import Admin from "./pages/Admin/Admin";
-import {YMInitializer} from "react-yandex-metrika";
+import {Link, Route, Switch} from 'react-router-dom';
+import News from './pages/News';
+import SocialNetworkBlockStyle from './pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle';
+import Instagram from './components/SocialNetwork/Instagram';
+import VK from './components/SocialNetwork/Vk';
+import QualityAssurance from './pages/QualityAssurance/QualityAssurance';
+import DeliveryPage from './pages/Delivery/DeliveryPage';
+import Seafood from './pages/Seafood/Seafood';
+import Blog from './pages/Blog/Blog';
+import PouchIcon from './containers/PouchIcon/PouchIcon';
+import Katalog from './Katalog';
+import config from './config';
+import Admin from './pages/Admin/Admin';
+import {YMInitializer} from 'react-yandex-metrika';
+import {setAllPlacesOfDelivery} from './actions';
+import connect from 'react-redux/es/connect/connect';
 
 const Main = () => (
-    <main>
-        <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/production' component={Seafood}/>
-            <Route path='/fbadmin' component={Admin}/>
-            <Route path='/blog' component={Blog}/>
-            <Route path='/about' component={About}/>
-            <Route path='/news' component={News}/>
-            <Route path='/about_fish' component={AboutFish}/>
-            <Route path='/shopping_cart' component={ShoppingCart}/>
-            <Route path='/location' component={Location}/>
-            <Route path='/quality_assurance' component={QualityAssurance}/>
-            <Route path='/delivery' component={DeliveryPage}/>
-        </Switch>
-    </main>
+  <main>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/production" component={Seafood} />
+      <Route path="/fbadmin" component={Admin} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/about" component={About} />
+      <Route path="/news" component={News} />
+      <Route path="/about_fish" component={AboutFish} />
+      <Route path="/shopping_cart" component={ShoppingCart} />
+      <Route path="/location" component={Location} />
+      <Route path="/quality_assurance" component={QualityAssurance} />
+      <Route path="/delivery" component={DeliveryPage} />
+    </Switch>
+  </main>
 );
 const Footer = () => (
-    <div>
+  <div>
+    <div className={css(AppStyle.footer, AppStyle.textAlignCenter)}>
+      <div>
+        <Link to={'/'}>
+          <img
+            src={require('./img/design/footer_logo/footer_logo.png')}
+            srcSet={`${require('./img/design/footer_logo/footer_logo2x.png')} 2x, ${require('./img/design/footer_logo/footer_logo3x.png')} 3x`}
+            width="136px"
+            height="96px"
+          />
+        </Link>
+      </div>
 
-        <div className={css(AppStyle.footer, AppStyle.textAlignCenter)}>
-
-
-            <div><Link to={`/`}>
-                <img src={require('./img/design/footer_logo/footer_logo.png')}
-                     srcSet={`${require('./img/design/footer_logo/footer_logo2x.png')} 2x, ${require('./img/design/footer_logo/footer_logo3x.png')} 3x`}
-                     width='136px' height='96px'></img></Link>
-
-            </div>
-
-            <div className={css(AppStyle.footer_menu)}>
-                <div className={css(AppStyle.phoneNumberMobileShow)}>
-                    <div className={css(AppStyle.phoneNumber)}>
-                        <a href='tel:+88007070794'>
-                            <nobr>8 800 707-07-94</nobr>
-                        </a>
-                    </div>
-                </div>
-                <Link className={css(AppStyle.footer_link)} to='/production'>Морепродукты</Link><br/>
-                <Link className={css(AppStyle.footer_link)} to='/quality_assurance'>Гарантия качества</Link>
-            </div>
-
-            <div className={css(AppStyle.footer_menu)}>
-                <Link className={css(AppStyle.footer_link)} to='/delivery'>Доставка</Link><br/>
-                <Link className={css(AppStyle.footer_link)} to='/blog'>Рецепты</Link>
-            </div>
-
-            <div className={css(AppStyle.phoneNumberMobileHide)}>
-                <div className={css(AppStyle.phoneNumber)}>
-                    <a href='tel:+88007070794'>
-                        <nobr>8 (917) 168 27 71</nobr>
-                    </a>
-                </div>
-                <Instagram/><span className={css(SocialNetworkBlockStyle.PL20)}>
-                            <VK/>
-                        </span>
-            </div>
-
-
-            {/*<a href="https://metrika.yandex.ru/stat/?id=46654176&amp;from=informer"
-               target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/46654176/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style={{width:"88px", height:"31px", border:"0"}} alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="46654176" data-lang="ru" /></a>*/}
+      <div className={css(AppStyle.footer_menu)}>
+        <div className={css(AppStyle.phoneNumberMobileShow)}>
+          <div className={css(AppStyle.phoneNumber)}>
+            <a href="tel:+88007070794">
+              <nobr>8 800 707-07-94</nobr>
+            </a>
+          </div>
         </div>
-    </div>
+        <Link className={css(AppStyle.footer_link)} to="/production">
+          Морепродукты
+        </Link>
+        <br />
+        <Link className={css(AppStyle.footer_link)} to="/quality_assurance">
+          Гарантия качества
+        </Link>
+      </div>
 
+      <div className={css(AppStyle.footer_menu)}>
+        <Link className={css(AppStyle.footer_link)} to="/delivery">
+          Доставка
+        </Link>
+        <br />
+        <Link className={css(AppStyle.footer_link)} to="/blog">
+          Рецепты
+        </Link>
+      </div>
+
+      <div className={css(AppStyle.phoneNumberMobileHide)}>
+        <div className={css(AppStyle.phoneNumber)}>
+          <a href="tel:+88007070794">
+            <nobr>8 (917) 168 27 71</nobr>
+          </a>
+        </div>
+        <Instagram />
+        <span className={css(SocialNetworkBlockStyle.PL20)}>
+          <VK />
+        </span>
+      </div>
+
+      {/* <a href="https://metrika.yandex.ru/stat/?id=46654176&amp;from=informer"
+               target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/46654176/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style={{width:"88px", height:"31px", border:"0"}} alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="46654176" data-lang="ru" /></a> */}
+    </div>
+  </div>
 );
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        //console.log(process.env.NODE_ENV)
+  render() {
+    const { history } = this.props;
+    return (
+      <div className={css(AppStyle.container)}>
+        <YMInitializer accounts={[46654176]} />
+        <Header isMobile={this.props.isMobile} />
+        <div style={{ position: 'relative' }}>
+          <PouchIcon />
+          {history.location.pathname === '/' && <Slider />}
+          <Main />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
+  componentDidMount() {
+    (async () => {
+      try {
+        const responseCatalog = await axios.get(`${config.serverAPI}/catalog`);
 
-    }
+        this.props.setAllPlacesOfDelivery([
+          { where: 'г.Новокуйбышевск', price: 70 },
+          { where: 'п.Гранный', price: 70 },
+          { where: 'г.Самара ', price: 150 },
+          { where: 'Сухая Самарка', price: 100 },
+          { where: 'Жилой район Волгарь', price: 100 },
+          { where: '116км.', price: 100 },
+          { where: 'Красноглинский район', price: 250 },
+        ]);
+        // console.log(responseCatalog);
+        Katalog.setPrice(responseCatalog.data);
 
-    componentWillMount() {
+        if (localStorage.getItem('auth_token')) {
+          try {
+            await axios.post(`${config.serverAPI}/check_user`, {
+              auth_token: localStorage.getItem('auth_token'),
+            });
+            this.forceUpdate();
+          } catch (e) {
+            localStorage.removeItem('auth_token');
+            this.forceUpdate();
+          }
+        } else {
+          this.forceUpdate();
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }
 
-    }
-
-    render() {
-
-        let {history} = this.props;
-        return (
-            <div className={css(AppStyle.container)}>
-                <YMInitializer accounts={[46654176]}/>
-                <Header isMobile={this.props.isMobile}/>
-                <div style={{position: 'relative'}}>
-                    <PouchIcon/>
-                    {(history.location.pathname === '/') &&
-                    <Slider/>
-                    }
-                    <Main/>
-                </div>
-                <Footer/>
-
-            </div>
-        )
-    }
-
-    componentDidMount() {
-        (async () => {
-            try {
-                const responseCatalog = await axios.get(`${config.serverAPI}/catalog`);
-                //console.log(responseCatalog);
-                Katalog.setPrice(responseCatalog.data);
-
-
-                if (localStorage.getItem('auth_token')) {
-                    try {
-                        const responseCheckUser = await axios.post(`${config.serverAPI}/check_user`, {auth_token: localStorage.getItem('auth_token')});
-                        this.forceUpdate();
-                    } catch (e) {
-                        localStorage.removeItem("auth_token");
-                        this.forceUpdate();
-                    }
-
-                } else {
-                    this.forceUpdate();
-                }
-
-
-            } catch (error) {
-                console.error(error);
-            }
-        })();
-
-
-        /*  axios.get(`${config.serverAPI}/catalog`)
-              .then(res => {
-
-                  const price = res.data;
-                  Katalog.setPrice(res.data);
-                  this.forceUpdate();
-
-                  if (localStorage.getItem('auth_token')) {
-                      axios.post(`${config.serverAPI}/check_user`, {
-                          catalog: Katalog.price,
-                          auth_token: localStorage.getItem('auth_token')
-                      }).then(function (response) {
-
-                          console.log(response);
-                      }).catch(function (error) {
-                          localStorage.removeItem("auth_token");
-                          console.log(error);
-                      });
-                  }
-
-
-              });*/
-
-
-    }
-
-    componentDidUpdate() {
-
-    }
+  componentDidUpdate() {}
 }
 
+const mapStateToProps = (state) => ({
+  allPlaceOfDelivery: state.allPlaceOfDelivery,
+});
 
-export default App;
+const matchDispatchToProps = (dispatch) => ({
+  setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
+    dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery));
+  },
+});
+export default connect(
+  mapStateToProps,
+  matchDispatchToProps,
+  null,
+  { withRef: true },
+)(App);
+//  export default App;
 
-//const mapStateToProps = (state) => ({});
+// const mapStateToProps = (state) => ({});
 
+// export default connect(mapStateToProps) (App);
 
-//export default connect(mapStateToProps) (App);
-
-/*const mapStateToProps = (state) => ({});
+/* const mapStateToProps = (state) => ({});
 
 const matchDispatchToProps = (dispatch) => ({
     setPrice: (document) => {
@@ -200,4 +190,4 @@ const matchDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps, matchDispatchToProps, null, {withRef: true})(App);*/
+export default connect(mapStateToProps, matchDispatchToProps, null, {withRef: true})(App); */
