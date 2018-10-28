@@ -13,6 +13,7 @@ const delivery = [
   { where: 'Сухая Самарка', price: 100 },
   { where: 'Жилой район Волгарь', price: 100 },
   { where: '116км.', price: 100 },
+  { where: 'п. Мехзавод, п.Управленческий,п. Красная глинка', price: 250 },
 ];
 
 const getDeliveryByWhere = (where) => {
