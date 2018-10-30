@@ -33,6 +33,7 @@ mongoimport.exe --db api_fishbazar  --collection fish_catalog  --file ./fish_cat
 
 mongoexport --db api_fishbazar --collection fish_catalog --out /d/fish_catalog.json
 mongoexport --db api_fishbazar --collection recipes --out /d/recipes.json
+mongoexport --db api_fishbazar --collection all_places_of_delivery --out /d/all_places_of_delivery.json
 
 =========
 

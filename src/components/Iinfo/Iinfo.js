@@ -1,15 +1,12 @@
 import React from 'react';
-import {StyleSheet, css} from 'aphrodite/no-important';
-import {MetaSerifProBookFont, MetaSerifProFont} from "../../css/Fonts";
-import {_try} from "../lib";
-
+import {css, StyleSheet} from 'aphrodite/no-important';
+import {MetaSerifProBookFont} from '../../css/Fonts';
+import {_try} from '../lib';
 
 const getSocialBlock = (visibleSocialBlock) => {
+  if (!visibleSocialBlock) return '';
 
-    if (!visibleSocialBlock)
-        return "";
-
-    return `<div style="margin-top: 16px"><span><a href={'https://www.instagram.com/fishbazar63/'} target='_blank'>
+  return `<div style="margin-top: 16px"><span><a href={'https://www.instagram.com/fishbazar63/'} target='_blank'>
             <a href='https://www.instagram.com/fishbazar63/' target='_blank'><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
                 <g fill="#7794E6" fill-rule="nonzero">
                     <path
@@ -24,131 +21,147 @@ const getSocialBlock = (visibleSocialBlock) => {
     <path fill="#7794E6" fill-rule="nonzero" d="M15 30C6.716 30 0 23.284 0 15 0 6.716 6.716 0 15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15zm9.748-8.877a1.289 1.289 0 0 0-.069-.137c-.357-.657-1.039-1.464-2.046-2.42l-.022-.022-.01-.01-.011-.012h-.01c-.457-.445-.746-.744-.869-.898-.22-.292-.27-.588-.149-.888.085-.226.407-.703.963-1.434.293-.386.525-.696.697-.93 1.236-1.68 1.77-2.753 1.606-3.22l-.063-.109c-.044-.066-.154-.126-.332-.181-.178-.054-.407-.063-.686-.027l-3.085.021a.394.394 0 0 0-.213.006 15.7 15.7 0 0 1-.14.033l-.054.027-.043.033a.475.475 0 0 0-.117.116.738.738 0 0 0-.108.192 18.103 18.103 0 0 1-1.145 2.463c-.264.452-.507.845-.73 1.177a5.64 5.64 0 0 1-.556.735c-.15.156-.286.282-.406.377-.123.094-.215.135-.28.12l-.182-.044a.728.728 0 0 1-.24-.268 1.235 1.235 0 0 1-.124-.427 5.16 5.16 0 0 1-.037-.443c-.003-.125-.001-.3.005-.526.008-.226.012-.38.012-.46 0-.278.005-.579.015-.903l.027-.772c.008-.19.01-.392.01-.603 0-.212-.011-.378-.037-.499a1.7 1.7 0 0 0-.112-.35.585.585 0 0 0-.22-.262 1.235 1.235 0 0 0-.358-.149c-.378-.087-.86-.134-1.447-.142-1.328-.014-2.18.074-2.56.263-.149.08-.285.19-.406.329-.129.16-.147.248-.054.263.428.065.731.222.91.47l.064.132c.05.094.1.263.15.503.051.24.083.508.097.8.035.533.035.99 0 1.368-.036.38-.07.676-.101.887a1.807 1.807 0 0 1-.146.516 2.066 2.066 0 0 1-.128.24.21.21 0 0 1-.053.055.812.812 0 0 1-.29.054c-.1 0-.222-.051-.364-.152a2.59 2.59 0 0 1-.444-.422 5.511 5.511 0 0 1-.52-.75c-.192-.322-.393-.701-.6-1.14l-.17-.317a29.348 29.348 0 0 1-.44-.893c-.186-.39-.35-.768-.493-1.133a.712.712 0 0 0-.257-.35l-.053-.033a.703.703 0 0 0-.172-.093 1.123 1.123 0 0 0-.246-.07l-2.935.02c-.3 0-.503.07-.61.21l-.043.064a.361.361 0 0 0-.032.176c0 .08.022.178.064.295.428 1.03.894 2.022 1.398 2.98.502.955.94 1.725 1.311 2.309.372.585.75 1.136 1.135 1.654.386.518.642.85.767.996.124.146.223.256.294.329l.268.263c.172.175.423.385.756.63.331.244.699.484 1.103.722.403.237.873.432 1.408.58.536.15 1.057.21 1.564.181h1.232c.25-.022.439-.102.567-.24l.043-.055a.737.737 0 0 0 .08-.203 1.16 1.16 0 0 0 .038-.3 3.64 3.64 0 0 1 .07-.85c.052-.251.114-.442.182-.57.068-.127.144-.234.23-.321a.898.898 0 0 1 .183-.16.514.514 0 0 1 .084-.037c.171-.06.373-.003.606.17.231.17.45.382.653.634s.449.535.734.848c.286.314.535.548.75.702l.213.131c.144.087.33.167.558.241.228.072.429.09.6.055l2.742-.045c.271 0 .482-.046.631-.136.15-.09.24-.192.268-.301.03-.11.03-.234.006-.372a1.443 1.443 0 0 0-.076-.29z"/>
 </svg></a>
 </div>
-`
-}
-const Iinfo = (props) => {
-
-
-    return (
-        <div className={css(Style.cnt, Style.cntDisplay)}>
-            <div className={css(Style.container)}>
-                <div>
-                    <span  className={(props.tooltip) ? css(Style.tooltiptext, _try(() => props.style.tooltiptext, null)) : null}
-                        dangerouslySetInnerHTML={{__html: _try(() => props.tooltip + getSocialBlock(props.visibleSocialBlock), null)}}></span>
-                    <div className={[css(Style.icon)+" icon"]}></div>
-                </div>
-
-
-                <div className={[css(Style.hidden_text)+" hidden_text"]}
-                     dangerouslySetInnerHTML={{__html: _try(() => props.text, null)}}></div>
-            </div>
-        </div>
-
-
-    );
-
+`;
 };
+const Iinfo = props => (
+  <div className={css(Style.cnt, Style.cntDisplay)}>
+    <div className={css(Style.container)}>
+      <div>
+        <span
+          className={
+            props.tooltip
+              ? css(
+                Style.tooltiptext,
+                _try(() => props.style.tooltiptext, null),
+              )
+              : null
+          }
+          dangerouslySetInnerHTML={{
+            __html: _try(
+              () => props.tooltip + getSocialBlock(props.visibleSocialBlock),
+              null,
+            ),
+          }}
+        />
+        <div className={[`${css(Style.icon)} icon`]} />
+      </div>
 
+      <div
+        className={[`${css(Style.hidden_text)} hidden_text`]}
+        dangerouslySetInnerHTML={{ __html: _try(() => props.text, null) }}
+      />
+    </div>
+  </div>
+);
 
 const Style = StyleSheet.create({
-    container: {
-        display: "grid",
-        gridTemplateColumns: "30px 1fr",
-        "height": "100%",
-        "alignContent": "center"
+  container: {
+    display: 'grid',
+    gridTemplateColumns: '30px 1fr',
+    height: '100%',
+    alignContent: 'center',
+  },
+  hidden_text: {
+    fontFamily: [MetaSerifProBookFont, 'sans-serif'],
+    fontSize: '12px',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: '0.4px',
+    textAlign: 'left',
+    color: 'rgba(31, 35, 44, 0.4)',
+  },
+  cntDisplay: {
+    display: 'block',
+  },
+
+  cnt: {
+    position: 'relative',
+
+    cursor: 'pointer',
+    borderBottom: '4px solid transparent',
+    borderTop: '4px solid transparent',
+    ':hover': {},
+    ':hover  span': {
+      display: 'inline-block',
+      opacity: '1',
     },
-    hidden_text: {
-        fontFamily: [MetaSerifProBookFont, "sans-serif"],
-        fontSize: "12px",
-        fontWeight: "normal",
-        fontStyle: "normal",
-        fontStretch: "normal",
-        lineHeight: "normal",
-        letterSpacing: "0.4px",
-        textAlign: "left",
-        color: "rgba(31, 35, 44, 0.4)"
+    ':hover .hidden_text': {
+      color: '#fe545b',
     },
-    cntDisplay:{
-        display: "block",
+    ':hover .icon': {
+      background:
+        `image-set(url(${
+          require('../../img/design/i/i_h.png')
+        }) 1x, url(${
+          require('../../img/design/i/i_h2x.png')
+        }) 2x, url(${
+          require('../../img/design/i/i_h3x.png')
+        }) 3x     ) no-repeat 0% 0px`,
     },
+    '@media (max-width: 650px)': {},
+  },
+  tooltiptext: {
+    display: 'none',
+    opacity: '0',
+    width: '100%',
+    backgroundColor: '#555',
+    color: '#fff',
+    textAlign: 'center',
+    borderRadius: '6px',
+    padding: '5px 0',
+    position: 'absolute',
+    // zIndex: "1",
+    bottom: '125%',
+    transition: 'opacity 0.3s',
+    fontFamily: [MetaSerifProBookFont, 'sans-serif'],
+    borderRadius: '8px',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 1px 10px 0 rgba(53, 66, 92, 0.08)',
+    fontSize: '12px',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: '0.4px',
+    textAlign: 'left',
+    color: 'rgba(31, 35, 44, 0.4)',
+    paddingLeft: '40px',
+    paddingTop: '24px',
+    paddingBottom: '24px',
+    paddingRight: '40px',
+    left: '-250%',
+    marginLeft: '-60px',
+    width: '250px',
 
-    cnt: {
-        position: "relative",
-
-        cursor:'pointer',
-        borderBottom: '4px solid transparent',
-        "borderTop":"4px solid transparent",
-        ':hover': {
-
-        },
-        ':hover  span': {
-            display: "inline-block",
-            opacity: "1",
-        },
-        ':hover .hidden_text': {
-            color: '#fe545b',
-        },
-        ':hover .icon': {
-            background: "image-set(url(" + require('../../img/design/i/i_h.png') + ") 1x, url(" + require('../../img/design/i/i_h2x.png') + ") 2x, url(" + require('../../img/design/i/i_h3x.png') + ") 3x     ) no-repeat 0% 0px",
-        },
-        '@media (max-width: 650px)': {}
-
+    ':hover': {
+      display: 'inline-block',
+      opacity: '1',
     },
-    tooltiptext: {
-        display: "none",
-        opacity: "0",
-        width: "100%",
-        backgroundColor: "#555",
-        color: "#fff",
-        textAlign: "center",
-        borderRadius: "6px",
-        padding: "5px 0",
-        position: "absolute",
-        //zIndex: "1",
-        bottom: "125%",
-        transition: "opacity 0.3s",
-        fontFamily: [MetaSerifProBookFont, "sans-serif"],
-        borderRadius: "8px",
-        backgroundColor: "#ffffff",
-        boxShadow: "0 1px 10px 0 rgba(53, 66, 92, 0.08)",
-        fontSize: "12px",
-        fontWeight: "normal",
-        fontStyle: "normal",
-        fontStretch: "normal",
-        lineHeight: "normal",
-        letterSpacing: "0.4px",
-        textAlign: "left",
-        color: "rgba(31, 35, 44, 0.4)",
-        paddingLeft: "40px",
-        paddingTop: "24px",
-        paddingBottom: "24px",
-        paddingRight: "40px",
-        left: "-250%",
-        marginLeft: "-60px",
-        width: '250px',
-
-        ':hover': {
-            display: "inline-block",
-            opacity: "1",
-        },
-        ':after': {
-            content: "''",
-            position: "absolute",
-            top: "100%",
-            left: "50%",
-            marginLeft: "-50px",
-            borderWidth: "5px",
-            borderStyle: "solid",
-            borderColor: "#ffffff transparent transparent transparent"
-        }
+    ':after': {
+      content: "''",
+      position: 'absolute',
+      top: '100%',
+      left: '50%',
+      marginLeft: '-50px',
+      borderWidth: '5px',
+      borderStyle: 'solid',
+      borderColor: '#ffffff transparent transparent transparent',
     },
+  },
 
-    icon:{
-        width:'18px',
-        height:'18px',
-        background: "image-set(url(" + require('../../img/design/i/i.png') + ") 1x, url(" + require('../../img/design/i/i2x.png') + ") 2x, url(" + require('../../img/design/i/i3x.png') + ") 3x     ) no-repeat 0% 0px",
-    }
-
-
+  icon: {
+    width: '18px',
+    height: '18px',
+    background:
+      `image-set(url(${
+        require('../../img/design/i/i.png')
+      }) 1x, url(${
+        require('../../img/design/i/i2x.png')
+      }) 2x, url(${
+        require('../../img/design/i/i3x.png')
+      }) 3x     ) no-repeat 0% 0px`,
+  },
 });
 export default Iinfo;

@@ -1,32 +1,33 @@
 import React from 'react';
+import $ from 'jquery';
+import {connect} from 'react-redux';
+import {css, StyleSheet} from 'aphrodite/no-important';
 import Katalog from '../../Katalog';
 import ShoppingCartStyle from '../../css/ShoppingCartStyle';
 import ProductionStyle from '../../css/ProductionStyle';
 import Counter from '../../components/Counter/Counter';
-import $ from 'jquery';
-import {connect} from 'react-redux';
 import {addFishToSeafoodShoppingCart} from '../../actions';
 import AppStyle from '../../css/AppStyle';
 import Iinfo from '../../components/Iinfo/Iinfo';
-import {css, StyleSheet} from 'aphrodite/no-important';
 
 const calbackFn = (id, props) => {
-  let fish = Katalog.get(id);
-  let count = $(`#fishNum_${id}`);
-  let countFish = Number.parseInt(count[0].value, 10);
+  const fish = Katalog.get(id);
+  const count = $(`#fishNum_${id}`);
+  const countFish = Number.parseInt(count[0].value, 10);
 
   props.addSeafoodItem(fish, countFish);
 };
 class ShoppingCartList extends React.Component {
   componentDidMount() {
-    //this.setState({totalSum:this.totalSum});
-    //this.props.onChangeShoppingCart(this.totalSum)
+    // this.setState({totalSum:this.totalSum});
+    // this.props.onChangeShoppingCart(this.totalSum)
   }
+
   getSeafoodShoppingCartInArray() {
-    let shoppingCart = this.props.seafoodShoppingCart.allFish;
-    let res = [];
+    const shoppingCart = this.props.seafoodShoppingCart.allFish;
+    const res = [];
     if (shoppingCart != null) {
-      for (let el in shoppingCart) {
+      for (const el in shoppingCart) {
         res.push(shoppingCart[el]);
       }
     }
@@ -39,9 +40,8 @@ class ShoppingCartList extends React.Component {
       <div>
         {catalog.map((p) => {
           i++;
-          let weightOfOneFish = p.weightOfOneFish ? p.weightOfOneFish : 1;
-          let cost =
-            p.count * p.price * (p.packaging !== 'кг' ? weightOfOneFish : 1);
+          const weightOfOneFish = p.weightOfOneFish ? p.weightOfOneFish : 1;
+          const cost = p.count * p.price * (p.packaging !== 'кг' ? weightOfOneFish : 1);
           this.totalSum += cost;
 
           return (
@@ -161,9 +161,9 @@ class ShoppingCartList extends React.Component {
                         packaging={p.packaging}
                         calbackFn={() => {
                           calbackFn(p.id, this.props);
-                          /*{
+                          /* {
                                                          this.props.onChangeShoppingCart(totalSum)
-                                                     }*/
+                                                     } */
                         }}
                       />
                     </div>
@@ -181,8 +181,8 @@ class ShoppingCartList extends React.Component {
                       <Iinfo
                         style={tooltiptMobileStyle}
                         tooltip={
-                          'Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам,\n' +
-                          'и сообщим точную стоимость заказа'
+                          'Это весовой товар, вес может отличаться +/– 200 гр. После отправки заказа, мы позвоним вам,\n'
+                          + 'и сообщим точную стоимость заказа'
                         }
                       />
                     </div>
@@ -269,9 +269,8 @@ class ShoppingCartList extends React.Component {
 
           {catalog.map((p) => {
             i++;
-            let weightOfOneFish = p.weightOfOneFish ? p.weightOfOneFish : 1;
-            let cost =
-              p.count * p.price * (p.packaging !== 'кг' ? weightOfOneFish : 1);
+            const weightOfOneFish = p.weightOfOneFish ? p.weightOfOneFish : 1;
+            const cost = p.count * p.price * (p.packaging !== 'кг' ? weightOfOneFish : 1);
             this.totalSum += cost;
 
             return (
@@ -312,9 +311,9 @@ class ShoppingCartList extends React.Component {
                     packaging={p.packaging}
                     calbackFn={() => {
                       calbackFn(p.id, this.props);
-                      /*{
+                      /* {
                                                      this.props.onChangeShoppingCart(totalSum)
-                                                 }*/
+                                                 } */
                     }}
                   />
                 </div>
@@ -381,8 +380,9 @@ class ShoppingCartList extends React.Component {
       </div>
     );
   }
+
   render() {
-    let catalog = this.getSeafoodShoppingCartInArray();
+    const catalog = this.getSeafoodShoppingCartInArray();
     if (catalog === null || catalog.length === 0) {
       return (
         <div className={css(ProductionStyle.text)}>
@@ -417,15 +417,15 @@ const tooltiptMobileStyle = StyleSheet.create({
     },
   },
 });
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   shoppingCart: state.shoppingCart,
   seafoodShoppingCart: state.seafoodShoppingCart,
 });
-//const mapStateToProps = (state) => (state);
+// const mapStateToProps = (state) => (state);
 
-const matchDispatchToProps = (dispatch) => ({
+const matchDispatchToProps = dispatch => ({
   onChangeShoppingCart: (totalSum) => {
-    dispatch({ type: 'CHANGE', totalSum: totalSum });
+    dispatch({ type: 'CHANGE', totalSum });
   },
 
   addSeafoodItem: (fish, countFish) => {

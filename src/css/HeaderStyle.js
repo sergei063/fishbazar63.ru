@@ -1,5 +1,5 @@
 import {minify, StyleSheet} from 'aphrodite/no-important';
-import {FuturaBoldFont, FuturaMediumFont,} from './Fonts';
+import {FuturaBoldFont, FuturaMediumFont} from './Fonts';
 
 minify(false);
 const HeaderStyle = StyleSheet.create({
@@ -248,7 +248,7 @@ const HeaderStyle = StyleSheet.create({
     justifyContent: 'space-around',
     boxShadow:
       'rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.12) 0px 10px 20px',
-    //transform: 'rotate(-1deg)',
+    // transform: 'rotate(-1deg)',
   },
 
   salesFirstChild: {

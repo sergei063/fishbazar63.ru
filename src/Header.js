@@ -2,10 +2,10 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 import {css} from 'aphrodite/no-important';
+import $ from 'jquery';
 import AppStyle from './css/AppStyle';
 import HeaderStyle from './css/HeaderStyle';
-import $ from 'jquery';
-import HeaderSales from "./components/HeaderSales";
+import HeaderSales from './components/HeaderSales';
 
 const mobileMenuClick = (event) => {
   if (event) event.preventDefault();
@@ -84,9 +84,9 @@ class Header extends React.Component {
             <div
               id="header_pouch_mobile_menu_close_span"
               className={
-                css(HeaderStyle.mobileMenuBtn) +
-                ' ' +
-                css(HeaderStyle.mobileMenuBtnHidden)
+                `${css(HeaderStyle.mobileMenuBtn)
+                } ${
+                  css(HeaderStyle.mobileMenuBtnHidden)}`
               }
             >
               <a
@@ -113,9 +113,9 @@ class Header extends React.Component {
             <span
               id="header_pouch_mobile_menu_span"
               className={
-                css(HeaderStyle.mobileMenuBtn) +
-                ' ' +
-                css(HeaderStyle.mobileMenuMarginLeft60)
+                `${css(HeaderStyle.mobileMenuBtn)
+                } ${
+                  css(HeaderStyle.mobileMenuMarginLeft60)}`
               }
             >
               <a
@@ -127,13 +127,13 @@ class Header extends React.Component {
               <br />
               <br />
             </span>
-            {/*<span className={css(HeaderStyle.mobileMenuBtn, AppStyle.paddingLeft10)}>
+            {/* <span className={css(HeaderStyle.mobileMenuBtn, AppStyle.paddingLeft10)}>
                             <a id="header_pouch_phone_menu"
                                className={(this.state.isMobile) ? css(HeaderStyle.pouchPhoneMenu) : css(HeaderStyle.pouchPhoneMenu)}
                                href='tel:+79171682771'></a>
                             <br/>
                             <br/>
-                        </span>*/}
+                        </span> */}
 
             <ul id="menu_inline_ul" className={css(HeaderStyle.menuInlineUl)}>
               <li className={css(AppStyle.menu_inline)}>
@@ -216,7 +216,7 @@ class Header extends React.Component {
               </li>
             </ul>
           </div>
-          <HeaderSales/>
+          <HeaderSales />
         </nav>
       </header>
     );

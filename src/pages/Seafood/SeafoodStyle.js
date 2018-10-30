@@ -15,7 +15,7 @@ const SeafoodStyle = StyleSheet.create({
     width: '100%',
     marginTop: '118px',
     position: 'relative',
-    //overflow: "hidden",
+    // overflow: "hidden",
     '@media (max-width: 900px)': {
       flexDirection: 'column-reverse',
       marginTop: '48px',

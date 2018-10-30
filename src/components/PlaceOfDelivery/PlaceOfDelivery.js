@@ -7,8 +7,7 @@ import {MetaSerifProBookFont} from '../../css/Fonts';
 import {setAllPlacesOfDelivery, setPlaceOfDelivery} from '../../actions';
 import AppStyle from '../../css/AppStyle';
 
-const getDeliveryByWhere = (allPlacesOfDelivery,where) => (_.find(allPlacesOfDelivery, item => item.where === where));
-
+const getDeliveryByWhere = (allPlacesOfDelivery, where) => _.find(allPlacesOfDelivery, item => item.where === where);
 
 const Style = StyleSheet.create({
   radioNative: {
@@ -124,8 +123,8 @@ class PlaceOfDelivery extends React.Component {
     this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
-    componentDidMount() {
-        /*(async () => {
+  componentDidMount() {
+    /* (async () => {
             try {
                 const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
                 this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
@@ -134,11 +133,16 @@ class PlaceOfDelivery extends React.Component {
             }
 
 
-        })();*/
-    }
+        })(); */
+  }
 
   handleOptionChange(changeEvent) {
-    this.props.setPlaceOfDelivery(getDeliveryByWhere(this.props.allPlacesOfDelivery,changeEvent.target.value));
+    this.props.setPlaceOfDelivery(
+      getDeliveryByWhere(
+        this.props.allPlacesOfDelivery,
+        changeEvent.target.value,
+      ),
+    );
   }
 
   validate(isScrollIntoView) {
@@ -215,15 +219,18 @@ class PlaceOfDelivery extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ placeOfDelivery: state.placeOfDelivery, allPlacesOfDelivery: state.allPlacesOfDelivery });
+const mapStateToProps = state => ({
+  placeOfDelivery: state.placeOfDelivery,
+  allPlacesOfDelivery: state.allPlacesOfDelivery,
+});
 
 const matchDispatchToProps = dispatch => ({
   setPlaceOfDelivery: (placeOfDelivery) => {
     dispatch(setPlaceOfDelivery(placeOfDelivery));
   },
-    setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
-        dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery));
-    }
+  setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
+    dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery));
+  },
 });
 
 export default connect(

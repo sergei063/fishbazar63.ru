@@ -4,7 +4,7 @@ import AppStyle from '../../css/AppStyle';
 import {LucidaGrandeFontB} from '../../css/Fonts';
 
 const CatalogGroups = (props) => {
-  let { history, productItems } = props;
+  const { history, productItems } = props;
   let keyMe = 2;
   let filter;
   try {
@@ -20,14 +20,14 @@ const CatalogGroups = (props) => {
         pathname={props.history.location.pathname}
         filter={filter}
         urlFilter={null}
-        text={`Все`}
+        text={'Все'}
       />
       <OneGroup
         history={history}
         pathname={props.history.location.pathname}
         filter={filter}
-        urlFilter={`hit`}
-        text={`Хит`}
+        urlFilter={'hit'}
+        text={'Хит'}
       />
       {productItems.map((p) => {
         ++keyMe;
@@ -47,16 +47,18 @@ const CatalogGroups = (props) => {
 };
 
 const OneGroup = (props) => {
-  let { history, pathname, filter, urlFilter, text } = props;
+  const {
+    history, pathname, filter, urlFilter, text,
+  } = props;
   return (
     <li
       onClick={() => {
         history.push({
-          pathname: pathname,
+          pathname,
           state: { filter: urlFilter },
           notScrollToTop: true,
         });
-        /*this.scrollToProductuionContainer(); */
+        /* this.scrollToProductuionContainer(); */
       }}
       className={css(Style.marginRight15, Style.gpoupItem, AppStyle.right_text)}
     >

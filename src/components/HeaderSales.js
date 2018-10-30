@@ -37,7 +37,7 @@ class HeaderSales extends React.Component {
         <div
           className={[`${css(Style.sales)} header_sales`]}
           onClick={(event) => {
-            //event.preventDefault();
+            // event.preventDefault();
             this.setState({ showSales: !this.state.showSales });
           }}
         >
@@ -75,7 +75,9 @@ class HeaderSales extends React.Component {
               <div>
                 За более подробной информацией об&nbsp;акции звоните
                 <a href="tel:+79171682771">
-                  <nobr><u>8 (917) 168 27 71</u></nobr>
+                  <nobr>
+                    <u>8 (917) 168 27 71</u>
+                  </nobr>
                 </a>
               </div>
             </div>
@@ -98,14 +100,14 @@ class HeaderSales extends React.Component {
 
 const Style = StyleSheet.create({
   closeBtn: {
-    display:'none',
+    display: 'none',
     position: 'absolute',
     left: '10px',
     top: '30px',
-      '@media (max-width: 600px)': {
-          left: '0px',
-          top: '5px',
-      },
+    '@media (max-width: 600px)': {
+      left: '0px',
+      top: '5px',
+    },
   },
   sales: {
     backgroundColor: '#3454b0',
@@ -126,9 +128,9 @@ const Style = StyleSheet.create({
     justifyContent: 'space-around',
     width: '100%',
     height: '70%',
-      '@media (max-width: 600px)': {
-          height: '80%',
-      },
+    '@media (max-width: 600px)': {
+      height: '80%',
+    },
   },
 
   salesFirstChild: {
@@ -137,7 +139,7 @@ const Style = StyleSheet.create({
   },
   salesChild: {
     gridTemplateColumns: '30px 1fr',
-    //height: '100%',
+    // height: '100%',
     alignContent: 'center',
 
     fontFamily: [FuturaMediumFont, 'sans-serif'],
@@ -153,7 +155,7 @@ const Style = StyleSheet.create({
       width: '80%',
       fontSize: '14px',
     },
-      '@media (max-width: 370px)': {
+    '@media (max-width: 370px)': {
       width: '95%',
       fontSize: '14px',
     },

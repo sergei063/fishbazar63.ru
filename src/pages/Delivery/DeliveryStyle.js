@@ -1,5 +1,5 @@
 import {StyleSheet} from 'aphrodite/no-important';
-import {FuturaBoldFont, FuturaMediumFont, MetaSerifProBookFont} from '../../css/Fonts';
+import {FuturaBoldFont, FuturaMediumFont, MetaSerifProBookFont,} from '../../css/Fonts';
 
 const DeliveryStyle = StyleSheet.create({
   cnt: {

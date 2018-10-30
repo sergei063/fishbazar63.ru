@@ -1,10 +1,12 @@
 import React from 'react';
-
 import {css} from 'aphrodite/no-important';
 import DeliveryStyle from './DeliveryStyle';
+import DeliveryPlaces from "./DeliveryPlaces";
 /* eslint-disable global-require */
+
+
 const Delivery = (props) => {
-  let { isMinimize } = props;
+  const { isMinimize } = props;
   return (
     <div className={css(DeliveryStyle.cnt)}>
       <div className={css(DeliveryStyle.deliveryArea)} />
@@ -70,28 +72,7 @@ const Delivery = (props) => {
             >
               Стоимость
             </div>
-            <div
-              className={css(
-                DeliveryStyle.width70Percent,
-                DeliveryStyle.columnText,
-              )}
-            >
-              г. Самара&nbsp;&mdash;{' '}
-              <span className={css(DeliveryStyle.redText)}>150&nbsp;руб</span>
-              <br />
-              Сухая Самарка, Жилой район Волгарь,116км. &mdash;{' '}
-              <span className={css(DeliveryStyle.redText)}>100&nbsp;руб</span>
-              <br />
-              г. Новокуйбышевск, п.Гранный&nbsp;&mdash;{' '}
-              <span className={css(DeliveryStyle.redText)}>70&nbsp;руб</span>
-              <br />
-                Красноглинский&nbsp;район&nbsp;&mdash;{' '}
-              <span className={css(DeliveryStyle.redText)}>250&nbsp;руб</span>
-              <br />
-              Минимальная сумма заказа{' '}
-              <span className={css(DeliveryStyle.redText)}>700&nbsp;руб</span>
-              <br />
-            </div>
+            <DeliveryPlaces />
           </div>
         </div>
       </div>

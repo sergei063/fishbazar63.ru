@@ -24,13 +24,17 @@
     "no-console": 0,
     'no-plusplus': 'off',
     "no-alert": 0,
-    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "max-len": ["error", { "code": 121,"ignoreComments": true }],
     "import/default": 0,
     "import/no-duplicates": 0,
     "import/named": 0,
     "import/namespace": 0,
     "import/no-unresolved": 0,
-    "import/no-named-as-default": 2
+    "import/no-named-as-default": 2,
+    "no-empty": ["error", {
+      "allowEmptyCatch": true
+    }]
   },
 
   "plugins": [

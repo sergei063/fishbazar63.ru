@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {css} from 'aphrodite/no-important';
-import Header from './Header';
-import Slider from './Slider';
+
 import Home from './pages/Home/Home';
 import About from './pages/About';
 import AboutFish from './pages/AboutFish';
@@ -12,24 +11,27 @@ import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
-import {Link, Route, Switch, withRouter} from 'react-router-dom';
 import News from './pages/News';
 import SocialNetworkBlockStyle from './pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle';
-import Instagram from './components/SocialNetwork/Instagram';
-import VK from './components/SocialNetwork/Vk';
 import QualityAssurance from './pages/QualityAssurance/QualityAssurance';
 import DeliveryPage from './pages/Delivery/DeliveryPage';
 import Seafood from './pages/Seafood/Seafood';
 import Blog from './pages/Blog/Blog';
-import PouchIcon from './containers/PouchIcon/PouchIcon';
 import Katalog from './Katalog';
 import config from './config';
 import Admin from './pages/Admin/Admin';
-import {YMInitializer} from 'react-yandex-metrika';
 import {setAllPlacesOfDelivery} from './actions';
+import {allPlacesOfDeliveryFetchData} from './actions/allPlacesOfDeliveryFetchData';
+/*  eslint-disable no-unused-vars */
+import Header from './Header';
+import Slider from './Slider';
+import {Link, Route, Switch, withRouter,} from 'react-router-dom';
+import Instagram from './components/SocialNetwork/Instagram';
+import VK from './components/SocialNetwork/Vk';
+import PouchIcon from './containers/PouchIcon/PouchIcon';
+import {YMInitializer} from 'react-yandex-metrika';
 import connect from 'react-redux/es/connect/connect';
-
-import {allPlacesOfDeliveryFetchData} from "./actions/allPlacesOfDeliveryFetchData";
+/*  eslint-disable no-unused-vars */
 
 const Main = () => (
   <main>
@@ -125,9 +127,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-      this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`);
+    this.props.fetchAllPlacesOfDelivery(
+      `${config.serverAPI}/all_places_of_delivery`,
+    );
     (async () => {
-        /*try {
+      /* try {
             const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
             this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
         } catch (e) {
@@ -141,52 +145,51 @@ class App extends React.Component {
         console.error(error);
       }
 
-        try {
-            if (localStorage.getItem('auth_token')) {
-                try {
-                    await axios.post(`${config.serverAPI}/check_user`, {
-                        auth_token: localStorage.getItem('auth_token'),
-                    });
-                } catch (e) {
-                    localStorage.removeItem('auth_token');
-                }
-            }
-        } catch (error) {
-            console.error(error);
+      try {
+        if (localStorage.getItem('auth_token')) {
+          try {
+            await axios.post(`${config.serverAPI}/check_user`, {
+              auth_token: localStorage.getItem('auth_token'),
+            });
+          } catch (e) {
+            localStorage.removeItem('auth_token');
+          }
         }
-        this.forceUpdate();
-
+      } catch (error) {
+        console.error(error);
+      }
+      this.forceUpdate();
     })();
   }
 
   componentDidUpdate() {}
 }
 
-const mapStateToProps = (state) => ({
-    allPlacesOfDelivery: state.allPlacesOfDelivery,
+const mapStateToProps = state => ({
+  allPlacesOfDelivery: state.allPlacesOfDelivery,
 });
 
-const matchDispatchToProps = (dispatch) => ({
+const matchDispatchToProps = dispatch => ({
   setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
     dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery));
   },
-    fetchAllPlacesOfDelivery: (url) => dispatch(allPlacesOfDeliveryFetchData())
+  fetchAllPlacesOfDelivery: url => dispatch(allPlacesOfDeliveryFetchData()),
 });
-//export default App;
+// export default App;
 export default withRouter(
-    connect(
-        mapStateToProps,
-        matchDispatchToProps,
-        null,
-        { withRef: true },
-    )(App)
+  connect(
+    mapStateToProps,
+    matchDispatchToProps,
+    null,
+    { withRef: true },
+  )(App),
 );
-/*export default connect(
+/* export default connect(
   mapStateToProps,
   matchDispatchToProps,
   null,
   { withRef: true },
-)(App);*/
+)(App); */
 //  export default App;
 
 // const mapStateToProps = (state) => ({});

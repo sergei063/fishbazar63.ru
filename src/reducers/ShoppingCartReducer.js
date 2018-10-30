@@ -1,24 +1,20 @@
-import Katalog from "../Katalog";
+import Katalog from '../Katalog';
 
 const initialState = {
-    allItems: Katalog.getShoppingCart(),
-    totalSum: 1
+  allItems: Katalog.getShoppingCart(),
+  totalSum: 1,
 };
 
-
 const ShoppingCartReducer = function (state = initialState, action) {
+  switch (action.type) {
+    case 'CHANGE':
+      return Object.assign({}, state, {
+        totalSum: action.totalSum,
+      });
 
-
-    switch (action.type) {
-        case 'CHANGE':
-            return Object.assign({}, state, {
-                totalSum:action.totalSum
-            });
-
-        default:
-            return state
-    }
-
+    default:
+      return state;
+  }
 };
 
 export default ShoppingCartReducer;

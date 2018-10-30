@@ -8,7 +8,7 @@ class PouchIcon extends React.Component {
   componentDidMount() {}
 
   componentWillUpdate() {
-    let span = $('#header_pouch span');
+    const span = $('#header_pouch span');
     if ($('#header_pouch').hasClass(css(Style.pouchA))) {
       span.addClass(css(Style.pouch_a_span_animation));
     }
@@ -17,7 +17,7 @@ class PouchIcon extends React.Component {
   }
 
   render() {
-    let lenght = Object.keys(this.props.seafoodShoppingCart.allFish).length;
+    const lenght = Object.keys(this.props.seafoodShoppingCart.allFish).length;
 
     return (
       <Link
@@ -70,35 +70,35 @@ const Style = StyleSheet.create({
     position: 'fixed',
     zIndex: '9999',
     background:
-      '#ffffff  image-set(url(' +
-      require('../../img/bucket/normal.png') +
-      ') 1x, url(' +
-      require('../../img/bucket/normal@2x.png') +
-      ') 2x, url(' +
-      require('../../img/bucket/normal@3x.png') +
-      ') 3x) no-repeat 50% 19px',
+      `#ffffff  image-set(url(${
+        require('../../img/bucket/normal.png')
+      }) 1x, url(${
+        require('../../img/bucket/normal@2x.png')
+      }) 2x, url(${
+        require('../../img/bucket/normal@3x.png')
+      }) 3x) no-repeat 50% 19px`,
     height: '68px',
     width: '68px',
     borderRadius: '44px',
-    //position: 'absolute',
+    // position: 'absolute',
     top: '235px',
     right: '27px',
     boxShadow: '0 1px 22px 0 rgba(0, 0, 0, 0.08)',
     transition: 'right 2s ease 0s',
     ':hover': {
       backgroundImage:
-        'image-set(url(' +
-        require('../../img/bucket/hover.png') +
-        ') 1x, url(' +
-        require('../../img/bucket/hover@2x.png') +
-        ') 2x, url(' +
-        require('../../img/bucket/hover@3x.png') +
-        ') 3x)',
+        `image-set(url(${
+          require('../../img/bucket/hover.png')
+        }) 1x, url(${
+          require('../../img/bucket/hover@2x.png')
+        }) 2x, url(${
+          require('../../img/bucket/hover@3x.png')
+        }) 3x)`,
     },
     ':hover span': {
       background: '#fe545b',
       boxShadow: 'none',
-      /*border: '1px solid #fe545b'*/
+      /* border: '1px solid #fe545b' */
     },
     '@media (max-width: 900px)': {
       top: '178px',
@@ -126,14 +126,14 @@ const Style = StyleSheet.create({
     width: '20px',
     textAlign: 'center',
     borderRadius: '20px',
-    /*border: '1px solid #b0893e',
-        boxShadow: 'inset 0 20px 20px -10px #eec77c',*/
+    /* border: '1px solid #b0893e',
+        boxShadow: 'inset 0 20px 20px -10px #eec77c', */
     color: '#fff',
     textShadow: '0 1px #634d23',
     webkitFontSmoothing: 'auto',
   },
 });
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   seafoodShoppingCart: state.seafoodShoppingCart,
 });
 

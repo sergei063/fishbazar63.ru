@@ -8,14 +8,15 @@ class Checkbox extends React.Component {
       text: props.text || '',
     };
   }
+
   toggleChange = () => {
     this.setState({
       isChecked: !this.state.isChecked,
     });
   };
-  getChecked = () => {
-    return this.state.isChecked;
-  };
+
+  getChecked = () => this.state.isChecked;
+
   render() {
     return (
       <label>

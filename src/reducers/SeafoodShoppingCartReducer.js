@@ -1,5 +1,7 @@
 const getInitialState = () => {
-  let seafoodShoppingCart = JSON.parse(localStorage.getItem('seafoodShoppingCart'));
+  let seafoodShoppingCart = JSON.parse(
+    localStorage.getItem('seafoodShoppingCart'),
+  );
   if (!seafoodShoppingCart) {
     seafoodShoppingCart = { allFish: {}, totalCost: 0 };
   }
@@ -28,7 +30,10 @@ const saveToLocalStorage = (allFish, totalCost) => {
 
   seafoodShoppingCart.allFish = allFish;
   seafoodShoppingCart.totalCost = totalCost;
-  localStorage.setItem('seafoodShoppingCart', JSON.stringify(seafoodShoppingCart));
+  localStorage.setItem(
+    'seafoodShoppingCart',
+    JSON.stringify(seafoodShoppingCart),
+  );
 };
 
 const SeafoodShoppingCartReducer = function (state = getInitialState(), action) {

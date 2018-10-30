@@ -10,7 +10,7 @@ import DeliveryStyle from '../Delivery/DeliveryStyle';
 const AllSeafood = (props) => {
   let filter;
   let filterCount;
-  let { isMinimize } = props;
+  const { isMinimize } = props;
 
   /*  filterCount = _try(() => props.history.location.state.filterCount, Katalog.FILTER_COUNT)
     filter = _try(() => props.history.location.state.filter, null);
@@ -34,14 +34,14 @@ const AllSeafood = (props) => {
   }
 
   const token = localStorage.getItem('auth_token');
-  let groupItems = Katalog.getGroupItems(filter, filterCount);
+  const groupItems = Katalog.getGroupItems(filter, filterCount);
   return (
     <div className={css(SeafoodStyle.cnt)}>
       <div className={css(AppStyle.textAlignCenter)}>
-        <AllCards isShowAddFish={token ? true : false} items={groupItems} />
+        <AllCards isShowAddFish={!!token} items={groupItems} />
         <br />
         <button
-          hidden={/*(filter != null) || */ filterCount > groupItems.length}
+          hidden={/* (filter != null) || */ filterCount > groupItems.length}
           onClick={(event) => {
             if (filterCount > groupItems.length) {
               event.currentTarget.hidden = 'hidden';
@@ -51,7 +51,7 @@ const AllSeafood = (props) => {
             props.history.push({
               pathname: props.history.location.pathname,
               state: {
-                filter: filter,
+                filter,
                 filterCount: filterCount + Katalog.FILTER_COUNT,
               },
               notScrollToTop: true,

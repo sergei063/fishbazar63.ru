@@ -8,7 +8,7 @@ import QualityAssurance from '../QualityAssurance/QualityAssurance';
 import Recipes from './RecipesBlog/RecipesBlog';
 import AllSeafood from '../Seafood/AllSeafood';
 
-//<img className={css(HomeStyle.productPhotoImg)} src={require(`${p.img}`)} alt=""></img>
+// <img className={css(HomeStyle.productPhotoImg)} src={require(`${p.img}`)} alt=""></img>
 class AllShowcase extends React.Component {
   componentDidMount() {}
 
