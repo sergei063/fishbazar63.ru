@@ -104,7 +104,6 @@ class AddFishItem extends React.Component {
                 const newFish = this.getFishItemFromRefs();
 
                 if (!newFish ||  !newFish.id ||  !newFish.id===''){
-                    console.log(newFish);
                     alert(`Ошибка: Не задан идентификатор`)
                     return;
                 }
@@ -168,7 +167,7 @@ class AddFishItem extends React.Component {
                 this.props.history.push({pathname: `/production`})
             } catch (e) {
                 alert('Ошибка при сохранении')
-                console.log(e);
+
             }
 
            /* axios.post(`${config.serverAPI}/set_catalog`, {

@@ -76,7 +76,7 @@ const RecipesBlog = (props) => {
                         <div className={css(RecipesBlogStyle.button_bock)}>
                             <button style={{width: '174px'}}  className={css(AppStyle.buttonRed)} onClick={(event) => {
                                 event.preventDefault();
-                                console.log(props)
+
                                 props.history.push({pathname: '/blog/cod_in_green_sauce'});
 
                             }} >Весь рецепт</button>

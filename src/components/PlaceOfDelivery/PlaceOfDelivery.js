@@ -4,20 +4,10 @@ import {connect} from 'react-redux';
 import * as ReactDOM from 'react-dom';
 import _ from 'lodash';
 import {MetaSerifProBookFont} from '../../css/Fonts';
-import {setPlaceOfDelivery} from '../../actions';
+import {setAllPlacesOfDelivery, setPlaceOfDelivery} from '../../actions';
 import AppStyle from '../../css/AppStyle';
 
-const delivery = [
-  { where: 'г.Новокуйбышевск', price: 70 },
-  { where: 'п.Гранный', price: 70 },
-  { where: 'г.Самара ', price: 150 },
-  { where: 'Сухая Самарка', price: 100 },
-  { where: 'Жилой район Волгарь', price: 100 },
-  { where: '116км.', price: 100 },
-  { where: 'Красноглинский район', price: 250 },
-];
-
-const getDeliveryByWhere = where => (_.find(delivery, item => item.where === where));
+const getDeliveryByWhere = (allPlacesOfDelivery,where) => (_.find(allPlacesOfDelivery, item => item.where === where));
 
 
 const Style = StyleSheet.create({
@@ -134,8 +124,21 @@ class PlaceOfDelivery extends React.Component {
     this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
+    componentDidMount() {
+        /*(async () => {
+            try {
+                const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
+                this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
+            } catch (e) {
+                console.error(e);
+            }
+
+
+        })();*/
+    }
+
   handleOptionChange(changeEvent) {
-    this.props.setPlaceOfDelivery(getDeliveryByWhere(changeEvent.target.value));
+    this.props.setPlaceOfDelivery(getDeliveryByWhere(this.props.allPlacesOfDelivery,changeEvent.target.value));
   }
 
   validate(isScrollIntoView) {
@@ -158,6 +161,7 @@ class PlaceOfDelivery extends React.Component {
 
   render() {
     let k = 0;
+
     return (
       <div className={css(Style.divTable)}>
         <div className={css(Style.divTableBody)}>
@@ -175,7 +179,7 @@ class PlaceOfDelivery extends React.Component {
             </div>
           </div>
 
-          {delivery.map((p) => {
+          {this.props.allPlacesOfDelivery.map((p) => {
             k++;
             return (
               <div
@@ -211,12 +215,15 @@ class PlaceOfDelivery extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ placeOfDelivery: state.placeOfDelivery });
+const mapStateToProps = state => ({ placeOfDelivery: state.placeOfDelivery, allPlacesOfDelivery: state.allPlacesOfDelivery });
 
 const matchDispatchToProps = dispatch => ({
   setPlaceOfDelivery: (placeOfDelivery) => {
     dispatch(setPlaceOfDelivery(placeOfDelivery));
   },
+    setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
+        dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery));
+    }
 });
 
 export default connect(

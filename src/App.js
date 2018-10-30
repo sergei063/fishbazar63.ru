@@ -12,7 +12,7 @@ import AppStyle from './css/AppStyle';
 
 import './index.css';
 import './App.css';
-import {Link, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch, withRouter} from 'react-router-dom';
 import News from './pages/News';
 import SocialNetworkBlockStyle from './pages/Delivery/SocialNetworkBlock/SocialNetworkBlockStyle';
 import Instagram from './components/SocialNetwork/Instagram';
@@ -28,6 +28,8 @@ import Admin from './pages/Admin/Admin';
 import {YMInitializer} from 'react-yandex-metrika';
 import {setAllPlacesOfDelivery} from './actions';
 import connect from 'react-redux/es/connect/connect';
+
+import {allPlacesOfDeliveryFetchData} from "./actions/allPlacesOfDeliveryFetchData";
 
 const Main = () => (
   <main>
@@ -123,38 +125,37 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+      this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`);
     (async () => {
+        /*try {
+            const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
+            this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
+        } catch (e) {
+            console.error(e);
+        }
+*/
       try {
         const responseCatalog = await axios.get(`${config.serverAPI}/catalog`);
-
-        this.props.setAllPlacesOfDelivery([
-          { where: 'г.Новокуйбышевск', price: 70 },
-          { where: 'п.Гранный', price: 70 },
-          { where: 'г.Самара ', price: 150 },
-          { where: 'Сухая Самарка', price: 100 },
-          { where: 'Жилой район Волгарь', price: 100 },
-          { where: '116км.', price: 100 },
-          { where: 'Красноглинский район', price: 250 },
-        ]);
-        // console.log(responseCatalog);
         Katalog.setPrice(responseCatalog.data);
-
-        if (localStorage.getItem('auth_token')) {
-          try {
-            await axios.post(`${config.serverAPI}/check_user`, {
-              auth_token: localStorage.getItem('auth_token'),
-            });
-            this.forceUpdate();
-          } catch (e) {
-            localStorage.removeItem('auth_token');
-            this.forceUpdate();
-          }
-        } else {
-          this.forceUpdate();
-        }
       } catch (error) {
         console.error(error);
       }
+
+        try {
+            if (localStorage.getItem('auth_token')) {
+                try {
+                    await axios.post(`${config.serverAPI}/check_user`, {
+                        auth_token: localStorage.getItem('auth_token'),
+                    });
+                } catch (e) {
+                    localStorage.removeItem('auth_token');
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
+        this.forceUpdate();
+
     })();
   }
 
@@ -162,20 +163,30 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  allPlaceOfDelivery: state.allPlaceOfDelivery,
+    allPlacesOfDelivery: state.allPlacesOfDelivery,
 });
 
 const matchDispatchToProps = (dispatch) => ({
   setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
     dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery));
   },
+    fetchAllPlacesOfDelivery: (url) => dispatch(allPlacesOfDeliveryFetchData())
 });
-export default connect(
+//export default App;
+export default withRouter(
+    connect(
+        mapStateToProps,
+        matchDispatchToProps,
+        null,
+        { withRef: true },
+    )(App)
+);
+/*export default connect(
   mapStateToProps,
   matchDispatchToProps,
   null,
   { withRef: true },
-)(App);
+)(App);*/
 //  export default App;
 
 // const mapStateToProps = (state) => ({});

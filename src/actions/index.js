@@ -21,7 +21,6 @@ export const setAllPlacesOfDelivery = (allPlacesOfDelivery) => {
     allPlacesOfDelivery: allPlacesOfDelivery,
   };
 };
-
 export const setAllFormsValue = (id, value) => {
   return {
     type: 'SET_ALL_FORMS_VALUE',

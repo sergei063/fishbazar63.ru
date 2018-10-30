@@ -8,46 +8,12 @@ import './css/GlobalStyles'; // global styles through Aphrodite
 import {css} from 'aphrodite/no-important';
 import AppStyle from './css/AppStyle';
 
-
-import createHistory from 'history/createBrowserHistory'
-import {applyMiddleware, createStore,compose} from "redux";
-import allReducers from "./reducers";
 import {Provider} from "react-redux";
-import {
-    ConnectedRouter,
-    routerMiddleware} from "react-router-redux";
+import {ConnectedRouter} from "react-router-redux";
+//import thunk from "redux-thunk";
+import store from "./components/getStore";
+import history from "./components/history";
 
-
-
-const history = createHistory();
-const middleware = routerMiddleware(history);
-
-const composeEnhancers =
-    typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-            // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-        }) : compose;
-
-const enhancer = composeEnhancers(
-    applyMiddleware(...middleware),
-
-);
-const store = createStore(allReducers, enhancer);
-
-//const store = createStore(allReducers, applyMiddleware(middleware));
-store.subscribe(()=>{
-    //console.log('subscribe',store.getState())
-});
-
-history.listen((location, action) => {
-
-    if (!location.notScrollToTop){
-        window.scrollTo(0, 0)
-    }
-    //console.log(location);
-    //console.log(action);
-});
 
 var isMobile = {
     Android: function() {

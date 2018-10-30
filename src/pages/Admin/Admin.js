@@ -58,7 +58,7 @@ const Admin = (props) => {
 
 
                         }).catch(function (error) {
-                            console.log(error);
+
                         });
 
                     }} style={{width: '174px'}} className={css(AppStyle.buttonRed)}>Войти</button>
