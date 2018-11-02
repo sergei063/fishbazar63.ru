@@ -7,16 +7,17 @@ import _ from 'lodash'
 
 const serverConfig = {
     imgRequire: img => `${img.replace('./', '/img/src/img/seafood/')}`,
-    serverAPI: 'http://api.fishbazar63.ru',
+    serverAPI: `${window.location.protocol}//api.fishbazar63.ru`,
 }
 
 const localConfig = {
     imgRequire: img => `${img.replace('./', '/img/src/img/seafood/')}`, // local
-    serverAPI: 'http://localhost:3212',
+    serverAPI: `${window.location.protocol}//localhost:3212`,
 }
 
 const common = {
     //  common
+    telegramUrl: `${window.location.protocol}//telegram.fishbazar63.ru/bot274564744:AAEGwFztcyAHcXcuNNR6ZzwiXoY4eY-nXCM`,
     imgBlogRequire: require.context('./img/Recipes/', true, /\.(png|jpg|svg)$/),
     //  serverImgDir:'/../public/img/src/img/seafood/',
 }

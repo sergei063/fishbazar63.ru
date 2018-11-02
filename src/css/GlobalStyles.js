@@ -1,12 +1,13 @@
-import {StyleSheet} from 'aphrodite/no-important';
+import { StyleSheet } from 'aphrodite/no-important'
 
-const GLOBALS = '__GLOBAL_STYLES__';
+const GLOBALS = '__GLOBAL_STYLES__'
 
 const globalExtension = {
-    selectorHandler: (selector, baseSelector, generateSubtreeStyles) => (baseSelector.includes(GLOBALS) ? generateSubtreeStyles(selector) : null),
-};
+    selectorHandler: (selector, baseSelector, generateSubtreeStyles) =>
+        baseSelector.includes(GLOBALS) ? generateSubtreeStyles(selector) : null,
+}
 
-const extended = StyleSheet.extend([globalExtension]);
+const extended = StyleSheet.extend([globalExtension])
 
 const styles = StyleSheet.create({
     [GLOBALS]: {
@@ -82,5 +83,5 @@ const styles = StyleSheet.create({
             listStyle: 'none',
         },
     },
-});
-export default extended.css(styles[GLOBALS]);
+})
+export default extended.css(styles[GLOBALS])

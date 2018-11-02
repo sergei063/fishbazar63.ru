@@ -1,7 +1,7 @@
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
-history.listen((location) => {
+history.listen(location => {
     if (!location.notScrollToTop) {
         window.scrollTo(0, 0)
     }

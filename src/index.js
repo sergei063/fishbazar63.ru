@@ -4,14 +4,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import $ from 'jquery'
-import './css/GlobalStyles' // global styles through Aphrodite
+import { ConnectedRouter } from 'react-router-redux'
+import { Provider } from 'react-redux'
 import { css } from 'aphrodite/no-important'
 
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
+import App from './App'
+import './css/GlobalStyles' // global styles through Aphrodite должны быть ниже App и css
 import AppStyle from './css/AppStyle'
 import registerServiceWorker from './registerServiceWorker'
-import App from './App'
+
+
 // import thunk from "redux-thunk";
 import store from './components/getStore'
 import history from './components/history'

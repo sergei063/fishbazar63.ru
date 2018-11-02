@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import { css } from 'aphrodite/no-important'
+import { Link, Route, Switch, withRouter } from 'react-router-dom'
+import connect from 'react-redux/es/connect/connect'
+import { YMInitializer } from 'react-yandex-metrika'
 
 import Home from './pages/Home/Home'
 import About from './pages/About'
@@ -25,12 +28,12 @@ import { allPlacesOfDeliveryFetchData } from './actions/allPlacesOfDeliveryFetch
 /*  eslint-disable no-unused-vars */
 import Header from './Header'
 import Slider from './Slider'
-import { Link, Route, Switch, withRouter } from 'react-router-dom'
+
 import Instagram from './components/SocialNetwork/Instagram'
 import VK from './components/SocialNetwork/Vk'
 import PouchIcon from './containers/PouchIcon/PouchIcon'
-import { YMInitializer } from 'react-yandex-metrika'
-import connect from 'react-redux/es/connect/connect'
+
+
 /*  eslint-disable no-unused-vars */
 
 const Main = () => (
@@ -124,8 +127,8 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`)
         (async () => {
+            this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`)
             /* try {
                   const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
                   this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
