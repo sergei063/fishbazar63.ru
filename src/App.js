@@ -33,7 +33,6 @@ import Instagram from './components/SocialNetwork/Instagram'
 import VK from './components/SocialNetwork/Vk'
 import PouchIcon from './containers/PouchIcon/PouchIcon'
 
-
 /*  eslint-disable no-unused-vars */
 
 const Main = () => (
@@ -127,7 +126,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        (async () => {
+        ;(async () => {
             this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`)
             /* try {
                   const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
