@@ -24,6 +24,7 @@
   "rules": {
     "no-console": 0,
     'no-plusplus': 'off',
+    'linebreak-style': ["error", "unix"],
     "no-alert": 0,
     "indent": ["error", 4, { "SwitchCase": 1 }],
     "max-len": ["error", { "code": 121,"ignoreComments": true }],
