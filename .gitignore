@@ -5,6 +5,8 @@
 /server/node_modules
 /public/img
 /public/fonts
+/public/app-bundle.js
+/public/app-bundle.js.map
 
 # testing
 /coverage

@@ -1,8 +1,12 @@
 var express = require('express');
 var request = require('request');
 var Agent = require('socks5-https-client/lib/Agent');
+var bodyParser = require('body-parser');
+
 
 var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('*', function (req, res) {
     var r = res;
@@ -28,6 +32,20 @@ app.get('*', function (req, res) {
         
     });
     //r.send(url);
+
+});
+app.post('*', function (req, res) {
+
+
+    var url = 'https://api.telegram.org' + req.url;
+    console.log(url)
+    request.post({
+        headers: {'content-type' : 'multipart/form-data'},
+        url:     url,
+        body:    req.body
+    }, function(error, response, body){
+        console.log(body);
+    });
 
 });
 
