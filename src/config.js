@@ -28,8 +28,8 @@ let settings = {
 if (process.env.NODE_ENV === 'production') {
     settings = _.assign(serverConfig, settings)
 } else {
-    //  settings = _.assign(localConfig, settings);
-    settings = _.assign(serverConfig, settings)
+    settings = _.assign(localConfig, settings)
+    //  settings = _.assign(serverConfig, settings)
 }
 const config = _.clone(settings)
 export default config

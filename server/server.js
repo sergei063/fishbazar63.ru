@@ -131,6 +131,33 @@ app.get('/all_places_of_delivery', function (req, res) {
 
     });
 });
+app.post('/set_all_places_of_delivery', function (req, res) {
+    if (!user_data.check_admin(req)) {
+        return res.sendStatus(401)
+    }
+
+console.log(req.body.catalog)
+    if (req.body.catalog) {
+        db.collection("all_places_of_delivery").deleteOne({}, function (err, result) {
+            if (err) {
+                console.log(err);
+                return res.sendStatus(500)
+            }
+            db.collection("all_places_of_delivery").insertOne(req.body.catalog, function (err, result) {
+                if (err) {
+                    console.log(err);
+                    return res.sendStatus(500)
+                }
+                res.send(req.body)
+            })
+        })
+
+
+    }
+
+
+});
+
 
 app.get('/catalog/:id', function (req, res) {
 

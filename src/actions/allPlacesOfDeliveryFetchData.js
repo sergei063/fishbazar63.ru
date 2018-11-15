@@ -8,7 +8,9 @@ export function allPlacesOfDeliveryFetchData() {
     return async dispatch => {
         try {
             const responseAllPlacesOfDelivery = await axios.get(ALL_PLACES_OF_DELIVERY_URL)
-            dispatch(setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery))
+            console.log(ALL_PLACES_OF_DELIVERY_URL)
+            console.log(responseAllPlacesOfDelivery)
+            dispatch(setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.allPlacesOfDelivery))
             dispatch(setMinimumOrderAmount(responseAllPlacesOfDelivery.data.minimumOrderAmount))
         } catch (e) {
             console.log(e)
