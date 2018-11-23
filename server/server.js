@@ -136,7 +136,7 @@ app.post('/set_all_places_of_delivery', function (req, res) {
         return res.sendStatus(401)
     }
 
-console.log(req.body.catalog)
+
     if (req.body.catalog) {
         db.collection("all_places_of_delivery").deleteOne({}, function (err, result) {
             if (err) {

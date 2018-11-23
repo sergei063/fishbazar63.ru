@@ -30,12 +30,10 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllPlacesOfDelivery().then(data =>
-            this.setState({
-                cars: this.props.allPlacesOfDelivery,
-                minimumOrderAmount: this.props.appConfig.minimumOrderAmount,
-            })
-        )
+        this.props.fetchAllPlacesOfDelivery().then(data => this.setState({
+            cars: this.props.allPlacesOfDelivery,
+            minimumOrderAmount: this.props.appConfig.minimumOrderAmount,
+        }))
 
         // this.forceUpdate()
         /* ;(async () => {
@@ -45,9 +43,13 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
 
     save() {
         const cars = [...this.state.cars]
-        if (this.newCar) cars.push(this.state.car)
-        else {
-            cars[this.findSelectedCarIndex()] = this.state.car
+        if (this.newCar) {
+            cars.push(this.state.car)
+        } else {
+            const selectedCarIndex = this.findSelectedCarIndex()
+            if (selectedCarIndex >= 0) {
+                cars[selectedCarIndex] = this.state.car
+            }
         }
 
         this.setState({
@@ -64,8 +66,8 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
         })
     }
 
-    saveToServer = allPlacesOfDeliveryObj => {
-        ;(async () => {
+    saveToServer = (allPlacesOfDeliveryObj) => {
+        (async () => {
             try {
                 await axios.post(`${config.serverAPI}/set_all_places_of_delivery`, {
                     catalog: allPlacesOfDeliveryObj,
@@ -78,7 +80,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
         })()
     }
 
-    handleMinimumOrderAmountChange = event => {
+    handleMinimumOrderAmountChange = (event) => {
         this.setState({ minimumOrderAmount: event.target.value })
     }
 
@@ -162,7 +164,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
                     onRowSelect={this.onCarSelect}
                     reorderableRows={true}
                     onRowReorder={e => this.setState({ cars: e.value })}>
-                    <Column rowReorder={true} style={{width: '3em'}} />
+                    <Column rowReorder={true} style={{ width: '3em' }} />
                     <Column field="where" header="Место" sortable={true} />
                     <Column field="price" header="Стоимость" sortable={true} />
                 </DataTable>
@@ -182,7 +184,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
                             <div className="p-col-8" style={{ padding: '.5em' }}>
                                 <InputText
                                     id="where"
-                                    onChange={e => {
+                                    onChange={(e) => {
                                         this.updateProperty('where', e.target.value)
                                     }}
                                     value={this.state.car.where}
@@ -195,7 +197,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
                             <div className="p-col-8" style={{ padding: '.5em' }}>
                                 <InputText
                                     id="year"
-                                    onChange={e => {
+                                    onChange={(e) => {
                                         this.updateProperty('price', e.target.value)
                                     }}
                                     value={this.state.car.price}
@@ -212,7 +214,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
                     onChange={this.handleMinimumOrderAmountChange}
                 />
                 {'  '}
-                <Button label="Сохранить" onClick={this.save} className="p-button-success p-button-rounded" />
+                <Button label="Сохранить все" onClick={this.save} className="p-button-success p-button-rounded" />
             </div>
         )
     }
@@ -223,12 +225,12 @@ const mapStateToProps = state => ({
 })
 
 const matchDispatchToProps = dispatch => ({
-    setAllPlacesOfDelivery: allPlacesOfDelivery => {
+    setAllPlacesOfDelivery: (allPlacesOfDelivery) => {
         dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery))
     },
     fetchAllPlacesOfDelivery: url => dispatch(allPlacesOfDeliveryFetchData()),
 })
 export default connect(
     mapStateToProps,
-    matchDispatchToProps
+    matchDispatchToProps,
 )(AllPlacesOfDeliveryDataTable)

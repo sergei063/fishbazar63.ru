@@ -78,10 +78,10 @@ const Admin = props => {
                 )}
 
                 {token && (
-                    <div>
+                    <div >
                         <div><AllPlacesOfDeliveryDataTable/></div>
                         <br/>
-                        <button
+                        <div style={{textAlign:'center'}}><button
                             onClick={() => {
                                 localStorage.removeItem('auth_token')
                                 props.history.push({ pathname: '/' })
@@ -89,7 +89,7 @@ const Admin = props => {
                             style={{ width: '174px' }}
                             className={css(AppStyle.buttonRed)}>
                             Выход
-                        </button>
+                        </button></div>
                     </div>
                 )}
             </div>
