@@ -28,6 +28,9 @@ ncu --loglevel verbose --packageFile package.json
 ====Mongo
 mongoimport.exe --db api_fishbazar  --collection fish_catalog  --file ./fish_catalog.json
 
+mongoimport.exe --db api_fishbazar  --collection all_places_of_delivery  --drop --file ./all_places_of_delivery.json
+mongoimport.exe --db api_fishbazar  --collection fish_catalog  --drop --file ./fish_catalog.json
+mongoimport.exe --db api_fishbazar  --collection recipes   --drop --file ./recipes.json
 
 
 

@@ -1,5 +1,8 @@
 import React from 'react'
-
+import 'primeicons/fonts/primeicons.eot'
+import 'primeicons/fonts/primeicons.svg'
+import 'primeicons/fonts/primeicons.ttf'
+import 'primeicons/fonts/primeicons.woff'
 import 'primereact/resources/themes/nova-light/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
