@@ -6,7 +6,7 @@ import 'primeicons/fonts/primeicons.woff'
 import 'primereact/resources/themes/nova-light/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
-
+import _ from 'lodash'
 import connect from 'react-redux/es/connect/connect'
 import { Button } from 'primereact/button'
 import { DataTable } from 'primereact/datatable'
@@ -84,7 +84,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
     }
 
     handleMinimumOrderAmountChange = (event) => {
-        this.setState({ minimumOrderAmount: event.target.value })
+        this.setState({ minimumOrderAmount: _.parseInt(event.target.value) })
     }
 
     delete() {
@@ -201,7 +201,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
                                 <InputText
                                     id="year"
                                     onChange={(e) => {
-                                        this.updateProperty('price', e.target.value)
+                                        this.updateProperty('price', _.parseInt(e.target.value))
                                     }}
                                     value={this.state.car.price}
                                 />

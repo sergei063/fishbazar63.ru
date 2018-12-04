@@ -14,9 +14,9 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+    text-decoration: none !important;
+    color: inherit !important;
+    cursor: pointer !important;
 }
 
 * {
@@ -36,6 +36,9 @@ nav {
     background-color: white;
     height: 180px;
     box-shadow: 0 1px 10px 0 rgba(53, 66, 92, 0.08);
+}
+ul{
+    list-style: none
 }
 
 @media (max-width: 900px) {
