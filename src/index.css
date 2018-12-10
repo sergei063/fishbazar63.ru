@@ -4,7 +4,12 @@ html {
     margin: 0px;
     padding: 0px;
     background-color: white;
-    font-size: 1px;
+    font-size: 14px;
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
 }
 body {
      height: 100%;
