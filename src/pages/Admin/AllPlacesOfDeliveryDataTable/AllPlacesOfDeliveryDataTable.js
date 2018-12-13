@@ -14,6 +14,7 @@ import { Column } from 'primereact/column'
 import { Dialog } from 'primereact/dialog'
 import { InputText } from 'primereact/inputtext'
 import axios from 'axios'
+import { Checkbox } from 'primereact/checkbox'
 import { allPlacesOfDeliveryFetchData } from '../../../actions/allPlacesOfDeliveryFetchData'
 import { setAllPlacesOfDelivery } from '../../../actions'
 import config from '../../../config'
@@ -23,25 +24,31 @@ import { _try } from '../../../components/lib'
 class AllPlacesOfDeliveryDataTable extends React.Component {
     constructor() {
         super()
-        this.state = { minimumOrderAmount: 0 }
+        this.state = { minimumOrderAmount: 0, isHiddenDeliveryPriceChecked: false }
         //  this.carservice = new CarService()
         this.save = this.save.bind(this)
         this.delete = this.delete.bind(this)
         this.onCarSelect = this.onCarSelect.bind(this)
         this.addNew = this.addNew.bind(this)
         this.handleMinimumOrderAmountChange = this.handleMinimumOrderAmountChange.bind(this)
+        this.isHiddenDeliveryPriceChecked = this.isHiddenDeliveryPriceChecked.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchAllPlacesOfDelivery().then(data => this.setState({
             cars: this.props.allPlacesOfDelivery,
             minimumOrderAmount: this.props.appConfig.minimumOrderAmount,
+            isHiddenDeliveryPrice: this.props.appConfig.isHiddenDeliveryPrice,
         }))
 
         // this.forceUpdate()
         /* ;(async () => {
 
         })() */
+    }
+
+    isHiddenDeliveryPriceChecked(e) {
+        this.setState({ isHiddenDeliveryPrice: e.checked })
     }
 
     save() {
@@ -66,6 +73,7 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
         this.saveToServer({
             allPlacesOfDelivery: cars,
             minimumOrderAmount: this.state.minimumOrderAmount,
+            isHiddenDeliveryPrice: this.state.isHiddenDeliveryPrice,
         })
     }
 
@@ -216,7 +224,18 @@ class AllPlacesOfDeliveryDataTable extends React.Component {
                     value={this.state.minimumOrderAmount}
                     onChange={this.handleMinimumOrderAmountChange}
                 />
-                {'  '}
+                <br />
+                <br />
+
+                <Checkbox
+                    inputId="isHiddenDeliveryPriceCheckbox"
+                    onChange={this.isHiddenDeliveryPriceChecked}
+                    checked={this.state.isHiddenDeliveryPrice}
+                />
+                <label htmlFor="isHiddenDeliveryPriceCheckbox" className="p-checkbox-label">
+                    День бесплатной доставки(Отключаются цены на доставку в корзине кроме цен больше 249р)
+                </label>
+                <hr />
                 <Button label="Сохранить все" onClick={this.save} className="p-button-success p-button-rounded" />
             </div>
         )
