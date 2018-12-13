@@ -222,6 +222,41 @@ const SeafoodItemStyle = StyleSheet.create({
         textAlign: 'left',
         color: 'rgba(31, 35, 44, 0.4)',
     },
+    modalWindow: {
+        fontFamily: [MetaSerifProBookFont, 'sans-serif'],
+        fontSize: '18px',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '1.9',
+        letterSpacing: '0.5px',
+        textAlign: 'left',
+        color: '#1e232c',
+        '@media (max-width: 730px)': {
+            fontSize: '10px',
+        },
+    },
+
+    modalWindowBlock: {
+        width: '30%',
+        '@media (max-width: 730px)': {
+            width: '95%',
+        },
+    },
+    mdLogo: {
+        marginBottom: '1em',
+        marginRight: '1.5em',
+        textAlign: 'center',
+    },
+    mdFlex: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        alignContent: 'center',
+    },
+
     withBuy: {
         fontFamily: [FuturaBoldFont, 'sans-serif'],
         fontSize: '18px',
@@ -269,6 +304,19 @@ const SeafoodItemStyle = StyleSheet.create({
     deliveryMore: {
         display: 'grid',
         gridTemplateColumns: '30px 1fr',
+    },
+
+    dialogH2: {
+        fontFamily: [MetaSerifProFont, 'sans-serif'],
+        fontSize: '16px',
+        textTransform: 'uppercase',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '30px',
+        letterSpacing: '0.5px',
+        textAlign: 'left',
+        color: '#000',
     },
 })
 export default SeafoodItemStyle
