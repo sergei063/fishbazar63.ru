@@ -222,20 +222,7 @@ const SeafoodItemStyle = StyleSheet.create({
         textAlign: 'left',
         color: 'rgba(31, 35, 44, 0.4)',
     },
-    modalWindow: {
-        fontFamily: [MetaSerifProBookFont, 'sans-serif'],
-        fontSize: '18px',
-        fontWeight: 'normal',
-        fontStyle: 'normal',
-        fontStretch: 'normal',
-        lineHeight: '1.9',
-        letterSpacing: '0.5px',
-        textAlign: 'left',
-        color: '#1e232c',
-        '@media (max-width: 730px)': {
-            fontSize: '10px',
-        },
-    },
+
 
 
 

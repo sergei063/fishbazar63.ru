@@ -1,5 +1,5 @@
 import React from 'react'
-import { css, StyleSheet } from 'aphrodite'
+import { css, StyleSheet } from 'aphrodite/no-important'
 import { Link } from 'react-router-dom'
 import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
@@ -7,7 +7,7 @@ import $ from 'jquery'
 import connect from 'react-redux/es/connect/connect'
 import { declOfNum } from '../lib'
 import AppStyle from '../../css/AppStyle'
-import { LucidaGrandeFont, MetaSerifProFont, MetaSerifProLightFont } from '../../css/Fonts'
+import { LucidaGrandeFont, MetaSerifProBookFont, MetaSerifProFont, MetaSerifProLightFont } from '../../css/Fonts'
 import { addFishToSeafoodShoppingCart, setShoppingCartDialogVisible } from '../../actions'
 import * as ReactDOM from 'react-dom'
 
@@ -44,7 +44,7 @@ class ShoppingCartDialog extends React.Component {
     render() {
         const shoppingCartLenght = Object.keys(this.props.seafoodShoppingCart.allFish).length
 
-        const shoppingCartLenghtText = `${shoppingCartLenght} ${declOfNum(['Товар', 'Товара', 'Товаров'])(
+        const shoppingCartLenghtText = `${shoppingCartLenght} ${declOfNum(['товар', 'товара', 'товаров'])(
             shoppingCartLenght
         )}`
 
@@ -106,6 +106,20 @@ const Style = StyleSheet.create({
         letterSpacing: '0.5px',
         textAlign: 'left',
         color: '#000',
+    },
+    modalWindow: {
+        fontFamily: [MetaSerifProBookFont, 'sans-serif'],
+        fontSize: '18px',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: '1.9',
+        letterSpacing: '0.5px',
+        textAlign: 'left',
+        color: '#1e232c',
+        '@media (max-width: 730px)': {
+            fontSize: '13px',
+        },
     },
     mdFlex: {
         display: 'flex',

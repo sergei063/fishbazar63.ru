@@ -16,6 +16,9 @@ import {
 } from '../../css/Fonts'
 import $ from 'jquery'
 import AppStyle from '../../css/AppStyle'
+import { AddShoppingCart } from '../../pages/Seafood/SeafoodItem'
+import { addFishToSeafoodShoppingCart, setShoppingCartDialogVisible } from '../../actions'
+import connect from 'react-redux/es/connect/connect'
 /*  eslint-enable no-unused-vars  */
 
 const Card = props => {
@@ -33,18 +36,23 @@ const Card = props => {
                 <div>хит</div>
             </div>
             <div className={css(_CommonCardStyle.productCounter, _CommonCardStyle.fontCounter)}>
-                <Counter
-                    id={`cardFishNum_${p.id}`}
-                    counter={p.count}
-                    packaging={p.packaging}
-                    calbackFn={() => {
-                        //calbackFn(p.id, this.props)
-                        /* {
-                         this.props.onChangeShoppingCart(totalSum)
-                     } */
-                    }}
-                />
+                <Counter id={`cardFishNum_${p.id}`} counter={p.count} packaging={p.packaging} calbackFn={() => {}} />
             </div>
+            {!isShowAddFish && (
+                <div className={css(_CommonCardStyle.productButton)}>
+                    <button
+                        onClick={e => {
+                            e.preventDefault()
+
+                            if (AddShoppingCart(p, $(`#cardFishNum_${p.id}`), props)) {
+                                props.setShoppingCartDialogVisible(true)
+                            }
+                        }}
+                        className={css(_CommonCardStyle.buttonRed)}>
+                        В корзину
+                    </button>
+                </div>
+            )}
             <Link className={css(Style.card)} to={`/production/${p.id}`}>
                 <div className={css(Style.productPhoto)}>
                     <img className={css(Style.productPhotoImg)} src={imgFile} alt={p.info} />
@@ -61,18 +69,6 @@ const Card = props => {
                     </div>
                     <div className={css(Style.productWeightFish)}>
                         {p.weightFish && p.weightFish.help ? `Вес одной рыбы - ${p.weightFish.help}` : ''}
-                    </div>
-                    <div className={css(_CommonCardStyle.productButton)}>
-                        <button
-                            onClick={e => {
-                                e.preventDefault()
-                                alert('Тут будет окно для спроса')
-                                //this.setState({ visibleDialog: true })
-                                //AddShoppingCart(item, $('#countFish'), this.props)
-                            }}
-                            className={css(_CommonCardStyle.buttonRed)}>
-                            В корзину
-                        </button>
                     </div>
                 </div>
             </Link>
@@ -98,9 +94,8 @@ const _CommonCardStyle = StyleSheet.create({
         textAlign: 'right',
         zIndex: '1',
         width: '100%',
-
-        paddingRight: '17px',
-        bottom: '10px',
+        paddingRight: '5px',
+        bottom: '2px',
     },
     fontCounter: {
         fontFamily: [MetaSerifProLightFont, 'sans-serif'],
@@ -136,4 +131,18 @@ const _CommonCardStyle = StyleSheet.create({
     },
 })
 
-export default Card
+const mapStateToProps = state => state
+
+const matchDispatchToProps = dispatch => ({
+    addSeafoodItem: (fish, countFish) => {
+        dispatch(addFishToSeafoodShoppingCart(fish, countFish))
+    },
+    setShoppingCartDialogVisible: visible => {
+        dispatch(setShoppingCartDialogVisible(visible))
+    },
+})
+
+export default connect(
+    mapStateToProps,
+    matchDispatchToProps
+)(Card)

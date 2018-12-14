@@ -32,6 +32,7 @@ import Slider from './Slider'
 import Instagram from './components/SocialNetwork/Instagram'
 import VK from './components/SocialNetwork/Vk'
 import PouchIcon from './containers/PouchIcon/PouchIcon'
+import ShoppingCartDialog from "./components/ShoppingCartDialog/ShoppingCartDialog";
 
 /*  eslint-disable no-unused-vars */
 
@@ -121,6 +122,7 @@ class App extends React.Component {
                     <Main />
                 </div>
                 <Footer />
+                <ShoppingCartDialog history={this.props.history} />
             </div>
         )
     }

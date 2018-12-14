@@ -21,6 +21,9 @@ const CardStyle = StyleSheet.create({
             marginRight: '0px',
             padding: '0px',
         },
+        '@media (max-width: 900px)': {
+            justifyContent: 'center',
+        },
     },
 
     li: {

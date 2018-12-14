@@ -71,7 +71,6 @@ class SeafoodItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-
     }
 
     render() {
@@ -89,7 +88,7 @@ class SeafoodItem extends React.Component {
         } catch (e) {}
         return (
             <div className={css(SeafoodItemStyle.cnt)}>
-                <ShoppingCartDialog history={this.props.history} />
+
 
                 <div className={css(SeafoodItemStyle.h124)} />
                 <div className={css(SeafoodItemStyle.flexContainer)}>
@@ -141,8 +140,10 @@ class SeafoodItem extends React.Component {
                         <div>
                             <button
                                 onClick={() => {
-                                    this.props.setShoppingCartDialogVisible(true)
-                                    AddShoppingCart(item, $('#countFish'), this.props)
+
+                                    if (AddShoppingCart(item, $('#countFish'), this.props)){
+                                        this.props.setShoppingCartDialogVisible(true)
+                                    }
                                 }}
                                 style={{ width: '174px' }}
                                 className={css(AppStyle.buttonRed)}>
@@ -213,18 +214,19 @@ const tooltiptMobileStyle = StyleSheet.create({
     },
 })
 
-const AddShoppingCart = (fish, countFishEl, props) => {
+export const AddShoppingCart = (fish, countFishEl, props) => {
     ym('reachGoal', 'objective1')
     const countFish = Number.parseInt(countFishEl[0].value, 10)
 
-    if (isNaN(fish.price)) {
+    if (isNaN(fish.price) || fish.price===null) {
         alert('Извините, данного товара нет в наличии')
-        return
+        return false;
     }
 
     Katalog.addShoppingCart(fish, countFish)
 
     props.addSeafoodItem(fish, countFish)
+    return true;
     // alert("Добавлено в корзину: " + fish.name + " (" + countFish + " " + fish.packaging + ")");
 }
 
