@@ -237,25 +237,8 @@ const SeafoodItemStyle = StyleSheet.create({
         },
     },
 
-    modalWindowBlock: {
-        width: '30%',
-        '@media (max-width: 730px)': {
-            width: '95%',
-        },
-    },
-    mdLogo: {
-        marginBottom: '1em',
-        marginRight: '1.5em',
-        textAlign: 'center',
-    },
-    mdFlex: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        alignContent: 'center',
-    },
+
+
 
     withBuy: {
         fontFamily: [FuturaBoldFont, 'sans-serif'],

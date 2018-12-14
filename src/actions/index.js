@@ -4,6 +4,7 @@ export const SET_IS_HIDDEN_DELIVERY_PRICE = 'SET_IS_HIDDEN_DELIVERY_PRICE'
 export const SET_PLACE_OF_DELIVERY = 'SET_PLACE_OF_DELIVERY'
 export const SET_ALL_FORMS_VALUE = 'SET_ALL_FORMS_VALUE'
 export const SET_PRICE = 'SET_PRICE'
+export const SET_SHOPPING_CART_DIALOG = 'SET_SHOPPING_CART_DIALOG'
 
 export const select = item => {}
 
@@ -40,4 +41,8 @@ export const setAllFormsValue = (id, value) => ({
 export const setPrice = document => ({
     type: SET_PRICE,
     document,
+})
+export const setShoppingCartDialogVisible = shoppingCartDialogVisible => ({
+    type: SET_SHOPPING_CART_DIALOG,
+    shoppingCartDialogVisible,
 })

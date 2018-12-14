@@ -11,11 +11,12 @@ import Katalog from '../../Katalog'
 import SeafoodItemStyle from './SeafoodItemStyle'
 import AppStyle from '../../css/AppStyle'
 import Counter from '../../components/Counter/Counter'
-import { addFishToSeafoodShoppingCart } from '../../actions'
+import { addFishToSeafoodShoppingCart, setIsHiddenDeliveryPrice, setShoppingCartDialogVisible } from '../../actions'
 import Iinfo from '../../components/Iinfo/Iinfo'
 import AllCards from '../../components/Cards/AllCards'
 import config from '../../config'
 import { declOfNum } from '../../components/lib'
+import ShoppingCartDialog from '../../components/ShoppingCartDialog/ShoppingCartDialog'
 
 const BreadCrumbs = props => (
     <div>
@@ -69,50 +70,11 @@ const onHideDialog = props => {
 class SeafoodItem extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { visibleDialog: false }
-        this.onClick = this.onClick.bind(this)
-        this.onHide = this.onHide.bind(this)
-        this.checkout = this.checkout.bind(this)
-    }
+        this.state = {}
 
-    onClick() {
-        this.setState({ visibleDialog: true })
-    }
-
-    onHide() {
-        this.setState({ visibleDialog: false })
-    }
-    checkout() {
-        this.setState({ visibleDialog: false })
-        this.props.history.push({ pathname: '/shopping_cart' })
     }
 
     render() {
-        const shoppingCartLenght = Object.keys(this.props.seafoodShoppingCart.allFish).length
-
-        const shoppingCartLenghtText = `${shoppingCartLenght} ${declOfNum(['Товар', 'Товара', 'Товаров'])(
-            shoppingCartLenght
-        )}`
-
-        const headerDialog = (
-            <div>
-                <div className={css(SeafoodItemStyle.dialogH2)}>Товар добавлен в корзину</div>
-                <div>
-                    Всего в вашей корзине {shoppingCartLenghtText}
-                    .&nbsp;
-                    <Link className={css(AppStyle.blue_link)} to="/shopping_cart">
-                        Посмотреть
-                    </Link>
-                </div>
-            </div>
-        )
-        const footer = (
-            <div>
-                <Button label="Продолжить покупки" onClick={this.onHide} className="p-button-secondary" />
-                <Button label="Оформить заказ" onClick={this.checkout} />
-            </div>
-        )
-
         const item = Katalog.get(this.props.match.params.id)
         if (!item) {
             return <div>Ничего не найдено</div>
@@ -127,29 +89,8 @@ class SeafoodItem extends React.Component {
         } catch (e) {}
         return (
             <div className={css(SeafoodItemStyle.cnt)}>
-                <Dialog
-                    header={headerDialog}
-                    closable={false}
-                    visible={this.state.visibleDialog}
-                    footer={footer}
-                    breakpoint={750}
-                    className={css(SeafoodItemStyle.modalWindowBlock)}
-                    minY={470}
-                    modal={true}
-                    baseZIndex={999999}
-                    responsive={true}
-                    onHide={this.onHide}
-                    maximizable={false}>
-                    <div className={css(SeafoodItemStyle.mdFlex)}>
-                        <div className={css(SeafoodItemStyle.mdLogo)}>
-                            <img src={require('../../img/logo_full.png')} width="152px" height="99px" />
-                        </div>
-                        <div className={css(SeafoodItemStyle.modalWindow)}>
-                            Оформите заказ сегодня и получите скидку <span style={{ color: 'red' }}>4%!</span>
+                <ShoppingCartDialog history={this.props.history} />
 
-                        </div>
-                    </div>
-                </Dialog>
                 <div className={css(SeafoodItemStyle.h124)} />
                 <div className={css(SeafoodItemStyle.flexContainer)}>
                     <div className={css(SeafoodItemStyle.fishContainer, SeafoodItemStyle.width40P)}>
@@ -200,7 +141,7 @@ class SeafoodItem extends React.Component {
                         <div>
                             <button
                                 onClick={() => {
-                                    this.setState({ visibleDialog: true })
+                                    this.props.setShoppingCartDialogVisible(true)
                                     AddShoppingCart(item, $('#countFish'), this.props)
                                 }}
                                 style={{ width: '174px' }}
@@ -292,6 +233,9 @@ const mapStateToProps = state => state
 const matchDispatchToProps = dispatch => ({
     addSeafoodItem: (fish, countFish) => {
         dispatch(addFishToSeafoodShoppingCart(fish, countFish))
+    },
+    setShoppingCartDialogVisible: visible => {
+        dispatch(setShoppingCartDialogVisible(visible))
     },
 })
 
