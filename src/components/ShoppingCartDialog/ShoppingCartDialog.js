@@ -5,11 +5,13 @@ import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
 import $ from 'jquery'
 import connect from 'react-redux/es/connect/connect'
+import * as ReactDOM from 'react-dom'
 import { declOfNum } from '../lib'
 import AppStyle from '../../css/AppStyle'
-import { LucidaGrandeFont, MetaSerifProBookFont, MetaSerifProFont, MetaSerifProLightFont } from '../../css/Fonts'
+import {
+    LucidaGrandeFont, MetaSerifProBookFont, MetaSerifProFont, MetaSerifProLightFont,
+} from '../../css/Fonts'
 import { addFishToSeafoodShoppingCart, setShoppingCartDialogVisible } from '../../actions'
-import * as ReactDOM from 'react-dom'
 
 class ShoppingCartDialog extends React.Component {
     constructor(props) {
@@ -17,9 +19,11 @@ class ShoppingCartDialog extends React.Component {
 
         this.root = document.createElement('div')
         document.body.appendChild(this.root)
+        this.top = 0
 
         this.onClick = this.onClick.bind(this)
         this.onHide = this.onHide.bind(this)
+        this.onShow = this.onShow.bind(this)
         this.checkout = this.checkout.bind(this)
     }
 
@@ -33,7 +37,12 @@ class ShoppingCartDialog extends React.Component {
     }
 
     onHide() {
+        $('html,body').animate({ scrollTop: this.top }, { duration: 10 })
         this.props.setShoppingCartDialogVisible(false)
+    }
+
+    onShow() {
+        this.top = $(window).scrollTop()
     }
 
     checkout() {
@@ -45,7 +54,7 @@ class ShoppingCartDialog extends React.Component {
         const shoppingCartLenght = Object.keys(this.props.seafoodShoppingCart.allFish).length
 
         const shoppingCartLenghtText = `${shoppingCartLenght} ${declOfNum(['товар', 'товара', 'товаров'])(
-            shoppingCartLenght
+            shoppingCartLenght,
         )}`
 
         const headerDialog = (
@@ -79,6 +88,7 @@ class ShoppingCartDialog extends React.Component {
                 baseZIndex={999999}
                 responsive={true}
                 onHide={this.onHide}
+                onShow={this.onShow}
                 maximizable={false}>
                 <div className={css(Style.mdFlex)}>
                     <div className={css(Style.mdLogo)}>
@@ -89,7 +99,7 @@ class ShoppingCartDialog extends React.Component {
                     </div>
                 </div>
             </Dialog>,
-            this.root
+            this.root,
         )
     }
 }
@@ -148,12 +158,12 @@ const mapStateToProps = state => ({
 })
 
 const matchDispatchToProps = dispatch => ({
-    setShoppingCartDialogVisible: visible => {
+    setShoppingCartDialogVisible: (visible) => {
         dispatch(setShoppingCartDialogVisible(visible))
     },
 })
 
 export default connect(
     mapStateToProps,
-    matchDispatchToProps
+    matchDispatchToProps,
 )(ShoppingCartDialog)
