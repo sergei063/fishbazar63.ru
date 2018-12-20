@@ -63,7 +63,7 @@ class ShoppingCartDialog extends React.Component {
                 <div>
                     Всего в вашей корзине {shoppingCartLenghtText}
                     .&nbsp;
-                    <Link className={css(AppStyle.blue_link)} to="/shopping_cart">
+                    <Link className={css(AppStyle.blue_link)} onClick={this.onHide} to="/shopping_cart">
                         Посмотреть
                     </Link>
                 </div>
