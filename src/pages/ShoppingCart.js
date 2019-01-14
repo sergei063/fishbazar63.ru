@@ -118,7 +118,7 @@ const Basket = (props) => {
                                 placeholder={'Улица, номер дома и квартиры'}
                             />
                         </div>
-
+                        <div  className={css(ShoppingCartStyle.consentPersonalDataText, ShoppingCartStyle.consentPersonalData)}>Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих &laquo;Персональных данных&raquo;.</div>
                         <button
                             onClick={(event) => {
                                 if (
@@ -210,6 +210,7 @@ const Basket = (props) => {
                             className={css(AppStyle.buttonRed, ShoppingCartStyle.button)}>
                             Оформить заказ
                         </button>
+
                     </div>
                 </div>
             </div>

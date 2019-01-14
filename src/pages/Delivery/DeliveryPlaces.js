@@ -7,7 +7,7 @@ import DeliveryStyle from './DeliveryStyle';
 
 const DeliveryPlaces = props => (
     <div className={css(DeliveryStyle.width70Percent, DeliveryStyle.columnText)}>
-        <ul style={{ paddingInlineStart: '0px' }}>
+        <ul style={{ padding:'0px' }}>
             {props.allPlacesOfDelivery.map((p, k) => (
                 <li key={k}>
                     {p.where}
