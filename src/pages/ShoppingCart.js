@@ -1,7 +1,7 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-import { css } from 'aphrodite/no-important'
-import { connect } from 'react-redux'
+import {Route, Switch} from 'react-router-dom'
+import {css} from 'aphrodite/no-important'
+import {connect} from 'react-redux'
 import $ from 'jquery'
 import ym from 'react-yandex-metrika'
 import AppStyle from '../css/AppStyle'
@@ -11,20 +11,21 @@ import PlaceOfDelivery from '../components/PlaceOfDelivery/PlaceOfDelivery'
 import ShoppingCartList from '../containers/ShoppingCart/ShoppingCartList'
 import InputTextBox from '../components/InputTextBox/InputTextBox'
 import config from '../config'
+import ConsentPersonalData from "../components/ConsentPersonalData/ConsentPersonalData";
 
 
 const ShoppingCart = props => (
     <Switch>
-        <Route exact path="/shopping_cart" params={props} component={connect(mapStateToProps)(Basket)} />
-        <Route path="/shopping_cart/:num" params={props} component={BasketConfirmed} />
+        <Route exact path="/shopping_cart" params={props} component={connect(mapStateToProps)(Basket)}/>
+        <Route path="/shopping_cart/:num" params={props} component={BasketConfirmed}/>
     </Switch>
 )
 
 const Basket = (props) => {
     if (props.seafoodShoppingCart.totalCost < 1) {
         return (
-            <div style={{ minHeight: '60vh' }}>
-                <div className={css(ShoppingCartStyle.cntArea)} />
+            <div style={{minHeight: '60vh'}}>
+                <div className={css(ShoppingCartStyle.cntArea)}/>
                 <div className={css(ShoppingCartStyle.h1)}>Ваша корзина пуста</div>
             </div>
         )
@@ -35,40 +36,41 @@ const Basket = (props) => {
     const placeOfDeliveryRef = React.createRef()
     return (
         <div className={css(ShoppingCartStyle.cnt)}>
-            <div className={css(ShoppingCartStyle.cntArea)} />
+            <div className={css(ShoppingCartStyle.cntArea)}/>
             <div className={css(ShoppingCartStyle.productCnt)}>
                 <div className={css(ShoppingCartStyle.h1)}>Корзина</div>
-                <br />
-                <br />
-                <br />
-                <ShoppingCartList history={props.history} />
-                <br />
-                <br />
-                <br />
+                <br/>
+                <br/>
+                <br/>
+                <ShoppingCartList history={props.history}/>
+                <br/>
+                <br/>
+                <br/>
 
-                <div style={{ marginBottom: '15px' }} className={css(ShoppingCartStyle.h1)}>
+                <div style={{marginBottom: '15px'}} className={css(ShoppingCartStyle.h1)}>
                     Доставка
                 </div>
-                <PlaceOfDelivery ref={placeOfDeliveryRef} />
+                <PlaceOfDelivery ref={placeOfDeliveryRef}/>
 
                 <div className={css(ShoppingCartStyle.coupon)}>
                     <div className={css(ShoppingCartStyle.couponInfoIcon)}>
-                        <Iinfo />
+                        <Iinfo/>
                     </div>
                     <div className={css(ShoppingCartStyle.couponInfotext)}>
                         Для бесплатной доставки введите номер купона
                     </div>
                     <div className={css(ShoppingCartStyle.couponInfoNum)}>
-                        <input placeholder={'номер купона'} className={css(ShoppingCartStyle.input)} />
+                        <input placeholder={'номер купона'} className={css(ShoppingCartStyle.input)}/>
                     </div>
                     <div>
-                        <button onClick={() => {}} style={{ width: '144px' }} className={css(AppStyle.buttonGrey)}>
+                        <button onClick={() => {
+                        }} style={{width: '144px'}} className={css(AppStyle.buttonGrey)}>
                             Применить
                         </button>
                     </div>
                 </div>
 
-                <div style={{ height: '36px' }} />
+                <div style={{height: '36px'}}/>
                 <div className={css(ShoppingCartStyle.totalText)}>
                     Итоговая сумма:{' '}
                     <span className={css(ShoppingCartStyle.price)}>
@@ -76,9 +78,9 @@ const Basket = (props) => {
                     </span>
                 </div>
 
-                <div style={{ height: '73px' }} />
+                <div style={{height: '73px'}}/>
                 <div className={css(ShoppingCartStyle.h1)}>Информация для доставки</div>
-                <div style={{ height: '59px' }} />
+                <div style={{height: '59px'}}/>
 
                 <div className={css(ShoppingCartStyle.deliveryInfo)}>
                     <div className={css(ShoppingCartStyle.deliveryMan)}>
@@ -118,7 +120,8 @@ const Basket = (props) => {
                                 placeholder={'Улица, номер дома и квартиры'}
                             />
                         </div>
-                        <div  className={css(ShoppingCartStyle.consentPersonalDataText, ShoppingCartStyle.consentPersonalData)}>Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих &laquo;Персональных данных&raquo;.</div>
+                        <ConsentPersonalData sidebarVisible={false}/>
+
                         <button
                             onClick={(event) => {
                                 if (
@@ -142,14 +145,14 @@ const Basket = (props) => {
                                         const fish = props.seafoodShoppingCart.allFish[el]
                                         msg += `-${i}) ${fish.name} ${fish.count} ${fish.packaging} по ${
                                             fish.price
-                                        } руб  на сумму ${fish.cost}руб.\n`
+                                            } руб  на сумму ${fish.cost}руб.\n`
                                         i++
                                     }
                                     msg += `Доставить ${
                                         props.placeOfDelivery.where
-                                    } по адресу ${address.current.wrappedInstance.getValue()}`
+                                        } по адресу ${address.current.wrappedInstance.getValue()}`
 
-                                     $.ajax({
+                                    $.ajax({
                                         url: `${config.telegramUrl}/sendMessage?text=<code>${encodeURI(
                                             msg
                                         )}</code>&parse_mode=HTML&chat_id=102407893`,
@@ -164,7 +167,8 @@ const Basket = (props) => {
                                              alert("Произошла ошибка: Нет связи с администраторром! Пожалуйста свяжитесь с нами +79277172111")
                                          } */
                                         },
-                                        error(jqXHR, textStatus, errorThrown) {},
+                                        error(jqXHR, textStatus, errorThrown) {
+                                        },
                                         complete(jqXHR, textStatus) {
                                             nativeEvent.disabled = false
                                             // props.history.push({pathname: `/shopping_cart/ok`})
@@ -176,11 +180,13 @@ const Basket = (props) => {
                                         dataType: 'JSONP',
                                         jsonpCallback: 'callback',
                                         type: 'GET',
-                                        success() {},
-                                        error(jqXHR, textStatus, errorThrown) {},
+                                        success() {
+                                        },
+                                        error(jqXHR, textStatus, errorThrown) {
+                                        },
                                         complete(jqXHR, textStatus) {
                                             nativeEvent.disabled = false
-                                            props.history.push({ pathname: '/shopping_cart/ok' })
+                                            props.history.push({pathname: '/shopping_cart/ok'})
                                         },
                                     })
 
@@ -220,7 +226,7 @@ const Basket = (props) => {
 
 const BasketConfirmed = props => (
     <div className={css(ShoppingCartStyle.cnt)}>
-        <div className={css(ShoppingCartStyle.cntAreaConfirmed)} />
+        <div className={css(ShoppingCartStyle.cntAreaConfirmed)}/>
         <div className={css(ShoppingCartStyle.productCnt)}>
             <div className={css(ShoppingCartStyle.deliveryInfo)}>
                 <div>
@@ -231,12 +237,12 @@ const BasketConfirmed = props => (
                         height="205px"
                     />
                 </div>
-                <div style={{ height: '53px' }} className={css(ShoppingCartStyle.mobileShow)} />
+                <div style={{height: '53px'}} className={css(ShoppingCartStyle.mobileShow)}/>
                 <div>
-                    <div className={css(ShoppingCartStyle.h1)} style={{ textAlign: 'left', marginLeft: '0' }}>
+                    <div className={css(ShoppingCartStyle.h1)} style={{textAlign: 'left', marginLeft: '0'}}>
                         Готово!
                     </div>
-                    <div style={{ height: '33px' }} />
+                    <div style={{height: '33px'}}/>
                     <div className={css(ShoppingCartStyle.confirmedText)}>
                         Ваш заказ в обработке, мы перезвоним вам в течение часа, чтобы узнать когда отправить курьера с
                         морепродуктами
@@ -244,7 +250,7 @@ const BasketConfirmed = props => (
                 </div>
             </div>
         </div>
-        <div className={css(ShoppingCartStyle.cntAreaConfirmed)} />
+        <div className={css(ShoppingCartStyle.cntAreaConfirmed)}/>
     </div>
 )
 

@@ -63,22 +63,7 @@ const ShoppingCartStyle = StyleSheet.create({
         color: '#1e232c',
     },
 
-    consentPersonalDataText: {
-        fontFamily: [MetaSerifProBookFont, 'sans-serif'],
-        fontSize: '14px',
-        fontWeight: 'normal',
-        fontStyle: 'normal',
-        fontStretch: 'normal',
-        lineHeight: '1.2',
-        letterSpacing: '0.5px',
-        textAlign: 'left',
-        color: '#1e232c',
-    },
 
-    consentPersonalData: {
-        paddingLeft: '10px',
-        marginBottom: '10px',
-    },
 
     divTable: {
         display: 'table',
