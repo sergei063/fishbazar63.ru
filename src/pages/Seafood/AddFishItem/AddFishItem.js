@@ -298,7 +298,7 @@ class AddFishItem extends React.Component {
           >
             <div className={css(SeafoodItemStyle.nameDiv)}>
               <span className={css(SeafoodItemStyle.name)}>
-                Идентификатор
+                Идентификатор(Только английские буквы и никаких пробелов)
                 <InputTextBox
                   text={item.id}
                   ref={this.idRef}

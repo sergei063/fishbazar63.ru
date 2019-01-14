@@ -32,6 +32,7 @@ import Slider from './Slider'
 import Instagram from './components/SocialNetwork/Instagram'
 import VK from './components/SocialNetwork/Vk'
 import PouchIcon from './containers/PouchIcon/PouchIcon'
+import ShoppingCartDialog from "./components/ShoppingCartDialog/ShoppingCartDialog";
 
 /*  eslint-disable no-unused-vars */
 
@@ -69,8 +70,8 @@ const Footer = () => (
             <div className={css(AppStyle.footer_menu)}>
                 <div className={css(AppStyle.phoneNumberMobileShow)}>
                     <div className={css(AppStyle.phoneNumber)}>
-                        <a href="tel:+88007070794">
-                            <nobr>8 800 707-07-94</nobr>
+                        <a href="tel:+79171682771">
+                            <nobr>8 (917) 168 27 71</nobr>
                         </a>
                     </div>
                 </div>
@@ -95,7 +96,7 @@ const Footer = () => (
 
             <div className={css(AppStyle.phoneNumberMobileHide)}>
                 <div className={css(AppStyle.phoneNumber)}>
-                    <a href="tel:+88007070794">
+                    <a href="tel:+79171682771">
                         <nobr>8 (917) 168 27 71</nobr>
                     </a>
                 </div>
@@ -121,6 +122,7 @@ class App extends React.Component {
                     <Main />
                 </div>
                 <Footer />
+                <ShoppingCartDialog history={this.props.history} />
             </div>
         )
     }

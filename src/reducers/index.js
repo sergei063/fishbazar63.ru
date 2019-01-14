@@ -7,6 +7,7 @@ import AllFormsReducer from './AllFormsReducer';
 import PriceReducer from './PriceReducer';
 import AllPlacesOfDeliveryReducer from './AllPlacesOfDeliveryReducer';
 import ConfigReducer from "./ConfigReducer";
+import ShoppingCartDialogReducer from "./ShoppingCartDialogReducer";
 
 const allReducers = combineReducers({
     routing: routerReducer,
@@ -17,6 +18,7 @@ const allReducers = combineReducers({
     seafoodShoppingCart: SeafoodShoppingCartReducer,
     allForms: AllFormsReducer,
     price: PriceReducer,
+    shoppingCartDialog: ShoppingCartDialogReducer,
 });
 
 export default allReducers;

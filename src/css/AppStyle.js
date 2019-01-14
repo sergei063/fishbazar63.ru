@@ -253,6 +253,12 @@ const AppStyle = StyleSheet.create({
             borderBottom: '2px solid red',
         },
     },
+    blue_link: {
+        color: '#5983f0 !important',
+        ':hover': {
+            color: 'red !important',
+        },
+    },
     center_text: {
         textAlign: 'center',
     },
