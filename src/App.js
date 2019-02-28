@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import { css } from 'aphrodite/no-important'
-import { Link, Route, Switch, withRouter } from 'react-router-dom'
+import {css} from 'aphrodite/no-important'
+import {Link, Route, Switch, withRouter} from 'react-router-dom'
 import connect from 'react-redux/es/connect/connect'
-import { YMInitializer } from 'react-yandex-metrika'
+import {YMInitializer} from 'react-yandex-metrika'
 
 import Home from './pages/Home/Home'
 import About from './pages/About'
@@ -23,8 +23,8 @@ import Blog from './pages/Blog/Blog'
 import Katalog from './Katalog'
 import config from './config'
 import Admin from './pages/Admin/Admin'
-import { setAllPlacesOfDelivery } from './actions'
-import { allPlacesOfDeliveryFetchData } from './actions/allPlacesOfDeliveryFetchData'
+import {setAllPlacesOfDelivery} from './actions'
+import {allPlacesOfDeliveryFetchData} from './actions/allPlacesOfDeliveryFetchData'
 /*  eslint-disable no-unused-vars */
 import Header from './Header'
 import Slider from './Slider'
@@ -39,17 +39,17 @@ import ShoppingCartDialog from "./components/ShoppingCartDialog/ShoppingCartDial
 const Main = () => (
     <main>
         <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/production" component={Seafood} />
-            <Route path="/fbadmin" component={Admin} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/about" component={About} />
-            <Route path="/news" component={News} />
-            <Route path="/about_fish" component={AboutFish} />
-            <Route path="/shopping_cart" component={ShoppingCart} />
-            <Route path="/location" component={Location} />
-            <Route path="/quality_assurance" component={QualityAssurance} />
-            <Route path="/delivery" component={DeliveryPage} />
+            <Route exact path="/" component={Home}/>
+            <Route path="/production" component={Seafood}/>
+            <Route path="/fbadmin" component={Admin}/>
+            <Route path="/blog" component={Blog}/>
+            <Route path="/about" component={About}/>
+            <Route path="/news" component={News}/>
+            <Route path="/about_fish" component={AboutFish}/>
+            <Route path="/shopping_cart" component={ShoppingCart}/>
+            <Route path="/location" component={Location}/>
+            <Route path="/quality_assurance" component={QualityAssurance}/>
+            <Route path="/delivery" component={DeliveryPage}/>
         </Switch>
     </main>
 )
@@ -65,6 +65,8 @@ const Footer = () => (
                         height="96px"
                     />
                 </Link>
+                <br/>
+                <span style={{color: 'white', textAlign: 'left' }}>ИП "Бухтияров Сергей Андреевич"<br/>Инн-633010251614<br/>Огрнип-317631300103445</span>
             </div>
 
             <div className={css(AppStyle.footer_menu)}>
@@ -78,7 +80,7 @@ const Footer = () => (
                 <Link className={css(AppStyle.footer_link)} to="/production">
                     Морепродукты
                 </Link>
-                <br />
+                <br/>
                 <Link className={css(AppStyle.footer_link)} to="/quality_assurance">
                     Гарантия качества
                 </Link>
@@ -88,7 +90,7 @@ const Footer = () => (
                 <Link className={css(AppStyle.footer_link)} to="/delivery">
                     Доставка
                 </Link>
-                <br />
+                <br/>
                 <Link className={css(AppStyle.footer_link)} to="/blog">
                     Рецепты
                 </Link>
@@ -100,9 +102,9 @@ const Footer = () => (
                         <nobr>8 (917) 168 27 71</nobr>
                     </a>
                 </div>
-                <Instagram />
+                <Instagram/>
                 <span className={css(SocialNetworkBlockStyle.PL20)}>
-                    <VK />
+                    <VK/>
                 </span>
             </div>
         </div>
@@ -111,55 +113,55 @@ const Footer = () => (
 
 class App extends React.Component {
     render() {
-        const { history } = this.props
-        return (
-            <div className={css(AppStyle.container)}>
-                <YMInitializer accounts={[46654176]} />
-                <Header isMobile={this.props.isMobile} />
-                <div style={{ position: 'relative' }}>
-                    <PouchIcon />
-                    {history.location.pathname === '/' && <Slider />}
-                    <Main />
-                </div>
-                <Footer />
-                <ShoppingCartDialog history={this.props.history} />
-            </div>
-        )
-    }
+    const {history} = this.props
+    return (
+    <div className={css(AppStyle.container)}>
+    <YMInitializer accounts={[46654176]} />
+    <Header isMobile={this.props.isMobile} />
+    <div style={{position: 'relative'}}>
+    <PouchIcon />
+    {history.location.pathname === '/' && <Slider/>}
+    <Main />
+    </div>
+    <Footer />
+    <ShoppingCartDialog history={this.props.history} />
+    </div>
+    )
+}
 
     componentDidMount() {
-        ;(async () => {
-            this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`)
-            /* try {
-                  const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
-                  this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
-              } catch (e) {
-                  console.error(e);
-              }
-      */
-            try {
-                const responseCatalog = await axios.get(`${config.serverAPI}/catalog`)
-                Katalog.setPrice(responseCatalog.data)
-            } catch (error) {
-                console.error(error)
-            }
+    ;(async () => {
+    this.props.fetchAllPlacesOfDelivery(`${config.serverAPI}/all_places_of_delivery`)
+    /* try {
+          const responseAllPlacesOfDelivery = await axios.get(`${config.serverAPI}/all_places_of_delivery`);
+          this.props.setAllPlacesOfDelivery(responseAllPlacesOfDelivery.data.AllPlacesOfDelivery);
+      } catch (e) {
+          console.error(e);
+      }
+*/
+    try {
+    const responseCatalog = await axios.get(`${config.serverAPI}/catalog`)
+    Katalog.setPrice(responseCatalog.data)
+} catch (error) {
+    console.error(error)
+}
 
-            try {
-                if (localStorage.getItem('auth_token')) {
-                    try {
-                        await axios.post(`${config.serverAPI}/check_user`, {
-                            auth_token: localStorage.getItem('auth_token'),
-                        })
-                    } catch (e) {
-                        localStorage.removeItem('auth_token')
-                    }
-                }
-            } catch (error) {
-                console.error(error)
-            }
-            this.forceUpdate()
-        })()
-    }
+    try {
+    if (localStorage.getItem('auth_token')) {
+    try {
+    await axios.post(`${config.serverAPI}/check_user`, {
+    auth_token: localStorage.getItem('auth_token'),
+})
+} catch (e) {
+    localStorage.removeItem('auth_token')
+}
+}
+} catch (error) {
+    console.error(error)
+}
+    this.forceUpdate()
+})()
+}
 
     componentDidUpdate() {}
 }
@@ -170,18 +172,18 @@ const mapStateToProps = state => ({
 
 const matchDispatchToProps = dispatch => ({
     setAllPlacesOfDelivery: allPlacesOfDelivery => {
-        dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery))
-    },
+    dispatch(setAllPlacesOfDelivery(allPlacesOfDelivery))
+},
     fetchAllPlacesOfDelivery: url => dispatch(allPlacesOfDeliveryFetchData()),
 })
 // export default App;
 export default withRouter(
-    connect(
-        mapStateToProps,
-        matchDispatchToProps,
-        null,
-        { withRef: true }
-    )(App)
+connect(
+mapStateToProps,
+matchDispatchToProps,
+null,
+{withRef: true}
+)(App)
 )
 /* export default connect(
   mapStateToProps,
